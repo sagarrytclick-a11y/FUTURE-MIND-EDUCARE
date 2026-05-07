@@ -8,6 +8,8 @@ import {
   FaUniversity,
   FaArrowRight,
 } from 'react-icons/fa';
+import { usePopup } from '@/contexts/PopupContext';
+import Link from 'next/link';
 
 const WhoWeAre: React.FC = () => {
   const stats = [
@@ -27,6 +29,8 @@ const WhoWeAre: React.FC = () => {
       label: 'Medical Universities',
     },
   ];
+
+  const {openPopup} = usePopup();
 
   return (
     <section className="relative py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
@@ -79,7 +83,7 @@ const WhoWeAre: React.FC = () => {
             className="max-w-2xl order-1 lg:order-2"
           >
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-4 sm:mb-6">
+            <div onClick={() =>  openPopup()} className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-4 sm:mb-6">
               <span className="text-blue-700 text-xs font-bold tracking-wide uppercase">
                 About Future Mind Educare
               </span>
@@ -140,7 +144,8 @@ const WhoWeAre: React.FC = () => {
             </div>
 
             {/* BUTTON */}
-            <button
+            <Link href={'/about'}>
+             <button
               className="
                 group
                 mt-6 sm:mt-8 lg:mt-10
@@ -167,6 +172,8 @@ const WhoWeAre: React.FC = () => {
 
               <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
             </button>
+            </Link>
+           
           </motion.div>
         </div>
       </div>

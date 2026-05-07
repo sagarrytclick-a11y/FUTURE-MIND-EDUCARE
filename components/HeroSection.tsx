@@ -10,6 +10,7 @@ import {
   FaStar,
   FaCheckCircle,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const HeroSection = () => {
   const { openPopup } = usePopup();
@@ -168,8 +169,11 @@ const HeroSection = () => {
                 <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
               </button>
 
-              <button
-                className="
+              <Link
+              href="/colleges/mbbs-abroad"
+               
+              >
+                <button  className="
                   h-12 sm:h-14
                   px-6 sm:px-8
                   rounded-full
@@ -183,10 +187,11 @@ const HeroSection = () => {
                   duration-300
                   text-sm sm:text-base
                   w-full sm:w-auto
-                "
-              >
+                ">
+
                 Explore Universities
-              </button>
+                </button>
+              </Link>
             </div>
           </motion.div>
 
