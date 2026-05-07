@@ -14,48 +14,56 @@ const FlagSlider = () => {
   const countries = [
     {
       name: 'India',
+      slug: 'india',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/india.svg',
       description: 'Top Medical Colleges',
     },
     {
       name: 'Bangladesh',
+      slug: 'bangladesh',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/bangladesh.svg',
       description: 'Affordable Education',
     },
     {
       name: 'Kyrgyzstan',
+      slug: 'kyrgyzstan',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/kyrgyzstan.svg',
       description: 'Quality Medical Education',
     },
     {
       name: 'Kazakhstan',
+      slug: 'kazakhstan',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/kazakhstan.svg',
       description: 'Modern Facilities',
     },
     {
       name: 'Uzbekistan',
+      slug: 'uzbekistan',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/uzbekistan.svg',
       description: 'Recognized Universities',
     },
     {
       name: 'Georgia',
+      slug: 'georgia',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/georgia.svg',
       description: 'European Standards',
     },
     {
       name: 'Russia',
+      slug: 'russia',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/russia-1.svg',
       description: 'Historic Medical Tradition',
     },
     {
       name: 'Nepal',
+      slug: 'nepal',
       flag:
         'https://argroupofeducation.com/wp-content/uploads/2024/04/nepal-1.svg',
       description: 'Affordable Education',
@@ -165,7 +173,7 @@ const FlagSlider = () => {
                   className="flex-shrink-0 w-[320px] px-3"
                 >
                   <Link
-                    href={`/colleges/mbbs-abroad?country=${country.name.toLowerCase()}`}
+                    href={`/colleges/mbbs-abroad?country=${country.slug}`}
                     className="block"
                   >
                     <div

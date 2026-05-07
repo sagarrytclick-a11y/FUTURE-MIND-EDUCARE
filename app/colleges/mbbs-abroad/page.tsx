@@ -93,7 +93,6 @@ const MbbsAbroadPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-[#f7f8fc] flex items-center justify-center">
         <div className="text-center">
-          <div className="w-14 h-14 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
           <p className="text-gray-600 text-lg font-medium">
             Loading Colleges...
           </p>
@@ -210,7 +209,7 @@ const MbbsAbroadPage: React.FC = () => {
 
                 {countries.map((country) => (
                   <option key={country.id} value={country.name}>
-                    {country.flag} {country.name}
+                    {country.name}
                   </option>
                 ))}
               </select>
@@ -278,8 +277,8 @@ const MbbsAbroadPage: React.FC = () => {
                       px-4 py-2 rounded-full text-xs font-bold shadow-lg
                       ${
                         college.type === "Government"
-                          ? "bg-green-500 text-white"
-                          : "bg-purple-600 text-white"
+                          && "bg-green-500 text-white"
+                         
                       }
                     `}
                     >
