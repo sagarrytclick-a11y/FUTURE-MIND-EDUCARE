@@ -4,11 +4,26 @@ import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  FaInstagram, FaFacebook, FaLinkedin,
-  FaEnvelope, FaChevronDown, FaBars, FaTimes, FaPhoneAlt
+  FaInstagram,
+  FaFacebook,
+  FaLinkedin,
+  FaEnvelope,
+  FaChevronDown,
+  FaBars,
+  FaTimes,
+  FaPhoneAlt,
 } from 'react-icons/fa';
+
 import { usePopup } from '../contexts/PopupContext';
 import Image from 'next/image';
+
+interface College {
+  id: number;
+  name: string;
+  city: string;
+  image: string;
+  fees?: string;
+}
 
 interface State {
   id: number;
@@ -29,37 +44,32 @@ interface Country {
   colleges: College[];
 }
 
-interface College {
-  id: number;
-  name: string;
-  city: string;
-  fees: string;
-  image: string;
-}
-
 const Header = () => {
   const { openPopup } = usePopup();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [hoveredItemData, setHoveredItemData] = useState<State | Country | null>(null);
-  
+  const [hoveredItemData, setHoveredItemData] = useState<
+    State | Country | null
+  >(null);
+
   const [indiaStates, setIndiaStates] = useState<State[]>([]);
   const [abroadCountries, setAbroadCountries] = useState<Country[]>([]);
+
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Brand Colors
-  const colors = {
-    primary: '#2563EB',
-    secondary: '#2563EB',
-    bgDark: '#12141D', // High-end dark from your palette
-    textMuted: '#94A3B8'
-  };
-
-  // 1. Navigation Configuration
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'MBBS India', href: '/colleges/mbbs-india', hasDropdown: true },
-    { name: 'MBBS Abroad', href: '/colleges/mbbs-abroad', hasDropdown: true },
+    {
+      name: 'MBBS India',
+      href: '/colleges/mbbs-india',
+      hasDropdown: true,
+    },
+    {
+      name: 'MBBS Abroad',
+      href: '/colleges/mbbs-abroad',
+      hasDropdown: true,
+    },
     { name: 'Blog', href: '/blog' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
@@ -67,9 +77,12 @@ const Header = () => {
 
   const fetchData = async (type: 'india' | 'abroad') => {
     try {
-      const url = type === 'india' ? '/mbbs-india.json' : '/mbbs-abroad.json';
+      const url =
+        type === 'india' ? '/mbbs-india.json' : '/mbbs-abroad.json';
+
       const res = await fetch(url);
       const data = await res.json();
+
       if (type === 'india') {
         setIndiaStates(data.states.slice(0, 8));
         setHoveredItemData(data.states[0]);
@@ -78,130 +91,300 @@ const Header = () => {
         setHoveredItemData(data.countries[0]);
       }
     } catch (err) {
-      console.error("Fetch error:", err);
+      console.error(err);
     }
   };
 
   const handleMouseEnter = (name: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
     setActiveDropdown(name);
-    if (name === 'MBBS India' && indiaStates.length === 0) fetchData('india');
-    if (name === 'MBBS Abroad' && abroadCountries.length === 0) fetchData('abroad');
+
+    if (name === 'MBBS India' && indiaStates.length === 0) {
+      fetchData('india');
+    }
+
+    if (name === 'MBBS Abroad' && abroadCountries.length === 0) {
+      fetchData('abroad');
+    }
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
       setHoveredItemData(null);
-    }, 200);
+    }, 150);
   };
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Top Bar */}
-      <div style={{ backgroundColor: colors.bgDark }} className="py-3 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center text-md space-x-4">
-            <FaInstagram className="text-gray-400 hover:text-white transition-colors cursor-pointer" />
-            <FaFacebook className="text-gray-400 hover:text-white transition-colors cursor-pointer" />
-            <FaLinkedin className="text-gray-400 hover:text-white transition-colors cursor-pointer" />
+      {/* TOP BAR */}
+      <div className="bg-[#0F172A] border-b border-white/10">
+        <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
+          {/* SOCIAL */}
+          <div className="flex items-center gap-5">
+            <FaInstagram className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
+
+            <FaFacebook className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
+
+            <FaLinkedin className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
           </div>
-          <div className="hidden text-md md:flex items-center space-x-6 font-medium" style={{ color: colors.textMuted }}>
-            <a href="tel:+919876543210" className="flex items-center hover:text-white transition-colors">
-              <FaPhoneAlt className="mr-2" style={{ color: colors.secondary }} /> +91 98765 43210
+
+          {/* CONTACT */}
+          <div className="hidden md:flex items-center gap-8">
+            <a
+              href="tel:+919876543210"
+              className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
+            >
+              <FaPhoneAlt className="mr-2 text-blue-500" />
+              +91 98765 43210
             </a>
-            <a href="mailto:info@mbbsguide.com" className="flex items-center hover:text-white transition-colors">
-              <FaEnvelope className="mr-2" style={{ color: colors.secondary }} /> info@mbbsguide.com
+
+            <a
+              href="mailto:info@mbbsguide.com"
+              className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
+            >
+              <FaEnvelope className="mr-2 text-blue-500" />
+              info@mbbsguide.com
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Nav */}
-      <div className="bg-white shadow-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="FM Education" width={50} height={50} />
-            <span className="text-xl font-bold tracking-tight text-gray-900 uppercase">
-             FM EDUCATION
-            </span>
+      {/* MAIN NAVBAR */}
+      <div className="bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+        <div className="max-w-[1400px] mx-auto px-4 h-[88px] flex items-center justify-between">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <Image
+                src="/logo.png"
+                alt="FM Education"
+                width={54}
+                height={54}
+                className="object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+
+            <div className="leading-tight">
+              <h2 className="text-[24px] font-black tracking-tight text-[#111827] uppercase">
+                FM Education
+              </h2>
+
+              <p className="text-[11px] tracking-[2px] uppercase font-semibold text-gray-500">
+                Study MBBS Worldwide
+              </p>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* DESKTOP NAV */}
+          <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((item) => (
-              <div 
-                key={item.name} 
-                className="relative py-7"
+              <div
+                key={item.name}
+                className="relative py-8 group"
                 onMouseEnter={() => handleMouseEnter(item.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link 
+                <Link
                   href={item.href}
-                  className={`flex items-center font-semibold transition-colors ${activeDropdown === item.name ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+                  className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
+                      ? 'text-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
+                    }`}
                 >
                   {item.name}
-                  {item.hasDropdown && <FaChevronDown className="ml-1 text-[10px]" />}
+
+                  {item.hasDropdown && (
+                    <FaChevronDown className="ml-2 text-[10px]" />
+                  )}
+
+                  <span
+                    className={`absolute -bottom-2 left-0 bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'
+                      }`}
+                  />
                 </Link>
 
-                {/* Mega Menu Dropdown */}
+                {/* MEGA MENU */}
                 <AnimatePresence>
                   {activeDropdown === item.name && item.hasDropdown && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-[78px] left-[-150px] w-[700px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex"
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.25 }}
+                      className="
+                        absolute
+                        top-[88px]
+                        left-1/2
+                        -translate-x-1/2
+                        w-[850px]
+                        bg-white
+                        rounded-[28px]
+                        shadow-[0_25px_80px_rgba(0,0,0,0.12)]
+                        border
+                        border-gray-100
+                        overflow-hidden
+                        flex
+                      "
                     >
-                      {/* Left Sidebar */}
-                      <div className="w-1/3 bg-gray-50 p-4 border-r border-gray-100">
-                        <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-4">Select Location</p>
-                        <div className="space-y-1">
-                          {(item.name === 'MBBS India' ? indiaStates : abroadCountries).map((loc: State | Country) => (
+                      {/* LEFT */}
+                      <div className="w-[280px] bg-[#F8FAFC] border-r border-gray-100 p-5">
+                        <p className="text-[11px] uppercase tracking-[2px] text-gray-400 font-bold mb-5">
+                          Select Location
+                        </p>
+
+                        <div className="space-y-2 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
+                          {(item.name === 'MBBS India'
+                            ? indiaStates
+                            : abroadCountries
+                          ).map((loc: State | Country) => (
                             <div
                               key={loc.id}
                               onMouseEnter={() => setHoveredItemData(loc)}
-                              className={`p-3 rounded-xl cursor-pointer transition-all flex items-center ${hoveredItemData?.id === loc.id ? 'bg-white shadow-md' : 'hover:bg-gray-100'}`}
+                              className={`
+                                group
+                                p-3
+                                rounded-2xl
+                                cursor-pointer
+                                transition-all
+                                duration-300
+                                flex
+                                items-center
+                                border
+                                ${hoveredItemData?.id === loc.id
+                                  ? 'bg-white border-blue-100 shadow-md'
+                                  : 'border-transparent hover:bg-white hover:border-gray-200'
+                                }
+                              `}
                             >
-                              <img src={loc.image || (loc as any).flag} alt={loc.name} className="w-6 h-4 rounded-sm mr-3 object-cover" />
-                              <span className={`text-sm font-medium ${hoveredItemData?.id === loc.id ? 'text-blue-600' : 'text-gray-700'}`}>{loc.name}</span>
+                              <img
+                                src={loc.image || (loc as any).flag}
+                                alt={loc.name}
+                                className="w-8 h-6 rounded-md object-cover mr-3"
+                              />
+
+                              <span
+                                className={`text-[14px] font-semibold ${hoveredItemData?.id === loc.id
+                                    ? 'text-blue-600'
+                                    : 'text-gray-700'
+                                  }`}
+                              >
+                                {loc.name}
+                              </span>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      {/* Right Panel */}
-                      <div className="w-2/3 p-6 bg-white">
+                      {/* RIGHT */}
+                      <div className="flex-1 p-7 bg-white">
                         {hoveredItemData ? (
-                          <motion.div key={hoveredItemData.id} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}>
-                            <div className="flex justify-between items-center mb-4">
-                              <h3 className="font-bold text-lg text-gray-900">Top Colleges in {hoveredItemData.name}</h3>
-                              <Link href={item.href} className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all">View All</Link>
+                          <motion.div
+                            key={hoveredItemData.id}
+                            initial={{ opacity: 0, x: 15 }}
+                            animate={{ opacity: 1, x: 0 }}
+                          >
+                            <div className="flex items-center justify-between mb-6">
+                              <div>
+                                <h3 className="text-[24px] font-black text-gray-900 leading-tight">
+                                  Top Colleges in {hoveredItemData.name}
+                                </h3>
+
+                                <p className="text-sm text-gray-500 mt-1">
+                                  Explore top-rated MBBS universities &
+                                  colleges
+                                </p>
+                              </div>
+
+                              <Link
+                                href={item.href}
+                                className="
+                                  px-4
+                                  py-2
+                                  rounded-full
+                                  bg-blue-50
+                                  text-blue-600
+                                  text-sm
+                                  font-bold
+                                  hover:bg-blue-600
+                                  hover:text-white
+                                  transition-all
+                                  duration-300
+                                "
+                              >
+                                View All
+                              </Link>
                             </div>
-                            <div className="grid grid-cols-1 gap-3">
-                              {hoveredItemData.colleges?.slice(0, 4).map((college: College) => {
-                                const collegeSlug = college.name
-                                  .toLowerCase()
-                                  .replace(/[^a-z0-9\s]/g, '')
-                                  .replace(/\s+/g, '-')
-                                  .replace(/-+/g, '-')
-                                  .replace(/^-|-$/g, '');
-                                
-                                return (
-                                <Link href={`/colleges/${collegeSlug}`} key={college.id} className="group flex items-center p-2 rounded-xl border border-transparent hover:border-blue-100 hover:bg-blue-50/50 transition-all">
-                                  <img src={college.image} alt={college.name} className="w-12 h-12 rounded-lg object-cover shadow-sm" />
-                                  <div className="ml-3 text-left">
-                                    <p className="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-1">{college.name}</p>
-                                    <p className="text-[11px] text-gray-500 font-medium">{college.city} • <span className="text-blue-500">{college.fees}</span></p>
-                                  </div>
-                                </Link>
-                                );
-                              })}
+
+                            <div className="grid grid-cols-1 gap-3 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
+                              {hoveredItemData.colleges
+                                ?.slice(0, 6)
+                                .map((college: College) => {
+                                  const collegeSlug = college.name
+                                    .toLowerCase()
+                                    .replace(/[^a-z0-9\s]/g, '')
+                                    .replace(/\s+/g, '-')
+                                    .replace(/-+/g, '-')
+                                    .replace(/^-|-$/g, '');
+
+                                  return (
+                                    <Link
+                                      href={`/colleges/${collegeSlug}`}
+                                      key={college.id}
+                                      className="
+                                        group
+                                        flex
+                                        items-center
+                                        p-3
+                                        rounded-2xl
+                                        border
+                                        border-transparent
+                                        hover:border-blue-100
+                                        hover:bg-[#F8FAFC]
+                                        transition-all
+                                        duration-300
+                                      "
+                                    >
+                                      <img
+                                        src={college.image}
+                                        alt={college.name}
+                                        className="
+                                          w-14
+                                          h-14
+                                          rounded-xl
+                                          object-cover
+                                          shadow-sm
+                                          group-hover:scale-105
+                                          transition-transform
+                                          duration-300
+                                        "
+                                      />
+
+                                      <div className="ml-4">
+                                        <h4 className="text-[15px] font-bold text-gray-800 group-hover:text-blue-600 line-clamp-1">
+                                          {college.name}
+                                        </h4>
+
+                                        <p className="text-[13px] text-gray-500 mt-1">
+                                          {college.city}
+                                        </p>
+
+                                        <p className="text-[13px] text-blue-600 font-semibold mt-1">
+                                          {college.fees || 'Affordable Fees'}
+                                        </p>
+                                      </div>
+                                    </Link>
+                                  );
+                                })}
                             </div>
                           </motion.div>
                         ) : (
-                          <div className="h-full flex items-center justify-center text-gray-400 italic text-sm">Select a location to view details</div>
+                          <div className="h-full flex items-center justify-center text-gray-400">
+                            Select a location
+                          </div>
                         )}
                       </div>
                     </motion.div>
@@ -214,53 +397,127 @@ const Header = () => {
           {/* CTA */}
           <button
             onClick={openPopup}
-            style={{ backgroundColor: colors.primary }}
-            className="hidden lg:block text-white px-7 py-2.5 rounded-full font-bold shadow-lg hover:scale-105 transition-transform active:scale-95"
+            className="
+              hidden
+              lg:flex
+              items-center
+              justify-center
+              px-7
+              h-12
+              rounded-full
+              bg-[#2563EB]
+              text-white
+              font-bold
+              text-sm
+              shadow-[0_10px_30px_rgba(37,99,235,0.25)]
+              hover:shadow-[0_15px_40px_rgba(37,99,235,0.35)]
+              hover:scale-[1.03]
+              transition-all
+              duration-300
+            "
           >
-            Get Consultation
+            Get Free Consultation
           </button>
 
-          {/* Mobile Button */}
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-2xl text-gray-700">
+          {/* MOBILE BTN */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden text-2xl text-gray-700"
+          >
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b overflow-hidden"
+            className="lg:hidden bg-white border-b border-gray-100 overflow-y-auto max-h-[80vh]"
           >
-            <div className="p-4 space-y-4">
-              {/* Contact Info for Mobile */}
-              <div className="border-b border-gray-200 pb-4">
-                <a href="tel:+919876543210" className="flex items-center text-lg font-semibold text-gray-700 hover:text-blue-600 mb-3">
-                  <FaPhoneAlt className="mr-3 text-blue-600" /> +91 98765 43210
+            <div className="p-4 sm:p-5 space-y-4 sm:space-y-5">
+              <div className="border-b border-gray-200 pb-4 sm:pb-5">
+                <a
+                  href="tel:+919876543210"
+                  className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700 mb-3 sm:mb-4"
+                >
+                  <FaPhoneAlt className="mr-3 text-blue-600 flex-shrink-0" />
+                  <span className="text-sm sm:text-base">+91 98765 43210</span>
                 </a>
-                <a href="mailto:info@mbbsguide.com" className="flex items-center text-lg font-semibold text-gray-700 hover:text-blue-600">
-                  <FaEnvelope className="mr-3 text-blue-600" /> info@mbbsguide.com
+
+                <a
+                  href="mailto:info@mbbsguide.com"
+                  className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700"
+                >
+                  <FaEnvelope className="mr-3 text-blue-600 flex-shrink-0" />
+                  <span className="text-sm sm:text-base break-words">info@mbbsguide.com</span>
                 </a>
               </div>
-              
-              {/* Navigation Links */}
+
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-lg font-semibold text-gray-700 hover:text-blue-600"
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-[15px] sm:text-[16px] font-semibold text-gray-800 hover:text-blue-600 transition-all py-2"
+                  >
+                    {link.name}
+                  </Link>
+                  {link.hasDropdown && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {link.name === 'MBBS India' && indiaStates.length > 0 && (
+                        <div className="space-y-1">
+                          <p className="text-xs text-gray-500 font-medium mb-2">Popular States:</p>
+                          {indiaStates.slice(0, 3).map((state) => (
+                            <Link
+                              key={state.id}
+                              href={`/colleges/mbbs-india`}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block text-sm text-gray-600 hover:text-blue-600 py-1"
+                            >
+                              • {state.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                      {link.name === 'MBBS Abroad' && abroadCountries.length > 0 && (
+                        <div className="space-y-1">
+                          <p className="text-xs text-gray-500 font-medium mb-2">Popular Countries:</p>
+                          {abroadCountries.slice(0, 3).map((country) => (
+                            <Link
+                              key={country.id}
+                              href={`/colleges/mbbs-abroad`}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block text-sm text-gray-600 hover:text-blue-600 py-1"
+                            >
+                              • {country.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               ))}
-              <button 
-                onClick={() => { openPopup(); setMobileMenuOpen(false); }}
-                className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold"
+
+              <button
+                onClick={() => {
+                  openPopup();
+                  setMobileMenuOpen(false);
+                }}
+                className="
+                  w-full
+                  h-12
+                  rounded-xl
+                  bg-blue-600
+                  text-white
+                  font-bold
+                  shadow-lg
+                  text-sm sm:text-base
+                "
               >
                 Get Free Consultation
               </button>

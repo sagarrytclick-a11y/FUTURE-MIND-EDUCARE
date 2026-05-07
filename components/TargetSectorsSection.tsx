@@ -1,78 +1,171 @@
-"use client"
-import React from 'react';
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaGlobeAsia,
+  FaUserGraduate,
+  FaStethoscope,
+  FaArrowRight,
+} from "react-icons/fa";
 
 interface SectorItem {
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const TargetSectorsSection: React.FC = () => {
   const sectors: SectorItem[] = [
     {
       title: "MBBS Abroad",
-      description: "We help students pursue their medical education dreams in top international universities across Russia, China, Georgia, Philippines, and other countries with affordable fees and global recognition.",
-      icon: "🌍"
+      description:
+        "Get admission guidance for globally recognized medical universities in Russia, Georgia, Kazakhstan, Uzbekistan, and more.",
+      icon: <FaGlobeAsia />,
     },
     {
       title: "MBBS India",
-      description: "Guiding students through the complex admission process for Indian medical colleges, including NEET counseling, state quota seats, and management quota admissions.",
-      icon: "🇮🇳"
+      description:
+        "Complete support for NEET counseling, private colleges, government seats, and admission procedures across India.",
+      icon: <FaUserGraduate />,
     },
     {
-      title: "MD/MS",
-      description: "Assisting medical graduates in securing postgraduate seats in prestigious institutions for specialization in various medical fields with comprehensive guidance.",
-      icon: "🎓"
-    }
+      title: "MD / MS",
+      description:
+        "Expert assistance for postgraduate medical admissions and specialization opportunities in top institutions.",
+      icon: <FaStethoscope />,
+    },
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Our Target Sectors
+    <section className="relative py-20 bg-white overflow-hidden">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
+
+      {/* LIGHT EFFECT */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-full" />
+
+      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* HEADER */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          
+          {/* BADGE */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+            <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
+              Career Opportunities
+            </span>
+          </div>
+
+          {/* TITLE */}
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+            Our Target
+            <span className="text-blue-600"> Sectors</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We specialize in providing comprehensive guidance across multiple medical education pathways, 
-            ensuring students find the perfect fit for their career aspirations and academic goals.
+
+          {/* DESCRIPTION */}
+          <p className="mt-6 text-slate-500 text-base md:text-lg leading-8 font-medium">
+            We provide expert medical admission guidance across multiple
+            educational pathways helping students build successful careers in
+            medicine.
           </p>
         </div>
 
-        {/* Sectors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {sectors.map((sector, index) => (
-            <div
+            <motion.div
               key={index}
-              className="text-center p-8 bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+              className="
+                group
+                relative
+                bg-white
+                border
+                border-slate-200
+                rounded-[30px]
+                p-8
+                overflow-hidden
+                hover:border-blue-100
+                hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+                transition-all
+                duration-500
+              "
             >
-              {/* Sector Icon */}
-              <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl">
-                  {sector.icon}
-                </span>
+              {/* TOP BLUE LINE */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+              {/* ICON */}
+              <div
+                className="
+                  w-20
+                  h-20
+                  rounded-3xl
+                  bg-blue-50
+                  text-blue-600
+                  flex
+                  items-center
+                  justify-center
+                  text-3xl
+                  mb-7
+                  group-hover:bg-blue-600
+                  group-hover:text-white
+                  transition-all
+                  duration-300
+                "
+              >
+                {sector.icon}
               </div>
-              
-              {/* Sector Title */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+              {/* TITLE */}
+              <h3 className="text-2xl font-black text-slate-900 mb-4">
                 {sector.title}
               </h3>
-              
-              {/* Sector Description */}
-              <p className="text-gray-600 leading-relaxed">
+
+              {/* DESCRIPTION */}
+              <p className="text-slate-500 leading-8 text-sm font-medium">
                 {sector.description}
               </p>
-            </div>
+
+              {/* FOOTER */}
+              <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-sm font-black text-slate-900">
+                  Learn More
+                </span>
+
+                <div
+                  className="
+                    w-11
+                    h-11
+                    rounded-2xl
+                    bg-slate-100
+                    group-hover:bg-blue-600
+                    flex
+                    items-center
+                    justify-center
+                    transition-all
+                    duration-300
+                  "
+                >
+                  <FaArrowRight className="text-slate-500 group-hover:text-white transition-colors duration-300 text-sm" />
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Additional Information */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            With years of experience and a proven track record, we have successfully placed thousands of students 
-            in their dream medical institutions. Our expert counselors provide personalized guidance to help you 
-            navigate the complex admission process with confidence.
+        {/* BOTTOM TEXT */}
+        <div className="mt-16 text-center max-w-4xl mx-auto">
+          <p className="text-slate-500 leading-8 font-medium">
+            With years of experience and expert counselors, we have successfully
+            guided thousands of students toward their dream medical careers in
+            India and abroad.
           </p>
         </div>
       </div>

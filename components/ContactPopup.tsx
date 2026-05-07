@@ -1,16 +1,18 @@
 "use client"
 import React, { useState } from 'react';
 import { usePopup } from '../contexts/PopupContext';
+import { FaUser, FaEnvelope, FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
 
 const ContactPopup: React.FC = () => {
   const { isOpen, closePopup, formData, updateFormData, resetForm } = usePopup();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -20,10 +22,9 @@ const ContactPopup: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-
       if (response.ok) {
         setSubmitStatus('success');
+
         setTimeout(() => {
           closePopup();
           resetForm();
@@ -31,170 +32,215 @@ const ContactPopup: React.FC = () => {
         }, 2000);
       } else {
         setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 3000);
       }
     } catch (error) {
-      console.error('Submit error:', error);
+      console.error(error);
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
     } finally {
       setIsSubmitting(false);
+
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
     }
   };
 
-  const handleInputChange = (field: 'name' | 'email' | 'mobile' | 'courseInterest' | 'neetScore', value: string) => {
+  const handleInputChange = (
+    field: 'name' | 'email' | 'mobile' | 'courseInterest' | 'neetScore',
+    value: string
+  ) => {
     updateFormData({ [field]: value });
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-60 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center px-4">
+      
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0  bg-opacity-50 backdrop-blur-sm"
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-md"
         onClick={closePopup}
       />
-      
+
       {/* Popup */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-        {/* Close Button */}
-        <button
-          onClick={closePopup}
-          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-        >
-          <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-[0_20px_80px_rgba(0,0,0,0.35)] animate-popup">
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
-          <h3 className="text-2xl font-bold mb-2">Get Free Consultation</h3>
-          <p className="text-blue-100">Fill in your details and our experts will contact you soon</p>
+        <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-7 py-7 text-white">
+
+          <div className="absolute -top-10 right-0 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+
+          <button
+            onClick={closePopup}
+            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 backdrop-blur hover:bg-white/25 transition"
+          >
+            ✕
+          </button>
+
+          <h2 className="text-3xl font-bold">
+            Free MBBS Counselling
+          </h2>
+
+          <p className="mt-2 text-sm text-blue-100">
+            Fill your details and our expert counsellor will contact you shortly.
+          </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
-          {/* Name Field */}
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5 p-7 max-h-[75vh] overflow-y-auto"
+        >
+
+          {/* Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Name <span className="text-red-500">*</span>
+            <label className="mb-2 block text-sm font-semibold text-gray-700">
+              Full Name
             </label>
-            <input
-              type="text"
-              value={formData.name}
-              onChange={(e) => handleInputChange('name', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              placeholder="Enter your name"
-              required
-            />
+
+            <div className="flex items-center rounded-xl border border-gray-200 bg-gray-50 px-4 focus-within:border-blue-500 focus-within:bg-white">
+              <FaUser className="text-gray-400" />
+
+              <input
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) =>
+                  handleInputChange('name', e.target.value)
+                }
+                placeholder="Enter your full name"
+                className="h-12 w-full bg-transparent px-3 outline-none"
+              />
+            </div>
           </div>
 
-          {/* Email Field */}
+          {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email <span className="text-red-500">*</span>
+            <label className="mb-2 block text-sm font-semibold text-gray-700">
+              Email Address
             </label>
-            <input
-              type="email"
-              value={formData.email}
-              onChange={(e) => handleInputChange('email', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              placeholder="your.email@example.com"
-              required
-            />
+
+            <div className="flex items-center rounded-xl border border-gray-200 bg-gray-50 px-4 focus-within:border-blue-500 focus-within:bg-white">
+              <FaEnvelope className="text-gray-400" />
+
+              <input
+                type="email"
+                required
+                value={formData.email}
+                onChange={(e) =>
+                  handleInputChange('email', e.target.value)
+                }
+                placeholder="example@gmail.com"
+                className="h-12 w-full bg-transparent px-3 outline-none"
+              />
+            </div>
           </div>
 
-          {/* Mobile Field */}
+          {/* Mobile */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Mobile No <span className="text-red-500">*</span>
+            <label className="mb-2 block text-sm font-semibold text-gray-700">
+              Mobile Number
             </label>
-            <input
-              type="tel"
-              value={formData.mobile}
-              onChange={(e) => handleInputChange('mobile', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              placeholder="+91 98765 43210"
-              required
-            />
+
+            <div className="flex items-center rounded-xl border border-gray-200 bg-gray-50 px-4 focus-within:border-blue-500 focus-within:bg-white">
+              <FaPhoneAlt className="text-gray-400" />
+
+              <input
+                type="tel"
+                required
+                value={formData.mobile}
+                onChange={(e) =>
+                  handleInputChange('mobile', e.target.value)
+                }
+                placeholder="+91 9876543210"
+                className="h-12 w-full bg-transparent px-3 outline-none"
+              />
+            </div>
           </div>
 
-          {/* Course Interest Field */}
+          {/* Course */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Course Interested In <span className="text-red-500">*</span>
+            <label className="mb-2 block text-sm font-semibold text-gray-700">
+              Course Interested
             </label>
-            <select
-              value={formData.courseInterest}
-              onChange={(e) => handleInputChange('courseInterest', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              required
-            >
-              <option value="">Select Course</option>
-              <option value="mbbs-india">MBBS India</option>
-              <option value="mbbs-abroad">MBBS Abroad</option>
-              <option value="md-ms-bds">MD/MS/BDS</option>
-            </select>
+
+            <div className="flex items-center rounded-xl border border-gray-200 bg-gray-50 px-4 focus-within:border-blue-500 focus-within:bg-white">
+              <FaGraduationCap className="text-gray-400" />
+
+              <select
+                required
+                value={formData.courseInterest}
+                onChange={(e) =>
+                  handleInputChange('courseInterest', e.target.value)
+                }
+                className="h-12 w-full bg-transparent px-3 outline-none"
+              >
+                <option value="">Select Course</option>
+                <option value="mbbs-india">MBBS India</option>
+                <option value="mbbs-abroad">MBBS Abroad</option>
+                <option value="md-ms-bds">MD / MS / BDS</option>
+              </select>
+            </div>
           </div>
 
-          {/* NEET Score Field */}
+          {/* NEET */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              NEET Score <span className="text-red-500">*</span>
+            <label className="mb-2 block text-sm font-semibold text-gray-700">
+              NEET Score
             </label>
+
             <input
               type="number"
-              value={formData.neetScore}
-              onChange={(e) => handleInputChange('neetScore', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              placeholder="Enter your NEET score"
+              required
               min="0"
               max="720"
-              required
+              value={formData.neetScore}
+              onChange={(e) =>
+                handleInputChange('neetScore', e.target.value)
+              }
+              placeholder="Enter your score"
+              className="h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 outline-none focus:border-blue-500 focus:bg-white"
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed"
+            className="h-13 w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-300 disabled:opacity-70"
           >
-            {isSubmitting ? (
-              <span className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Submitting...
-              </span>
-            ) : submitStatus === 'success' ? (
-              <span className="flex items-center justify-center">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Submitted Successfully!
-              </span>
-            ) : submitStatus === 'error' ? (
-              <span className="flex items-center justify-center">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                Error! Try Again
-              </span>
-            ) : (
-              'Get Free Consultation'
-            )}
+            {isSubmitting
+              ? 'Submitting...'
+              : submitStatus === 'success'
+              ? 'Submitted Successfully ✓'
+              : submitStatus === 'error'
+              ? 'Something Went Wrong'
+              : 'Get Free Consultation'}
           </button>
 
-          {/* Privacy Note */}
-          <p className="text-xs text-gray-500 text-center">
-            By submitting this form, you agree to our privacy policy and terms of service.
+          <p className="text-center text-xs leading-relaxed text-gray-500">
+            By continuing, you agree to our privacy policy and terms & conditions.
           </p>
         </form>
       </div>
+
+      <style jsx>{`
+        @keyframes popup {
+          0% {
+            opacity: 0;
+            transform: scale(0.92) translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+
+        .animate-popup {
+          animation: popup 0.3s ease;
+        }
+      `}</style>
     </div>
   );
 };
