@@ -1,0 +1,250 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "name": "Russia",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1280px-Flag_of_Russia.svg.png",
+      "image": "https://i.pinimg.com/1200x/29/2d/e2/292de231f2d4bb8572813423294bae60.jpg",
+      "description": "Quality Medical Education with Affordable Fees",
+      "universities": 80,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 1,
+          "name": "Moscow State Medical University",
+          "city": "Moscow",
+          "fees": "$4,500 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Russia",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSny6HAPFc1e_-6CSsiRrd0MtsWXk8ASjdW1w&s"
+        },
+        {
+          "id": 2,
+          "name": "Saint Petersburg State Medical University",
+          "city": "Saint Petersburg",
+          "fees": "$4,000 - $5,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Russia",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq8hZN3RNo34WnGdPNubZ-LSfbSKpGWmkV0g&s",
+          "type": "Government"
+        },
+        {
+          "id": 3,
+          "name": "Kazan Federal University",
+          "city": "Kazan",
+          "fees": "$3,500 - $5,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Russia",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSny6HAPFc1e_-6CSsiRrd0MtsWXk8ASjdW1w&s",
+          "type": "Government"
+        },
+        {
+          "id": 4,
+          "name": "Novosibirsk State Medical University",
+          "city": "Novosibirsk",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#4 in Russia",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFPOGsXPr4cWTDeGmTBN6xi5_kqunipHTow&s",
+          "type": "Government"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Kazakhstan",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1280px-Flag_of_Kazakhstan.svg.png",
+      "image": "https://i.pinimg.com/1200x/16/01/a1/1601a122fa2792080fd1e57c50abc8ab.jpg",
+      "description": "Modern Facilities with International Standards",
+      "universities": 45,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 5,
+          "name": "Kazakh National Medical University",
+          "city": "Almaty",
+          "fees": "$3,500 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Kazakhstan",
+          "image": "https://www.dishaeducationconsultancy.com/wp-content/uploads/2021/08/img2.jpg"
+        },
+        {
+          "id": 6,
+          "name": "Astana Medical University",
+          "city": "Astana",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Kazakhstan",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLI55pTwlljOU55Gn7TZzRq5lXNdEJgcuUQ&s"
+        },
+        {
+          "id": 7,
+          "name": "Karaganda State Medical University",
+          "city": "Karaganda",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Kazakhstan",
+          "image": "https://gmfadmission.in/wp-content/uploads/2020/01/Karaganda-State-Medical-University.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Philippines",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "image": "https://i.pinimg.com/1200x/23/1c/81/231c817b08e7e1b77e055c4b3bdcfdaa.jpg",
+      "description": "English Medium with US-Based Curriculum",
+      "universities": 60,
+      "courses": "MBBS, MD, Nursing",
+      "colleges": [
+        {
+          "id": 8,
+          "name": "University of the Philippines Manila",
+          "city": "Manila",
+          "fees": "$8,000 - $12,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Philippines",
+          "image": "https://up.edu.ph/wp-content/uploads/2023/11/Oblation-Plaza-by-Misael-Bacani_4.jpg"
+        },
+        {
+          "id": 9,
+          "name": "University of Santo Tomas",
+          "city": "Manila",
+          "fees": "$7,000 - $10,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Philippines",
+          "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/f7/77/23/main-building-this-edifice.jpg?w=900&h=500&s=1"
+        },
+        {
+          "id": 10,
+          "name": "Davao Medical School Foundation",
+          "city": "Davao",
+          "fees": "$6,000 - $9,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Philippines",
+          "image": "https://www.dmsf.net/wp-content/uploads/2020/11/about1-edited.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Georgia",
+      "flag": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmznejpYTXuRw7ikT-yFexaAuGzx8Xmti1YQ&s",
+      "image": "https://i.pinimg.com/1200x/db/8a/4a/db8a4aa1c8deabf44d9c894cdd6e29f9.jpg",
+      "description": "European Standards with Affordable Education",
+      "universities": 35,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 11,
+          "name": "Tbilisi State Medical University",
+          "city": "Tbilisi",
+          "fees": "$5,000 - $7,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Georgia",
+          "image": "https://images.shiksha.com/mediadata/images/1702625100phpu2Kbnu.jpeg"
+        },
+        {
+          "id": 12,
+          "name": "Batumi Shota Rustaveli State University",
+          "city": "Batumi",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Georgia",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/CAMPUS_4ZetiLIiP.webp?tr=w-3840"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bangladesh",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/3840px-Flag_of_Bangladesh.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      "image": "https://i.pinimg.com/1200x/a6/ed/b1/a6edb15919952898711316c17344a2d1.jpg",
+      "description": "Affordable Education with Similar Curriculum",
+      "universities": 50,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 13,
+          "name": "Dhaka Medical College",
+          "city": "Dhaka",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Bangladesh",
+          "image": "https://dmch.gov.bd/wp-content/uploads/2022/10/dmch-picture-1200x674.jpg"
+        },
+        {
+          "id": 14,
+          "name": "Bangabandhu Sheikh Mujib Medical University",
+          "city": "Dhaka",
+          "fees": "$5,000 - $7,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Bangladesh",
+          "image": "https://www.rmcedu.com/_next/image/?url=https%3A%2F%2Fdash.rmcedu.com%2Fuploads%2Fbangabandhu_sheikh_mujib_medical_university_and_hospital1_867e52c131.webp&w=1920&q=75",
+          "type": "Government"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Uzbekistan",
+      "flag": "https://cdn.britannica.com/47/7247-050-BEEDE5E3/Flag-Uzbekistan.jpg",
+      "image": "https://i.pinimg.com/736x/b4/5d/c9/b45dc94da00ddd4883ae6e3c789227ca.jpg",
+      "description": "Recognized Universities with Low Cost",
+      "universities": 40,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 15,
+          "name": "Tashkent Medical Academy",
+          "city": "Tashkent",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Uzbekistan",
+          "image": "https://universityinsights.in/wp-content/uploads/2024/12/9-Tashkent-Medical-Academy-2.webp"
+        },
+        {
+          "id": 16,
+          "name": "Samarkand State Medical University",
+          "city": "Samarkand",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Uzbekistan",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL8qcY9DLmYEPzgsG4Dzl1M42FugC9A_FRVA&s"
+        }
+      ]
+    }
+  ]
+}

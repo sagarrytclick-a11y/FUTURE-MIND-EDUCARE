@@ -1,0 +1,321 @@
+{
+  "states": [
+    {
+      "id": 1,
+      "name": "Delhi",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/AIIMS-All-India-Institute-of-Medical-Sciences-delhi.webp",
+      "description": "Capital City with Premier Medical Institutes",
+      "colleges": [
+        {
+          "id": 1,
+          "name": "All India Institute of Medical Sciences (AIIMS)",
+          "city": "New Delhi",
+          "fees": "₹1,500 per year",
+          "seats": 125,
+          "recognition": "NMC, MCI",
+          "ranking": "#1 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4OEnrkCgsu6Iuo_Roxu0jmn6iVNWBVv0zKQ&s"
+        },
+        {
+          "id": 2,
+          "name": "Maulana Azad Medical College (MAMC)",
+          "city": "New Delhi",
+          "fees": "₹2,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#5 in India",
+          "type": "Government",
+          "image": "https://mamc.delhi.gov.in/sites/default/files/mamc/image/mamc.png"
+        },
+        {
+          "id": 3,
+          "name": "Lady Hardinge Medical College (LHMC)",
+          "city": "New Delhi",
+          "fees": "₹1,800 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#8 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjbq7t1ElIa_ufPRIWHNE9UK5Nd_EucXt3Eg&s"
+        },
+        {
+          "id": 4,
+          "name": "University College of Medical Sciences (UCMS)",
+          "city": "New Delhi",
+          "fees": "₹2,500 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#12 in India",
+          "type": "Government",
+          "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Ucmsbuil.jpg/250px-Ucmsbuil.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Maharashtra",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mahars.webp",
+      "description": "Largest State with Maximum Medical Colleges",
+      "colleges": [
+        {
+          "id": 5,
+          "name": "Grant Medical College (GMC)",
+          "city": "Mumbai",
+          "fees": "₹3,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#7 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAbIbZmTy3n3H5LSC5GFOUJrruoMxEAgfamA&s"
+        },
+        {
+          "id": 6,
+          "name": "KEM Hospital and Seth G.S. Medical College",
+          "city": "Mumbai",
+          "fees": "₹3,500 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#9 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-wxAMcGwYbrft9RL6qQhR7zU-C-3mGeoB4Q&s"
+        },
+        {
+          "id": 7,
+          "name": "B.J. Government Medical College",
+          "city": "Pune",
+          "fees": "₹2,800 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#15 in India",
+          "type": "Government",
+          "image": "https://collegekaka.com/wp-content/uploads/2023/11/B.J.-Government-Medical-College-Pune.webp"
+        },
+        {
+          "id": 8,
+          "name": "Seth G.S. Medical College and KEM Hospital",
+          "city": "Mumbai",
+          "fees": "₹4,000 per year",
+          "seats": 180,
+          "recognition": "NMC, MCI",
+          "ranking": "#11 in India",
+          "type": "Government",
+          "image": "https://mycareersview.com/afile/mcv16743_mnr_dental_college1-4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Uttar Pradesh",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
+      "description": "Most Populous State with Quality Medical Education",
+      "colleges": [
+        {
+          "id": 9,
+          "name": "King George's Medical University (KGMU)",
+          "city": "Lucknow",
+          "fees": "₹2,500 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#3 in India",
+          "type": "Government",
+          "image": "https://careermantraimages.s3.ap-south-1.amazonaws.com/assets/uploads/images/coverimages/cover_1348.png"
+        },
+        {
+          "id": 10,
+          "name": "Banaras Hindu University (BHU)",
+          "city": "Varanasi",
+          "fees": "₹2,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#6 in India",
+          "type": "Government",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/campusimage/14980395041443100431BHU_NEW.jpg"
+        },
+        {
+          "id": 11,
+          "name": "Jawaharlal Nehru Medical College (JNMC)",
+          "city": "Aligarh",
+          "fees": "₹3,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#18 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfhaHQ5ywpPJ3dthczv-N8TRTnCZEVId16pg&s"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Karnataka",
+      "image": "https://media.newindianexpress.com/TNIE%2Fimport%2F2019%2F8%2F5%2Foriginal%2FBengaluru_University_EPS123.jpg?w=480&auto=format%2Ccompress&fit=max",
+      "description": "Silicon Valley with Top Medical Institutes",
+      "colleges": [
+        {
+          "id": 12,
+          "name": "Bangalore Medical College and Research Institute (BMCRI)",
+          "city": "Bangalore",
+          "fees": "₹4,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#10 in India",
+          "type": "Government",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1_xGrgyrFNlNmIZNcQ0D7Q6cmik9sPBdGg&s"
+        },
+        {
+          "id": 13,
+          "name": "Kasturba Medical College (KMC)",
+          "city": "Manipal",
+          "fees": "₹12,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#13 in India",
+          "type": "Private",
+          "image": "https://www.manipal.edu/content/dam/manipal/mu/default-thumbnail-images/968X328/manipal-building-968x328.jpg"
+        },
+        {
+          "id": 14,
+          "name": "St. John's Medical College",
+          "city": "Bangalore",
+          "fees": "₹8,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#16 in India",
+          "type": "Private",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZHMSDzE8YxArHqAp4_1FCxv3chdJJ8o4DA&s"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tamil Nadu",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
+      "description": "Medical Hub with Excellent Healthcare",
+      "colleges": [
+        {
+          "id": 15,
+          "name": "Madras Medical College (MMC)",
+          "city": "Chennai",
+          "fees": "₹2,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#4 in India",
+          "type": "Government",
+          "image": "https://i.ytimg.com/vi/AZ6BHMOPlEg/maxresdefault.jpg"
+        },
+        {
+          "id": 16,
+          "name": "Christian Medical College (CMC)",
+          "city": "Vellore",
+          "fees": "₹15,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#2 in India",
+          "type": "Private",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/CMCH_Vellore.JPG/1280px-CMCH_Vellore.JPG"
+        },
+        {
+          "id": 17,
+          "name": "Sri Ramachandra Institute of Higher Education",
+          "city": "Chennai",
+          "fees": "₹10,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#14 in India",
+          "type": "Private",
+          "image": "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/inline-images/Sri%20Ramachandra%20Institute.jpg?09nPJs_e5z_NvNgrV8wHwzYTy2IkEL31"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "West Bengal",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwRx0zCRiDFVtkHf2H3CJBqURE6ec3hwf9Q&s",
+      "description": "Cultural Capital with Premier Medical Colleges",
+      "colleges": [
+        {
+          "id": 18,
+          "name": "Medical College Kolkata (MCK)",
+          "city": "Kolkata",
+          "fees": "₹2,500 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#8 in India",
+          "type": "Government",
+          "image": "https://www.moksh16.com/uploads/images/mck.webp"
+        },
+        {
+          "id": 19,
+          "name": "IPGMER and SSKM Hospital",
+          "city": "Kolkata",
+          "fees": "₹3,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#17 in India",
+          "type": "Government",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg/250px-%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Gujarat",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Gujarat_College_Ahmedabad_Anupam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "description": "Developing State with Modern Medical Facilities",
+      "colleges": [
+        {
+          "id": 20,
+          "name": "B.J. Medical College (BJMC)",
+          "city": "Ahmedabad",
+          "fees": "₹2,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#19 in India",
+          "type": "Government",
+          "image": "https://medicalneetpg.com/_next/image?url=https%3A%2F%2Fi3c-medical-colleges-assets.blr1.digitaloceanspaces.com%2F2020%2F10%2F24%2F54223233169d47998d24a55cf98cbc6a.jpg&w=640&q=75"
+        },
+        {
+          "id": 21,
+          "name": "Medical College, Baroda",
+          "city": "Vadodara",
+          "fees": "₹2,500 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#22 in India",
+          "type": "Government",
+          "image": "https://www.medicalcollegebaroda.edu.in/img/6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Rajasthan",
+      "image": "https://www.rajasthandriver.com/img/travel-info/667x445_city-jaisalmer.jpg",
+      "description": "Desert State with Quality Medical Education",
+      "colleges": [
+        {
+          "id": 22,
+          "name": "S.M.S. Medical College",
+          "city": "Jaipur",
+          "fees": "₹2,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#20 in India",
+          "type": "Government",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/appImage/9879_1443530382SMSMC_NEW.png"
+        },
+        {
+          "id": 23,
+          "name": "J.L.N. Medical College",
+          "city": "Ajmer",
+          "fees": "₹1,800 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#25 in India",
+          "type": "Government",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_CBuT4FOpIJ.webp"
+        }
+      ]
+    }
+  ]
+}
