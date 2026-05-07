@@ -1,6 +1,12 @@
 "use client"
+
 import React from 'react';
 import { usePopup } from '../contexts/PopupContext';
+import {
+  FaArrowRight,
+  FaMapMarkerAlt,
+  FaPlaneDeparture,
+} from 'react-icons/fa';
 
 interface DiaryItem {
   id: number;
@@ -13,121 +19,244 @@ const AirportDiariesSection: React.FC = () => {
   const { openPopup, updateFormData } = usePopup();
 
   const handleViewMoreStories = () => {
-    // Navigate to more stories or expand current section
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const handleShareJourney = () => {
-    // Pre-fill form with journey sharing context
     updateFormData({
-      courseInterest: 'Share My Journey - Airport Diary'
+      courseInterest: 'Share My Journey - Airport Diary',
     });
+
     openPopup();
   };
+
   const diaries: DiaryItem[] = [
     {
       id: 1,
-      image: "https://www.theeducationabroad.com/uploads/gallery/departure1.webp",
-      caption: "Students ready to fly to Georgia",
-      location: "Indira Gandhi International Airport, Delhi"
+      image:
+        'https://www.theeducationabroad.com/uploads/gallery/departure1.webp',
+      caption: 'Students Ready to Fly to Georgia',
+      location: 'Indira Gandhi International Airport, Delhi',
     },
     {
       id: 2,
-      image: "https://www.ruseducation.in/wp-content/uploads/2023/09/Departure-of-Indian-Students-for-Russia-to-study-MBBS-at-OrSMU-4.webp",
-      caption: "MBBS aspirants heading to Philippines",
-      location: "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+      image:
+        'https://www.ruseducation.in/wp-content/uploads/2023/09/Departure-of-Indian-Students-for-Russia-to-study-MBBS-at-OrSMU-4.webp',
+      caption: 'MBBS Aspirants Heading to Philippines',
+      location:
+        'Chhatrapati Shivaji Maharaj International Airport, Mumbai',
     },
     {
       id: 3,
-      image: "https://www.ruseducation.in/wp-content/uploads/2022/09/batch-3-departs-to-join-mbbs-in-russia-2.webp",
-      caption: "Future doctors departing for Kazakhstan",
-      location: "Kempegowda International Airport, Bengaluru"
+      image:
+        'https://www.ruseducation.in/wp-content/uploads/2022/09/batch-3-departs-to-join-mbbs-in-russia-2.webp',
+      caption: 'Future Doctors Departing for Kazakhstan',
+      location: 'Kempegowda International Airport, Bengaluru',
     },
     {
       id: 4,
-      image: "https://www.ruseducation.in/wp-content/uploads/2022/01/2-78.webp",
-      caption: "Medical students bound for Russia",
-      location: "Netaji Subhash Chandra Bose International Airport, Kolkata"
-    }
+      image:
+        'https://www.ruseducation.in/wp-content/uploads/2022/01/2-78.webp',
+      caption: 'Medical Students Bound for Russia',
+      location:
+        'Netaji Subhash Chandra Bose International Airport, Kolkata',
+    },
   ];
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Airport Diaries
+    <section className="py-20 px-4 bg-[#F8FAFC] overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* HEADER */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              rounded-full
+              bg-blue-50
+              border
+              border-blue-100
+              mb-5
+            "
+          >
+            <FaPlaneDeparture className="text-blue-600 text-sm" />
+
+            <span className="text-blue-700 text-xs font-bold tracking-[0.2em] uppercase">
+              Student Departures
+            </span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+            Airport
+            <span className="text-blue-600"> Diaries</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Follow the journeys of our students as they embark on their medical education abroad. 
-            These moments capture the excitement and dreams of future doctors taking their first steps.
+
+          <p className="mt-5 text-slate-500 text-lg leading-8">
+            Witness the unforgettable moments when our students begin their
+            MBBS journey abroad and step closer to becoming future doctors.
           </p>
         </div>
 
-        {/* Diaries Grid - 2x2 layout */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {diaries.map((diary, index) => (
+          {diaries.map((diary) => (
             <div
               key={diary.id}
-              className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-[30px]
+                h-[420px]
+                shadow-lg
+                hover:shadow-[0_25px_60px_rgba(0,0,0,0.15)]
+                transition-all
+                duration-500
+              "
             >
-              {/* Image */}
-              <div className="relative h-80">
-                <img
-                  src={diary.image}
-                  alt={diary.caption}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Content Overlay - Appears on Hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-white">
-                    <h3 className="text-xl font-bold mb-2">
-                      {diary.caption}
-                    </h3>
-                    <p className="text-sm text-gray-200 flex items-center">
-                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                      {diary.location}
-                    </p>
-                  </div>
-                </div>
+              {/* IMAGE */}
+              <img
+                src={diary.image}
+                alt={diary.caption}
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  group-hover:scale-110
+                  transition-transform
+                  duration-700
+                "
+              />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+              {/* TOP TAG */}
+              <div className="absolute top-5 left-5">
+                <span
+                  className="
+                    bg-white/15
+                    backdrop-blur-md
+                    border
+                    border-white/20
+                    text-white
+                    text-[11px]
+                    font-bold
+                    px-4
+                    py-2
+                    rounded-full
+                    tracking-wider
+                    uppercase
+                  "
+                >
+                  MBBS Abroad
+                </span>
               </div>
-              
-              {/* Static Caption - Always Visible */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/60 to-transparent">
-                <div className="text-white">
-                  <p className="text-sm font-medium">
-                    {diary.caption}
+
+              {/* CONTENT */}
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+                  right-0
+                  p-7
+                  translate-y-4
+                  group-hover:translate-y-0
+                  transition-transform
+                  duration-500
+                "
+              >
+                <h3 className="text-2xl font-black text-white leading-snug mb-4">
+                  {diary.caption}
+                </h3>
+
+                <div className="flex items-start gap-3 text-gray-200 mb-5">
+                  <FaMapMarkerAlt className="mt-1 text-blue-400 shrink-0" />
+
+                  <p className="text-sm leading-6">
+                    {diary.location}
                   </p>
                 </div>
+
+                {/* BUTTON */}
+                <button
+                  onClick={handleShareJourney}
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    bg-blue-600
+                    hover:bg-blue-700
+                    text-white
+                    px-5
+                    py-3
+                    rounded-full
+                    text-sm
+                    font-bold
+                    transition-all
+                    duration-300
+                    group/btn
+                  "
+                >
+                  Start Your Journey
+
+                  <FaArrowRight className="text-xs group-hover/btn:translate-x-1 transition-transform duration-300" />
+                </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Additional Information */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            Every year, hundreds of students trust Future Mind Educare to guide them to prestigious 
-            medical universities worldwide. These airport diaries are just the beginning of their 
-            remarkable journey toward becoming healthcare professionals.
+        {/* BOTTOM CONTENT */}
+        <div className="mt-16 text-center max-w-3xl mx-auto">
+          <p className="text-slate-500 text-lg leading-8 mb-8">
+            Hundreds of students trust Future Mind Educare every year to guide
+            them toward globally recognized medical universities. These airport
+            moments are the beginning of life-changing success stories.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
               onClick={handleViewMoreStories}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="
+                bg-blue-600
+                hover:bg-blue-700
+                text-white
+                px-8
+                py-4
+                rounded-full
+                font-bold
+                shadow-lg
+                transition-all
+                duration-300
+                hover:scale-105
+              "
             >
               View More Stories
             </button>
-            <button 
+
+            <button
               onClick={handleShareJourney}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              className="
+                border
+                border-slate-300
+                bg-white
+                hover:bg-slate-100
+                text-slate-800
+                px-8
+                py-4
+                rounded-full
+                font-bold
+                transition-all
+                duration-300
+              "
             >
               Share Your Journey
             </button>

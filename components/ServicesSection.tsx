@@ -1,121 +1,268 @@
-"use client"
-import React from 'react';
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaUniversity,
+  FaComments,
+  FaPlaneDeparture,
+  FaUserGraduate,
+  FaGlobeAsia,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 interface ServiceItem {
   title: string;
   description: string;
-  icon: string;
-  position: 'left' | 'right';
+  icon: React.ReactNode;
+  position: "left" | "right";
 }
 
 const ServicesSection: React.FC = () => {
   const services: ServiceItem[] = [
     {
-      title: "100% Admission",
-      description: "From university selection to all the paperwork, we provide complete guidance for your admission that helps to sunshine career.",
-      icon: "🏢",
-      position: "left"
+      title: "100% Admission Assistance",
+      description:
+        "Complete support from university selection to documentation and admission process for a smooth journey.",
+      icon: <FaUniversity />,
+      position: "left",
     },
     {
-      title: "Free Counseling",
-      description: "We offer free career counseling to students and parents. Our counselors have vast expertise in helping students pursue medicine.",
-      icon: "💬",
-      position: "left"
+      title: "Free Career Counseling",
+      description:
+        "Expert guidance for students and parents to choose the best MBBS destination and career path.",
+      icon: <FaComments />,
+      position: "left",
     },
     {
-      title: "95% Visa Acceptance",
-      description: "Obtain a free visa application and the greatest airfare for your flights to ensure you receive the most benefits possible.",
-      icon: "✈️",
-      position: "left"
+      title: "95% Visa Success Rate",
+      description:
+        "Professional visa assistance with proper documentation and travel support for students.",
+      icon: <FaPlaneDeparture />,
+      position: "left",
     },
     {
-      title: "University/Course selection",
-      description: "We help to select the best one for your bright future. AR Group has a team of experts that guide you in your journey.",
-      icon: "🎓",
-      position: "right"
+      title: "University & Course Selection",
+      description:
+        "We help students choose the best medical universities according to their goals and budget.",
+      icon: <FaUserGraduate />,
+      position: "right",
     },
     {
-      title: "Customized Approach",
-      description: "AR Group takes pride in being recognized as a top study abroad consultancy. Our students' customized approaches differentiate them from others.",
-      icon: "🔄",
-      position: "right"
+      title: "Personalized Guidance",
+      description:
+        "Customized counseling and one-to-one mentorship for every student throughout the process.",
+      icon: <FaShieldAlt />,
+      position: "right",
     },
     {
-      title: "Pre-departure Services",
-      description: "Pre-departure services help to positive student experience. Candidates learn about international life, multicultural diversity, etc.",
-      icon: "🌍",
-      position: "right"
-    }
+      title: "Pre-Departure Support",
+      description:
+        "Complete assistance before departure including accommodation, travel, and student orientation.",
+      icon: <FaGlobeAsia />,
+      position: "right",
+    },
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Services At Future Mind Educare
+    <section className="relative py-20 bg-white overflow-hidden">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
+
+      {/* LIGHT EFFECT */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-100 blur-3xl opacity-30 rounded-full" />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* HEADER */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          
+          {/* BADGE */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+            <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
+              Our Premium Services
+            </span>
+          </div>
+
+          {/* TITLE */}
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+            Services At
+            <span className="text-blue-600"> Future Mind Educare</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            At Future Mind Educare, we provide you with the best services that make your studying MBBS abroad or in India much easier, simpler, and hassle-free so that you enjoy maximum benefits!
+
+          {/* DESCRIPTION */}
+          <p className="mt-6 text-slate-500 text-base md:text-lg leading-8 font-medium">
+            We provide complete MBBS admission guidance for students planning to
+            study in India or abroad with trusted support at every step.
           </p>
         </div>
 
-        {/* Services Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Left Side Services */}
+        {/* MAIN LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+          
+          {/* LEFT SERVICES */}
           <div className="space-y-6">
-            {services.filter(service => service.position === 'left').map((service, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
-              >
-                <div className="shrink-0 text-3xl">
-                  {service.icon}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {services
+              .filter((service) => service.position === "left")
+              .map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                  }}
+                  viewport={{ once: true }}
+                  className="
+                    group
+                    bg-white
+                    border
+                    border-slate-200
+                    rounded-[28px]
+                    p-6
+                    hover:border-blue-100
+                    hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+                    transition-all
+                    duration-500
+                  "
+                >
+                  <div className="flex items-start gap-5">
+                    
+                    {/* ICON */}
+                    <div
+                      className="
+                        w-14
+                        h-14
+                        rounded-2xl
+                        bg-blue-50
+                        text-blue-600
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
+                        shrink-0
+                        group-hover:bg-blue-600
+                        group-hover:text-white
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      {service.icon}
+                    </div>
+
+                    {/* TEXT */}
+                    <div>
+                      <h3 className="text-xl font-black text-slate-900 mb-3">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-slate-500 leading-7 text-sm font-medium">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
           </div>
 
-          {/* Central Illustration */}
-          <div className="flex justify-center">
-            <div className="relative">
+          {/* CENTER IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative flex justify-center"
+          >
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-blue-100 blur-3xl opacity-40 rounded-full" />
+
+            {/* IMAGE CARD */}
+            <div className="relative bg-white rounded-[36px] border border-slate-200 overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.08)]">
+              
               <img
                 src="/docter.png"
-                alt="Doctor with medical elements"
-                className="w-full max-w-sm h-auto"
+                alt="Doctor"
+                className="w-full max-w-[400px] object-cover"
               />
-            </div>
-          </div>
 
-          {/* Right Side Services */}
-          <div className="space-y-6">
-            {services.filter(service => service.position === 'right').map((service, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
-              >
-                <div className="shrink-0 text-3xl">
-                  {service.icon}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+              {/* FLOATING CARD */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white shadow-xl rounded-2xl px-6 py-4 border border-slate-100 w-[85%]">
+                <h3 className="text-lg font-black text-slate-900 text-center">
+                  Trusted MBBS Guidance
+                </h3>
+
+                <p className="text-sm text-slate-500 text-center mt-2 font-medium">
+                  Expert counseling & admission support for medical aspirants.
+                </p>
               </div>
-            ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT SERVICES */}
+          <div className="space-y-6">
+            {services
+              .filter((service) => service.position === "right")
+              .map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                  }}
+                  viewport={{ once: true }}
+                  className="
+                    group
+                    bg-white
+                    border
+                    border-slate-200
+                    rounded-[28px]
+                    p-6
+                    hover:border-blue-100
+                    hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+                    transition-all
+                    duration-500
+                  "
+                >
+                  <div className="flex items-start gap-5">
+                    
+                    {/* ICON */}
+                    <div
+                      className="
+                        w-14
+                        h-14
+                        rounded-2xl
+                        bg-blue-50
+                        text-blue-600
+                        flex
+                        items-center
+                        justify-center
+                        text-xl
+                        shrink-0
+                        group-hover:bg-blue-600
+                        group-hover:text-white
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      {service.icon}
+                    </div>
+
+                    {/* TEXT */}
+                    <div>
+                      <h3 className="text-xl font-black text-slate-900 mb-3">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-slate-500 leading-7 text-sm font-medium">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
           </div>
         </div>
       </div>

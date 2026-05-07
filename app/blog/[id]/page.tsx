@@ -1,8 +1,19 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { FaRegCalendarAlt, FaRegClock, FaTag, FaArrowLeft, FaShare, FaBookmark } from 'react-icons/fa';
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import {
+  FaRegCalendarAlt,
+  FaRegClock,
+  FaArrowLeft,
+  FaShareAlt,
+  FaBookmark,
+  FaFacebookF,
+  FaTwitter,
+  FaWhatsapp,
+  FaLink,
+} from "react-icons/fa";
 
 interface BlogItem {
   id: number;
@@ -20,11 +31,11 @@ interface BlogItem {
 
 const BlogPostPage: React.FC = () => {
   const params = useParams();
-  const router = useRouter();
+
   const [blog, setBlog] = useState<BlogItem | null>(null);
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     fetchBlogs();
@@ -33,60 +44,83 @@ const BlogPostPage: React.FC = () => {
   useEffect(() => {
     if (blogs.length > 0 && params.id) {
       const blogId = parseInt(params.id as string);
-      const foundBlog = blogs.find(b => b.id === blogId);
+      const foundBlog = blogs.find((b) => b.id === blogId);
+
       if (foundBlog) {
         setBlog(foundBlog);
-      } else {
-        setError('Blog post not found');
       }
+
       setLoading(false);
     }
   }, [blogs, params.id]);
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('/blogs.json');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const response = await fetch("/blogs.json");
       const data = await response.json();
+
       if (data.blogs) {
         setBlogs(data.blogs);
       }
     } catch (error) {
-      console.error('Error fetching blogs:', error);
-      setError('Failed to load blog post');
+      console.error(error);
       setLoading(false);
     }
   };
 
   const getRelatedBlogs = () => {
     if (!blog) return [];
+
     return blogs
-      .filter(b => b.id !== blog.id && (b.category === blog.category || b.tags.some(tag => blog.tags.includes(tag))))
+      .filter(
+        (b) =>
+          b.id !== blog.id &&
+          (b.category === blog.category ||
+            b.tags.some((tag) => blog.tags.includes(tag)))
+      )
       .slice(0, 3);
+  };
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-blue-500"></div>
-          <p className="mt-4 text-gray-600">Loading blog post...</p>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-14 h-14 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-gray-600 font-medium">
+            Loading Article...
+          </p>
         </div>
       </div>
     );
   }
 
-  if (error || !blog) {
+  if (!blog) {
     return (
-      <div className="min-h-screen bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-600 mb-6">{error || 'The blog post you are looking for does not exist.'}</p>
-          <Link 
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+        <div className="bg-white rounded-3xl shadow-xl p-10 text-center max-w-lg w-full">
+          <h1 className="text-3xl font-black text-gray-900 mb-4">
+            Blog Not Found
+          </h1>
+
+          <p className="text-gray-600 mb-8">
+            The article you are looking for does not exist.
+          </p>
+
+          <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
           >
-            <FaArrowLeft /> Back to Blog
+            <FaArrowLeft />
+            Back To Blog
           </Link>
         </div>
       </div>
@@ -96,141 +130,231 @@ const BlogPostPage: React.FC = () => {
   const relatedBlogs = getRelatedBlogs();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-6">
-          <Link 
+    <div className="bg-[#f5f7fb] min-h-screen">
+      {/* HERO */}
+      <section className="relative h-[500px] overflow-hidden">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-full object-cover scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10"></div>
+
+        <div className="absolute top-6 left-6 z-20">
+          <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-600 transition-colors mb-6"
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
           >
-            <FaArrowLeft /> Back to Blog
+            <FaArrowLeft />
+            Back
           </Link>
-          
-          <div className="flex items-center justify-between">
-            <div>
-              <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
-                {blog.category}
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full z-20">
+          <div className="max-w-5xl mx-auto px-6 pb-16">
+            <span className="inline-block bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg mb-6">
+              {blog.category}
+            </span>
+
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight max-w-4xl">
+              {blog.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-6 mt-8 text-gray-200">
+              <span className="flex items-center gap-2">
+                <FaRegCalendarAlt className="text-blue-400" />
+                {blog.date}
               </span>
+
+              <span className="flex items-center gap-2">
+                <FaRegClock className="text-blue-400" />
+                {blog.readTime}
+              </span>
+
+              <span className="font-medium">By {blog.author}</span>
             </div>
-            <div className="flex gap-3">
-              <button className="p-2 text-gray-600 hover:text-blue-500 transition-colors">
-                <FaShare />
+          </div>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <section className="max-w-5xl mx-auto px-4 md:px-6 -mt-20 relative z-30">
+        <div className="bg-white rounded-[32px] shadow-2xl overflow-hidden border border-gray-100">
+          {/* DESCRIPTION */}
+          <div className="p-8 md:p-12 border-b border-gray-100">
+            <p className="text-xl leading-9 text-gray-700 font-light">
+              {blog.description}
+            </p>
+          </div>
+
+          {/* CONTENT */}
+          {blog.content && (
+            <div className="p-8 md:p-12">
+              <div
+                className="
+                  prose 
+                  prose-lg 
+                  max-w-none
+                  prose-headings:text-gray-900
+                  prose-p:text-gray-700
+                  prose-p:leading-8
+                  prose-strong:text-black
+                  prose-a:text-blue-600
+                  prose-img:rounded-2xl
+                "
+                dangerouslySetInnerHTML={{
+                  __html: blog.content.replace(/\n/g, "<br />"),
+                }}
+              />
+            </div>
+          )}
+
+          {/* TAGS */}
+          <div className="px-8 md:px-12 pb-10">
+            <h3 className="text-2xl font-bold text-gray-900 mb-5">
+              Popular Tags
+            </h3>
+
+            <div className="flex flex-wrap gap-3">
+              {blog.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="
+                    px-4 py-2 rounded-full
+                    bg-blue-50
+                    text-blue-600
+                    text-sm
+                    font-semibold
+                    hover:bg-blue-600
+                    hover:text-white
+                    transition-all
+                    duration-300
+                    cursor-pointer
+                  "
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* SHARE */}
+        <div className="bg-white rounded-[28px] shadow-xl mt-10 p-8 border border-gray-100">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Share This Article
+              </h3>
+
+              <p className="text-gray-600">
+                Help others discover this valuable content.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-all">
+                <FaFacebookF />
               </button>
-              <button className="p-2 text-gray-600 hover:text-blue-500 transition-colors">
+
+              <button className="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center hover:scale-110 transition-all">
+                <FaTwitter />
+              </button>
+
+              <button className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-all">
+                <FaWhatsapp />
+              </button>
+
+              <button
+                onClick={handleCopy}
+                className="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center hover:scale-110 transition-all"
+              >
+                <FaLink />
+              </button>
+
+              <button className="w-12 h-12 rounded-full border border-gray-300 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all">
                 <FaBookmark />
               </button>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Blog Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-          {blog.title}
-        </h1>
-
-        {/* Meta Info */}
-        <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
-          <span className="flex items-center gap-2">
-            <FaRegCalendarAlt className="text-blue-500" />
-            {blog.date}
-          </span>
-          <span className="flex items-center gap-2">
-            <FaRegClock className="text-blue-500" />
-            {blog.readTime}
-          </span>
-          <span className="font-medium">By {blog.author}</span>
+          {copied && (
+            <p className="text-green-600 text-sm font-medium mt-4">
+              Link copied successfully!
+            </p>
+          )}
         </div>
 
-        {/* Featured Image */}
-        <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8">
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        </div>
-
-        {/* Description */}
-        <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200 mb-8">
-          <p className="text-lg text-gray-700 leading-relaxed">
-            {blog.description}
-          </p>
-        </div>
-
-        {/* Content */}
-        {blog.content && (
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200 mb-8">
-            <div className="prose prose-lg max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: blog.content.replace(/\n/g, '<br />') }} />
-            </div>
-          </div>
-        )}
-
-        {/* Tags */}
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Tags</h3>
-          <div className="flex flex-wrap gap-2">
-            {blog.tags.map((tag, index) => (
-              <span 
-                key={index} 
-                className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-medium"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Share Section */}
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-12">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Share this article</h3>
-          <div className="flex gap-4">
-            <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-              Facebook
-            </button>
-            <button className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors">
-              Twitter
-            </button>
-            <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
-              WhatsApp
-            </button>
-            <button className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition-colors">
-              Copy Link
-            </button>
-          </div>
-        </div>
-
-        {/* Related Blogs */}
+        {/* RELATED BLOGS */}
         {relatedBlogs.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-20 pb-20">
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <h2 className="text-4xl font-black text-gray-900 mb-2">
+                  Related Articles
+                </h2>
+
+                <p className="text-gray-600">
+                  Continue reading more medical education insights
+                </p>
+              </div>
+
+              <FaShareAlt className="text-4xl text-blue-500 hidden md:block" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedBlogs.map((relatedBlog) => (
                 <Link href={`/blog/${relatedBlog.id}`} key={relatedBlog.id}>
-                  <div className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-all duration-300 group cursor-pointer">
-                    <div className="relative h-40 overflow-hidden">
+                  <div
+                    className="
+                      group
+                      bg-white
+                      rounded-[28px]
+                      overflow-hidden
+                      shadow-lg
+                      hover:shadow-2xl
+                      transition-all
+                      duration-500
+                      hover:-translate-y-2
+                      border border-gray-100
+                      h-full
+                    "
+                  >
+                    <div className="relative h-56 overflow-hidden">
                       <img
                         src={relatedBlog.image}
                         alt={relatedBlog.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    </div>
-                    <div className="p-4">
-                      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+                      <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         {relatedBlog.category}
                       </span>
-                      <h3 className="font-semibold text-gray-900 mt-2 mb-2 line-clamp-2 group-hover:text-blue-500 transition-colors">
+                    </div>
+
+                    <div className="p-6">
+                      <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                        <span>{relatedBlog.date}</span>
+                        <span>{relatedBlog.readTime}</span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
                         {relatedBlog.title}
                       </h3>
-                      <p className="text-sm text-gray-600 line-clamp-2">
+
+                      <p className="text-gray-600 text-sm leading-7 line-clamp-3">
                         {relatedBlog.description}
                       </p>
+
+                      <div className="mt-6 text-blue-600 font-semibold flex items-center gap-2">
+                        Read More
+                        <span className="group-hover:translate-x-1 transition-transform">
+                          →
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -238,7 +362,7 @@ const BlogPostPage: React.FC = () => {
             </div>
           </div>
         )}
-      </div>
+      </section>
     </div>
   );
 };

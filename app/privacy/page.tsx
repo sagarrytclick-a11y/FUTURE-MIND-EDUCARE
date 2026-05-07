@@ -1,6 +1,15 @@
-"use client"
-import React from 'react';
-import { FaShieldAlt, FaLock, FaUserSecret, FaDatabase, FaCookie, FaEyeSlash } from 'react-icons/fa';
+"use client";
+
+import React from "react";
+import {
+  FaShieldAlt,
+  FaLock,
+  FaUserSecret,
+  FaDatabase,
+  FaCheckCircle,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const PrivacyPage: React.FC = () => {
   const privacySections = [
@@ -8,242 +17,291 @@ const PrivacyPage: React.FC = () => {
       icon: FaShieldAlt,
       title: "Information We Collect",
       content: [
-        "Personal Information: Name, email, phone number, address, and educational qualifications",
-        "Academic Information: NEET scores, academic records, and educational background",
-        "Communication Data: Emails, phone calls, and messages exchanged with our team",
-        "Usage Data: Website interactions, pages visited, and time spent on our platform",
-        "Payment Information: Bank details, transaction records, and payment history"
-      ]
+        "Personal details like name, email, phone number and address",
+        "Academic information including NEET score and qualifications",
+        "Communication records from calls, emails and inquiries",
+        "Website usage and analytics data",
+        "Payment and transaction details for services"
+      ],
     },
     {
       icon: FaLock,
       title: "How We Use Your Information",
       content: [
-        "Provide personalized counseling and guidance services",
-        "Process admission applications and documentation",
-        "Communicate important updates and information",
-        "Improve our services and user experience",
-        "Comply with legal and regulatory requirements"
-      ]
+        "Provide admission guidance and counseling",
+        "Process applications and documentation",
+        "Share important updates and notifications",
+        "Improve our platform and services",
+        "Maintain security and prevent misuse"
+      ],
     },
     {
       icon: FaUserSecret,
-      title: "Data Protection Measures",
+      title: "Your Privacy Protection",
       content: [
-        "SSL encryption for all data transmissions",
-        "Secure servers with restricted access",
-        "Regular security audits and updates",
-        "Employee training on data protection",
-        "Compliance with data protection regulations"
-      ]
+        "Your data is encrypted and securely stored",
+        "Only authorized staff can access information",
+        "Regular security monitoring and updates",
+        "Strict confidentiality practices",
+        "No unauthorized sharing of personal data"
+      ],
     },
     {
       icon: FaDatabase,
       title: "Data Sharing Policy",
       content: [
-        "We do not sell or rent your personal information to third parties",
-        "Information is shared only with partner colleges for admission purposes",
-        "Data may be shared with service providers under strict confidentiality agreements",
-        "Government authorities may be provided information as required by law",
-        "Analytics tools may collect anonymous usage data"
-      ]
-    }
+        "We never sell your personal data",
+        "Information is shared only for admission purposes",
+        "Trusted service providers follow confidentiality rules",
+        "Legal authorities may receive data if required by law",
+        "Analytics data remains anonymous"
+      ],
+    },
   ];
 
-  const rightsAndPolicies = [
+  const policies = [
     {
       title: "Your Rights",
       points: [
-        "Access to your personal information",
-        "Correction of inaccurate data",
-        "Deletion of your information upon request",
-        "Restriction of data processing",
-        "Data portability to other services",
-        "Objection to marketing communications"
-      ]
+        "Request access to your data",
+        "Correct inaccurate information",
+        "Request deletion of your information",
+        "Opt out of marketing communication",
+      ],
     },
     {
       title: "Cookies Policy",
       points: [
-        "We use essential cookies for website functionality",
-        "Analytics cookies help us improve user experience",
-        "Marketing cookies personalize content and advertisements",
-        "You can control cookie preferences through browser settings",
-        "Disabling cookies may affect website functionality",
-        "Cookie consent is obtained upon first visit"
-      ]
+        "Cookies improve website functionality",
+        "Analytics help us understand user behavior",
+        "You can disable cookies in browser settings",
+        "Some features may not work without cookies",
+      ],
     },
     {
       title: "Data Retention",
       points: [
-        "Personal information is retained only as long as necessary",
-        "Student records are kept for 7 years after graduation",
-        "Financial records are maintained for 10 years as required",
-        "Inactive accounts are deleted after 2 years",
-        "Data is securely destroyed when no longer needed",
-        "Backup copies are maintained for disaster recovery"
-      ]
+        "Data is stored only when necessary",
+        "Inactive records are periodically removed",
+        "Financial records are retained as per regulations",
+        "Secure backups are maintained",
+      ],
     },
-    {
-      title: "Third-Party Services",
-      points: [
-        "Payment gateways for secure transactions",
-        "Email services for communication",
-        "Cloud storage for data backup",
-        "Analytics platforms for website optimization",
-        "Social media integration for marketing",
-        "All third parties undergo security vetting"
-      ]
-    },
-    {
-      title: "Children's Privacy",
-      points: [
-        "Our services are intended for users 18 years and above",
-        "We do not knowingly collect information from minors",
-        "Parental consent is required for users under 18",
-        "Special protection is provided for minor data",
-        "Educational institutions may provide consent on behalf of students",
-        "We comply with children's online privacy protection laws"
-      ]
-    },
-    {
-      title: "International Data Transfer",
-      points: [
-        "Data may be transferred to countries where partner colleges are located",
-        "International transfers comply with applicable laws",
-        "Adequate protection measures are in place for cross-border data",
-        "Standard contractual clauses are used for international transfers",
-        "Data subjects are informed of international transfers",
-        "EU data transfers follow GDPR requirements"
-      ]
-    }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#f6f9fc]">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Your privacy is important to us. Learn how we collect, use, and protect your information
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 text-white">
+        <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-cover"></div>
+
+        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6">
+              <FaLock className="text-cyan-300" />
+              <span className="text-sm font-medium">
+                Your Data is Safe & Protected
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+              Privacy <span className="text-cyan-300">Policy</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
+              At FUTURE MIND EDUCARE, we value your trust and are committed to
+              protecting your personal information with industry-standard
+              security practices.
             </p>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Introduction */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Privacy Commitment</h2>
-          <p className="text-gray-600 leading-relaxed">
-            At FUTURE MIND EDUCARE, we are committed to protecting your privacy and ensuring the security of your personal information. 
-            This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
-          </p>
-          <p className="text-gray-600 leading-relaxed mt-4">
-            By using our services, you agree to the collection and use of information in accordance with this policy.
-          </p>
-          <p className="text-gray-600 leading-relaxed mt-4">
-            Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </p>
-        </div>
-
-        {/* Main Privacy Sections */}
-        {privacySections.map((section, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                <section.icon className="w-6 h-6 text-blue-600" />
+            <div className="flex flex-wrap gap-4 mt-10">
+              <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl px-6 py-4">
+                <h3 className="text-2xl font-bold">100%</h3>
+                <p className="text-sm text-blue-100">Secure Data Handling</p>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{section.title}</h3>
-                <ul className="space-y-2">
-                  {section.content.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
-                      <span className="text-gray-600">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl px-6 py-4">
+                <h3 className="text-2xl font-bold">24/7</h3>
+                <p className="text-sm text-blue-100">Security Monitoring</p>
+              </div>
+
+              <div className="bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl px-6 py-4">
+                <h3 className="text-2xl font-bold">SSL</h3>
+                <p className="text-sm text-blue-100">Encrypted Platform</p>
               </div>
             </div>
           </div>
-        ))}
+        </div>
+      </section>
 
-        {/* Rights and Policies */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Your Rights and Our Policies</h3>
-          <div className="space-y-8">
-            {rightsAndPolicies.map((policy, index) => (
-              <div key={index}>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">{policy.title}</h4>
-                <ul className="space-y-2">
-                  {policy.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start space-x-2">
-                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
-                      <span className="text-gray-600">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Intro */}
+      <section className="max-w-7xl mx-auto px-6 -mt-14 relative z-10">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+          <h2 className="text-3xl font-bold text-gray-900 mb-5">
+            Our Commitment to Privacy
+          </h2>
+
+          <p className="text-gray-600 leading-relaxed text-lg">
+            We understand the importance of your personal information and take
+            every measure to ensure it remains protected. This Privacy Policy
+            explains how we collect, use, and secure your data while providing
+            educational counseling and admission support services.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            {[
+              "Secure Servers",
+              "Encrypted Data",
+              "Confidential Handling",
+              "Trusted Services",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold"
+              >
+                <FaCheckCircle />
+                {item}
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Security Measures */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <div className="flex items-start space-x-4 mb-6">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
-              <FaLock className="w-6 h-6 text-green-600" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Security Measures</h3>
-              <p className="text-gray-600 mb-4">
-                We implement industry-standard security measures to protect your information:
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Technical Security</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• 256-bit SSL encryption</li>
-                    <li>• Secure server infrastructure</li>
-                    <li>• Regular security updates</li>
-                    <li>• Intrusion detection systems</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">Administrative Security</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• Employee background checks</li>
-                    <li>• Regular security training</li>
-                    <li>• Access control policies</li>
-                    <li>• Confidentiality agreements</li>
-                  </ul>
-                </div>
+      {/* Main Sections */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {privacySections.map((section, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center mb-6">
+                <section.icon className="text-3xl text-blue-700" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-5">
+                {section.title}
+              </h3>
+
+              <div className="space-y-4">
+                {section.content.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <span className="mt-2 w-2.5 h-2.5 rounded-full bg-cyan-500 shrink-0"></span>
+                    <p className="text-gray-600 leading-relaxed">{item}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
         </div>
+      </section>
 
-        {/* Contact Information */}
-        <div className="bg-blue-50 rounded-xl p-8">
-          <h3 className="text-xl font-bold text-blue-900 mb-4">Privacy Questions?</h3>
-          <p className="text-blue-800 mb-6">
-            If you have any questions about this Privacy Policy or want to exercise your data rights, please contact us.
-          </p>
-          <div className="space-y-2 text-blue-800">
-            <p><strong>Privacy Officer:</strong> privacy@futuremindeducare.com</p>
-            <p><strong>General Contact:</strong> info@futuremindeducare.com</p>
-            <p><strong>Phone:</strong> +91 98765 43210</p>
-            <p><strong>Address:</strong> 123, MG Road, Andheri West, Mumbai - 400058</p>
+      {/* Policies Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              Policies & Rights
+            </span>
+
+            <h2 className="text-4xl font-black text-gray-900 mb-4">
+              Your Rights & Policies
+            </h2>
+
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We believe in transparency and giving users complete control over
+              their personal information.
+            </p>
           </div>
-          <p className="text-blue-800 mt-4 text-sm">
-            We will respond to your privacy inquiries within 7 working days.
-          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {policies.map((policy, index) => (
+              <div
+                key={index}
+                className="bg-[#f8fbff] border border-blue-100 rounded-3xl p-8 hover:shadow-xl transition duration-300"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  {policy.title}
+                </h3>
+
+                <div className="space-y-4">
+                  {policy.points.map((point, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <FaCheckCircle className="text-green-500 mt-1 shrink-0" />
+                      <p className="text-gray-600">{point}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-gradient-to-r from-blue-800 to-cyan-700 rounded-[32px] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              <span className="inline-block bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-5">
+                Need Assistance?
+              </span>
+
+              <h2 className="text-4xl font-black mb-5">
+                Have Questions About Privacy?
+              </h2>
+
+              <p className="text-blue-100 max-w-2xl text-lg leading-relaxed mb-10">
+                Our support team is available to help you understand how your
+                information is collected, stored, and protected.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                      <FaEnvelope className="text-xl" />
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-blue-100">Email Support</p>
+                      <h4 className="font-bold text-lg">
+                        privacy@futuremindeducare.com
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                      <FaPhoneAlt className="text-xl" />
+                    </div>
+
+                    <div>
+                      <p className="text-sm text-blue-100">Call Us</p>
+                      <h4 className="font-bold text-lg">
+                        +91 98765 43210
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-blue-100 text-sm mt-8">
+                Last Updated:{" "}
+                {new Date().toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

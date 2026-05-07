@@ -18,6 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "FUTURE MIND EDUCARE - MBBS Admission Consultants",
   description: "Leading educational consultancy for MBBS admissions in India and abroad. Expert guidance for medical education at Andheri East, Mumbai.",
+  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/logo.png",
   },

@@ -1,11 +1,20 @@
 "use client"
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 import { usePopup } from '../contexts/PopupContext';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
   const { openPopup } = usePopup();
+
   const usefulLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -16,151 +25,200 @@ const Footer: React.FC = () => {
   ];
 
   const mbbsAbroadLinks = [
-    { name: "Study MBBS In Kazakhstan", href: "/country/kazakhstan" },
-    { name: "Study MBBS In Bangladesh", href: "/country/bangladesh" },
-    { name: "Study MBBS In Georgia", href: "/country/georgia" },
-    { name: "Study MBBS In Philippines", href: "/country/philippines" },
-    { name: "Study MBBS In Russia", href: "/country/russia" },
-    { name: "Study MBBS In Uzbekistan", href: "/country/uzbekistan" },
+    { name: "MBBS In Kazakhstan", href: "/country/kazakhstan" },
+    { name: "MBBS In Bangladesh", href: "/country/bangladesh" },
+    { name: "MBBS In Georgia", href: "/country/georgia" },
+    { name: "MBBS In Philippines", href: "/country/philippines" },
+    { name: "MBBS In Russia", href: "/country/russia" },
+    { name: "MBBS In Uzbekistan", href: "/country/uzbekistan" },
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: <FaFacebook />, href: "https://facebook.com/futuremindeducare" },
-    { name: "Twitter", icon: <FaTwitter />, href: "https://twitter.com/futuremindeducare" },
-    { name: "LinkedIn", icon: <FaLinkedin />, href: "https://linkedin.com/company/futuremindeducare" },
-    { name: "Instagram", icon: <FaInstagram />, href: "https://instagram.com/futuremindeducare" }
+    {
+      name: "Facebook",
+      icon: <FaFacebookF />,
+      href: "https://facebook.com"
+    },
+    {
+      name: "Twitter",
+      icon: <FaTwitter />,
+      href: "https://twitter.com"
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedinIn />,
+      href: "https://linkedin.com"
+    },
+    {
+      name: "Instagram",
+      icon: <FaInstagram />,
+      href: "https://instagram.com"
+    }
   ];
 
   return (
-    <footer className="bg-blue-900 text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          {/* Column 1: Company Info */}
-          <div className="space-y-4">
-            {/* Logo */}
+    <footer className="bg-[#071B3B] text-white pt-20 pb-8 px-4 relative overflow-hidden">
+
+      {/* Background Blur */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/10 pb-14">
+
+          {/* Company */}
+          <div>
             <img
               src="/logo.png"
-              alt="FUTURE MIND EDUCARE"
-              className="h-25 object-contain w-auto"
+              alt="Future Mind Educare"
+              className="h-16 w-auto mb-5"
             />
-            
-            {/* Description */}
-            <p className="text-blue-100 text-sm leading-relaxed">
-              Welcome to FUTURE MIND EDUCARE, your trusted partner for MBBS admissions 
-              in India and abroad. We provide comprehensive guidance and support to help 
-              aspiring medical students achieve their dreams from our Mumbai office.
+
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              FUTURE MIND EDUCARE helps students achieve their dream of
+              studying MBBS in India & Abroad with expert counseling,
+              admission support, and visa guidance.
             </p>
-            
-            {/* Get Guidance Button */}
-            <button 
+
+            <button
               onClick={openPopup}
-              className="flex items-center bg-white text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             >
-              Get Guidance
+              Get Free Counseling
             </button>
           </div>
 
-          {/* Column 2: Useful Links */}
+          {/* Useful Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Useful Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-bold mb-6">
+              Useful Links
+            </h3>
+
+            <ul className="space-y-3">
               {usefulLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-blue-100 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    {link.name}
+                    → {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: MBBS Abroad */}
+          {/* MBBS Abroad */}
           <div>
-            <h3 className="text-lg font-bold mb-4">MBBS Abroad</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-bold mb-6">
+              MBBS Abroad
+            </h3>
+
+            <ul className="space-y-3">
               {mbbsAbroadLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-blue-100 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    {link.name}
+                    → {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Get In Touch */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold mb-4">Get In Touch</h3>
-            
-            {/* Contact Information */}
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start">
-                <span className="mr-2">📍</span>
-                <span className="text-blue-100">
-                  B WING-107, Rustomjee Central Park, Near Western Express Highway Metro Station, Opp Kanakia Wall Street, Andheri East, Mumbai 400069
-                </span>
+          {/* Contact */}
+          <div>
+            <h3 className="text-xl font-bold mb-6">
+              Contact Info
+            </h3>
+
+            <div className="space-y-5 text-sm">
+
+              <div className="flex items-start gap-3">
+                <div className="bg-blue-600/20 p-2 rounded-lg mt-1">
+                  <FaMapMarkerAlt className="text-blue-400" />
+                </div>
+
+                <p className="text-gray-300 leading-relaxed">
+                  B Wing-107, Rustomjee Central Park,
+                  Andheri East, Mumbai - 400069
+                </p>
               </div>
-              <div className="flex items-center">
-                <span className="mr-2">📞</span>
-                <span className="text-blue-100">+91-7076909090</span>
+
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-600/20 p-2 rounded-lg">
+                  <FaPhoneAlt className="text-blue-400" />
+                </div>
+
+                <p className="text-gray-300">
+                  +91 7076909090
+                </p>
               </div>
-              <div className="flex items-center">
-                <span className="mr-2">✉️</span>
-                <span className="text-blue-100">info@futuremindeducare.com</span>
+
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-600/20 p-2 rounded-lg">
+                  <FaEnvelope className="text-blue-400" />
+                </div>
+
+                <p className="text-gray-300">
+                  info@futuremindeducare.com
+                </p>
               </div>
             </div>
-            
-            {/* Social Media Icons */}
-            <div className="flex space-x-3 pt-4">
+
+            {/* Social */}
+            <div className="flex gap-3 mt-8">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300"
-                  aria-label={social.name}
+                  className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <span className="text-lg text-white">{social.icon}</span>
+                  <span className="text-lg">
+                    {social.icon}
+                  </span>
                 </Link>
               ))}
             </div>
-            
           </div>
         </div>
-        
+
         {/* Disclaimer */}
-        <div className="mt-8 pt-8 border-t border-blue-800">
-          <div className="bg-blue-800 bg-opacity-50 rounded-lg p-6 mb-6">
-            <h4 className="text-lg font-semibold mb-3 text-white">Disclaimer</h4>
-            <p className="text-blue-100 text-sm leading-relaxed">
-              FUTURE MIND EDUCARE provides counseling and guidance services for MBBS admissions. We do not guarantee admission to any specific college or university. 
-              Admission is subject to merit, eligibility criteria, and seat availability of respective institutions. 
-              Information provided on our website is for general informational purposes only. 
-              Users are advised to verify all information directly with the concerned colleges/universities. 
-              We are not responsible for any decisions made based on the information provided.
+        <div className="py-10 border-b border-white/10">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+            <h4 className="text-2xl font-bold mb-4 text-white">
+              Disclaimer
+            </h4>
+
+            <p className="text-gray-300 leading-relaxed text-sm">
+              FUTURE MIND EDUCARE provides counseling and admission guidance
+              services for MBBS aspirants. Admission depends on eligibility,
+              merit, and seat availability. Students are advised to verify
+              details directly from universities and official authorities.
             </p>
-            <p className="text-blue-100 text-sm leading-relaxed mt-3">
-              <strong>Important:</strong> All fees paid to FUTURE MIND EDUCARE are for counseling and guidance services only. 
-              We do not collect any fees on behalf of colleges/universities. 
-              Please be aware of fraudulent activities and report any suspicious behavior immediately.
+
+            <p className="text-gray-400 text-sm mt-4">
+              We do not collect fees on behalf of universities. Beware of fraud
+              and contact us directly for authentic guidance.
             </p>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-blue-200 text-sm">
-            © {new Date().getFullYear()} FUTURE MIND EDUCARE. All rights reserved.
+        {/* Bottom */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+
+          <p className="text-gray-400 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} FUTURE MIND EDUCARE. All Rights Reserved.
           </p>
-          <p className="text-blue-300 text-xs mt-2">
-            Designed with ❤️ for medical aspirants
+
+          <p className="text-gray-500 text-sm">
+            Designed for Future Doctors ❤️
           </p>
+
         </div>
       </div>
     </footer>

@@ -1,7 +1,15 @@
 "use client"
 import Link from 'next/link';
 import React from 'react';
-import { FaGraduationCap, FaUsers, FaAward, FaClock, FaCheckCircle, FaQuoteLeft, FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { 
+  FaGraduationCap, 
+  FaUsers, 
+  FaAward, 
+  FaClock, 
+  FaCheckCircle, 
+  FaQuoteLeft,
+  FaArrowRight
+} from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
   const stats = [
@@ -11,220 +19,276 @@ const AboutPage: React.FC = () => {
     { number: "98%", label: "Success Rate", icon: FaAward }
   ];
 
-  const team = [
-    {
-      name: "Dr. Rajesh Kumar",
-      position: "Founder & CEO",
-      image: "/team/ceo.jpg",
-      description: "MBBS, MD - 15+ years of experience in medical education counseling",
-      expertise: ["MBBS Admissions", "NEET Counseling", "Career Guidance"]
-    },
-    {
-      name: "Dr. Priya Sharma",
-      position: "Academic Director",
-      image: "/team/director.jpg",
-      description: "MBBS, MS - Expert in medical college selection and admission procedures",
-      expertise: ["College Selection", "Documentation", "Interview Prep"]
-    },
-    {
-      name: "Mr. Amit Patel",
-      position: "Operations Head",
-      image: "/team/operations.jpg",
-      description: "MBA - 10+ years in educational consultancy operations and management",
-      expertise: ["Process Management", "Student Support", "Logistics"]
-    },
-    {
-      name: "Ms. Sarah Johnson",
-      position: "International Relations",
-      image: "/team/international.jpg",
-      description: "MA International Relations - Specialized in overseas medical education",
-      expertise: ["MBBS Abroad", "Visa Assistance", "Global Partnerships"]
-    }
-  ];
-
   const testimonials = [
     {
       name: "Ananya Singh",
       course: "MBBS - AIIMS Delhi",
-      quote: "FUTURE MIND EDUCARE guided me through the entire NEET counseling process. Their expertise helped me secure a seat in AIIMS Delhi.",
+      quote:
+        "FUTURE MIND EDUCARE guided me through the entire NEET counseling process.",
       rating: 5
     },
     {
       name: "Rahul Kumar",
       course: "MBBS - Philippines",
-      quote: "Thanks to their guidance, I'm now pursuing my MBBS dream in Philippines. The team handled everything perfectly.",
+      quote:
+        "Thanks to their guidance, I'm now pursuing my MBBS dream abroad.",
       rating: 5
     },
     {
       name: "Priya Nair",
       course: "MBBS - KMC Manipal",
-      quote: "Professional and trustworthy service. They helped me choose the right college and assisted with all documentation.",
+      quote:
+        "Professional and trustworthy service with excellent support.",
       rating: 5
     }
   ];
 
   const achievements = [
-    "Mumbai's No. 1 MBBS Consultancy",
-    "98% Student Satisfaction Rate",
     "5000+ Successful Placements",
-    "100+ Partner Colleges Worldwide",
-    "15+ Years of Experience",
-    "24/7 Student Support System"
-  ];
-
-  const socialLinks = [
-    { icon: FaFacebook, link: "#", color: "text-blue-600" },
-    { icon: FaInstagram, link: "#", color: "text-pink-600" },
-    { icon: FaTwitter, link: "#", color: "text-sky-400" },
-    { icon: FaLinkedin, link: "#", color: "text-blue-700" },
-    { icon: FaYoutube, link: "#", color: "text-red-600" }
+    "100+ Partner Colleges",
+    "15+ Years Experience",
+    "98% Success Rate",
+    "Expert Counseling Team",
+    "Complete Admission Support"
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-linear-to-r from-blue-700 to-blue-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">About FUTURE MIND EDUCARE</h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Mumbai's trusted MBBS consultancy with 15+ years of experience in guiding medical aspirants to their dream careers
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="bg-white overflow-hidden">
 
-      {/* Stats Section */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
-                  <stat.icon className="w-8 h-8 text-blue-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+      {/* HERO SECTION */}
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-300 rounded-full blur-3xl"></div>
         </div>
-      </div>
 
-      {/* Our Story Section */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+            {/* LEFT */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  Founded in 2008, FUTURE MIND EDUCARE started with a simple mission: to help medical aspirants navigate the complex world of MBBS admissions. What began as a small counseling center in Mumbai has grown into one of India's most trusted medical education consultancies.
-                </p>
-                <p>
-                  Over the past 15+ years, we have guided over 5000 students to secure admissions in prestigious medical colleges across India and abroad. Our expertise spans NEET counseling, college selection, documentation assistance, and complete admission support.
-                </p>
-                <p>
-                  We believe that every deserving student should get the opportunity to pursue their dream of becoming a doctor. Our personalized approach, extensive network of partner colleges, and experienced team make us the preferred choice for MBBS aspirants.
-                </p>
+              <span className="inline-block bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                Trusted MBBS Consultancy
+              </span>
+
+              <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                Building Future
+                <span className="block text-orange-400">
+                  Doctors Since 2008
+                </span>
+              </h1>
+
+              <p className="text-lg text-blue-100 leading-relaxed mb-8 max-w-2xl">
+                FUTURE MIND EDUCARE has helped thousands of students secure
+                admissions in top medical colleges across India and abroad with
+                expert counseling and complete admission support.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-105 shadow-xl"
+                >
+                  Start Your Journey
+                  <FaArrowRight className="ml-2" />
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center justify-center border border-white/30 text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
+                >
+                  Explore Blogs
+                </Link>
               </div>
             </div>
-            <div className="bg-gray-200 rounded-xl h-96 flex items-center justify-center">
-              <img src="https://i.pinimg.com/736x/db/3b/1a/db3b1a2d9ed8b906a294ec242cbf214d.jpg" alt="Our Journey" className="w-full h-full object-cover" />
-             
+
+            {/* RIGHT IMAGE */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://i.pinimg.com/736x/db/3b/1a/db3b1a2d9ed8b906a294ec242cbf214d.jpg"
+                  alt="About Future Mind Educare"
+                  className="w-full h-[500px] object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+                <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                  <h3 className="text-white text-2xl font-bold mb-2">
+                    5000+ Students Guided
+                  </h3>
+                  <p className="text-blue-100 text-sm">
+                    Your trusted partner for MBBS admissions in India & Abroad.
+                  </p>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Mission & Vision */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-blue-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-blue-900 mb-4">Our Mission</h3>
-              <p className="text-blue-800">
-                To provide comprehensive, ethical, and transparent guidance to medical aspirants, helping them secure admissions in the best medical colleges that match their aspirations, budget, and career goals.
-              </p>
-            </div>
-            <div className="bg-green-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-green-900 mb-4">Our Vision</h3>
-              <p className="text-green-800">
-                To become the most trusted and preferred medical education consultancy in India, known for our student-centric approach, ethical practices, and exceptional success rates in MBBS admissions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* STATS */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-100 flex items-center justify-center mb-5">
+                  <stat.icon className="text-3xl text-blue-700" />
+                </div>
 
-      {/* Achievements Section */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Achievements</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Recognized for excellence in medical education counseling and student success
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
-                <FaCheckCircle className="w-6 h-6 text-green-500 shrink-0" />
-                <span className="text-gray-700">{achievement}</span>
+                <h3 className="text-4xl font-black text-gray-900 mb-2">
+                  {stat.number}
+                </h3>
+
+                <p className="text-gray-600 font-medium">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-    
+      {/* STORY */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-      {/* Testimonials Section */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Student Success Stories</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Hear from our students who achieved their medical dreams with our guidance
-            </p>
+            <div>
+              <span className="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm">
+                Our Story
+              </span>
+
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-4 mb-8 leading-tight">
+                Helping Students Achieve Their Medical Dreams
+              </h2>
+
+              <div className="space-y-5 text-gray-600 leading-relaxed text-lg">
+                <p>
+                  FUTURE MIND EDUCARE started with a mission to simplify MBBS
+                  admissions for students who dream of becoming doctors.
+                </p>
+
+                <p>
+                  With years of experience and trusted partnerships with top
+                  medical universities, we provide complete support from
+                  counseling to final admission.
+                </p>
+
+                <p>
+                  Our dedicated team ensures every student receives
+                  personalized guidance according to their budget, preferences,
+                  and career goals.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-5">
+              {achievements.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                >
+                  <FaCheckCircle className="text-green-500 text-2xl mb-4" />
+
+                  <p className="font-semibold text-gray-800 leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+
+          <div className="text-center mb-14">
+            <span className="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm">
+              Testimonials
+            </span>
+
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-4">
+              Student Success Stories
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
-                <FaQuoteLeft className="w-8 h-8 text-blue-600 mb-4" />
-                <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-blue-600">{testimonial.course}</div>
-                  <div className="flex mt-2">
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <FaQuoteLeft className="text-4xl text-blue-200 mb-6" />
+
+                <p className="text-gray-600 leading-relaxed mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
+
+                <div className="border-t pt-5">
+                  <h3 className="font-bold text-lg text-gray-900">
+                    {testimonial.name}
+                  </h3>
+
+                  <p className="text-blue-600 text-sm font-medium mb-3">
+                    {testimonial.course}
+                  </p>
+
+                  <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-400">★</span>
+                      <span key={i} className="text-yellow-400 text-lg">
+                        ★
+                      </span>
                     ))}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* CTA Section */}
-      <div className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Medical Journey?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of successful medical students who started their journey with FUTURE MIND EDUCARE
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
+            Ready To Start Your MBBS Journey?
+          </h2>
+
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-10">
+            Connect with our expert counselors today and get personalized
+            guidance for MBBS admissions in India and Abroad.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Get Started Now
+
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <Link
+              href="/contact"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-105"
+            >
+              Get Free Counseling
             </Link>
-            <Link href="tel:+919876543210" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors">
-              Call Us
+
+            <Link
+              href="tel:+917076909090"
+              className="border border-white/30 hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300"
+            >
+              Call Now
             </Link>
           </div>
+
         </div>
-      </div>
+      </section>
+
     </div>
   );
 };

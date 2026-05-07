@@ -1,7 +1,14 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePopup } from '@/contexts/PopupContext';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  FaArrowRight,
+  FaGraduationCap,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { usePopup } from "@/contexts/PopupContext";
 
 interface UniversityItem {
   name: string;
@@ -42,66 +49,55 @@ interface MbbsData {
 const TopUniversitiesSection: React.FC = () => {
   const [universities, setUniversities] = useState<UniversityItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
   const { openPopup } = usePopup();
 
   useEffect(() => {
     const fetchUniversities = async () => {
       try {
-        const response = await fetch('/mbbs-india.json');
+        const response = await fetch("/mbbs-india.json");
+
         if (!response.ok) {
-          throw new Error('Failed to fetch university data');
+          throw new Error("Failed to fetch university data");
         }
+
         const data: MbbsData = await response.json();
-        
-        // Extract top 6 universities from different states based on ranking
+
         const topUniversities: UniversityItem[] = [];
         const seenUniversities = new Set<string>();
-        
-        // Sort colleges by ranking and get top universities
-        data.states.forEach(state => {
-          state.colleges.forEach(college => {
-            if (topUniversities.length < 6 && !seenUniversities.has(college.name)) {
-              // Extract numeric ranking for better sorting
-              const rankingMatch = college.ranking.match(/#(\d+)/);
-              const rankingNum = rankingMatch ? parseInt(rankingMatch[1]) : 999;
-              
-              // Generate slug from college name
+
+        data.states.forEach((state) => {
+          state.colleges.forEach((college) => {
+            if (
+              topUniversities.length < 6 &&
+              !seenUniversities.has(college.name)
+            ) {
               const slug = college.name
                 .toLowerCase()
-                .replace(/[^a-z0-9\s]/g, '')
-                .replace(/\s+/g, '-')
-                .replace(/-+/g, '-')
-                .replace(/^-|-$/g, '');
-              
+                .replace(/[^a-z0-9\s]/g, "")
+                .replace(/\s+/g, "-");
+
               topUniversities.push({
                 name: college.name,
-                description: `${college.type} medical college in ${college.city} with ${college.seats} seats. ${college.recognition} recognized.`,
+                description: `${college.type} medical college with ${college.seats} seats and ${college.recognition} recognition.`,
                 image: college.image,
                 city: college.city,
                 fees: college.fees,
                 ranking: college.ranking,
                 type: college.type,
-                slug: slug,
-                id: college.id
+                slug,
+                id: college.id,
               });
+
               seenUniversities.add(college.name);
             }
           });
         });
-        
-        // Sort by ranking
-        topUniversities.sort((a, b) => {
-          const aRank = a.ranking?.match(/#(\d+)/)?.[1] ? parseInt(a.ranking.match(/#(\d+)/)![1]) : 999;
-          const bRank = b.ranking?.match(/#(\d+)/)?.[1] ? parseInt(b.ranking.match(/#(\d+)/)![1]) : 999;
-          return aRank - bRank;
-        });
-        
+
         setUniversities(topUniversities.slice(0, 6));
-        setLoading(false);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+      } catch (error) {
+        console.error(error);
+      } finally {
         setLoading(false);
       }
     };
@@ -109,158 +105,240 @@ const TopUniversitiesSection: React.FC = () => {
     fetchUniversities();
   }, []);
 
-  if (loading) {
-    return (
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Top MBBS Medical Universities in India
-            </h2>
+  return (
+    <section className="relative py-20 bg-[#F8FAFC] overflow-hidden">
+      
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,#ffffff)]" />
+
+      {/* LIGHT EFFECT */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-full" />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* HEADER */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          
+          {/* BADGE */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+            <FaGraduationCap className="text-blue-600 text-sm" />
+
+            <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
+              Top Medical Colleges
+            </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* TITLE */}
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+            Top MBBS
+            <span className="text-blue-600"> Universities In India</span>
+          </h2>
+
+          {/* DESCRIPTION */}
+          <p className="mt-6 text-slate-500 text-base md:text-lg leading-8 font-medium">
+            Discover India's leading medical universities with world-class
+            education, modern infrastructure, and excellent career
+            opportunities.
+          </p>
+        </div>
+
+        {/* LOADING */}
+        {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {[...Array(6)].map((_, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="h-48 bg-gray-200 animate-pulse"></div>
+              <div
+                key={index}
+                className="bg-white rounded-[30px] overflow-hidden border border-slate-200"
+              >
+                <div className="h-[240px] bg-slate-200 animate-pulse" />
+
                 <div className="p-6">
-                  <div className="h-6 bg-gray-200 rounded animate-pulse mb-3"></div>
-                  <div className="h-4 bg-gray-200 rounded animate-pulse mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                  <div className="h-5 bg-slate-200 rounded animate-pulse mb-4" />
+                  <div className="h-4 bg-slate-200 rounded animate-pulse mb-2" />
+                  <div className="h-4 bg-slate-200 rounded animate-pulse w-2/3" />
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error) {
-    return (
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Top MBBS Medical Universities in India
-          </h2>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-2xl mx-auto">
-            <p className="text-red-600">Error loading university data: {error}</p>
-            <button 
-              onClick={() => window.location.reload()} 
-              className="mt-4 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors"
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <>
-      <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Top MBBS Medical Universities in India
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find a medical university that fits your goals and aspirations
-          </p>
-        </div>
-
-        {/* Universities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {universities.map((university, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
-            >
-              {/* University Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={university.image}
-                  alt={university.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = '/placeholder-university.png';
+        ) : (
+          <>
+            {/* CARDS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {universities.map((university, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
                   }}
-                />
-                {university.ranking && (
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {university.ranking}
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              {/* University Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {university.name}
-                </h3>
-                
-                <div className="mb-3">
-                  {university.type && (
-                    <span className={`inline-block px-2 py-1 text-xs font-semibold rounded-full mr-2 ${
-                      university.type === 'Government' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-purple-100 text-purple-800'
-                    }`}>
-                      {university.type}
-                    </span>
-                  )}
-                  {university.city && (
-                    <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
-                      📍 {university.city}
-                    </span>
-                  )}
-                </div>
-                
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {university.description}
-                </p>
-
-                {university.fees && (
-                  <div className="mb-4 p-3 bg-blue-50 rounded-lg">
-                    <p className="text-sm font-semibold text-blue-900">
-                      💰 Fees: {university.fees}
-                    </p>
-                  </div>
-                )}
-                
-                {/* Apply Now Button */}
-                <Link 
-                  href={`/colleges/${university.slug}`}
-                  className="inline-flex bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300 group hover:bg-blue-700"
+                  viewport={{ once: true }}
                 >
-                  Apply Now
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+                  <Link
+                    href={`/colleges/${university.slug}`}
+                    className="group block h-full"
+                  >
+                    <div
+                      className="
+                        relative
+                        h-full
+                        bg-white
+                        border
+                        border-slate-200
+                        rounded-[32px]
+                        overflow-hidden
+                        hover:border-blue-100
+                        hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+                        transition-all
+                        duration-500
+                      "
+                    >
+                      {/* TOP LINE */}
+                      <div className="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
 
-        {/* Additional Information */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-            These universities represent the pinnacle of medical education in India, offering cutting-edge facilities, 
-            experienced faculty, and excellent career opportunities. Our expert counselors can help you navigate the 
-            admission process for these prestigious institutions.
-          </p>
-          <button 
-            onClick={() => openPopup()}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Get Admission Guidance
-          </button>
-        </div>
+                      {/* IMAGE */}
+                      <div className="relative h-[240px] overflow-hidden">
+                        <img
+                          src={university.image}
+                          alt={university.name}
+                          className="
+                            w-full
+                            h-full
+                            object-cover
+                            group-hover:scale-110
+                            transition-transform
+                            duration-700
+                          "
+                        />
+
+                        {/* OVERLAY */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                        {/* RANKING */}
+                        {university.ranking && (
+                          <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                            <span className="text-xs font-bold text-slate-800">
+                              {university.ranking}
+                            </span>
+                          </div>
+                        )}
+
+                        {/* NAME */}
+                        <div className="absolute bottom-5 left-5">
+                          <h3 className="text-xl font-black text-white leading-snug max-w-[90%]">
+                            {university.name}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* CONTENT */}
+                      <div className="p-7">
+                        
+                        {/* TAGS */}
+                        <div className="flex items-center gap-3 flex-wrap mb-5">
+                          {university.type && (
+                            <span
+                              className={`px-3 py-2 rounded-full text-xs font-bold ${
+                                university.type === "Government"
+                                  ? "bg-green-50 text-green-700 border border-green-100"
+                                  : "bg-purple-50 text-purple-700 border border-purple-100"
+                              }`}
+                            >
+                              {university.type}
+                            </span>
+                          )}
+
+                          {university.city && (
+                            <span className="px-3 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 flex items-center gap-2">
+                              <FaMapMarkerAlt className="text-[10px]" />
+                              {university.city}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* DESCRIPTION */}
+                        <p className="text-slate-500 leading-7 text-sm font-medium">
+                          {university.description}
+                        </p>
+
+                        {/* FEES */}
+                        {university.fees && (
+                          <div className="mt-5 bg-blue-50 border border-blue-100 rounded-2xl px-5 py-4">
+                            <p className="text-sm font-bold text-blue-700">
+                              Fees: {university.fees}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* BUTTON */}
+                        <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+                          <span className="text-slate-900 font-black text-sm">
+                            Apply Now
+                          </span>
+
+                          <div
+                            className="
+                              w-11
+                              h-11
+                              rounded-2xl
+                              bg-slate-100
+                              group-hover:bg-blue-600
+                              flex
+                              items-center
+                              justify-center
+                              transition-all
+                              duration-300
+                            "
+                          >
+                            <FaArrowRight className="text-slate-500 group-hover:text-white transition-colors duration-300 text-sm" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="mt-16 text-center">
+              <p className="text-slate-500 leading-8 font-medium max-w-3xl mx-auto mb-8">
+                Our expert counselors help students secure admission into India's
+                top medical universities with complete admission guidance and
+                counseling support.
+              </p>
+
+              <button
+                onClick={() => openPopup()}
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-3
+                  bg-blue-600
+                  hover:bg-blue-700
+                  text-white
+                  h-14
+                  px-8
+                  rounded-full
+                  font-bold
+                  text-sm
+                  shadow-[0_15px_35px_rgba(37,99,235,0.25)]
+                  transition-all
+                  duration-300
+                  hover:scale-[1.03]
+                "
+              >
+                Get Admission Guidance
+
+                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </section>
-    
-    </>
   );
 };
 
