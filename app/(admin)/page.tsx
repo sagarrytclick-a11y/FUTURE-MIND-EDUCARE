@@ -65,20 +65,20 @@ const AdminPanel: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [search, setSearch] = useState('');
   const [enquiriesPerPage] = useState(10);
-  
+
   // Debounced search to prevent excessive API calls
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [searchTimeout, setSearchTimeout] = useState<NodeJS.Timeout | null>(null);
-  
+
   useEffect(() => {
     if (searchTimeout) {
       clearTimeout(searchTimeout);
     }
-    
+
     const timeout = setTimeout(() => {
       setDebouncedSearch(search);
     }, 500);
-    
+
     setSearchTimeout(timeout);
   }, [search]);
 
@@ -114,7 +114,7 @@ const AdminPanel: React.FC = () => {
         },
         body: JSON.stringify({ id, status }),
       });
-      
+
       if (response.ok) {
         refetchEnquiries();
         refetchStats();
@@ -133,7 +133,7 @@ const AdminPanel: React.FC = () => {
         },
         body: JSON.stringify({ notes }),
       });
-      
+
       if (response.ok) {
         refetchEnquiries();
         refetchStats();
@@ -151,7 +151,7 @@ const AdminPanel: React.FC = () => {
           'Content-Type': 'application/json',
         },
       });
-      
+
       if (response.ok) {
         refetchEnquiries();
         refetchStats();
