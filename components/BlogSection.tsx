@@ -122,7 +122,7 @@ const BlogSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
           <div className="absolute top-4 left-4">
-            <span className="bg-blue-600 text-white text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+            <span className="bg-blue-600 text-white text-[11px] font-bold px-4 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
               {blog.category}
             </span>
           </div>
@@ -177,7 +177,7 @@ const BlogSection: React.FC = () => {
                     bg-blue-50
                     px-3
                     py-1
-                    rounded-full
+                    rounded-lg
                   "
                 >
                   #{tag}
@@ -223,7 +223,7 @@ const BlogSection: React.FC = () => {
                 border-blue-100
                 px-4
                 py-2
-                rounded-full
+                rounded-lg
                 text-xs
                 font-bold
                 tracking-[0.2em]
@@ -324,7 +324,7 @@ const BlogSection: React.FC = () => {
             className="
               px-8
               py-4
-              rounded-full
+              rounded-lg
               bg-blue-600
               hover:bg-blue-700
               text-white

@@ -60,8 +60,8 @@ const Footer: React.FC = () => {
     <footer className="bg-[#071B3B] text-white pt-20 pb-8 px-4 relative overflow-hidden">
 
       {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-lg"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-lg"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -176,7 +176,7 @@ const Footer: React.FC = () => {
                 <Link
                   key={index}
                   href={social.href}
-                  className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
+                  className="w-11 h-11 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
                 >
                   <span className="text-lg">
                     {social.icon}

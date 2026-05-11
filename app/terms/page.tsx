@@ -91,11 +91,11 @@ const TermsPage: React.FC = () => {
     <div className="min-h-screen bg-[#f7f9fc]">
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#2563eb] py-24">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-lg"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400/20 blur-3xl rounded-lg"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 text-center text-white">
-          <span className="inline-block px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm mb-6">
+          <span className="inline-block px-5 py-2 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md text-sm mb-6">
             FUTURE MIND EDUCARE
           </span>
 
@@ -161,7 +161,7 @@ const TermsPage: React.FC = () => {
               <div className="space-y-4">
                 {section.content.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="mt-2 w-2 h-2 rounded-full bg-blue-600 shrink-0"></div>
+                    <div className="mt-2 w-2 h-2 rounded-lg bg-blue-600 shrink-0"></div>
                     <p className="text-gray-600 leading-relaxed">{item}</p>
                   </div>
                 ))}
@@ -195,7 +195,7 @@ const TermsPage: React.FC = () => {
                 <div className="space-y-3">
                   {term.points.map((point, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="mt-2 w-2 h-2 rounded-full bg-cyan-500 shrink-0"></div>
+                      <div className="mt-2 w-2 h-2 rounded-lg bg-cyan-500 shrink-0"></div>
                       <p className="text-gray-600 leading-relaxed">{point}</p>
                     </div>
                   ))}
@@ -209,7 +209,7 @@ const TermsPage: React.FC = () => {
       {/* CONTACT */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0f172a] to-[#1d4ed8] p-10 md:p-14 text-white shadow-2xl">
-          <div className="absolute right-0 top-0 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute right-0 top-0 w-72 h-72 bg-cyan-400/10 rounded-lg blur-3xl"></div>
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-black mb-4">

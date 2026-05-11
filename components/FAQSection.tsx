@@ -89,12 +89,12 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 px-4 bg-gradient-to-b from-white overflow-x-hidden to-blue-50">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-lg text-sm font-semibold mb-4">
             FAQs
           </span>
 
@@ -116,7 +116,7 @@ const FAQSection: React.FC = () => {
               placeholder="Search your question..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-white border border-gray-200 rounded-2xl px-5 py-4 pl-12 text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-lg bg-white border border-gray-200 rounded-2xl px-5 py-4 pl-12 text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
             <svg
@@ -141,7 +141,7 @@ const FAQSection: React.FC = () => {
             <button
               key={category}
               onClick={() => setFilteredCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
                 filteredCategory === category
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 border border-gray-200 hover:border-blue-400'
@@ -162,10 +162,10 @@ const FAQSection: React.FC = () => {
               {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between text-left p-6"
+                className="w-lg flex items-center justify-between text-left p-6"
               >
                 <div>
-                  <span className="inline-block text-xs font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full mb-3">
+                  <span className="inline-block text-xs font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-lg mb-3">
                     {faq.category}
                   </span>
 

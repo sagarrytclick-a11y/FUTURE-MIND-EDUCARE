@@ -144,7 +144,7 @@ const BlogPostPage: React.FC = () => {
         <div className="absolute top-6 left-6 z-20">
           <Link
             href="/blog"
-            className="flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-3 rounded-lg border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
           >
             <FaArrowLeft />
             Back
@@ -153,7 +153,7 @@ const BlogPostPage: React.FC = () => {
 
         <div className="absolute bottom-0 left-0 w-full z-20">
           <div className="max-w-5xl mx-auto px-6 pb-16">
-            <span className="inline-block bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg mb-6">
+            <span className="inline-block bg-blue-500 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow-lg mb-6">
               {blog.category}
             </span>
 
@@ -221,7 +221,7 @@ const BlogPostPage: React.FC = () => {
                 <span
                   key={index}
                   className="
-                    px-4 py-2 rounded-full
+                    px-4 py-2 rounded-lg
                     bg-blue-50
                     text-blue-600
                     text-sm
@@ -254,26 +254,26 @@ const BlogPostPage: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-all">
+              <button className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-all">
                 <FaFacebookF />
               </button>
 
-              <button className="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center hover:scale-110 transition-all">
+              <button className="w-12 h-12 rounded-lg bg-sky-500 text-white flex items-center justify-center hover:scale-110 transition-all">
                 <FaTwitter />
               </button>
 
-              <button className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-all">
+              <button className="w-12 h-12 rounded-lg bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-all">
                 <FaWhatsapp />
               </button>
 
               <button
                 onClick={handleCopy}
-                className="w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center hover:scale-110 transition-all"
+                className="w-12 h-12 rounded-lg bg-gray-800 text-white flex items-center justify-center hover:scale-110 transition-all"
               >
                 <FaLink />
               </button>
 
-              <button className="w-12 h-12 rounded-full border border-gray-300 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all">
+              <button className="w-12 h-12 rounded-lg border border-gray-300 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all">
                 <FaBookmark />
               </button>
             </div>
@@ -330,7 +330,7 @@ const BlogPostPage: React.FC = () => {
 
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-                      <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-lg">
                         {relatedBlog.category}
                       </span>
                     </div>

@@ -51,7 +51,7 @@ const WhoWeAre: React.FC = () => {
             {/* MAIN IMAGE */}
             <div className="relative w-full max-w-[400px] sm:max-w-[450px] lg:max-w-[520px]">
               
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-blue-100 rounded-full blur-2xl sm:blur-3xl opacity-50 sm:opacity-60" />
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-blue-100 rounded-lg blur-2xl sm:blur-3xl opacity-50 sm:opacity-60" />
 
               <div className="relative overflow-hidden rounded-[20px] sm:rounded-[24px] lg:rounded-[32px] border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
                 <img
@@ -83,7 +83,7 @@ const WhoWeAre: React.FC = () => {
             className="max-w-2xl order-1 lg:order-2"
           >
             {/* BADGE */}
-            <div onClick={() =>  openPopup()} className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-4 sm:mb-6">
+            <div onClick={() =>  openPopup()} className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-4 sm:mb-6">
               <span className="text-blue-700 text-xs font-bold tracking-wide uppercase">
                 About Future Mind Educare
               </span>
@@ -151,7 +151,7 @@ const WhoWeAre: React.FC = () => {
                 mt-6 sm:mt-8 lg:mt-10
                 h-12 sm:h-13
                 px-5 sm:px-6 lg:px-7
-                rounded-full
+                rounded-lg
                 bg-blue-600
                 hover:bg-blue-700
                 text-white

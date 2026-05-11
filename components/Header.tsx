@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FaInstagram,
@@ -84,10 +84,10 @@ const Header = () => {
       const data = await res.json();
 
       if (type === 'india') {
-        setIndiaStates(data.states.slice(0, 8));
+        setIndiaStates(data.states);
         setHoveredItemData(data.states[0]);
       } else {
-        setAbroadCountries(data.countries.slice(0, 8));
+        setAbroadCountries(data.countries);
         setHoveredItemData(data.countries[0]);
       }
     } catch (err) {
@@ -115,6 +115,25 @@ const Header = () => {
       setHoveredItemData(null);
     }, 150);
   };
+
+  // Set default hovered items when data is loaded
+  useEffect(() => {
+    if (indiaStates.length > 0) {
+      const delhiState = indiaStates.find(state => state.name === 'Delhi');
+      if (delhiState) {
+        setHoveredItemData(delhiState);
+      }
+    }
+  }, [indiaStates]);
+
+  useEffect(() => {
+    if (abroadCountries.length > 0) {
+      const russiaCountry = abroadCountries.find(country => country.name === 'Russia');
+      if (russiaCountry) {
+        setHoveredItemData(russiaCountry);
+      }
+    }
+  }, [abroadCountries]);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -158,7 +177,7 @@ const Header = () => {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Image
-                src="/logo.png"
+                src="/header.png"
                 alt="FM Education"
                 width={54}
                 height={54}
@@ -261,7 +280,7 @@ const Header = () => {
                               `}
                             >
                               <img
-                                src={loc.image || (loc as any).flag}
+                                src='/header.png'
                                 alt={loc.name}
                                 className="w-8 h-6 rounded-md object-cover mr-3"
                               />
@@ -304,7 +323,7 @@ const Header = () => {
                                 className="
                                   px-4
                                   py-2
-                                  rounded-full
+                                  rounded-lg
                                   bg-blue-50
                                   text-blue-600
                                   text-sm
@@ -321,7 +340,7 @@ const Header = () => {
 
                             <div className="grid grid-cols-1 gap-3 max-h-80 overflow-y-auto pr-2 custom-scrollbar">
                               {hoveredItemData.colleges
-                                ?.slice(0, 6)
+                                ?.slice(0, 20)
                                 .map((college: College) => {
                                   const collegeSlug = college.name
                                     .toLowerCase()
@@ -404,7 +423,7 @@ const Header = () => {
               justify-center
               px-7
               h-12
-              rounded-full
+              rounded-lg
               bg-[#2563EB]
               text-white
               font-bold

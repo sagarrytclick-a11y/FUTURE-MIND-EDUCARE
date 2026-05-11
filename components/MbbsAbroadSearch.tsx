@@ -179,7 +179,7 @@ const MbbsAbroadSearch: React.FC = () => {
               </div>
               
               <div className="text-sm text-gray-600 mb-4">
-                <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
+                <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 rounded-lg text-xs font-medium">
                   ✓
                 </span>
                 {college.recognition}

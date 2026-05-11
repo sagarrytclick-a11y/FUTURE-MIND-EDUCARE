@@ -77,7 +77,7 @@ const NeetCounselingSection: React.FC = () => {
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 cursor-pointer group"
             >
               {/* Service Icon */}
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
                 <span className="text-3xl">{service.icon}</span>
               </div>
               

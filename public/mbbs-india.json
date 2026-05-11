@@ -15,7 +15,7 @@
           "recognition": "NMC, MCI",
           "ranking": "#1 in India",
           "type": "Government",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4OEnrkCgsu6Iuo_Roxu0jmn6iVNWBVv0zKQ&s"
+          "image": "https://future-mbbs.com/wp-content/uploads/2025/04/shutterstock_2138771655-scaled.jpg"
         },
         {
           "id": 2,
@@ -26,7 +26,7 @@
           "recognition": "NMC, MCI",
           "ranking": "#5 in India",
           "type": "Government",
-          "image": "https://mamc.delhi.gov.in/sites/default/files/mamc/image/mamc.png"
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2017/04/maulana-azad-medical-college-mamc-delhi.jpg"
         },
         {
           "id": 3,
@@ -37,7 +37,7 @@
           "recognition": "NMC, MCI",
           "ranking": "#8 in India",
           "type": "Government",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjbq7t1ElIa_ufPRIWHNE9UK5Nd_EucXt3Eg&s"
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_hB_1u_F4_h.webp?tr=w-3840"
         },
         {
           "id": 4,
@@ -48,8 +48,104 @@
           "recognition": "NMC, MCI",
           "ranking": "#12 in India",
           "type": "Government",
-          "image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Ucmsbuil.jpg/250px-Ucmsbuil.jpg"
+          "image": "https://i.ytimg.com/vi/ICMb1iMPguw/maxresdefault.jpg"
+        },
+        {
+          "id": 24,
+          "name": "Vardhman Mahavir Medical College (VMMC)",
+          "city": "New Delhi",
+          "fees": "₹2,200 per year",
+          "seats": 180,
+          "recognition": "NMC, MCI",
+          "ranking": "#15 in India",
+          "type": "Government",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/campusimage/14320111364.JPG"
+        },
+        {
+          "id": 25,
+          "name": "Hamdard Institute of Medical Sciences",
+          "city": "New Delhi",
+          "fees": "₹12,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#45 in India",
+          "type": "Private",
+          "image": "https://www.himsr.co.in/wp-content/uploads/2019/01/abou-himsr.jpg"
+        },
+        {
+          "id": 26,
+          "name": "Indira Gandhi Institute of Medical Sciences",
+          "city": "New Delhi",
+          "fees": "₹8,50,000 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#52 in India",
+          "type": "Private",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765988967497-d5b75ad9-sxlvmymkmo8xufg8rh0y.jpg"
+        },
+        {
+          "id": 27,
+          "name": "Army College of Medical Sciences",
+          "city": "New Delhi",
+          "fees": "₹6,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#38 in India",
+          "type": "Private",
+          "image": "https://content.jdmagicbox.com/v2/comp/delhi/z5/011p1236313043w2b4z5/catalogue/army-college-of-medical-science-delhi-cantt-delhi-colleges-1c96fuv.jpg"
+        },
+        {
+          "id": 28,
+          "name": "Guru Gobind Singh Indraprastha University",
+          "city": "New Delhi",
+          "fees": "₹10,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#41 in India",
+          "type": "Private",
+          "image": "https://images.shiksha.com/mediadata/images/articles/1677067245php1mTwhk.jpeg"
+        },
+       
+        {
+          "id": 30,
+          "name": "South Delhi Medical College",
+          "city": "New Delhi",
+          "fees": "₹11,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#55 in India",
+          "type": "Private",
+          "image": "https://future-mbbs.com/wp-content/uploads/2025/02/shutterstock_2436474897-1440x960.jpg"
+        },
+       
+      
+        {
+          "id": 34,
+          "name": "Delhi Medical College and Hospital",
+          "city": "New Delhi",
+          "fees": "₹6,80,000 per year",
+          "seats": 90,
+          "recognition": "NMC, MCI",
+          "ranking": "#58 in India",
+          "type": "Private",
+          "image": "https://threebestrated.in/images/AllIndiaInstituteofMedicalSciences-Delhi-DL.jpeg"
+        },
+       
+      
+       
+       
+        {
+          "id": 39,
+          "name": "Metropolitan Medical College Delhi",
+          "city": "New Delhi",
+          "fees": "₹9,80,000 per year",
+          "seats": 135,
+          "recognition": "NMC, MCI",
+          "ranking": "#44 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2019/02/NDMC-Medical-College-Admin-Block.jpg"
         }
+        
       ]
     },
     {
@@ -101,6 +197,206 @@
           "ranking": "#11 in India",
           "type": "Government",
           "image": "https://mycareersview.com/afile/mcv16743_mnr_dental_college1-4.jpg"
+        },
+        {
+          "id": 41,
+          "name": "Topiwala National Medical College",
+          "city": "Mumbai",
+          "fees": "₹3,200 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#17 in India",
+          "type": "Government",
+          "image": "https://mycareersview.com/afile/mcv21783_campus%20lok.jpg"
+        },
+        {
+          "id": 42,
+          "name": "Lokmanya Tilak Municipal Medical College",
+          "city": "Mumbai",
+          "fees": "₹3,800 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#13 in India",
+          "type": "Government",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2023/09/Lokmanya-Tilak-Medical-College-Mumbai.jpg"
+        },
+        {
+          "id": 43,
+          "name": "Armed Forces Medical College (AFMC)",
+          "city": "Pune",
+          "fees": "₹25,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#4 in India",
+          "type": "Government",
+          "image": "https://studyriserr.com/images/cover/171294757910270_afmccover.jpg"
+        },
+        {
+          "id": 44,
+          "name": "Mahatma Gandhi Institute of Medical Sciences",
+          "city": "Nagpur",
+          "fees": "₹4,200 per year",
+          "seats": 180,
+          "recognition": "NMC, MCI",
+          "ranking": "#19 in India",
+          "type": "Government",
+          "image": "https://studypalacehub.com/wp-content/uploads/2022/10/i13.png"
+        },
+      
+        {
+          "id": 46,
+          "name": "Siddhartha Medical College",
+          "city": "Nashik",
+          "fees": "₹3,400 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#26 in India",
+          "type": "Government",
+          "image": "https://ssahe.edu.in/ssmc/images/ssdc_gallery/02.jpg"
+        },
+        {
+          "id": 47,
+          "name": "Maharashtra Institute of Medical Sciences",
+          "city": "Aurangabad",
+          "fees": "₹3,800 per year",
+          "seats": 160,
+          "recognition": "NMC, MCI",
+          "ranking": "#28 in India",
+          "type": "Government",
+          "image": "https://www.justmbbs.com/img/college/maharashtra/maharashtra-institute-of-medical-sciences-%26-research-latur-banner.jpg"
+        },
+        {
+          "id": 48,
+          "name": "Bharati Vidyapeeth Medical College",
+          "city": "Pune",
+          "fees": "₹15,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#35 in India",
+          "type": "Private",
+          "image": "https://dishaconsultancy.org/images/bharati-vidyapeeth-university-medical-college-hospital.jpg"
+        },
+        {
+          "id": 49,
+          "name": "Symbiosis Medical College",
+          "city": "Pune",
+          "fees": "₹18,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#32 in India",
+          "type": "Private",
+          "image": "https://www.sihs.edu.in/images/infrastructure/AerialViewSIHS.jpg"
+        },
+        {
+          "id": 50,
+          "name": "D.Y. Patil Medical College",
+          "city": "Navi Mumbai",
+          "fees": "₹22,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#30 in India",
+          "type": "Private",
+          "image": "https://medical.dpu.edu.in/images/infrastructure/infrastructure-new/Infrastructure-01.jpg"
+        },
+     
+        {
+          "id": 52,
+          "name": "K.J. Somaiya Medical College",
+          "city": "Mumbai",
+          "fees": "₹16,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#37 in India",
+          "type": "Private",
+          "image": "https://images.shiksha.com/mediadata/images/1753356409phpH1INwf.jpeg"
+        },
+        {
+          "id": 53,
+          "name": "Tata Memorial Hospital Medical College",
+          "city": "Mumbai",
+          "fees": "₹12,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#39 in India",
+          "type": "Private",
+          "image": "https://tmc.gov.in/assets/img/slide/ACTREC.png"
+        },
+        {
+          "id": 54,
+          "name": "Nashik Medical College",
+          "city": "Nashik",
+          "fees": "₹14,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#50 in India",
+          "type": "Private",
+          "image": "https://content.jdmagicbox.com/comp/nashik/n7/0253px253.x253.000756258997.m5n7/catalogue/dr-vasantrao-pawar-medical-college-hospital-and-research-centre-adgaon-naka-nashik-hospitals-gljpp4.jpg"
+        },
+        {
+          "id": 55,
+          "name": "Aurangabad Medical College",
+          "city": "Aurangabad",
+          "fees": "₹13,00,000 per year",
+          "seats": 110,
+          "recognition": "NMC, MCI",
+          "ranking": "#53 in India",
+          "type": "Private",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765988968456-af83947a-kmrzzxxl91lit2qvf7jo.jpg"
+        },
+        {
+          "id": 56,
+          "name": "Solapur Medical College",
+          "city": "Solapur",
+          "fees": "₹11,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#57 in India",
+          "type": "Private",
+          "image": "https://vmgmc.edu.in/images/vmgmc8.jpg"
+        },
+        {
+          "id": 57,
+          "name": "Kolhapur Medical College",
+          "city": "Kolhapur",
+          "fees": "₹10,00,000 per year",
+          "seats": 90,
+          "recognition": "NMC, MCI",
+          "ranking": "#59 in India",
+          "type": "Private",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/COVER-IMAGE_ZMcmEnPI9.webp?tr=w-3840"
+        },
+        {
+          "id": 58,
+          "name": "Sangli Medical College",
+          "city": "Sangli",
+          "fees": "₹9,00,000 per year",
+          "seats": 80,
+          "recognition": "NMC, MCI",
+          "ranking": "#61 in India",
+          "type": "Private",
+          "image": "https://mchsangli.bharatividyapeeth.edu/media/images/slider/Slide_2024_2.jpg"
+        },
+        {
+          "id": 59,
+          "name": "Satara Medical College",
+          "city": "Satara",
+          "fees": "₹8,00,000 per year",
+          "seats": 70,
+          "recognition": "NMC, MCI",
+          "ranking": "#63 in India",
+          "type": "Private",
+          "image": "https://i.ytimg.com/vi/ovyMMKa7BeM/maxresdefault.jpg"
+        },
+        {
+          "id": 60,
+          "name": "Amravati Medical College",
+          "city": "Amravati",
+          "fees": "₹7,00,000 per year",
+          "seats": 60,
+          "recognition": "NMC, MCI",
+          "ranking": "#65 in India",
+          "type": "Private",
+          "image": "https://www.pdmmc.edu.in/data1/images/pdmc10.jpg"
         }
       ]
     },
@@ -142,6 +438,226 @@
           "ranking": "#18 in India",
           "type": "Government",
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfhaHQ5ywpPJ3dthczv-N8TRTnCZEVId16pg&s"
+        },
+        {
+          "id": 61,
+          "name": "Sanjay Gandhi Post Graduate Institute of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹4,000 per year",
+          "seats": 180,
+          "recognition": "NMC, MCI",
+          "ranking": "#10 in India",
+          "type": "Government",
+          "image": "https://sgpgims.org.in/Home/images/slider/2.jpg"
+        },
+        {
+          "id": 62,
+          "name": "Moti Lal Nehru Medical College",
+          "city": "Allahabad",
+          "fees": "₹2,800 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#22 in India",
+          "type": "Government",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/Mlnmc1.jpg"
+        },
+        {
+          "id": 63,
+          "name": "Gandhi Medical College",
+          "city": "Bhopal",
+          "fees": "₹3,200 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#24 in India",
+          "type": "Government",
+          "image": "https://gmcsecunderabad.org/wp-content/uploads/2021/12/Gandhi-Medical-College.jpg"
+        },
+        {
+          "id": 64,
+          "name": "Jawaharlal Nehru Medical College",
+          "city": "Bhopal",
+          "fees": "₹3,500 per year",
+          "seats": 180,
+          "recognition": "NMC, MCI",
+          "ranking": "#27 in India",
+          "type": "Government",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765993297614-08474fd9-vftpvig34tjafu1o4ynh.jpg"
+        },
+        {
+          "id": 65,
+          "name": "Maharani Laxmi Bai Medical College",
+          "city": "Jhansi",
+          "fees": "₹2,600 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#31 in India",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2019/03/MLB-Medical-college-Jhansi.jpg"
+        },
+        {
+          "id": 66,
+          "name": "Lala Lajpat Rai Medical College",
+          "city": "Meerut",
+          "fees": "₹3,000 per year",
+          "seats": 160,
+          "recognition": "NMC, MCI",
+          "ranking": "#34 in India",
+          "type": "Government",
+          "image": "https://collegekaka.com/wp-content/uploads/2023/12/L.L.R.M.-MEDICAL-COLLEGE-MEERUT.webp"
+        },
+        {
+          "id": 67,
+          "name": "Sarojini Naidu Medical College",
+          "city": "Agra",
+          "fees": "₹2,900 per year",
+          "seats": 140,
+          "recognition": "NMC, MCI",
+          "ranking": "#36 in India",
+          "type": "Government",
+          "image": "https://collegekaka.com/wp-content/uploads/2023/12/S.N.-MEDICAL-COLLEGE-AGRA.webp"
+        },
+        {
+          "id": 68,
+          "name": "Uttar Pradesh University of Medical Sciences",
+          "city": "Saifai",
+          "fees": "₹3,100 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#38 in India",
+          "type": "Government",
+          "image": "https://www.upums.ac.in/assets/img/hospitalServices/hos1.gif"
+        },
+        {
+          "id": 69,
+          "name": "Dr. Ram Manohar Lohia Institute of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹3,300 per year",
+          "seats": 130,
+          "recognition": "NMC, MCI",
+          "ranking": "#41 in India",
+          "type": "Government",
+          "image": "https://medicaldialogues.in/h-upload/2022/12/20/194312-ram-manohar-lohia.jpg"
+        },
+        {
+          "id": 70,
+          "name": "Baba Raghav Das Medical College",
+          "city": "Gorakhpur",
+          "fees": "₹2,700 per year",
+          "seats": 110,
+          "recognition": "NMC, MCI",
+          "ranking": "#43 in India",
+          "type": "Government",
+          "image": "https://www.moksh16.com/uploads/images/brdmc-gorakhpur.webp"
+        },
+        {
+          "id": 71,
+          "name": "Maharaja Gaj Singh Medical College",
+          "city": "Kanpur",
+          "fees": "₹3,400 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#45 in India",
+          "type": "Government",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765991972241-b847ac65-sm0xnjoor2w09qsunqbv.jpg"
+        },
+        {
+          "id": 72,
+          "name": "Shri Ram Murti Smarak Institute of Medical Sciences",
+          "city": "Bareilly",
+          "fees": "₹12,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#54 in India",
+          "type": "Private",
+          "image": "https://nyraeducation.in/wp-content/uploads/2025/05/Shri-Ram-Murti-Smarak-Institute-of-Medical-Sciences-Bareilly.jpg"
+        },
+        {
+          "id": 73,
+          "name": "Hind Institute of Medical Sciences",
+          "city": "Sultanpur",
+          "fees": "₹10,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#58 in India",
+          "type": "Private",
+          "image": "https://www.justmbbs.com/img/college/uttar-pradesh/hind-institute-of-medical-sciences-barabanki-banner.jpg"
+        },
+        {
+          "id": 74,
+          "name": "Santosh Medical College",
+          "city": "Ghaziabad",
+          "fees": "₹15,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#47 in India",
+          "type": "Private",
+          "image": "https://www.santosh.ac.in/uploads/images/home/about.webp"
+        },
+        {
+          "id": 75,
+          "name": "Saraswathi Institute of Medical Sciences",
+          "city": "Ghaziabad",
+          "fees": "₹13,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#52 in India",
+          "type": "Private",
+          "image": "https://nyraeducation.in/wp-content/uploads/2025/05/1644815391phpEPXzWp.jpeg"
+        },
+        {
+          "id": 76,
+          "name": "Teerthanker Mahaveer Medical College",
+          "city": "Moradabad",
+          "fees": "₹11,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#56 in India",
+          "type": "Private",
+          "image": "https://www.eklavyaoverseas.com/assets/images/teerthankar-medical-college.jpg"
+        },
+        {
+          "id": 77,
+          "name": "Rohilkhand Medical College",
+          "city": "Bareilly",
+          "fees": "₹9,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#60 in India",
+          "type": "Private",
+          "image": "https://e2pconsultancy.com/wp-content/uploads/2019/03/Rohilkhand_Medical_College.jpg"
+        },
+        {
+          "id": 78,
+          "name": "Siddhartha Institute of Medical Sciences",
+          "city": "Kanpur",
+          "fees": "₹8,00,000 per year",
+          "seats": 80,
+          "recognition": "NMC, MCI",
+          "ranking": "#62 in India",
+          "type": "Private",
+          "image": "https://development-docthub.nyc3.digitaloceanspaces.com/production/tenants/60f3c83998166d4cf800b03e/organizationdocuments/17D280A0CAF_coverImage.jpg"
+        },
+        {
+          "id": 79,
+          "name": "Prasad Institute of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹7,00,000 per year",
+          "seats": 60,
+          "recognition": "NMC, MCI",
+          "ranking": "#64 in India",
+          "type": "Private",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2025/09/Prasad-Institute-of-Medical-Sciences.webp"
+        },
+        {
+          "id": 80,
+          "name": "Mayo Institute of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹6,00,000 per year",
+          "seats": 50,
+          "recognition": "NMC, MCI",
+          "ranking": "#66 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2017/04/mayo-institute-of-medical-sciences-barabanki-Admin-block.jpg"
         }
       ]
     },
@@ -183,6 +699,226 @@
           "ranking": "#16 in India",
           "type": "Private",
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZHMSDzE8YxArHqAp4_1FCxv3chdJJ8o4DA&s"
+        },
+        {
+          "id": 81,
+          "name": "Mysore Medical College",
+          "city": "Mysore",
+          "fees": "₹3,500 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#22 in India",
+          "type": "Government",
+          "image": "https://www.moksh16.com/uploads/images/mmcri-mysore.webp"
+        },
+        {
+          "id": 82,
+          "name": "M.S. Ramaiah Medical College",
+          "city": "Bangalore",
+          "fees": "₹18,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#25 in India",
+          "type": "Private",
+          "image": "https://www.msrmc.ac.in/assets/frontend/ramaiah-medical-college/images/faculty-building.webp"
+        },
+        {
+          "id": 83,
+          "name": "JSS Medical College",
+          "city": "Mysore",
+          "fees": "₹10,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#28 in India",
+          "type": "Private",
+          "image": "https://www.psypathy.com/wp-content/uploads/2022/09/JSS-Hospital-1.jpg"
+        },
+        {
+          "id": 84,
+          "name": "Kempegowda Institute of Medical Sciences",
+          "city": "Bangalore",
+          "fees": "₹9,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#31 in India",
+          "type": "Private",
+          "image": "https://www.kimsbangalore.edu.in/wp-content/uploads/2021/08/banner_1.jpg"
+        },
+        {
+          "id": 85,
+          "name": "Sri Devaraj Urs Medical College",
+          "city": "Kolar",
+          "fees": "₹7,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#34 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/11/Sri-Devraj-Urs-Medical-College-Kolar.jpg"
+        },
+        {
+          "id": 86,
+          "name": "M.V.J. Medical College",
+          "city": "Bangalore",
+          "fees": "₹6,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#37 in India",
+          "type": "Private",
+          "image": "https://admissionkaro.com/wp-content/uploads/2017/03/mvj-medical-college-and-research-hospital-bangalore.jpg"
+        },
+        {
+          "id": 87,
+          "name": "Sapthagiri Institute of Medical Sciences",
+          "city": "Bangalore",
+          "fees": "₹8,50,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#40 in India",
+          "type": "Private",
+          "image": "https://admissionkaro.com/wp-content/uploads/2017/03/sapthagiri-institute-of-medical-sciences-and-research-centre-bangalore.jpg"
+        },
+        {
+          "id": 88,
+          "name": "Sri Siddhartha Medical College",
+          "city": "Tumkur",
+          "fees": "₹5,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#43 in India",
+          "type": "Private",
+          "image": "https://ssahe.edu.in/ssmc/images/ssdc_gallery/02.jpg"
+        },
+        {
+          "id": 89,
+          "name": "Shri B.M. Patil Medical College",
+          "city": "Bijapur",
+          "fees": "₹4,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#46 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2018/10/Shri-BM-Patil-Medical-College-Hospital-BLED-University.jpg"
+        },
+        {
+          "id": 90,
+          "name": "Hubli Medical College",
+          "city": "Hubli",
+          "fees": "₹3,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#49 in India",
+          "type": "Government",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_1a9MAI5j0.webp?tr=w-3840"
+        },
+        {
+          "id": 91,
+          "name": "Bellary Medical College",
+          "city": "Bellary",
+          "fees": "₹2,800 per year",
+          "seats": 80,
+          "recognition": "NMC, MCI",
+          "ranking": "#52 in India",
+          "type": "Government",
+          "image": "https://www.justmbbs.com/img/college/karnataka/vijaynagar-institute-of-medical-sciences-%28vims%29-bellary-banner.jpg"
+        },
+        {
+          "id": 92,
+          "name": "Raichur Medical College",
+          "city": "Raichur",
+          "fees": "₹2,600 per year",
+          "seats": 60,
+          "recognition": "NMC, MCI",
+          "ranking": "#55 in India",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/10/Raichur-Institude-of-Medical-science-building.jpg"
+        },
+        {
+          "id": 93,
+          "name": "Gulbarga Medical College",
+          "city": "Gulbarga",
+          "fees": "₹2,400 per year",
+          "seats": 50,
+          "recognition": "NMC, MCI",
+          "ranking": "#58 in India",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2017/04/Gulbarga-Institute-of-Medical-Sciences.jpg"
+        },
+        {
+          "id": 94,
+          "name": "Bidar Medical College",
+          "city": "Bidar",
+          "fees": "₹2,200 per year",
+          "seats": 40,
+          "recognition": "NMC, MCI",
+          "ranking": "#61 in India",
+          "type": "Government",
+          "image": "https://neetsupport.com/content/images/2025/07/Bidar-Institute-of-Medical-Sciences--Karnataka.jpeg"
+        },
+        {
+          "id": 95,
+          "name": "Chitradurga Medical College",
+          "city": "Chitradurga",
+          "fees": "₹2,000 per year",
+          "seats": 30,
+          "recognition": "NMC, MCI",
+          "ranking": "#64 in India",
+          "type": "Government",
+          "image": "https://manage.collnod.com/Upload/Content/web_img_1_11_4_2025_11_26_38.jpeg"
+        },
+        {
+          "id": 96,
+          "name": "Shimoga Medical College",
+          "city": "Shimoga",
+          "fees": "₹1,800 per year",
+          "seats": 25,
+          "recognition": "NMC, MCI",
+          "ranking": "#67 in India",
+          "type": "Government",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2018/11/Shimoga-Institute-of-Medical-Sciences-_Campus-1280x720.jpg"
+        },
+        {
+          "id": 97,
+          "name": "Dharwad Medical College",
+          "city": "Dharwad",
+          "fees": "₹1,600 per year",
+          "seats": 20,
+          "recognition": "NMC, MCI",
+          "ranking": "#70 in India",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/12/SDM_Medical_College_Dharwad.jpg"
+        },
+        {
+          "id": 98,
+          "name": "Mangalore Medical College",
+          "city": "Mangalore",
+          "fees": "₹1,400 per year",
+          "seats": 15,
+          "recognition": "NMC, MCI",
+          "ranking": "#73 in India",
+          "type": "Government",
+          "image": "https://www.futeducation.com/media/letestblog/Kasturba-Medical-College-Mangalore_slVYvAD.jpg"
+        },
+        {
+          "id": 99,
+          "name": "Udupi Medical College",
+          "city": "Udupi",
+          "fees": "₹1,200 per year",
+          "seats": 10,
+          "recognition": "NMC, MCI",
+          "ranking": "#76 in India",
+          "type": "Government",
+          "image": "https://content.jdmagicbox.com/comp/udupi/y5/0820px820.x820.110117150521.z1y5/catalogue/s-d-m-college-of-ayurveda-udupi-ho-udupi-ayurvedic-colleges-1d2la8r.jpg"
+        },
+        {
+          "id": 100,
+          "name": "Hassan Medical College",
+          "city": "Hassan",
+          "fees": "₹1,000 per year",
+          "seats": 8,
+          "recognition": "NMC, MCI",
+          "ranking": "#79 in India",
+          "type": "Government",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/11/Hassan-Institute-of-Medical-Sciences.jpg"
         }
       ]
     },

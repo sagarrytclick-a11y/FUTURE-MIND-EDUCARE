@@ -6,7 +6,7 @@
       "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1280px-Flag_of_Russia.svg.png",
       "image": "https://i.pinimg.com/1200x/29/2d/e2/292de231f2d4bb8572813423294bae60.jpg",
       "description": "Quality Medical Education with Affordable Fees",
-      "universities": 80,
+      "universities": 20,
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
@@ -55,6 +55,174 @@
           "ranking": "#4 in Russia",
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFPOGsXPr4cWTDeGmTBN6xi5_kqunipHTow&s",
           "type": "Government"
+        },
+        {
+          "id": 5,
+          "name": "People's Friendship University",
+          "city": "Moscow",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#5 in Russia",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_K6w-1gfPQ.webp?tr=w-3840",
+          "type": "Government"
+        },
+        {
+          "id": 6,
+          "name": "First Moscow State Medical University",
+          "city": "Moscow",
+          "fees": "$4,000 - $5,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#6 in Russia",
+          "image": "https://fmsmu.com/wp-content/uploads/2019/02/about_university.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 7,
+          "name": "Russian National Research Medical University",
+          "city": "Moscow",
+          "fees": "$3,500 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#7 in Russia",
+          "image": "https://mediced.com.my/wp-content/uploads/2018/02/MBBS.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 8,
+          "name": "Pirogov Russian National Research Medical University",
+          "city": "Moscow",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#8 in Russia",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/RNRMU_Entrance.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 9,
+          "name": "Sechenov First Moscow State Medical University",
+          "city": "Moscow",
+          "fees": "$4,500 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#9 in Russia",
+          "image": "https://fmsmu.com/wp-content/uploads/2019/02/about_university.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 10,
+          "name": "Voronezh State Medical University",
+          "city": "Voronezh",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#10 in Russia",
+          "image": "https://brightbridgeoverseas.com/wp-content/uploads/2024/04/voronezh-state-medical-university-img.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 11,
+          "name": "Siberian State Medical University",
+          "city": "Tomsk",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#11 in Russia",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/Siberian-State-Medical-University.webp",
+          "type": "Government"
+        },
+        {
+          "id": 12,
+          "name": "Kursk State Medical University",
+          "city": "Kursk",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#12 in Russia",
+          "image": "https://studymbbsinrussia.co.in/wp-content/uploads/2019/03/ksmu-kursk-russia.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 13,
+          "name": "Samara State Medical University",
+          "city": "Samara",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#13 in Russia",
+          "image": "https://ruseducation.in/wp-content/uploads/2022/08/samara-state-medical-university-banner.webp",
+          "type": "Government"
+        },
+        {
+          "id": 14,
+          "name": "Volgograd State Medical University",
+          "city": "Volgograd",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#14 in Russia",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/Volgograd-State-Medical-University-2.webp",
+          "type": "Government"
+        },
+        {
+          "id": 15,
+          "name": "Rostov State Medical University",
+          "city": "Rostov-on-Don",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#15 in Russia",
+          "image": "https://www.rostgmu.net/assets/Rostov-Background-f8rGNQKH.jpeg",
+          "type": "Government"
+        },
+        {
+          "id": 18,
+          "name": "Stavropol State Medical University",
+          "city": "Stavropol",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#18 in Russia",
+          "image": "https://www.royalnextacademy.com/file_manager_images/60b4c8c607708.jpg",
+          "type": "Government"
+        },
+        {
+          "id": 19,
+          "name": "Kuban State Medical University",
+          "city": "Krasnodar",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#19 in Russia",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/12/kuban-state-medical-university-stu-1.webp",
+          "type": "Government"
+        },
+        {
+          "id": 20,
+          "name": "Dagestan State Medical University",
+          "city": "Makhachkala",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#20 in Russia",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/Dagestan-State-Medical-University.webp",
+          "type": "Government"
         }
       ]
     },
@@ -64,11 +232,11 @@
       "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1280px-Flag_of_Kazakhstan.svg.png",
       "image": "https://i.pinimg.com/1200x/16/01/a1/1601a122fa2792080fd1e57c50abc8ab.jpg",
       "description": "Modern Facilities with International Standards",
-      "universities": 45,
+      "universities": 20,
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
-          "id": 5,
+          "id": 21,
           "name": "Kazakh National Medical University",
           "city": "Almaty",
           "fees": "$3,500 - $5,000 per year",
@@ -79,7 +247,7 @@
           "image": "https://www.dishaeducationconsultancy.com/wp-content/uploads/2021/08/img2.jpg"
         },
         {
-          "id": 6,
+          "id": 22,
           "name": "Astana Medical University",
           "city": "Astana",
           "fees": "$3,000 - $4,500 per year",
@@ -90,7 +258,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLI55pTwlljOU55Gn7TZzRq5lXNdEJgcuUQ&s"
         },
         {
-          "id": 7,
+          "id": 23,
           "name": "Karaganda State Medical University",
           "city": "Karaganda",
           "fees": "$2,500 - $4,000 per year",
@@ -99,6 +267,153 @@
           "medium": "English",
           "ranking": "#3 in Kazakhstan",
           "image": "https://gmfadmission.in/wp-content/uploads/2020/01/Karaganda-State-Medical-University.jpg"
+        },
+        {
+          "id": 24,
+          "name": "West Kazakhstan Medical University",
+          "city": "Aktobe",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#4 in Kazakhstan",
+          "image": "https://ewings.co.in/img/kokshetau-main-campus.webp"
+        },
+        {
+          "id": 25,
+          "name": "Kokshetau State University",
+          "city": "Kokshetau",
+          "fees": "$2,800 - $4,200 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#5 in Kazakhstan",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLI55pTwlljOU55Gn7TZzRq5lXNdEJgcuUQ&s"
+        },
+        {
+          "id": 26,
+          "name": "Semey Medical University",
+          "city": "Semey",
+          "fees": "$3,200 - $4,200 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#6 in Kazakhstan",
+          "image": "https://www.riaoverseas.com/wp-content/uploads/2020/05/semey_state_medical_univ-min.jpg"
+        },
+        {
+          "id": 27,
+          "name": "Pavlodar State University",
+          "city": "Pavlodar",
+          "fees": "$3,000 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#7 in Kazakhstan",
+          "image": "https://tou.edu.kz/images/july2016/1507161.jpg"
+        },
+        {
+          "id": 28,
+          "name": "Taraz State University",
+          "city": "Taraz",
+          "fees": "$2,800 - $4,200 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#8 in Kazakhstan",
+          "image": "https://thumbs.dreamstime.com/b/taraz-dulati-university-state-picturesque-breathtaking-view-technology-faculty-building-sunny-blue-sky-day-162846822.jpg"
+        },
+        {
+          "id": 29,
+          "name": "Kostanay State University",
+          "city": "Kostanay",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#9 in Kazakhstan",
+          "image": "https://avatars.mds.yandex.net/get-altay/13611210/2a00000192190e16d0965fbd998b1a601e11/L_height"
+        },
+        {
+          "id": 30,
+          "name": "North Kazakhstan State University",
+          "city": "Petropavl",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#10 in Kazakhstan",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/CAMPUS_9gny6MOl1.webp?tr=w-3840"
+        },
+        {
+          "id": 31,
+          "name": "South Kazakhstan State University",
+          "city": "Shymkent",
+          "fees": "$2,800 - $4,200 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#11 in Kazakhstan",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/south-kazakhstan-medical-academy.webp"
+        },
+        {
+          "id": 32,
+          "name": "Atyrau State University",
+          "city": "Atyrau",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#12 in Kazakhstan",
+          "image": "https://media.licdn.com/dms/image/v2/C4D1BAQE3f0H3-ynloQ/company-background_10000/company-background_10000/0/1583334578263/atyrau_state_university_cover?e=2147483647&v=beta&t=GoTGCheV-c5slsGv9rAIY-MKs5tXJClR3BgdNNvDcbY"
+        },
+        {
+          "id": 33,
+          "name": "Kazakh Medical University",
+          "city": "Almaty",
+          "fees": "$3,500 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#13 in Kazakhstan",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/CAMPUS_nzDCQ2Hw2t.webp",
+          "type": "Private"
+        },
+        {
+          "id": 34,
+          "name": "Al-Farabi Kazakh National Medical University",
+          "city": "Almaty",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#14 in Kazakhstan",
+          "image": "https://future-mbbs.com/wp-content/uploads/2025/07/Copy-of-Untitled-28.png.webp",
+          "type": "Private"
+        },
+        {
+          "id": 35,
+          "name": "International Kazakh-Turkish University",
+          "city": "Turkestan",
+          "fees": "$3,500 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#15 in Kazakhstan",
+          "image": "https://image.free-apply.com/gallery/l/uni/gallery/lg/1039800011/54e4119bfac3ca13c2afd999a82b9da9c95c80b7.jpg?s=640",
+          "type": "Private"
+        },
+        {
+          "id": 36,
+          "name": "Kazakh-Russian Medical University",
+          "city": "Almaty",
+          "fees": "$3,000 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#16 in Kazakhstan",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/kazakh-russian-medical-university.webp",
+          "type": "Private"
         }
       ]
     },
@@ -156,7 +471,7 @@
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
-          "id": 11,
+          "id": 37,
           "name": "Tbilisi State Medical University",
           "city": "Tbilisi",
           "fees": "$5,000 - $7,000 per year",
@@ -167,7 +482,7 @@
           "image": "https://images.shiksha.com/mediadata/images/1702625100phpu2Kbnu.jpeg"
         },
         {
-          "id": 12,
+          "id": 38,
           "name": "Batumi Shota Rustaveli State University",
           "city": "Batumi",
           "fees": "$4,000 - $6,000 per year",
@@ -176,6 +491,94 @@
           "medium": "English",
           "ranking": "#2 in Georgia",
           "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/CAMPUS_4ZetiLIiP.webp?tr=w-3840"
+        },
+        {
+          "id": 39,
+          "name": "Ivane Javakhishvili State Medical University",
+          "city": "Tbilisi",
+          "fees": "$4,500 - $6,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Georgia",
+          "image": "https://mediplor.com/wp-content/uploads/2023/05/Ivane-Javakhishvili-University-Tbilisi-State.webp"
+        },
+        {
+          "id": 40,
+          "name": "Akaki Tsereteli State University",
+          "city": "Kutaisi",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#4 in Georgia",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/Akaki-Tsereteli-State-University.webp"
+        },
+        {
+          "id": 41,
+          "name": "David Tvildiani State University",
+          "city": "Kutaisi",
+          "fees": "$3,500 - $5,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#5 in Georgia",
+          "image": "https://www.eklavyaoverseas.com/assets/images/david-tvildiani-medical-university.jpg"
+        },
+        {
+          "id": 42,
+          "name": "Petre Shotadze State University",
+          "city": "Gori",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#6 in Georgia",
+          "image": "https://gmfadmission.in/wp-content/uploads/2020/06/Petre-Shotadze-Tbilisi-Medical-Academy.jpg"
+        },
+        {
+          "id": 43,
+          "name": "Gori State Medical University",
+          "city": "Gori",
+          "fees": "$3,500 - $5,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#7 in Georgia",
+          "image": "https://www.edugainoverseas.com/wp-content/uploads/2023/02/GORI-STATE-TEACHING-UNIVERSITY.png"
+        },
+        {
+          "id": 44,
+          "name": "Telavi State Medical University",
+          "city": "Telavi",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#8 in Georgia",
+          "image": "https://www.edugainoverseas.com/wp-content/uploads/2023/02/Telavi-Iakob-Gogebashvili-State-University.png"
+        },
+        {
+          "id": 45,
+          "name": "Samtskhe-Javakheti State Medical University",
+          "city": "Samtskhe",
+          "fees": "$3,500 - $5,500 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#9 in Georgia",
+          "image": "https://image.free-apply.com/gallery/l/uni/gallery/lg/1026800005/122e1630a9c63fb4924c9e156bc5f952bd9c0bb8.jpg?s=640"
+        },
+        {
+          "id": 46,
+          "name": "Sokhumi State Medical University",
+          "city": "Sokhumi",
+          "fees": "$3,000 - $5,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#10 in Georgia",
+          "image": "https://www.edugainoverseas.com/wp-content/uploads/2023/02/SUKHUMI-STATE-UNIVERSITY.png"
         }
       ]
     },
@@ -189,7 +592,7 @@
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
-          "id": 13,
+          "id": 47,
           "name": "Dhaka Medical College",
           "city": "Dhaka",
           "fees": "$4,000 - $6,000 per year",
@@ -197,20 +600,207 @@
           "recognition": "NMC, WHO, FAIMER",
           "medium": "English",
           "ranking": "#1 in Bangladesh",
-          "image": "https://dmch.gov.bd/wp-content/uploads/2022/10/dmch-picture-1200x674.jpg"
+          "image": "https://gmfadmission.in/wp-content/uploads/2021/06/pop.png"
         },
         {
-          "id": 14,
-          "name": "Bangabandhu Sheikh Mujib Medical University",
+          "id": 48,
+          "name": "Bangladesh Medical College",
           "city": "Dhaka",
-          "fees": "$5,000 - $7,000 per year",
+          "fees": "$3,500 - $5,000 per year",
           "duration": "5 years",
           "recognition": "NMC, WHO, FAIMER",
           "medium": "English",
           "ranking": "#2 in Bangladesh",
-          "image": "https://www.rmcedu.com/_next/image/?url=https%3A%2F%2Fdash.rmcedu.com%2Fuploads%2Fbangabandhu_sheikh_mujib_medical_university_and_hospital1_867e52c131.webp&w=1920&q=75",
-          "type": "Government"
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/dhaka-national-medical-college.webp"
+        },
+        {
+          "id": 49,
+          "name": "Sir Salimullah Medical College",
+          "city": "Dhaka",
+          "fees": "$4,000 - $5,500 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Bangladesh",
+          "image": "https://www.rmcedu.com/_next/image/?url=https%3A%2F%2Fdash.rmcedu.com%2Fuploads%2Fsir_salimullah_medical_college2_a28c9e54f6.webp&w=1920&q=75"
+        },
+        {
+          "id": 50,
+          "name": "Shaheed Suhrawardy Medical College",
+          "city": "Dhaka",
+          "fees": "$3,800 - $5,200 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#4 in Bangladesh",
+          "image": "https://www.justmbbs.com/img/college/bangladesh/shaheed-suhrawardy-medical-college-banner.jpg"
+        },
+        {
+          "id": 51,
+          "name": "Mymensingh Medical College",
+          "city": "Mymensingh",
+          "fees": "$3,200 - $4,500 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#5 in Bangladesh",
+          "image": "https://i.ytimg.com/vi/WLfNAHXlMyg/maxresdefault.jpg"
+        },
+        {
+          "id": 52,
+          "name": "Rajshahi Medical College",
+          "city": "Rajshahi",
+          "fees": "$2,800 - $4,200 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#6 in Bangladesh",
+          "image": "https://rmc.edu.bd/wp-content/uploads/2017/06/unnamed3.jpg"
+        },
+        {
+          "id": 53,
+          "name": "Chittagong Medical College",
+          "city": "Chittagong",
+          "fees": "$3,500 - $4,500 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#7 in Bangladesh",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFPOGsXPr4cWTDeGmTBN6xi5_kqunipHTow&s"
+        },
+        {
+          "id": 54,
+          "name": "Khulna Medical College",
+          "city": "Khulna",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#8 in Bangladesh",
+          "image": "https://www.rmcedu.com/_next/image/?url=https%3A%2F%2Fdash.rmcedu.com%2Fuploads%2Fkhulna_medical_college_and_hospital2_319adcb580.webp&w=1920&q=75"
+        },
+        {
+          "id": 55,
+          "name": "Rangpur Medical College",
+          "city": "Rangpur",
+          "fees": "$2,200 - $3,800 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#9 in Bangladesh",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/11/rangpur-community-medical-college-university.webp"
+        },
+        {
+          "id": 56,
+          "name": "Comilla Medical College",
+          "city": "Comilla",
+          "fees": "$2,000 - $3,800 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#10 in Bangladesh",
+          "image": "https://cache.careers360.mobi/media/colleges/social-media/media-gallery/59172/2024/6/11/Campus%20Entrance%20View%20of%20Comilla%20Medical%20College%20Cumilla_Campus-View.png"
+        },
+        {
+          "id": 57,
+          "name": "Sylhet Medical College",
+          "city": "Sylhet",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#11 in Bangladesh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Sylhet_Women%27s_Medical_College.jpg"
+        },
+        {
+          "id": 58,
+          "name": "Barisal Medical College",
+          "city": "Barisal",
+          "fees": "$2,800 - $4,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#12 in Bangladesh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Sher-e-Bangla_Medical_College_Hospital%2C_Barisal.jpg/3840px-Sher-e-Bangla_Medical_College_Hospital%2C_Barisal.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+        },
+        {
+          "id": 59,
+          "name": "M. A. Gafur Medical College",
+          "city": "Dhaka",
+          "fees": "$3,000 - $4,500 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#13 in Bangladesh",
+          "image": "https://content.jdmagicbox.com/comp/malappuram/01/9999pmulblrstd1100701/catalogue/dr-gafoor-memorial-mes-mampad-college-mampad-malappuram-mechanical-engineering-colleges-ZvDwANfhrh.jpg"
+        },
+        {
+          "id": 60,
+          "name": "Sher-e-Bangla Medical College",
+          "city": "Dhaka",
+          "fees": "$2,500 - $4,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#14 in Bangladesh",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Shere_Bangla_Medical_College.jpg"
+        },
+        {
+          "id": 61,
+          "name": "Shaheed Tajuddin Ahmed Medical College",
+          "city": "Dhaka",
+          "fees": "$2,200 - $3,800 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#15 in Bangladesh",
+          "image": "https://stamc.edu.bd/wp-content/uploads/2022/10/cover-photo.png"
+        },
+        {
+          "id": 62,
+          "name": "Ibrahim Medical College",
+          "city": "Dhaka",
+          "fees": "$2,000 - $3,800 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#16 in Bangladesh",
+          "image": "https://www.justmbbs.com/img/college/bangladesh/ibrahim-medical-college-banner.jpg"
+        },
+        {
+          "id": 63,
+          "name": "Kumudini Medical College",
+          "city": "Kumudini",
+          "fees": "$1,800 - $3,200 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#17 in Bangladesh",
+          "image": "https://www.smileeducation.in/wp-content/uploads/2021/01/Kumudini-Womens-Medical-College.png"
+        },
+        {
+          "id": 64,
+          "name": "Anwer Khan Modern Medical College",
+          "city": "Dhaka",
+          "fees": "$3,500 - $4,500 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#18 in Bangladesh",
+          "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/anwer-khan-modern-medical-college.webp"
+        },
+        {
+          "id": 65,
+          "name": "Jalalabad Medical College",
+          "city": "Jalalabad",
+          "fees": "$1,500 - $3,000 per year",
+          "duration": "5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#19 in Bangladesh",
+          "image": "https://www.riaoverseas.com/wp-content/uploads/2020/05/jalalabad-state-medical-university-5.png"
         }
+       
       ]
     },
     {
@@ -223,7 +813,7 @@
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
-          "id": 15,
+          "id": 81,
           "name": "Tashkent Medical Academy",
           "city": "Tashkent",
           "fees": "$3,000 - $4,500 per year",
@@ -234,7 +824,7 @@
           "image": "https://universityinsights.in/wp-content/uploads/2024/12/9-Tashkent-Medical-Academy-2.webp"
         },
         {
-          "id": 16,
+          "id": 82,
           "name": "Samarkand State Medical University",
           "city": "Samarkand",
           "fees": "$2,500 - $4,000 per year",

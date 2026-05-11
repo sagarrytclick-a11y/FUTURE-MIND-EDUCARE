@@ -90,7 +90,7 @@ const StatesPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-[#f5f9ff] flex items-center justify-center px-4">
         <div className="bg-white shadow-xl rounded-3xl p-10 text-center max-w-md w-full">
-          <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-6">
             <span className="text-red-600 text-3xl">!</span>
           </div>
 
@@ -141,12 +141,12 @@ const StatesPage: React.FC = () => {
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-800 to-cyan-700 text-white">
         {/* Blur Circles */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-400/20 rounded-lg blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-lg blur-3xl"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-full px-5 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md rounded-lg px-5 py-2 mb-8">
               <FaMapMarkedAlt className="text-cyan-300" />
               <span className="text-sm font-medium">
                 Explore MBBS Colleges State Wise
@@ -212,7 +212,7 @@ const StatesPage: React.FC = () => {
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-14">
           <div>
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold mb-4">
               All States
             </span>
 
@@ -270,7 +270,7 @@ const StatesPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                   {/* Badge */}
-                  <div className="absolute top-5 left-5 bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white text-sm font-semibold">
+                  <div className="absolute top-5 left-5 bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg text-white text-sm font-semibold">
                     MBBS State
                   </div>
 
@@ -319,7 +319,7 @@ const StatesPage: React.FC = () => {
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                        <span className="w-3 h-3 rounded-lg bg-green-500"></span>
 
                         <span className="text-gray-700">
                           Government Colleges
@@ -333,7 +333,7 @@ const StatesPage: React.FC = () => {
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="w-3 h-3 rounded-full bg-purple-500"></span>
+                        <span className="w-3 h-3 rounded-lg bg-purple-500"></span>
 
                         <span className="text-gray-700">
                           Private Colleges
@@ -352,7 +352,7 @@ const StatesPage: React.FC = () => {
                       Explore Colleges
                     </span>
 
-                    <div className="w-12 h-12 rounded-full bg-blue-700 text-white flex items-center justify-center group-hover:translate-x-2 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-lg bg-blue-700 text-white flex items-center justify-center group-hover:translate-x-2 transition-transform duration-300">
                       <FaArrowRight />
                     </div>
                   </div>
@@ -367,7 +367,7 @@ const StatesPage: React.FC = () => {
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-5">
+            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold mb-5">
               Benefits
             </span>
 

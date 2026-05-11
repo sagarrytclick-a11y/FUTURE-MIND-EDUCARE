@@ -131,7 +131,7 @@ const CollegeSlugPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-lg h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading college information...</p>
         </div>
       </div>
@@ -187,17 +187,17 @@ const CollegeSlugPage: React.FC = () => {
               {college.city} • {college.type} • {college.ranking}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <span className={`px-4 py-2 rounded-full text-sm font-semibold ${
+              <span className={`px-4 py-2 rounded-lg text-sm font-semibold ${
                 college.type === 'Government' 
                   ? 'bg-green-100 text-green-800' 
                   : 'bg-purple-100 text-purple-800'
               }`}>
                 {college.type}
               </span>
-              <span className="bg-white text-black bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-white text-black bg-opacity-20 px-4 py-2 rounded-lg text-sm font-semibold">
                 {college.recognition}
               </span>
-              <span className="bg-white text-black bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-white text-black bg-opacity-20 px-4 py-2 rounded-lg text-sm font-semibold">
                 {college.seats} Seats Available
               </span>
             </div>
@@ -236,7 +236,7 @@ const CollegeSlugPage: React.FC = () => {
                     <h3 className="text-sm font-medium text-gray-500 mb-1">Type</h3>
                     <p className="font-semibold text-gray-900">{college.type}</p>
                     {college.type && (
-                      <span className={`inline-block ml-2 px-2 py-1 text-xs font-medium rounded-full ${
+                      <span className={`inline-block ml-2 px-2 py-1 text-xs font-medium rounded-lg ${
                         college.type === 'Government' 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-orange-100 text-orange-800'
@@ -279,19 +279,19 @@ const CollegeSlugPage: React.FC = () => {
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg"></span>
                     <span className="text-gray-600">Modern Infrastructure</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg"></span>
                     <span className="text-gray-600">Experienced Faculty</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg"></span>
                     <span className="text-gray-600">Clinical Training</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg"></span>
                     <span className="text-gray-600">Research Facilities</span>
                   </div>
                 </div>
@@ -309,15 +309,15 @@ const CollegeSlugPage: React.FC = () => {
                 <h4 className="font-semibold text-blue-900 mb-2">Eligibility Criteria</h4>
                 <ul className="space-y-2 text-blue-800">
                   <li className="flex items-start space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg mt-2 shrink-0"></span>
                     <span>Minimum 17 years of age</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg mt-2 shrink-0"></span>
                     <span>Physics, Chemistry, Biology in 10+2</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></span>
+                    <span className="w-2 h-2 bg-blue-600 rounded-lg mt-2 shrink-0"></span>
                     <span>Valid NEET score as per cutoff</span>
                   </li>
                 </ul>

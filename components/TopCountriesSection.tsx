@@ -98,7 +98,7 @@ const TopCountriesSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,#ffffff)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-full" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-lg" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -106,7 +106,7 @@ const TopCountriesSection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
             <FaGlobeAsia className="text-blue-600 text-sm" />
 
             <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
@@ -181,7 +181,7 @@ const TopCountriesSection: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                     {/* UNIVERSITIES */}
-                    <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                    <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm">
                       <div className="flex items-center gap-2">
                         <FaUniversity className="text-blue-600 text-xs" />
 
@@ -216,7 +216,7 @@ const TopCountriesSection: React.FC = () => {
 
   {/* COURSE TAG */}
   <div className="mt-5">
-    <span className="inline-flex items-center bg-blue-50 text-blue-700 text-xs font-bold px-4 py-2 rounded-full border border-blue-100">
+    <span className="inline-flex items-center bg-blue-50 text-blue-700 text-xs font-bold px-4 py-2 rounded-lg border border-blue-100">
       {country.courses}
     </span>
   </div>
@@ -275,7 +275,7 @@ const TopCountriesSection: React.FC = () => {
               text-white
               h-14
               px-8
-              rounded-full
+              rounded-lg
               font-bold
               text-sm
               shadow-[0_15px_35px_rgba(37,99,235,0.25)]

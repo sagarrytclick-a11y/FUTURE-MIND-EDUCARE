@@ -202,7 +202,7 @@ const TopStatesSection: React.FC = () => {
               text-white
               px-8
               py-4
-              rounded-full
+              rounded-lg
               font-bold
               shadow-lg
               hover:scale-105

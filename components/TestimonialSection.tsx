@@ -210,7 +210,7 @@ const TestimonialSection: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`transition-all duration-300 rounded-full ${
+                className={`transition-all duration-300 rounded-lg ${
                   currentIndex === index
                     ? 'w-10 h-3 bg-blue-600'
                     : 'w-3 h-3 bg-slate-300 hover:bg-slate-400'

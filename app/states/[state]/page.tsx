@@ -173,7 +173,7 @@ const StatePage: React.FC = () => {
           </div>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-lg mb-6">
               <FaGraduationCap />
               <span className="text-sm font-medium">
                 MBBS Admission 2026
@@ -194,7 +194,7 @@ const StatePage: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <FaUniversity className="text-2xl text-blue-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-full text-blue-100">
+                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
                     Colleges
                   </span>
                 </div>
@@ -211,7 +211,7 @@ const StatePage: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <FaHospital className="text-2xl text-green-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-full text-blue-100">
+                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
                     Seats
                   </span>
                 </div>
@@ -228,7 +228,7 @@ const StatePage: React.FC = () => {
               <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
                 <div className="flex items-center justify-between mb-4">
                   <FaStar className="text-2xl text-yellow-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-full text-blue-100">
+                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
                     Govt
                   </span>
                 </div>
@@ -306,7 +306,7 @@ const StatePage: React.FC = () => {
 
                 <div className="absolute top-4 left-4">
                   <span
-                    className={`px-4 py-2 rounded-full text-xs font-bold shadow-lg ${
+                    className={`px-4 py-2 rounded-lg text-xs font-bold shadow-lg ${
                       college.type === "Government"
                         ? "bg-green-500 text-white"
                         : "bg-purple-500 text-white"
@@ -317,7 +317,7 @@ const StatePage: React.FC = () => {
                 </div>
 
                 {college.ranking && (
-                  <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-2 rounded-full text-xs font-bold shadow-lg">
+                  <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-2 rounded-lg text-xs font-bold shadow-lg">
                     {college.ranking}
                   </div>
                 )}
@@ -390,7 +390,7 @@ const StatePage: React.FC = () => {
         <div className="mt-20 bg-white rounded-[32px] shadow-xl border border-slate-100 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-10 lg:p-14">
-              <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-5">
+              <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold mb-5">
                 Medical Education
               </span>
 
@@ -415,8 +415,8 @@ const StatePage: React.FC = () => {
                     key={index}
                     className="flex items-start gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-0.5">
-                      <div className="w-2 h-2 rounded-full bg-white"></div>
+                    <div className="w-6 h-6 rounded-lg bg-blue-600 flex items-center justify-center mt-0.5">
+                      <div className="w-2 h-2 rounded-lg bg-white"></div>
                     </div>
 
                     <p className="text-slate-700 font-medium">{item}</p>
