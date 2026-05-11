@@ -47,7 +47,7 @@ const AwardsAchievementsSection: React.FC = () => {
                 "
               >
                 <img
-                  src="https://argroupofeducation.com/wp-content/uploads/elementor/thumbs/AR-Group-of-Education_page-0001-1-qn31g6ia73qcl8addivrjtram0igpuw0octpj2mfck.jpg"
+                  src="/paper/image-1.png"
                   alt="Award Certificate"
                   className="w-[230px] md:w-[260px] object-cover"
                 />
@@ -69,7 +69,7 @@ const AwardsAchievementsSection: React.FC = () => {
                 "
               >
                 <img
-                  src="https://argroupofeducation.com/wp-content/uploads/elementor/thumbs/A-R-Group-of-Education_page-0001-1-e1713787042396-qn31gguiaa4i4xvcp5cnt95d593i2j12ds01t473g4.jpg"
+                  src="/paper/image-2.png"
                   alt="Achievement Certificate"
                   className="w-[230px] md:w-[260px] object-cover"
                 />

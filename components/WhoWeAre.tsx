@@ -55,7 +55,7 @@ const WhoWeAre: React.FC = () => {
 
               <div className="relative overflow-hidden rounded-[20px] sm:rounded-[24px] lg:rounded-[32px] border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
                 <img
-                  src="https://argroupofeducation.com/wp-content/uploads/2024/04/doctors-images.png"
+                  src="/medical.png"
                   alt="Future Mind Educare Team"
                   className="w-full h-[300px] sm:h-[350px] lg:h-[400px] object-cover"
                 />
