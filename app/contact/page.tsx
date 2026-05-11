@@ -144,14 +144,14 @@ const ContactPage: React.FC = () => {
     <div className="bg-[#f5f7ff] min-h-screen overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative py-24 bg-gradient-to-br from-[#071952] via-[#0B2447] to-[#19376D] text-white">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-lg blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/10 rounded-lg blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {/* LEFT */}
             <div>
-              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-5 py-2 rounded-full text-sm font-medium backdrop-blur-md mb-6">
+              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-5 py-2 rounded-lg text-sm font-medium backdrop-blur-md mb-6">
                 <FaUserGraduate />
                 FUTURE MIND EDUCARE
               </span>

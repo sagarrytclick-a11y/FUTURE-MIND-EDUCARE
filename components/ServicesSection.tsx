@@ -70,7 +70,7 @@ const ServicesSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-100 blur-3xl opacity-30 rounded-full" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-100 blur-3xl opacity-30 rounded-lg" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -78,7 +78,7 @@ const ServicesSection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           
           {/* BADGE */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
             <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
               Our Premium Services
             </span>
@@ -175,7 +175,7 @@ const ServicesSection: React.FC = () => {
             className="relative flex justify-center"
           >
             {/* GLOW */}
-            <div className="absolute inset-0 bg-blue-100 blur-3xl opacity-40 rounded-full" />
+            <div className="absolute inset-0 bg-blue-100 blur-3xl opacity-40 rounded-lg" />
 
             {/* IMAGE CARD */}
             <div className="relative bg-white rounded-[36px] border border-slate-200 overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.08)]">

@@ -112,7 +112,7 @@ const TopUniversitiesSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,#ffffff)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-full" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-lg" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -120,7 +120,7 @@ const TopUniversitiesSection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
             <FaGraduationCap className="text-blue-600 text-sm" />
 
             <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
@@ -186,7 +186,7 @@ const TopUniversitiesSection: React.FC = () => {
                         bg-white
                         border
                         border-slate-200
-                        rounded-[32px]
+                        rounded-lg
                         overflow-hidden
                         hover:border-blue-100
                         hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
@@ -195,7 +195,7 @@ const TopUniversitiesSection: React.FC = () => {
                       "
                     >
                       {/* TOP LINE */}
-                      <div className="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
+                      <div className="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20 rounded-lg" />
 
                       {/* IMAGE */}
                       <div className="relative h-[240px] overflow-hidden">
@@ -217,7 +217,7 @@ const TopUniversitiesSection: React.FC = () => {
 
                         {/* RANKING */}
                         {university.ranking && (
-                          <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+                          <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm">
                             <span className="text-xs font-bold text-slate-800">
                               {university.ranking}
                             </span>
@@ -239,7 +239,7 @@ const TopUniversitiesSection: React.FC = () => {
                         <div className="flex items-center gap-3 flex-wrap mb-5">
                           {university.type && (
                             <span
-                              className={`px-3 py-2 rounded-full text-xs font-bold ${
+                              className={`px-3 py-2 rounded-lg text-xs font-bold ${
                                 university.type === "Government"
                                   ? "bg-green-50 text-green-700 border border-green-100"
                                   : "bg-purple-50 text-purple-700 border border-purple-100"
@@ -250,7 +250,7 @@ const TopUniversitiesSection: React.FC = () => {
                           )}
 
                           {university.city && (
-                            <span className="px-3 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 flex items-center gap-2">
+                            <span className="px-3 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 flex items-center gap-2">
                               <FaMapMarkerAlt className="text-[10px]" />
                               {university.city}
                             </span>
@@ -300,6 +300,14 @@ const TopUniversitiesSection: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+            
+            <div className="flex justify-center mt-8">
+              <Link href="/colleges/mbbs-abroad">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                  View All Universities
+                </button>
+              </Link>
+            </div>
 
             {/* CTA */}
             <div className="mt-16 text-center">
@@ -321,7 +329,7 @@ const TopUniversitiesSection: React.FC = () => {
                   text-white
                   h-14
                   px-8
-                  rounded-full
+                  rounded-lg
                   font-bold
                   text-sm
                   shadow-[0_15px_35px_rgba(37,99,235,0.25)]

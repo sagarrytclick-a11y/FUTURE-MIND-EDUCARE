@@ -58,8 +58,8 @@ const AboutPage: React.FC = () => {
       {/* HERO SECTION */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-lg blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-300 rounded-lg blur-3xl"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4">
@@ -67,7 +67,7 @@ const AboutPage: React.FC = () => {
 
             {/* LEFT */}
             <div>
-              <span className="inline-block bg-white/10 border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <span className="inline-block bg-white/10 border border-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6">
                 Trusted MBBS Consultancy
               </span>
 

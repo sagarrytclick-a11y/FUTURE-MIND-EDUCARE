@@ -31,8 +31,8 @@ const FixedBottomCarousel: React.FC = () => {
         <div className="relative overflow-hidden border-t border-white/10 bg-[#071226]/95 backdrop-blur-xl shadow-2xl">
           
           {/* Glow */}
-          <div className="absolute -left-10 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-blue-500/20 blur-2xl sm:blur-3xl"></div>
-          <div className="absolute right-0 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-cyan-400/20 blur-2xl sm:blur-3xl"></div>
+          <div className="absolute -left-10 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-blue-500/20 blur-2xl sm:blur-3xl"></div>
+          <div className="absolute right-0 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-cyan-400/20 blur-2xl sm:blur-3xl"></div>
 
           <div className="relative py-1.5 sm:py-2">
             <div className="overflow-hidden">
@@ -40,10 +40,10 @@ const FixedBottomCarousel: React.FC = () => {
                 {duplicatedCountries.map((country, index) => (
                   <button
                     key={index}
-                    className="group flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/10 bg-white/5 px-2 sm:px-3 py-1 sm:py-1.5 text-white transition-all duration-300 hover:bg-blue-600 hover:border-blue-500"
+                    className="group flex items-center gap-1.5 sm:gap-2 rounded-lg border border-white/10 bg-white/5 px-2 sm:px-3 py-1 sm:py-1.5 text-white transition-all duration-300 hover:bg-blue-600 hover:border-blue-500"
                   >
                     {/* Icon */}
-                    <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-white/10">
+                    <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-lg bg-white/10">
                       <FaPaperPlane className="text-[8px] sm:text-[10px]" />
                     </div>
 

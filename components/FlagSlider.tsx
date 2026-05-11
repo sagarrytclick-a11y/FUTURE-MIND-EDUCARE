@@ -83,7 +83,7 @@ const FlagSlider = () => {
         <div className="flex flex-col items-center justify-center text-center mb-14">
 
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-5">
             <FaGlobeAsia className="text-blue-600 text-sm" />
 
             <span className="text-blue-700 text-xs font-bold tracking-wide uppercase">
@@ -113,7 +113,7 @@ const FlagSlider = () => {
       mt-8
       h-12
       px-7
-      rounded-full
+      rounded-lg
       border
       border-slate-200
       bg-white
@@ -201,7 +201,7 @@ const FlagSlider = () => {
                         {/* LEFT */}
                         <div className="flex items-center gap-4">
                           <div className="relative">
-                            <div className="absolute inset-0 bg-blue-100 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+                            <div className="absolute inset-0 bg-blue-100 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
 
                             <img
                               src={country.flag}

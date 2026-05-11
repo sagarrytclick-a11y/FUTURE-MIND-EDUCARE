@@ -157,7 +157,7 @@ const CountrySlugPage: React.FC = () => {
                 className="w-20 h-14 rounded-xl object-cover border border-white/20 shadow-2xl"
               />
 
-              <span className="bg-white/10 border border-white/20 text-white backdrop-blur-xl px-5 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-white/10 border border-white/20 text-white backdrop-blur-xl px-5 py-2 rounded-lg text-sm font-semibold">
                 Study MBBS Abroad
               </span>
             </div>
@@ -252,7 +252,7 @@ const CountrySlugPage: React.FC = () => {
 
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-bold ${
+                      className={`px-3 py-1 rounded-lg text-xs font-bold ${
                         college.type === "Government"
                           ? "bg-green-500 text-white"
                           : "bg-purple-500 text-white"
@@ -263,7 +263,7 @@ const CountrySlugPage: React.FC = () => {
                   </div>
 
                   {college.ranking && (
-                    <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                    <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded-lg text-sm font-bold shadow-lg">
                       {college.ranking}
                     </div>
                   )}

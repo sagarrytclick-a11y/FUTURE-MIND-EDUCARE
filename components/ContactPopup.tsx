@@ -69,11 +69,11 @@ const ContactPopup: React.FC = () => {
         {/* Header */}
         <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-7 py-7 text-white">
 
-          <div className="absolute -top-10 right-0 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+          <div className="absolute -top-10 right-0 h-40 w-40 rounded-lg bg-white/10 blur-3xl"></div>
 
           <button
             onClick={closePopup}
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 backdrop-blur hover:bg-white/25 transition"
+            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 backdrop-blur hover:bg-white/25 transition"
           >
             ✕
           </button>

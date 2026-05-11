@@ -97,7 +97,7 @@ const PrivacyPage: React.FC = () => {
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg mb-6">
               <FaLock className="text-cyan-300" />
               <span className="text-sm font-medium">
                 Your Data is Safe & Protected
@@ -157,7 +157,7 @@ const PrivacyPage: React.FC = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold"
+                className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold"
               >
                 <FaCheckCircle />
                 {item}
@@ -186,7 +186,7 @@ const PrivacyPage: React.FC = () => {
               <div className="space-y-4">
                 {section.content.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <span className="mt-2 w-2.5 h-2.5 rounded-full bg-cyan-500 shrink-0"></span>
+                    <span className="mt-2 w-2.5 h-2.5 rounded-lg bg-cyan-500 shrink-0"></span>
                     <p className="text-gray-600 leading-relaxed">{item}</p>
                   </div>
                 ))}
@@ -200,7 +200,7 @@ const PrivacyPage: React.FC = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold mb-4">
               Policies & Rights
             </span>
 
@@ -242,10 +242,10 @@ const PrivacyPage: React.FC = () => {
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
           <div className="bg-gradient-to-r from-blue-800 to-cyan-700 rounded-[32px] p-10 md:p-14 text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-lg blur-3xl"></div>
 
             <div className="relative z-10">
-              <span className="inline-block bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-5">
+              <span className="inline-block bg-white/10 border border-white/20 px-4 py-2 rounded-lg text-sm font-semibold mb-5">
                 Need Assistance?
               </span>
 

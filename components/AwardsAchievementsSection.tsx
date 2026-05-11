@@ -15,8 +15,8 @@ const AwardsAchievementsSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a,#121826,#1e293b)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-10 left-20 w-[300px] h-[300px] bg-blue-600/20 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-500/10 blur-3xl rounded-full" />
+      <div className="absolute top-10 left-20 w-[300px] h-[300px] bg-blue-600/20 blur-3xl rounded-lg" />
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-500/10 blur-3xl rounded-lg" />
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -120,7 +120,7 @@ const AwardsAchievementsSection: React.FC = () => {
             viewport={{ once: true }}
           >
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/10 mb-6">
               <FaAward className="text-blue-400 text-sm" />
 
               <span className="text-blue-300 text-xs font-bold tracking-widest uppercase">
@@ -161,7 +161,7 @@ const AwardsAchievementsSection: React.FC = () => {
                 text-white
                 h-14
                 px-8
-                rounded-full
+                rounded-lg
                 font-bold
                 text-sm
                 shadow-[0_15px_40px_rgba(37,99,235,0.30)]

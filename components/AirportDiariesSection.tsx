@@ -78,7 +78,7 @@ const AirportDiariesSection: React.FC = () => {
               gap-2
               px-4
               py-2
-              rounded-full
+              rounded-lg
               bg-blue-50
               border
               border-blue-100
@@ -150,7 +150,7 @@ const AirportDiariesSection: React.FC = () => {
                     font-bold
                     px-4
                     py-2
-                    rounded-full
+                    rounded-lg
                     tracking-wider
                     uppercase
                   "
@@ -197,7 +197,7 @@ const AirportDiariesSection: React.FC = () => {
                     text-white
                     px-5
                     py-3
-                    rounded-full
+                    rounded-lg
                     text-sm
                     font-bold
                     transition-all
@@ -231,7 +231,7 @@ const AirportDiariesSection: React.FC = () => {
                 text-white
                 px-8
                 py-4
-                rounded-full
+                rounded-lg
                 font-bold
                 shadow-lg
                 transition-all
@@ -252,7 +252,7 @@ const AirportDiariesSection: React.FC = () => {
                 text-slate-800
                 px-8
                 py-4
-                rounded-full
+                rounded-lg
                 font-bold
                 transition-all
                 duration-300

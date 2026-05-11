@@ -77,7 +77,7 @@ const MbbsAbroadSection: React.FC = () => {
     return (
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-lg h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading countries and colleges...</p>
         </div>
       </section>
@@ -96,7 +96,7 @@ const MbbsAbroadSection: React.FC = () => {
             Explore top medical universities across the globe. Get quality education at affordable fees 
             with globally recognized degrees and excellent career opportunities.
           </p>
-          <div className="mt-4 w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="mt-4 w-24 h-1.5 bg-blue-600 mx-auto rounded-lg"></div>
         </div>
 
         {/* Search and Filter */}
@@ -134,7 +134,7 @@ const MbbsAbroadSection: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
                     {country.universities}+ Universities
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">

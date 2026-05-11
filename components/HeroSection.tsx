@@ -20,9 +20,9 @@ const HeroSection = () => {
       
       {/* BACKGROUND DESIGN */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-120px] right-[-100px] h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px] rounded-full bg-blue-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
+        <div className="absolute top-[-120px] right-[-100px] h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px] rounded-lg bg-blue-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
 
-        <div className="absolute bottom-[-120px] left-[-100px] h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] lg:h-[300px] lg:w-[300px] rounded-full bg-cyan-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
+        <div className="absolute bottom-[-120px] left-[-100px] h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] lg:h-[300px] lg:w-[300px] rounded-lg bg-cyan-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
       </div>
 
       {/* CONTENT */}
@@ -39,7 +39,7 @@ const HeroSection = () => {
           >
 
             {/* TAG */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 sm:px-5 py-2 mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50 px-4 sm:px-5 py-2 mb-4 sm:mb-6">
               <FaStar className="text-yellow-500 text-sm" />
 
               <span className="text-sm font-semibold text-blue-700">
@@ -147,7 +147,7 @@ const HeroSection = () => {
                   group
                   h-12 sm:h-14
                   px-6 sm:px-8
-                  rounded-full
+                  rounded-lg
                   bg-blue-600
                   hover:bg-blue-700
                   text-white
@@ -176,7 +176,7 @@ const HeroSection = () => {
                 <button  className="
                   h-12 sm:h-14
                   px-6 sm:px-8
-                  rounded-full
+                  rounded-lg
                   border
                   border-gray-200
                   bg-white

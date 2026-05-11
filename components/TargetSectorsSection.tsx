@@ -43,7 +43,7 @@ const TargetSectorsSection: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-full" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-lg" />
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -51,7 +51,7 @@ const TargetSectorsSection: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto mb-16">
           
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
             <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
               Career Opportunities
             </span>

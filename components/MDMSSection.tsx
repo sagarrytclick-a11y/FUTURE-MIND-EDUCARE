@@ -57,7 +57,7 @@ const MDMSSection: React.FC = () => {
     return (
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-lg h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading states and PG colleges...</p>
         </div>
       </section>
@@ -76,7 +76,7 @@ const MDMSSection: React.FC = () => {
             Explore post-graduate medical courses across India. Get specialized training in various 
             medical disciplines with excellent career opportunities in premier institutions.
           </p>
-          <div className="mt-4 w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="mt-4 w-24 h-1.5 bg-blue-600 mx-auto rounded-lg"></div>
         </div>
 
         {/* Search and Filter */}
@@ -112,7 +112,7 @@ const MDMSSection: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent">
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
                     {state.colleges.length}+ Colleges
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -196,7 +196,7 @@ const MDMSSection: React.FC = () => {
           <p className="mb-6 text-blue-100">
             Get expert guidance for NEET PG counseling and secure admission in your desired MD/MS specialization.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-colors">
+          <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors">
             Get PG Counseling
           </button>
         </div>
