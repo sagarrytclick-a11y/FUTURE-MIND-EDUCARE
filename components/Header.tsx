@@ -280,7 +280,7 @@ const Header = () => {
                               `}
                             >
                               <img
-                                src='/header.png'
+                                src={loc.image}
                                 alt={loc.name}
                                 className="w-8 h-6 rounded-md object-cover mr-3"
                               />
