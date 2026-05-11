@@ -16,56 +16,56 @@ const FlagSlider = () => {
       name: 'India',
       slug: 'india',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/india.svg',
+        '/flag/india.svg',
       description: 'Top Medical Colleges',
     },
     {
       name: 'Bangladesh',
       slug: 'bangladesh',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/bangladesh.svg',
+        '/flag/bangladesh.svg',
       description: 'Affordable Education',
     },
     {
       name: 'Kyrgyzstan',
       slug: 'kyrgyzstan',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/kyrgyzstan.svg',
+        '/flag/kyrgyzstan.svg',
       description: 'Quality Medical Education',
     },
     {
       name: 'Kazakhstan',
       slug: 'kazakhstan',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/kazakhstan.svg',
+        '/flag/kazakhstan.svg',
       description: 'Modern Facilities',
     },
     {
       name: 'Uzbekistan',
       slug: 'uzbekistan',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/uzbekistan.svg',
+        '/flag/uzbekistan.svg',
       description: 'Recognized Universities',
     },
     {
       name: 'Georgia',
       slug: 'georgia',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/georgia.svg',
+        '/flag/georgia.svg',
       description: 'European Standards',
     },
     {
       name: 'Russia',
       slug: 'russia',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/russia-1.svg',
+        '/flag/russia.svg',
       description: 'Historic Medical Tradition',
     },
     {
       name: 'Nepal',
       slug: 'nepal',
       flag:
-        'https://argroupofeducation.com/wp-content/uploads/2024/04/nepal-1.svg',
+        '/flag/nepal.svg',
       description: 'Affordable Education',
     },
   ];

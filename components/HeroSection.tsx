@@ -35,31 +35,30 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-2xl"
+            className="max-w-2xl lg:max-w-3xl"
           >
+            {/* BADGE */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 sm:px-4 py-2 mb-4 sm:mb-6">
+              <FaStar className="text-yellow-500 text-xs sm:text-sm" />
 
-            {/* TAG */}
-            <div className="inline-flex items-center gap-2 rounded-lg border border-blue-100 bg-blue-50 px-4 sm:px-5 py-2 mb-4 sm:mb-6">
-              <FaStar className="text-yellow-500 text-sm" />
-
-              <span className="text-sm font-semibold text-blue-700">
-                Trusted MBBS Consultancy
+              <span className="text-xs sm:text-sm font-semibold text-blue-700">
+                Premium Medical Guidance
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] text-gray-900 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-tight text-gray-900">
               Build Your
               <span className="block text-blue-600 mt-1 sm:mt-2">
                 Medical Career
               </span>
-              <span className="block text-lg sm:text-xl lg:text-2xl xl:text-3xl mt-1 sm:mt-2 font-bold">
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
                 With Top Universities
               </span>
             </h1>
 
-            {/* TEXT */}
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-gray-600 max-w-xl">
+            {/* DESCRIPTION */}
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl leading-6 sm:leading-7 text-gray-600 max-w-2xl">
               Get complete guidance for MBBS admission in India & Abroad.
               From counseling to university selection — we help you at every step.
             </p>
