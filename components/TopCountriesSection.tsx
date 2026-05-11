@@ -70,7 +70,8 @@ const TopCountriesSection: React.FC = () => {
     return (
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black text-slate-900">
+          <div className="inline-block h-12 w-12 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin mx-auto"></div>
+          <h2 className="text-4xl font-black text-slate-900 mt-4">
             Loading Countries...
           </h2>
         </div>

@@ -146,17 +146,8 @@ const TopUniversitiesSection: React.FC = () => {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[30px] overflow-hidden border border-slate-200"
-              >
-                <div className="h-[240px] bg-slate-200 animate-pulse" />
-
-                <div className="p-6">
-                  <div className="h-5 bg-slate-200 rounded animate-pulse mb-4" />
-                  <div className="h-4 bg-slate-200 rounded animate-pulse mb-2" />
-                  <div className="h-4 bg-slate-200 rounded animate-pulse w-2/3" />
-                </div>
+              <div key={index} className="animate-pulse">
+                <div className="h-12 w-12 rounded-full border-4 border-gray-200 mx-auto"></div>
               </div>
             ))}
           </div>

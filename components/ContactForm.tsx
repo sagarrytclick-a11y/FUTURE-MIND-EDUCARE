@@ -199,7 +199,7 @@ const ContactForm: React.FC = () => {
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
-                    <svg className="animate-spin h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-5 w-5 mr-3 rounded-full" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 4-8v4a8 8 0 0-8 8zm0 4a8 8 0 0 8 4z"/>
                     </svg>

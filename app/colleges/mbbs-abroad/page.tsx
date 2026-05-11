@@ -280,7 +280,7 @@ const MbbsAbroadPage: React.FC = () => {
                             : "bg-blue-500"
                         }`}
                       >
-                        {college.type}
+                        {college.type || "Private"}
                       </span>
                     </div>
 

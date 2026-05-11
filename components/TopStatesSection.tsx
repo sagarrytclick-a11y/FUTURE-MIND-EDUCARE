@@ -50,7 +50,7 @@ const TopStatesSection: React.FC = () => {
     return (
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="text-slate-500 font-medium">Loading Top States...</p>
         </div>
       </section>

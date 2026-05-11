@@ -192,7 +192,7 @@ const CollegeSlugPage: React.FC = () => {
                   ? 'bg-green-100 text-green-800' 
                   : 'bg-purple-100 text-purple-800'
               }`}>
-                {college.type}
+                {college.type || 'Private'}
               </span>
               <span className="bg-white text-black bg-opacity-20 px-4 py-2 rounded-lg text-sm font-semibold">
                 {college.recognition}

@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { PopupProvider } from "@/contexts/PopupContext";
-import ContactPopup from "@/components/ContactPopup";
-import FloatingButton from "@/components/FloatingButton";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import FixedBottomCarousel from "@/components/FixedBottomCarousel";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -36,13 +31,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <PopupProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ContactPopup />
-          <FixedBottomCarousel />
-          <FloatingButton />
-          <WhatsAppButton />
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
         </PopupProvider>
       </body>
     </html>

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import connectDB from '@/lib/mongodb';
+import Enquiry from '@/models/Enquiry';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -20,6 +22,22 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Connect to database and save enquiry
+    console.log('📊 Connecting to database...');
+    await connectDB();
+    
+    console.log('💾 Saving enquiry to database...');
+    const enquiry = new Enquiry({
+      name,
+      email,
+      mobile,
+      courseInterest,
+      neetScore,
+    });
+    
+    await enquiry.save();
+    console.log('✅ Enquiry saved successfully with ID:', enquiry._id);
 
     // Check environment variables
     console.log('🔧 Environment check:');
