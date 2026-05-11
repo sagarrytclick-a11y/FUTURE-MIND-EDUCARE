@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
                     href={link.href}
                     className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    → {link.name}
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                     href={link.href}
                     className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    → {link.name}
+                    {link.name}
                   </Link>
                 </li>
               ))}

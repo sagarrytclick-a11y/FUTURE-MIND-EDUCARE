@@ -70,7 +70,7 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
 
           {/* Login Card */}
           <div className="bg-[#1E293B] border border-[#334155] rounded-2xl p-8 shadow-2xl">
-            <div className="mb-6">
+            <div className="mb-6 flex items-center flex-col">
               <h2 className="text-xl font-semibold text-[#F8FAFC] mb-2">Welcome Back</h2>
               <p className="text-[#94A3B8] text-sm">Enter your credentials to access the dashboard</p>
             </div>

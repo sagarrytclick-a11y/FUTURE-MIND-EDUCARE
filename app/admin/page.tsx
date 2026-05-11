@@ -15,6 +15,7 @@ import {
   FaUserCheck,
   FaClock,
   FaCheckCircle,
+  FaTrash,
 } from 'react-icons/fa';
 import AuthWrapper from './components/AuthWrapper';
 
@@ -134,6 +135,29 @@ const AdminPanel: React.FC = () => {
     }
   };
 
+  const deleteEnquiry = async (id: string) => {
+    if (!confirm('Are you sure you want to delete this enquiry? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/admin/enquiries?id=${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        fetchEnquiries();
+        fetchStats();
+        if (selectedEnquiry?._id === id) {
+          setShowDetails(false);
+          setSelectedEnquiry(null);
+        }
+      }
+    } catch (error) {
+      console.error('Error deleting enquiry:', error);
+    }
+  };
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'new':
@@ -209,14 +233,26 @@ const AdminPanel: React.FC = () => {
                 </div>
               </div>
 
+              <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6 hover:border-[#475569] transition-all hover:shadow-lg hover:shadow-[#F59E0B]/10">
+                <div className="flex items-center">
+                  <div className="p-3 bg-[#F59E0B]/20 rounded-lg">
+                    <FaClock className="text-[#F59E0B] text-xl" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">Pending</p>
+                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.statusStats?.new || 0}</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6 hover:border-[#475569] transition-all hover:shadow-lg hover:shadow-[#10B981]/10">
                 <div className="flex items-center">
                   <div className="p-3 bg-[#10B981]/20 rounded-lg">
-                    <FaCalendarAlt className="text-[#10B981] text-xl" />
+                    <FaCheckCircle className="text-[#10B981] text-xl" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">Today</p>
-                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.todayEnquiries}</p>
+                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">Resolved</p>
+                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.statusStats?.closed || 0}</p>
                   </div>
                 </div>
               </div>
@@ -224,23 +260,11 @@ const AdminPanel: React.FC = () => {
               <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6 hover:border-[#475569] transition-all hover:shadow-lg hover:shadow-[#8B5CF6]/10">
                 <div className="flex items-center">
                   <div className="p-3 bg-[#8B5CF6]/20 rounded-lg">
-                    <FaChartLine className="text-[#8B5CF6] text-xl" />
+                    <FaChartBar className="text-[#8B5CF6] text-xl" />
                   </div>
                   <div className="ml-4">
-                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">This Week</p>
-                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.weekEnquiries}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6 hover:border-[#475569] transition-all hover:shadow-lg hover:shadow-[#F59E0B]/10">
-                <div className="flex items-center">
-                  <div className="p-3 bg-[#F59E0B]/20 rounded-lg">
-                    <FaChartBar className="text-[#F59E0B] text-xl" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">This Month</p>
-                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.monthEnquiries}</p>
+                    <p className="text-xs text-[#94A3B8] uppercase tracking-wider">In Progress</p>
+                    <p className="text-2xl font-bold text-[#F8FAFC]">{stats.statusStats?.['in-progress'] || 0}</p>
                   </div>
                 </div>
               </div>
@@ -364,6 +388,13 @@ const AdminPanel: React.FC = () => {
                           className="text-[#0EA5E9] hover:text-[#38BDF8] transition-colors"
                         >
                           <FaEye />
+                        </button>
+                        <button
+                          onClick={() => deleteEnquiry(enquiry._id)}
+                          className="text-red-500 hover:text-red-400 transition-colors"
+                          title="Delete enquiry"
+                        >
+                          <FaTrash />
                         </button>
                         <select
                           value={enquiry.status}
