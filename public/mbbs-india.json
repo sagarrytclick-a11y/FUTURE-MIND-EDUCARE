@@ -196,7 +196,7 @@
           "recognition": "NMC, MCI",
           "ranking": "#11 in India",
           "type": "Government",
-          "image": "https://mycareersview.com/afile/mcv16743_mnr_dental_college1-4.jpg"
+          "image": "https://www.kem.edu/images/home-slide7.jpg"
         },
         {
           "id": 41,
@@ -1050,6 +1050,113 @@
           "ranking": "#25 in India",
           "type": "Government",
           "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_CBuT4FOpIJ.webp"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Madhya Pradesh",
+      "image": "https://static.toiimg.com/photo/msid-106486632,width-96,height-65.cms",
+      "description": "Heart of India with Growing Medical Education",
+      "colleges": [
+        {
+          "id": 101,
+          "name": "LNCT Medical College Indore",
+          "city": "Indore",
+          "fees": "₹9,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#60 in India",
+          "type": "Private",
+          "image": "https://content.jdmagicbox.com/v2/comp/indore/b7/0731px731.x731.220501221404.r6b7/catalogue/lnct-medical-college-indore-colleges-m91pthahsj.jpg"
+        },
+        {
+          "id": 102,
+          "name": "Sukh Sagar Medical College and Hospital",
+          "city": "Jabalpur",
+          "fees": "₹8,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#65 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2017/04/Sukh-Sagar-Medical-College-Hospital-Jabalpur-Madhya-Pradesh.jpg"
+        },
+        {
+          "id": 103,
+          "name": "Sri Satya Sai University of Technology & Medical Sciences",
+          "city": "Sehore",
+          "fees": "₹8,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC, MCI",
+          "ranking": "#68 in India",
+          "type": "Private",
+          "image": "https://content3.jdmagicbox.com/comp/bhopal/e5/0755px755.x755.200519160003.c2e5/catalogue/sri-satya-sai-university-of-technology-and-medical-sciences-bhopal-84omg7d406.jpg"
+        },
+        {
+          "id": 104,
+          "name": "RKDF Medical College & Research Centre Bhopal",
+          "city": "Bhopal",
+          "fees": "₹9,50,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#62 in India",
+          "type": "Private",
+          "image": "https://admissionuniverse.in/img/rkdf.jpeg"
+        },
+        {
+          "id": 105,
+          "name": "Ram Krishna Medical College Hospital and Research Centre",
+          "city": "Bhopal",
+          "fees": "₹8,80,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#67 in India",
+          "type": "Private",
+          "image": "https://www.moksh16.com/uploads/images/MBBS%20IN%20INDIA/MBBS%20In%20Madhya%20Pradesh/Ram-Krishna-College-Hospital-&-Research-Center_-Bhopal.webp"
+        },
+        {
+          "id": 106,
+          "name": "Amaltas Institute of Medical Science Dewas",
+          "city": "Dewas",
+          "fees": "₹9,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#61 in India",
+          "type": "Private",
+          "image": "https://amaltasuniversity.in/wp-content/uploads/2026/02/shared-image-53.jpeg"
+        },
+        {
+          "id": 107,
+          "name": "Index Medical College Indore",
+          "city": "Indore",
+          "fees": "₹9,00,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#58 in India",
+          "type": "Private",
+          "image": "https://indexgroup.co.in/nursing/images/slider1b.jpg"
+        },
+        {
+          "id": 108,
+          "name": "People's College of Medical Sciences Bhopal",
+          "city": "Bhopal",
+          "fees": "₹8,50,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#64 in India",
+          "type": "Private",
+          "image": "https://mbbsadvisor.in/madhyapradesh/images/peoples-college-of-medical-science.jpg"
+        },
+        {
+          "id": 109,
+          "name": "Rani Durgavati Medical College",
+          "city": "Rajgarh",
+          "fees": "₹7,80,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#70 in India",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2017/04/gmc_banda_entrance.jpg"
         }
       ]
     }
