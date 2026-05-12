@@ -10,17 +10,6 @@
       "courses": "MBBS, MD, MS",
       "colleges": [
         {
-          "id": 1,
-          "name": "Moscow State Medical University",
-          "city": "Moscow",
-          "fees": "$4,500 - $6,000 per year",
-          "duration": "6 years",
-          "recognition": "NMC, WHO, FAIMER",
-          "medium": "English",
-          "ranking": "#1 in Russia",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSny6HAPFc1e_-6CSsiRrd0MtsWXk8ASjdW1w&s"
-        },
-        {
           "id": 2,
           "name": "Saint Petersburg State Medical University",
           "city": "Saint Petersburg",
@@ -32,18 +21,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq8hZN3RNo34WnGdPNubZ-LSfbSKpGWmkV0g&s",
           "type": "Government"
         },
-        {
-          "id": 3,
-          "name": "Kazan Federal University",
-          "city": "Kazan",
-          "fees": "$3,500 - $5,000 per year",
-          "duration": "5 years",
-          "recognition": "NMC, WHO, FAIMER",
-          "medium": "English",
-          "ranking": "#3 in Russia",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSny6HAPFc1e_-6CSsiRrd0MtsWXk8ASjdW1w&s",
-          "type": "Government"
-        },
+      
         {
           "id": 4,
           "name": "Novosibirsk State Medical University",
