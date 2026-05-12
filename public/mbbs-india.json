@@ -964,96 +964,6 @@
       ]
     },
     {
-      "id": 6,
-      "name": "West Bengal",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwRx0zCRiDFVtkHf2H3CJBqURE6ec3hwf9Q&s",
-      "description": "Cultural Capital with Premier Medical Colleges",
-      "colleges": [
-        {
-          "id": 18,
-          "name": "Medical College Kolkata (MCK)",
-          "city": "Kolkata",
-          "fees": "₹2,500 per year",
-          "seats": 200,
-          "recognition": "NMC, MCI",
-          "ranking": "#8 in India",
-          "type": "Government",
-          "image": "https://www.moksh16.com/uploads/images/mck.webp"
-        },
-        {
-          "id": 19,
-          "name": "IPGMER and SSKM Hospital",
-          "city": "Kolkata",
-          "fees": "₹3,000 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#17 in India",
-          "type": "Government",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg/250px-%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Gujarat",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Gujarat_College_Ahmedabad_Anupam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
-      "description": "Developing State with Modern Medical Facilities",
-      "colleges": [
-        {
-          "id": 20,
-          "name": "B.J. Medical College (BJMC)",
-          "city": "Ahmedabad",
-          "fees": "₹2,000 per year",
-          "seats": 250,
-          "recognition": "NMC, MCI",
-          "ranking": "#19 in India",
-          "type": "Government",
-          "image": "https://medicalneetpg.com/_next/image?url=https%3A%2F%2Fi3c-medical-colleges-assets.blr1.digitaloceanspaces.com%2F2020%2F10%2F24%2F54223233169d47998d24a55cf98cbc6a.jpg&w=640&q=75"
-        },
-        {
-          "id": 21,
-          "name": "Medical College, Baroda",
-          "city": "Vadodara",
-          "fees": "₹2,500 per year",
-          "seats": 200,
-          "recognition": "NMC, MCI",
-          "ranking": "#22 in India",
-          "type": "Government",
-          "image": "https://www.medicalcollegebaroda.edu.in/img/6.jpg"
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Rajasthan",
-      "image": "https://www.rajasthandriver.com/img/travel-info/667x445_city-jaisalmer.jpg",
-      "description": "Desert State with Quality Medical Education",
-      "colleges": [
-        {
-          "id": 22,
-          "name": "S.M.S. Medical College",
-          "city": "Jaipur",
-          "fees": "₹2,000 per year",
-          "seats": 200,
-          "recognition": "NMC, MCI",
-          "ranking": "#20 in India",
-          "type": "Government",
-          "image": "https://image-static.collegedunia.com/public/college_data/images/appImage/9879_1443530382SMSMC_NEW.png"
-        },
-        {
-          "id": 23,
-          "name": "J.L.N. Medical College",
-          "city": "Ajmer",
-          "fees": "₹1,800 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#25 in India",
-          "type": "Government",
-          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_CBuT4FOpIJ.webp"
-        }
-      ]
-    },
-    {
       "id": 9,
       "name": "Madhya Pradesh",
       "image": "https://static.toiimg.com/photo/msid-106486632,width-96,height-65.cms",
@@ -1252,7 +1162,149 @@
           "recognition": "NMC, MCI",
           "ranking": "#90 in India",
           "type": "Private",
-          "image": "https://jnktmchmadhepura.org/assets/banner_4-6e0514e6.jpg"
+          "image": "https://www.jktmcm.in/wp-content/uploads/2020/03/college-building.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Uttarakhand",
+      "image": "https://static.toiimg.com/photo/msid-114174336,width-96,height-65.cms",
+      "description": "Himalayan State with Emerging Medical Education Hubs",
+      "colleges": [
+        {
+          "id": 119,
+          "name": "Graphic Era Institute of Medical Sciences",
+          "city": "Dehradun",
+          "fees": "₹10,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#50 in India",
+          "type": "Private",
+          "image": "https://geims.geu.ac.in/wp-content/uploads/2024/07/geims-academic-block-min.jpg"
+        },
+        {
+          "id": 120,
+          "name": "Gautam Buddha Chikitsa Mahavidyalaya, Dehradun",
+          "city": "Dehradun",
+          "fees": "₹9,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#55 in India",
+          "type": "Private",
+          "image": "https://www.edufever.com/wp-content/uploads/2022/03/Gautam-Buddha-Chikitsa-Mahavidyalaya-Dehradun.webp"
+        },
+        {
+          "id": 121,
+          "name": "Himalayan Institute of Medical Science, Dehradun",
+          "city": "Dehradun",
+          "fees": "₹9,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#52 in India",
+          "type": "Private",
+          "image": "https://srhu.edu.in/wp-content/uploads/2025/03/HIMS-Building-Exterior-e1684308920857.jpg"
+        },
+        {
+          "id": 122,
+          "name": "Shri Guru Ram Rai Institute of Medical Science",
+          "city": "Dehradun",
+          "fees": "₹8,50,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#58 in India",
+          "type": "Private",
+          "image": "https://www.justmbbs.com/img/college/uttarakhand/shri-guru-ram-rai-institute-of-medical-%26-health-sciences-dehradun-banner.jpg"
+        }
+      ]
+    } , 
+      {
+      "id": 6,
+      "name": "West Bengal",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwRx0zCRiDFVtkHf2H3CJBqURE6ec3hwf9Q&s",
+      "description": "Cultural Capital with Premier Medical Colleges",
+      "colleges": [
+        {
+          "id": 18,
+          "name": "Medical College Kolkata (MCK)",
+          "city": "Kolkata",
+          "fees": "₹2,500 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#8 in India",
+          "type": "Government",
+          "image": "https://www.moksh16.com/uploads/images/mck.webp"
+        },
+        {
+          "id": 19,
+          "name": "IPGMER and SSKM Hospital",
+          "city": "Kolkata",
+          "fees": "₹3,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#17 in India",
+          "type": "Government",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg/250px-%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Gujarat",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Gujarat_College_Ahmedabad_Anupam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "description": "Developing State with Modern Medical Facilities",
+      "colleges": [
+        {
+          "id": 20,
+          "name": "B.J. Medical College (BJMC)",
+          "city": "Ahmedabad",
+          "fees": "₹2,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#19 in India",
+          "type": "Government",
+          "image": "https://medicalneetpg.com/_next/image?url=https%3A%2F%2Fi3c-medical-colleges-assets.blr1.digitaloceanspaces.com%2F2020%2F10%2F24%2F54223233169d47998d24a55cf98cbc6a.jpg&w=640&q=75"
+        },
+        {
+          "id": 21,
+          "name": "Medical College, Baroda",
+          "city": "Vadodara",
+          "fees": "₹2,500 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#22 in India",
+          "type": "Government",
+          "image": "https://www.medicalcollegebaroda.edu.in/img/6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Rajasthan",
+      "image": "https://www.rajasthandriver.com/img/travel-info/667x445_city-jaisalmer.jpg",
+      "description": "Desert State with Quality Medical Education",
+      "colleges": [
+        {
+          "id": 22,
+          "name": "S.M.S. Medical College",
+          "city": "Jaipur",
+          "fees": "₹2,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "#20 in India",
+          "type": "Government",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/appImage/9879_1443530382SMSMC_NEW.png"
+        },
+        {
+          "id": 23,
+          "name": "J.L.N. Medical College",
+          "city": "Ajmer",
+          "fees": "₹1,800 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#25 in India",
+          "type": "Government",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Cover_CBuT4FOpIJ.webp"
         }
       ]
     }
