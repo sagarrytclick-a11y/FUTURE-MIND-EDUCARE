@@ -1159,6 +1159,102 @@
           "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2017/04/gmc_banda_entrance.jpg"
         }
       ]
+    },
+    {
+      "id": 10,
+      "name": "Bihar",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixXaS1vQNHGjZJyZNssjoP-PSDdAzcm103bukk1DiTm_Qbb3SQw164YvvmppO_6qkVxlyi1p1Ggy09gXLF_OgnExo-2w_Q346ifbKKVzge2wrziXKkRAJcHNDOdi5OT95hCrilwhrcAUGR/s1600/15AWAS+BOARD.jpg",
+      "description": "State with Rich History and Growing Medical Facilities",
+      "colleges": [
+        {
+          "id": 111,
+          "name": "Lord Buddha Koshi Medical College & Hospital",
+          "city": "Saharsa",
+          "fees": "₹8,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#75 in India",
+          "type": "Private",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Lbkmch.jpge.jpg"
+        },
+        {
+          "id": 112,
+          "name": "Mata Gujri Memorial Medical College",
+          "city": "Kishanganj",
+          "fees": "₹7,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#78 in India",
+          "type": "Private",
+          "image": "https://www.matagujriuniversity.com/wp-content/uploads/2022/02/s11.jpg"
+        },
+        {
+          "id": 113,
+          "name": "Radha Devi Jageshwari Memorial Medical College Muzaffarpur",
+          "city": "Muzaffarpur",
+          "fees": "₹7,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#80 in India",
+          "type": "Private",
+          "image": "https://rdjmmch.in/img/Slider/Slider12.png"
+        },
+        {
+          "id": 114,
+          "name": "Shree Narayan Medical Institute & Hospital Saharsa",
+          "city": "Saharsa",
+          "fees": "₹6,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#82 in India",
+          "type": "Private",
+          "image": "https://content.jdmagicbox.com/comp/saharsa/y2/9999p6478.6478.171109150240.x9y2/catalogue/shree-narayan-medical-institute-and-hospital-saharsa-ho-saharsa-hospitals-xw5vlgpa91.jpg"
+        },
+        {
+          "id": 115,
+          "name": "Narayan Medical College & Hospital Bihar",
+          "city": "Sasaram",
+          "fees": "₹6,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#72 in India",
+          "type": "Private",
+          "image": "https://nmch.ac.in/wp-content/uploads/2023/08/banner_1557936742-1170x550.jpg"
+        },
+        {
+          "id": 116,
+          "name": "Madhubani Medical College & Hospital Bihar",
+          "city": "Madhubani",
+          "fees": "₹5,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#85 in India",
+          "type": "Private",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2025/08/Madhubani-Medical-College.webp"
+        },
+        {
+          "id": 117,
+          "name": "Anugrah Narayan Magadh Medical College Gaya",
+          "city": "Gaya",
+          "fees": "₹5,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#88 in India",
+          "type": "Private",
+          "image": "https://www.edufever.com/wp-content/uploads/2021/12/Anugrah-Narayan-Magadh-Medical-College-and-Hospital-Gaya.webp"
+        },
+        {
+          "id": 118,
+          "name": "Jannayak Karpoori Thakur Medical College Madhepura",
+          "city": "Madhepura",
+          "fees": "₹4,80,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#90 in India",
+          "type": "Private",
+          "image": "https://jnktmchmadhepura.org/assets/banner_4-6e0514e6.jpg"
+        }
+      ]
     }
   ]
 }
