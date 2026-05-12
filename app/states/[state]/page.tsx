@@ -10,6 +10,8 @@ import {
   FaUniversity,
   FaArrowRight,
   FaStar,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
 
@@ -42,6 +44,8 @@ const StatePage: React.FC = () => {
   const [state, setState] = useState<StateData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const collegesPerPage = 6;
 
   const { openPopup, updateFormData } = usePopup();
 
@@ -134,6 +138,16 @@ const StatePage: React.FC = () => {
   const privateColleges = state.colleges.filter(
     (c) => c.type === "Private"
   ).length;
+
+  // Pagination logic
+  const indexOfLastCollege = currentPage * collegesPerPage;
+  const indexOfFirstCollege = indexOfLastCollege - collegesPerPage;
+  const currentColleges = state.colleges.slice(indexOfFirstCollege, indexOfLastCollege);
+  const totalPages = Math.ceil(state.colleges.length / collegesPerPage);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -285,7 +299,7 @@ const StatePage: React.FC = () => {
 
         {/* COLLEGES GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {state.colleges.map((college) => (
+          {currentColleges.map((college) => (
             <div
               key={college.id}
               className="group bg-white rounded-[28px] overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
@@ -385,6 +399,71 @@ const StatePage: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* PAGINATION */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-2">
+              {/* Previous Button */}
+              <button
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <FaChevronLeft className="text-slate-600" />
+              </button>
+
+              {/* Page Numbers */}
+              <div className="flex items-center gap-1">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                  // Show first page, last page, current page, and pages around current
+                  if (
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  ) {
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => paginate(page)}
+                        className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
+                          currentPage === page
+                            ? "bg-blue-600 text-white"
+                            : "hover:bg-slate-50 text-slate-600"
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  }
+
+                  // Show ellipsis for gaps
+                  if (
+                    (page === 2 && currentPage > 3) ||
+                    (page === totalPages - 1 && currentPage < totalPages - 2)
+                  ) {
+                    return (
+                      <span key={page} className="px-2 text-slate-400">
+                        ...
+                      </span>
+                    );
+                  }
+
+                  return null;
+                })}
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={nextPage}
+                disabled={currentPage === totalPages}
+                className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <FaChevronRight className="text-slate-600" />
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* ABOUT SECTION */}
         <div className="mt-20 bg-white rounded-[32px] shadow-xl border border-slate-100 overflow-hidden">

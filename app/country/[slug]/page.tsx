@@ -12,6 +12,8 @@ import {
   FaCheckCircle,
   FaMapMarkerAlt,
   FaStar,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
 
@@ -49,6 +51,8 @@ const CountrySlugPage: React.FC = () => {
   const [country, setCountry] = useState<CountryData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const collegesPerPage = 6;
 
   useEffect(() => {
     const fetchCountry = async () => {
@@ -234,8 +238,22 @@ const CountrySlugPage: React.FC = () => {
         </div>
 
         {country.colleges && country.colleges.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {country.colleges.map((college) => (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {(() => {
+                // Pagination logic
+                const indexOfLastCollege = currentPage * collegesPerPage;
+                const indexOfFirstCollege = indexOfLastCollege - collegesPerPage;
+                const currentColleges = country.colleges.slice(indexOfFirstCollege, indexOfLastCollege);
+                const totalPages = Math.ceil(country.colleges.length / collegesPerPage);
+
+                const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+                const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+
+                return (
+                  <>
+                    {currentColleges.map((college) => (
               <div
                 key={college.id}
                 className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-purple-300 shadow-md hover:shadow-2xl transition-all duration-500"
@@ -353,7 +371,85 @@ const CountrySlugPage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+                  </>
+                );
+              })()}
+            </div>
+
+            {/* PAGINATION */}
+            {(() => {
+              const totalPages = Math.ceil((country.colleges?.length || 0) / collegesPerPage);
+              if (totalPages <= 1) return null;
+
+              const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+              const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+              const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+
+              return (
+                <div className="mt-12 flex items-center justify-center">
+                  <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-2">
+                    {/* Previous Button */}
+                    <button
+                      onClick={prevPage}
+                      disabled={currentPage === 1}
+                      className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <FaChevronLeft className="text-slate-600" />
+                    </button>
+
+                    {/* Page Numbers */}
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                        // Show first page, last page, current page, and pages around current
+                        if (
+                          page === 1 ||
+                          page === totalPages ||
+                          (page >= currentPage - 1 && page <= currentPage + 1)
+                        ) {
+                          return (
+                            <button
+                              key={page}
+                              onClick={() => paginate(page)}
+                              className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
+                                currentPage === page
+                                  ? "bg-purple-600 text-white"
+                                  : "hover:bg-slate-50 text-slate-600"
+                              }`}
+                            >
+                              {page}
+                            </button>
+                          );
+                        }
+
+                        // Show ellipsis for gaps
+                        if (
+                          (page === 2 && currentPage > 3) ||
+                          (page === totalPages - 1 && currentPage < totalPages - 2)
+                        ) {
+                          return (
+                            <span key={page} className="px-2 text-slate-400">
+                              ...
+                            </span>
+                          );
+                        }
+
+                        return null;
+                      })}
+                    </div>
+
+                    {/* Next Button */}
+                    <button
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages}
+                      className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                      <FaChevronRight className="text-slate-600" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })()}
+          </>
         ) : (
           <div className="bg-white rounded-3xl p-12 text-center shadow-lg">
             <h3 className="text-3xl font-bold text-slate-900 mb-4">
