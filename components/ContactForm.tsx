@@ -1,7 +1,8 @@
 "use client"
 import React, { useState } from 'react';
+import { SITE_IDENTITY } from '../app/config/site_identity';
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -222,7 +223,7 @@ const ContactForm: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-sm sm:text-base">Phone:</p>
-                  <p className="text-blue-200 text-sm sm:text-base break-words">+91-7076909090</p>
+                  <p className="text-blue-200 text-sm sm:text-base break-words">{SITE_IDENTITY.contact.phone}</p>
                 </div>
               </div>
               
@@ -232,7 +233,7 @@ const ContactForm: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-sm sm:text-base">Email:</p>
-                  <p className="text-blue-200 text-sm sm:text-base break-words">info@argroupofeducation.com</p>
+                  <p className="text-blue-200 text-sm sm:text-base break-words">{SITE_IDENTITY.contact.email}</p>
                 </div>
               </div>
               
@@ -243,7 +244,9 @@ const ContactForm: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-sm sm:text-base">Address:</p>
-                  <p className="text-blue-200 text-sm sm:text-base leading-relaxed">523, 5th Floor, Wave Silver Tower, Sec-18, Noida, UP-201301</p>
+                  <p className="text-blue-200 text-sm sm:text-base leading-relaxed">
+                    {SITE_IDENTITY.address.building}, {SITE_IDENTITY.address.landmark}, {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city} - {SITE_IDENTITY.address.pincode}
+                  </p>
                 </div>
               </div>
             </div>
@@ -251,8 +254,8 @@ const ContactForm: React.FC = () => {
             {/* Office Hours */}
             <div className="pt-4 sm:pt-6 border-t border-blue-800">
               <h4 className="font-semibold mb-2 text-sm sm:text-base">Office Hours</h4>
-              <p className="text-blue-200 text-sm sm:text-base">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-              <p className="text-blue-200 text-sm sm:text-base">Sunday: Closed</p>
+              <p className="text-blue-200 text-sm sm:text-base">Monday - Saturday: {SITE_IDENTITY.officeHours.mondayToSaturday}</p>
+              <p className="text-blue-200 text-sm sm:text-base">Sunday: {SITE_IDENTITY.officeHours.sunday}</p>
             </div>
           </div>
         </div>

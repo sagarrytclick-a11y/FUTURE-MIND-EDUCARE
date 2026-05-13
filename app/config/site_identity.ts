@@ -10,7 +10,7 @@ export const SITE_IDENTITY = {
     pincode: "400069"
   },
   contact: {
-    phone: "+91-7076909090",
+    phone: "+91-70769 09090",
     email: "info@futuremindeducare.com",
     googleMapsUrl: "https://share.google/wy9AJuMuQVABHu5eV"
   },

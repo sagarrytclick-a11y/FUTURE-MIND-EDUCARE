@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
       {/* Background Blur */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-lg"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-lg"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-400/10 blur-3xl rounded-lg"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
 

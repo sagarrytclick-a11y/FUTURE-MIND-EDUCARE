@@ -97,7 +97,7 @@ const CountrySlugPage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="h-14 w-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-slate-600 font-medium">
             Loading Country Details...
           </p>
@@ -120,7 +120,7 @@ const CountrySlugPage: React.FC = () => {
 
           <Link
             href="/colleges/mbbs-abroad"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
           >
             <FaArrowLeft />
             Back to Countries
@@ -141,7 +141,7 @@ const CountrySlugPage: React.FC = () => {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#12002f]/90 via-[#25005f]/80 to-[#5d00ff]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/80 to-blue-600/70"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -214,7 +214,7 @@ const CountrySlugPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
           <div>
-            <p className="text-purple-600 font-semibold uppercase tracking-wider mb-2">
+            <p className="text-blue-600 font-semibold uppercase tracking-wider mb-2">
               Top Medical Universities
             </p>
 
@@ -231,7 +231,7 @@ const CountrySlugPage: React.FC = () => {
 
               openPopup();
             }}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-7 py-3 rounded-2xl font-semibold shadow-lg shadow-purple-600/30 transition-all hover:scale-105"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-2xl font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-105"
           >
             Free Counseling
           </button>
@@ -256,7 +256,7 @@ const CountrySlugPage: React.FC = () => {
                     {currentColleges.map((college) => (
               <div
                 key={college.id}
-                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-purple-300 shadow-md hover:shadow-2xl transition-all duration-500"
+                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-md hover:shadow-2xl transition-all duration-500"
               >
                 {/* IMAGE */}
                 <div className="relative h-60 overflow-hidden">
@@ -273,7 +273,7 @@ const CountrySlugPage: React.FC = () => {
                       className={`px-3 py-1 rounded-lg text-xs font-bold ${
                         college.type === "Government"
                           ? "bg-green-500 text-white"
-                          : "bg-purple-500 text-white"
+                          : "bg-blue-500 text-white"
                       }`}
                     >
                       {college.type}
@@ -296,7 +296,7 @@ const CountrySlugPage: React.FC = () => {
 
                 {/* CONTENT */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 leading-snug group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 leading-snug group-hover:text-blue-600 transition-colors">
                     {college.name}
                   </h3>
 
@@ -306,7 +306,7 @@ const CountrySlugPage: React.FC = () => {
                         Tuition Fees
                       </span>
 
-                      <span className="font-bold text-purple-600">
+                      <span className="font-bold text-blue-600">
                         {college.fees}
                       </span>
                     </div>
@@ -359,7 +359,7 @@ const CountrySlugPage: React.FC = () => {
 
                         openPopup();
                       }}
-                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition-all"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all"
                     >
                       Apply Now
                     </button>
@@ -412,7 +412,7 @@ const CountrySlugPage: React.FC = () => {
                               onClick={() => paginate(page)}
                               className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
                                 currentPage === page
-                                  ? "bg-purple-600 text-white"
+                                  ? "bg-blue-600 text-white"
                                   : "hover:bg-slate-50 text-slate-600"
                               }`}
                             >
@@ -463,7 +463,7 @@ const CountrySlugPage: React.FC = () => {
 
             <Link
               href="/colleges/mbbs-abroad"
-              className="inline-flex bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-2xl font-semibold transition-all"
+              className="inline-flex bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-all"
             >
               Explore Other Countries
             </Link>
@@ -475,7 +475,7 @@ const CountrySlugPage: React.FC = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-purple-600 font-semibold uppercase tracking-wider mb-3">
+            <p className="text-blue-600 font-semibold uppercase tracking-wider mb-3">
               Benefits
             </p>
 
@@ -514,7 +514,7 @@ const CountrySlugPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-5">
                 Affordable MBBS Abroad
               </h3>
@@ -544,7 +544,7 @@ const CountrySlugPage: React.FC = () => {
 
               <button
                 onClick={() => openPopup()}
-                className="mt-8 bg-white text-purple-700 hover:bg-slate-100 px-6 py-3 rounded-2xl font-bold transition-all"
+                className="mt-8 bg-white text-blue-700 hover:bg-slate-100 px-6 py-3 rounded-2xl font-bold transition-all"
               >
                 Get Free Admission Guidance
               </button>

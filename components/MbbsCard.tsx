@@ -4,7 +4,7 @@ import { FaHospital, FaPlane, FaCheckCircle, FaArrowRight, FaGraduationCap, FaGl
 
 const MbbsCard = () => {
   return (
-   <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+   <section className="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
@@ -20,7 +20,7 @@ const MbbsCard = () => {
             <Link href="/colleges/mbbs-india">
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-cyan-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <div className="text-5xl font-black mb-2 flex items-center justify-center">
@@ -74,7 +74,7 @@ const MbbsCard = () => {
             <Link href="/colleges/mbbs-abroad">
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-600"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <div className="text-5xl font-black mb-2 flex items-center justify-center">
@@ -88,8 +88,8 @@ const MbbsCard = () => {
                 
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <FaGraduationCap className="text-purple-600 text-lg" />
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <FaGraduationCap className="text-blue-600 text-lg" />
                     </div>
                     <h4 className="text-xl font-bold text-gray-900">Global Medical Education</h4>
                   </div>
@@ -115,7 +115,7 @@ const MbbsCard = () => {
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <span className="text-sm text-gray-500">Discover global options</span>
-                    <div className="flex items-center gap-2 text-purple-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
                       <span>View Colleges</span>
                       <FaArrowRight className="text-sm" />
                     </div>

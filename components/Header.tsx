@@ -16,6 +16,7 @@ import {
 
 import { usePopup } from '../contexts/PopupContext';
 import Image from 'next/image';
+import { SITE_IDENTITY } from '../app/config/site_identity';
 
 interface College {
   id: number;
@@ -170,19 +171,19 @@ const Header = () => {
           {/* CONTACT */}
           <div className="hidden md:flex items-center gap-8">
             <a
-              href="tel:+919876543210"
+              href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
               className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
             >
               <FaPhoneAlt className="mr-2 text-blue-500" />
-              +91 98765 43210
+              {SITE_IDENTITY.contact.phone}
             </a>
 
             <a
-              href="mailto:info@mbbsguide.com"
+              href={`mailto:${SITE_IDENTITY.contact.email}`}
               className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
             >
               <FaEnvelope className="mr-2 text-blue-500" />
-              info@mbbsguide.com
+              {SITE_IDENTITY.contact.email}
             </a>
           </div>
         </div>
@@ -422,7 +423,7 @@ const Header = () => {
               px-7
               h-12
               rounded-lg
-              bg-[#2563EB]
+              bg-blue-600
               text-white
               font-bold
               text-sm
@@ -458,19 +459,19 @@ const Header = () => {
             <div className="p-4 sm:p-5 space-y-4 sm:space-y-5">
               <div className="border-b border-gray-200 pb-4 sm:pb-5">
                 <a
-                  href="tel:+919876543210"
+                  href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
                   className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700 mb-3 sm:mb-4"
                 >
                   <FaPhoneAlt className="mr-3 text-blue-600 flex-shrink-0" />
-                  <span className="text-sm sm:text-base">+91 98765 43210</span>
+                  <span className="text-sm sm:text-base">{SITE_IDENTITY.contact.phone}</span>
                 </a>
 
                 <a
-                  href="mailto:info@mbbsguide.com"
+                  href={`mailto:${SITE_IDENTITY.contact.email}`}
                   className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700"
                 >
                   <FaEnvelope className="mr-3 text-blue-600 flex-shrink-0" />
-                  <span className="text-sm sm:text-base break-words">info@mbbsguide.com</span>
+                  <span className="text-sm sm:text-base break-words">{SITE_IDENTITY.contact.email}</span>
                 </a>
               </div>
 
