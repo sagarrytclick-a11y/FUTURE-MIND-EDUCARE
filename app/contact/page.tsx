@@ -86,7 +86,7 @@ const ContactPage: React.FC = () => {
     {
       icon: FaPhone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 70769 09090"],
       bg: "from-blue-500 to-cyan-500",
     },
     {
@@ -398,7 +398,7 @@ const ContactPage: React.FC = () => {
 
               <div className="space-y-5">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+917076909090"
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center">
@@ -408,7 +408,7 @@ const ContactPage: React.FC = () => {
                   <div>
                     <p className="text-sm text-blue-200">Call Us</p>
                     <h4 className="font-bold text-lg">
-                      +91 98765 43210
+                      +91 7076909090
                     </h4>
                   </div>
                 </a>

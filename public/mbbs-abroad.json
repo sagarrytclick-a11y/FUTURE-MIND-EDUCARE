@@ -813,6 +813,94 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL8qcY9DLmYEPzgsG4Dzl1M42FugC9A_FRVA&s"
         }
       ]
+    },
+   
+     {
+      "id": 7,
+      "name": "Nepal",
+      "flag": "https://static.vecteezy.com/system/resources/previews/045/874/141/non_2x/flag-of-nepal-nepal-national-flag-free-vector.jpg",
+      "image": "https://www.fabionodariphoto.com/wp-content/uploads/2026/10/ghandruk-1.jpg",
+      "description": "Excellence in Medical Education with Proximity to India",
+      "universities": 15,
+      "courses": "MBBS, MD, MS",
+      "colleges": [
+        {
+          "id": 83,
+          "name": "Kathmandu University Nepal",
+          "city": "Dhulikhel",
+          "fees": "$5,000 - $7,000 per year",
+          "duration": "5.5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Nepal",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Kathmandu_University.jpg"
+        },
+        {
+          "id": 84,
+          "name": "Tribhuvan University",
+          "city": "Kathmandu",
+          "fees": "$4,500 - $6,500 per year",
+          "duration": "5.5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#2 in Nepal",
+          "image": "https://portal.tu.edu.np/medias/saroj_2024_04_01_13_55_36.jpg"
+        },
+        {
+          "id": 85,
+          "name": "Autonomous College – B.P. Koirala Institute of Health Sciences",
+          "city": "Dharan",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "5.5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#3 in Nepal",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Campus_da7fMTi86o.webp?tr=w-3840"
+        },
+        {
+          "id": 86,
+          "name": "Autonomous College – Patan Academy of Health Science",
+          "city": "Lalitpur",
+          "fees": "$4,000 - $6,000 per year",
+          "duration": "5.5 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#4 in Nepal",
+          "image": "https://mbbsinnepal.in/images/automnomous-college/pahs.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Serbia",
+      "flag": "https://cdn.britannica.com/39/94839-050-6827FB80/Flag-Serbia.jpg",
+      "image": "https://cdn.britannica.com/57/96057-050-BD18B6F6/Boats-Danube-River-Belgrade-Serbia.jpg",
+      "description": "High Standard European Education",
+      "universities": 10,
+      "courses": "MBBS, MD",
+      "colleges": [
+        {
+          "id": 87,
+          "name": "University of Kragujevac",
+          "city": "Kragujevac",
+          "fees": "$4,500 - $6,000 per year",
+          "duration": "6 years",
+          "recognition": "NMC, WHO, FAIMER",
+          "medium": "English",
+          "ranking": "#1 in Serbia",
+          "image": "https://www.moksh16.com/uploads/images/Serbia/University-of-Kragujevac.webp"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Iran",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/1280px-Flag_of_Iran.svg.png",
+      "image": "https://www.hrw.org/sites/default/files/styles/opengraph/public/media_2024/12/202412mena_iran_wr.jpg?h=790be497&itok=qf0cVxQv",
+      "description": "Quality Education with Advanced Research",
+      "universities": 12,
+      "courses": "MBBS, MD",
+      "colleges": []
     }
   ]
 }

@@ -260,10 +260,11 @@ const Header = () => {
         -translate-x-1/2
         mt-[2px]
         z-[999]
+        w-[662px]
       "
     >
       {/* WRAPPER */}
-      <div className="relative flex items-start">
+      <div className="relative flex items-start w-full">
 
         {/* LEFT PANEL */}
         <div
@@ -275,6 +276,7 @@ const Header = () => {
             border
             border-gray-100
             overflow-hidden
+            min-h-[400px]
           "
         >
           <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
@@ -358,12 +360,12 @@ const Header = () => {
                 border
                 border-gray-100
                 overflow-hidden
+                min-h-[400px]
               "
             >
-              <div className="space-y-3 max-h-[460px] overflow-y-auto custom-scrollbar">
-                {hoveredItemData.colleges
-                  ?.slice(0, 10)
-                  .map((college: College) => {
+              <div className="space-y-3 max-h-[500px] overflow-y-auto custom-scrollbar">
+                {hoveredItemData.colleges && hoveredItemData.colleges.length > 0 ? (
+                  hoveredItemData.colleges.slice(0, 10).map((college: College) => {
                     const collegeSlug = college.name
                       .toLowerCase()
                       .replace(/[^a-z0-9\s]/g, '')
@@ -391,7 +393,12 @@ const Header = () => {
                         {college.name}
                       </Link>
                     );
-                  })}
+                  })
+                ) : (
+                  <div className="p-8 text-center text-gray-500 text-sm">
+                    No colleges found for this region.
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
