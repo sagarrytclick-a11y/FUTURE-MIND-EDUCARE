@@ -128,7 +128,7 @@ const MbbsAbroadPage: React.FC = () => {
   return (
     <div className="bg-[#f5f7fb]    min-h-screen">
       {/* HERO SECTION */}
-      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-purple-700 via-indigo-700 to-blue-900 text-white overflow-hidden">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')]"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
@@ -147,7 +147,7 @@ const MbbsAbroadPage: React.FC = () => {
             </span>
           </h1>
 
-          <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-purple-100 px-4 sm:px-0">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-blue-100 px-4 sm:px-0">
             Explore top NMC & WHO approved medical universities
             across the world with affordable fees and global
             recognition.
@@ -162,7 +162,7 @@ const MbbsAbroadPage: React.FC = () => {
                 {totalCountries}+
               </h2>
 
-              <p className="text-purple-100 text-xs sm:text-sm">
+              <p className="text-blue-100 text-xs sm:text-sm">
                 Countries
               </p>
             </div>
@@ -174,7 +174,7 @@ const MbbsAbroadPage: React.FC = () => {
                 {totalColleges}+
               </h2>
 
-              <p className="text-purple-100 text-xs sm:text-sm">
+              <p className="text-blue-100 text-xs sm:text-sm">
                 Medical Colleges
               </p>
             </div>
@@ -186,7 +186,7 @@ const MbbsAbroadPage: React.FC = () => {
                 {totalSeats.toLocaleString()}+
               </h2>
 
-              <p className="text-purple-100 text-xs sm:text-sm">
+              <p className="text-blue-100 text-xs sm:text-sm">
                 Total Seats
               </p>
             </div>
@@ -209,7 +209,7 @@ const MbbsAbroadPage: React.FC = () => {
                 setSearch(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full h-10 sm:h-12 rounded-lg sm:rounded-xl border bg-gray-50 pl-9 sm:pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400 transition-all text-sm sm:text-base"
+              className="w-full h-10 sm:h-12 rounded-lg sm:rounded-xl border bg-gray-50 pl-9 sm:pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-400 transition-all text-sm sm:text-base"
             />
           </div>
 
@@ -220,7 +220,7 @@ const MbbsAbroadPage: React.FC = () => {
               setSelectedCountry(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full h-10 sm:h-12 rounded-lg sm:rounded-xl border bg-gray-50 px-3 sm:px-4 outline-none focus:ring-2 focus:ring-purple-400 text-sm sm:text-base"
+            className="w-full h-10 sm:h-12 rounded-lg sm:rounded-xl border bg-gray-50 px-3 sm:px-4 outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
           >
             <option value="">All Countries</option>
 
@@ -308,7 +308,7 @@ const MbbsAbroadPage: React.FC = () => {
                           Fees
                         </span>
 
-                        <span className="font-bold text-purple-700 text-xs sm:text-sm">
+                        <span className="font-bold text-blue-700 text-xs sm:text-sm">
                           {college.fees}
                         </span>
                       </div>
@@ -342,7 +342,7 @@ const MbbsAbroadPage: React.FC = () => {
 
                     <Link
                       href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
-                      className="w-full py-2 sm:py-3 rounded-xl bg-indigo-600 text-white font-bold flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all text-sm sm:text-base"
+                      className="w-full py-2 sm:py-3 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-all text-sm sm:text-base"
                     >
                       View Details
 

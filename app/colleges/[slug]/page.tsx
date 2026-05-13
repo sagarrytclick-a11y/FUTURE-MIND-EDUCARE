@@ -153,7 +153,7 @@ const CollegeSlugPage: React.FC = () => {
             </Link>
             <Link 
               href="/colleges/mbbs-abroad"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
             >
               Browse Abroad Colleges
             </Link>
@@ -173,8 +173,8 @@ const CollegeSlugPage: React.FC = () => {
       .replace(/^-|-$/g, '');
   };
 
-  const bgColor = collegeType === 'india' ? 'from-blue-700 to-blue-900' : 'from-purple-700 to-purple-900';
-  const buttonColor = collegeType === 'india' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700';
+  const bgColor = 'from-blue-700 to-blue-900';
+  const buttonColor = 'bg-blue-600 hover:bg-blue-700';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -190,7 +190,7 @@ const CollegeSlugPage: React.FC = () => {
               <span className={`px-4 py-2 rounded-lg text-sm font-semibold ${
                 college.type === 'Government' 
                   ? 'bg-green-100 text-green-800' 
-                  : 'bg-purple-100 text-purple-800'
+                  : 'bg-blue-100 text-blue-800'
               }`}>
                 {college.type || 'Private'}
               </span>
@@ -239,7 +239,7 @@ const CollegeSlugPage: React.FC = () => {
                       <span className={`inline-block ml-2 px-2 py-1 text-xs font-medium rounded-lg ${
                         college.type === 'Government' 
                           ? 'bg-green-100 text-green-800' 
-                          : 'bg-orange-100 text-orange-800'
+                          : 'bg-blue-100 text-blue-800'
                       }`}>
                         {college.type}
                       </span>
@@ -328,7 +328,7 @@ const CollegeSlugPage: React.FC = () => {
           {/* Right Column - Actions and Related */}
           <div className="space-y-6 lg:sticky lg:top-4 lg:self-start lg:w-80 lg:ml-4 lg:mr-4">
             {/* Apply Now CTA */}
-            <div className={`${collegeType === 'india' ? 'bg-blue-600' : 'bg-purple-600'} text-white rounded-xl p-6 text-center`}>
+            <div className="bg-blue-600 text-white rounded-xl p-6 text-center">
               <h3 className="text-xl font-bold mb-4">Ready to Apply?</h3>
               <p className="text-blue-100 mb-6">Get expert guidance for admission</p>
               <button 

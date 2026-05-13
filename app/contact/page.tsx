@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { SITE_IDENTITY } from "../config/site_identity";
 import {
   FaPhone,
   FaEnvelope,
@@ -86,14 +87,14 @@ const ContactPage: React.FC = () => {
     {
       icon: FaPhone,
       title: "Call Us",
-      details: ["+91 70769 09090"],
+      details: [SITE_IDENTITY.contact.phone],
       bg: "from-blue-500 to-cyan-500",
     },
     {
       icon: FaEnvelope,
       title: "Email Us",
       details: [
-        "info@futuremindeducare.com",
+        SITE_IDENTITY.contact.email,
         "admission@futuremindeducare.com",
       ],
       bg: "from-emerald-500 to-green-500",
@@ -101,13 +102,19 @@ const ContactPage: React.FC = () => {
     {
       icon: FaMapMarkerAlt,
       title: "Visit Office",
-      details: ["Andheri West, Mumbai", "Maharashtra - 400058"],
+      details: [
+        `${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city}`,
+        `Maharashtra - ${SITE_IDENTITY.address.pincode}`,
+      ],
       bg: "from-rose-500 to-red-500",
     },
     {
       icon: FaClock,
       title: "Working Hours",
-      details: ["Mon - Sat : 9 AM - 7 PM", "Sunday : 10 AM - 5 PM"],
+      details: [
+        `Mon - Sat : ${SITE_IDENTITY.officeHours.mondayToSaturday}`,
+        `Sunday : ${SITE_IDENTITY.officeHours.sunday}`,
+      ],
       bg: "from-violet-500 to-purple-500",
     },
   ];
@@ -141,9 +148,9 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#f5f7ff] min-h-screen overflow-hidden">
+    <div className="bg-white min-h-screen overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative py-24 bg-gradient-to-br from-[#071952] via-[#0B2447] to-[#19376D] text-white">
+      <section className="relative py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-lg blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/10 rounded-lg blur-3xl"></div>
 
@@ -171,7 +178,7 @@ const ContactPage: React.FC = () => {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+919876543210"
+                  href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
                   className="bg-white text-[#0B2447] hover:bg-cyan-300 px-7 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-xl"
                 >
                   Call Now
@@ -398,7 +405,7 @@ const ContactPage: React.FC = () => {
 
               <div className="space-y-5">
                 <a
-                  href="tel:+917076909090"
+                  href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center">
@@ -408,13 +415,13 @@ const ContactPage: React.FC = () => {
                   <div>
                     <p className="text-sm text-blue-200">Call Us</p>
                     <h4 className="font-bold text-lg">
-                      +91 7076909090
+                      {SITE_IDENTITY.contact.phone}
                     </h4>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@futuremindeducare.com"
+                  href={`mailto:${SITE_IDENTITY.contact.email}`}
                   className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center">
@@ -424,7 +431,7 @@ const ContactPage: React.FC = () => {
                   <div>
                     <p className="text-sm text-blue-200">Mail Us</p>
                     <h4 className="font-bold text-lg">
-                      info@futuremindeducare.com
+                      {SITE_IDENTITY.contact.email}
                     </h4>
                   </div>
                 </a>

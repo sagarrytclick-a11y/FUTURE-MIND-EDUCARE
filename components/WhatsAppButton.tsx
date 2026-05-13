@@ -1,10 +1,11 @@
 "use client"
 import React from 'react';
 import { MdOutlineWhatsapp } from "react-icons/md";
+import { SITE_IDENTITY } from '../app/config/site_identity';
 
 const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "919876543210"; // Replace with your actual WhatsApp number
+    const phoneNumber = SITE_IDENTITY.contact.phone.replace(/[^0-9]/g, ''); 
     const message = encodeURIComponent("Hi! I'm interested in MBBS admission guidance. Can you help me?");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
