@@ -9,19 +9,7 @@
       "universities": 20,
       "courses": "MBBS, MD, MS",
       "colleges": [
-        {
-          "id": 2,
-          "name": "Saint Petersburg State Medical University",
-          "city": "Saint Petersburg",
-          "fees": "$4,000 - $5,500 per year",
-          "duration": "6 years",
-          "recognition": "NMC, WHO, FAIMER",
-          "medium": "English",
-          "ranking": "#2 in Russia",
-          "image": "https://medipediaoverseas.com/images/university/petersburg-state-medical-university.jpg",
-          "type": "Government"
-        },
-      
+       
         {
           "id": 4,
           "name": "Novosibirsk State Medical University",
