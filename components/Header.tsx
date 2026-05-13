@@ -29,6 +29,7 @@ interface College {
 interface State {
   id: number;
   name: string;
+  slug?: string;
   image: string;
   description: string;
   colleges: College[];
@@ -57,6 +58,7 @@ const Header = () => {
 
   const [indiaStates, setIndiaStates] = useState<State[]>([]);
   const [abroadCountries, setAbroadCountries] = useState<Country[]>([]);
+  const [mdmsStates, setMdmsStates] = useState<State[]>([]);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -72,15 +74,20 @@ const Header = () => {
       href: '/colleges/mbbs-abroad',
       hasDropdown: true,
     },
+    {
+      name: 'MD/MS',
+      href: '/colleges/md-ms',
+      hasDropdown: true,
+    },
     { name: 'Blog', href: '/blog' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  const fetchData = async (type: 'india' | 'abroad') => {
+  const fetchData = async (type: 'india' | 'abroad' | 'mdms') => {
     try {
       const url =
-        type === 'india' ? '/mbbs-india.json' : '/mbbs-abroad.json';
+        type === 'india' ? '/mbbs-india.json' : type === 'abroad' ? '/mbbs-abroad.json' : '/md-ms.json';
 
       const res = await fetch(url);
       const data = await res.json();
@@ -88,9 +95,13 @@ const Header = () => {
       if (type === 'india') {
         setIndiaStates(data.states);
         setHoveredItemData(data.states[0]);
-      } else {
+      } else if (type === 'abroad') {
         setAbroadCountries(data.countries);
         setHoveredItemData(data.countries[0]);
+      } else {
+        // Updated to use states from md-ms.json correctly
+        setMdmsStates(data.states);
+        setHoveredItemData(data.states[0]);
       }
     } catch (err) {
       console.error(err);
@@ -109,6 +120,10 @@ const Header = () => {
     if (name === 'MBBS Abroad' && abroadCountries.length === 0) {
       fetchData('abroad');
     }
+
+    if (name === 'MD/MS' && mdmsStates.length === 0) {
+      fetchData('mdms');
+    }
   };
 
   const handleMouseLeave = () => {
@@ -126,6 +141,10 @@ const Header = () => {
     // Fetch data if needed when expanding MBBS India
     if (itemName === 'MBBS India' && indiaStates.length === 0) {
       fetchData('india');
+    }
+
+    if (itemName === 'MD/MS' && mdmsStates.length === 0) {
+      fetchData('mdms');
     }
     
     setExpandedMobileItems(prev => 
@@ -225,26 +244,42 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter(item.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link
-                  href={item.href}
-                  className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
-                    ? 'text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
-                    }`}
-                >
-                  {item.name}
-
-                  {item.hasDropdown && (
-                    <FaChevronDown className="ml-2 text-[10px]" />
-                  )}
-
-                  <span
-                    className={`absolute -bottom-2 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
-                      ? 'w-full'
-                      : 'w-0 group-hover:w-full'
+                {item.name === 'MD/MS' ? (
+                  <div
+                    className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 cursor-pointer ${activeDropdown === item.name
+                      ? 'text-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
                       }`}
-                  />
-                </Link>
+                  >
+                    {item.name}
+                    <FaChevronDown className="ml-2 text-[10px]" />
+                    <span
+                      className={`absolute -bottom-2 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'
+                        }`}
+                    />
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
+                      ? 'text-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
+                      }`}
+                  >
+                    {item.name}
+                    {item.hasDropdown && (
+                      <FaChevronDown className="ml-2 text-[10px]" />
+                    )}
+                    <span
+                      className={`absolute -bottom-2 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full'
+                        }`}
+                    />
+                  </Link>
+                )}
 
              {/* MEGA MENU */}
 <AnimatePresence>
@@ -254,15 +289,15 @@ const Header = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 12 }}
       transition={{ duration: 0.22 }}
-      className="
+      className={`
         absolute
         top-full
         left-1/2
         -translate-x-1/2
         mt-[2px]
         z-[999]
-        w-[662px]
-      "
+        ${item.name === 'MD/MS' ? 'w-[300px]' : 'w-[662px]'}
+      `}
     >
       {/* WRAPPER */}
       <div className="relative flex items-start w-full">
@@ -283,67 +318,83 @@ const Header = () => {
           <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
             {(item.name === 'MBBS India'
               ? indiaStates
-              : abroadCountries
-            ).map((loc: State | Country) => (
-              <div
-                key={loc.id}
-                onMouseEnter={() => setHoveredItemData(loc)}
-                className={`
-                  h-[65px]
-                  px-5
-                  flex
-                  items-center
-                  justify-between
-                  cursor-pointer
-                  transition-all
-                  duration-300
-                  border-b
-                  border-gray-100
-                  ${
-                    hoveredItemData?.id === loc.id
-                      ? 'bg-blue-500'
-                      : 'hover:bg-gray-50'
-                  }
-                `}
-              >
-                <span
+              : item.name === 'MBBS Abroad'
+              ? abroadCountries
+              : mdmsStates
+            ).map((loc: any) => {
+              const isMdMs = item.name === 'MD/MS';
+              const Content = (
+                <div
                   className={`
-                    text-[14px]
-                    font-semibold
+                    h-[65px]
+                    px-5
+                    flex
+                    items-center
+                    justify-between
+                    cursor-pointer
                     transition-all
                     duration-300
+                    border-b
+                    border-gray-100
                     ${
                       hoveredItemData?.id === loc.id
-                        ? 'text-white'
-                        : 'text-[#111827]'
+                        ? 'bg-blue-500 text-white'
+                        : 'hover:bg-gray-50 text-[#111827]'
                     }
                   `}
                 >
-                  {item.name === 'MBBS India'
-                    ? `MBBS in ${loc.name}`
-                    : loc.name}
-                </span>
+                  <span className="text-[14px] font-semibold">
+                    {item.name === 'MBBS India'
+                      ? `MBBS in ${loc.name}`
+                      : item.name === 'MD/MS'
+                      ? `MD/MS in ${loc.name}`
+                      : loc.name}
+                  </span>
 
-                <FaChevronDown
-                  className={`
-                    text-[11px]
-                    transition-all
-                    duration-300
-                    ${
-                      hoveredItemData?.id === loc.id
-                        ? 'rotate-[-90deg] text-white'
-                        : 'rotate-[-90deg] text-gray-500'
-                    }
-                  `}
-                />
-              </div>
-            ))}
+                  {!isMdMs && (
+                    <FaChevronDown
+                      className={`
+                        text-[11px]
+                        transition-all
+                        duration-300
+                        ${
+                          hoveredItemData?.id === loc.id
+                            ? 'rotate-[-90deg] text-white'
+                            : 'rotate-[-90deg] text-gray-500'
+                        }
+                      `}
+                    />
+                  )}
+                </div>
+              );
+
+              return isMdMs ? (
+                <Link
+                  key={loc.id}
+                  href={`/colleges/md-ms/${loc.slug || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  onMouseEnter={() => setHoveredItemData(loc)}
+                  onClick={() => {
+                    setActiveDropdown(null);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  {Content}
+                </Link>
+              ) : (
+                <div
+                  key={loc.id}
+                  onMouseEnter={() => setHoveredItemData(loc)}
+                >
+                  {Content}
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* RIGHT PANEL */}
         <AnimatePresence>
-          {hoveredItemData && (
+          {hoveredItemData && item.name !== 'MD/MS' && (
             <motion.div
               key={hoveredItemData.id}
               initial={{ opacity: 0, x: -8 }}
@@ -365,6 +416,25 @@ const Header = () => {
               "
             >
               <div className="space-y-3 max-h-[500px] overflow-y-auto custom-scrollbar">
+                {activeDropdown === 'MD/MS' && hoveredItemData && (
+                  <Link
+                    href={`/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="
+                      block
+                      text-[14px]
+                      p-4
+                      font-bold
+                      text-blue-600
+                      hover:bg-blue-50
+                      transition-all
+                      duration-300
+                      border-b
+                      border-blue-50
+                    "
+                  >
+                    View All {hoveredItemData.name} MD/MS Details →
+                  </Link>
+                )}
                 {hoveredItemData.colleges && hoveredItemData.colleges.length > 0 ? (
                   hoveredItemData.colleges.slice(0, 10).map((college: College) => {
                     const collegeSlug = college.name
@@ -377,7 +447,7 @@ const Header = () => {
                     return (
                       <Link
                         key={college.id}
-                        href={`/colleges/${collegeSlug}`}
+                        href={activeDropdown === 'MD/MS' ? `/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}` : `/colleges/${collegeSlug}`}
                         className="
                           block
                           text-[14px]
@@ -604,6 +674,54 @@ const Header = () => {
                                               </Link>
                                             );
                                           })}
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            {link.name === 'MD/MS' && mdmsStates.length > 0 && (
+                              <div className="space-y-2">
+                                {mdmsStates.map((state) => (
+                                  <div key={state.id} className="border-l-2 border-gray-200">
+                                    <button
+                                      onClick={() => toggleMobileItem(`mdms-${state.id}`)}
+                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                    >
+                                      <span>MD/MS in {state.name}</span>
+                                      <FaChevronDown 
+                                        className={`text-[8px] transition-transform duration-300 ${
+                                          expandedMobileItems.includes(`mdms-${state.id}`) ? 'rotate-180' : ''
+                                        }`}
+                                      />
+                                    </button>
+                                    
+                                    <AnimatePresence>
+                                      {expandedMobileItems.includes(`mdms-${state.id}`) && (
+                                        <motion.div
+                                          initial={{ opacity: 0, height: 0 }}
+                                          animate={{ opacity: 1, height: 'auto' }}
+                                          exit={{ opacity: 0, height: 0 }}
+                                          transition={{ duration: 0.25 }}
+                                          className="ml-4 mt-1 space-y-1 overflow-hidden"
+                                        >
+                                          <Link
+                                            href={`/colleges/md-ms/${state.slug || state.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                            className="block text-xs text-blue-600 font-bold py-2 px-3 transition-all"
+                                          >
+                                            View All Details for {state.name}
+                                          </Link>
+                                          {state.colleges && state.colleges.slice(0, 5).map((college: any) => (
+                                            <div
+                                              key={college.id}
+                                              className="block text-xs text-gray-600 py-1 px-3"
+                                            >
+                                              • {college.name}
+                                            </div>
+                                          ))}
                                         </motion.div>
                                       )}
                                     </AnimatePresence>

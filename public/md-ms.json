@@ -2,242 +2,90 @@
   "states": [
     {
       "id": 1,
-      "name": "Delhi",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/AIIMS-All-India-Institute-of-Medical-Sciences-delhi.webp",
-      "description": "Capital City with Premier PG Medical Institutes",
+      "name": "Uttar Pradesh",
+      "slug": "up",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
+      "description": "Premier Hub for MD/MS in India with over 4300+ PG seats across Government and Private Institutions.",
       "colleges": [
-        {
-          "id": 1,
-          "name": "All India Institute of Medical Sciences (AIIMS)",
-          "city": "New Delhi",
-          "fees": "₹2,000 per year",
-          "seats": 250,
-          "recognition": "NMC, MCI",
-          "ranking": "#1 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/aiims-delhi.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Maulana Azad Medical College (MAMC)",
-          "city": "New Delhi",
-          "fees": "₹3,000 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#3 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Orthopedics", "ENT", "Ophthalmology", "Psychiatry"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mamc.jpg"
-        },
-        {
-          "id": 3,
-          "name": "University College of Medical Sciences (UCMS)",
-          "city": "New Delhi",
-          "fees": "₹3,500 per year",
-          "seats": 100,
-          "recognition": "NMC, MCI",
-          "ranking": "#7 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Pathology", "Pharmacology", "Microbiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/ucms.jpg"
-        }
+        { "id": 1, "name": "IMS BHU", "city": "Varanasi", "seats": 225, "yearOfEstd": "1960", "fees": "INR 45 K", "type": "Government" },
+        { "id": 2, "name": "King George's Medical University (KGMU)", "city": "Lucknow", "seats": 250, "yearOfEstd": "1911", "fees": "MD: 35,000", "type": "Government" },
+        { "id": 3, "name": "AIIMS Gorakhpur", "city": "Gorakhpur", "seats": 1436, "yearOfEstd": "2019", "fees": "INR 5.1 K", "type": "Government" },
+        { "id": 4, "name": "SGPGIMS Lucknow", "city": "Lucknow", "seats": 150, "yearOfEstd": "1983", "fees": "INR 1.71 Lakh", "type": "Government" },
+        { "id": 5, "name": "LLRM Medical College", "city": "Meerut", "seats": 136, "yearOfEstd": "1966", "fees": "MD: 43,000, MS: 43,000", "type": "Government" },
+        { "id": 6, "name": "Baba Raghavdas Medical College", "city": "Gorakhpur", "seats": 150, "yearOfEstd": "1972", "fees": "MD: 42,000, MS: 42,000", "type": "Government" },
+        { "id": 7, "name": "Maharani Laxmi Bai Medical College", "city": "Jhansi", "seats": 150, "yearOfEstd": "1968", "fees": "MD: 1.1 lakh, MS: 1.1 lakh", "type": "Government" },
+        { "id": 8, "name": "Government Medical College, Jalaun", "city": "Jalaun", "seats": 100, "yearOfEstd": "2013", "fees": "MD: 39,000, MS: 39,000", "type": "Government" },
+        { "id": 9, "name": "Institute of Medical Science Varanasi", "city": "Varanasi", "seats": 100, "yearOfEstd": "1960", "fees": "INR 30.4 Lakh", "type": "Government" },
+        { "id": 10, "name": "RMLIMS", "city": "Lucknow", "seats": 200, "yearOfEstd": "2006", "fees": "MD: 74,100, MS: 74,100", "type": "Government" },
+        { "id": 11, "name": "Subharti Medical College", "city": "Meerut", "seats": 130, "yearOfEstd": "1996", "fees": "₹36L - ₹75L", "type": "Private" },
+        { "id": 12, "name": "Rama Medical College", "city": "Kanpur", "seats": 99, "yearOfEstd": "2009", "fees": "₹30L - ₹66L", "type": "Private" },
+        { "id": 13, "name": "Saraswati Medical College", "city": "Unnao", "seats": 100, "yearOfEstd": "2008", "fees": "₹30L - ₹60L", "type": "Private" },
+        { "id": 14, "name": "ERA's Lucknow Medical College", "city": "Lucknow", "seats": 100, "yearOfEstd": "2016", "fees": "₹24L - ₹58L", "type": "Private" },
+        { "id": 15, "name": "Santosh Medical College", "city": "Ghaziabad", "seats": 150, "yearOfEstd": "2001", "fees": "₹36L - ₹72L", "type": "Private" },
+        { "id": 16, "name": "Hind Institute of Medical Sciences", "city": "Barabanki", "seats": 70, "yearOfEstd": "1995", "fees": "₹32L - ₹68L", "type": "Private" }
       ]
     },
     {
       "id": 2,
-      "name": "Maharashtra",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mahars.webp",
-      "description": "Medical Hub with Diverse PG Specializations",
+      "name": "Karnataka",
+      "slug": "karnataka",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/karnataka.webp",
+      "description": "The medical education capital of India with top-tier Deemed and Private PG medical colleges.",
       "colleges": [
-        {
-          "id": 4,
-          "name": "Grant Medical College (GMC)",
-          "city": "Mumbai",
-          "fees": "₹4,000 per year",
-          "seats": 200,
-          "recognition": "NMC, MCI",
-          "ranking": "#2 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Cardiology", "Nephrology", "Gastroenterology", "Neurology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/grant-medical.jpg"
-        },
-        {
-          "id": 5,
-          "name": "KEM Hospital and Seth G.S. Medical College",
-          "city": "Mumbai",
-          "fees": "₹4,500 per year",
-          "seats": 180,
-          "recognition": "NMC, MCI",
-          "ranking": "#4 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/kem-medical.jpg"
-        },
-        {
-          "id": 6,
-          "name": "B.J. Government Medical College",
-          "city": "Pune",
-          "fees": "₹3,800 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#8 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Orthopedics", "ENT", "Ophthalmology", "Psychiatry"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/bj-medical.jpg"
-        }
+        { "id": 101, "name": "Bangalore Medical College (BMCRI)", "city": "Bangalore", "seats": 180, "yearOfEstd": "1955", "fees": "INR 1.1 Lakh", "type": "Government" },
+        { "id": 102, "name": "Mysore Medical College", "city": "Mysore", "seats": 150, "yearOfEstd": "1924", "fees": "INR 1.1 Lakh", "type": "Government" },
+        { "id": 103, "name": "Kasturba Medical College (KMC)", "city": "Manipal", "seats": 150, "yearOfEstd": "1953", "fees": "₹20L - ₹40L", "type": "Private" },
+        { "id": 104, "name": "St. John's Medical College", "city": "Bangalore", "seats": 80, "yearOfEstd": "1963", "fees": "₹10L - ₹15L", "type": "Private" },
+        { "id": 105, "name": "JSS Medical College", "city": "Mysore", "seats": 120, "yearOfEstd": "1984", "fees": "₹18L - ₹35L", "type": "Private" }
       ]
     },
     {
       "id": 3,
-      "name": "Tamil Nadu",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/tamilnadu.webp",
-      "description": "Healthcare Excellence with Advanced PG Programs",
+      "name": "Haryana",
+      "slug": "haryana",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/haryana.webp",
+      "description": "Rising hub for medical PG with state-of-the-art infrastructure and clinical exposure.",
       "colleges": [
-        {
-          "id": 7,
-          "name": "Madras Medical College (MMC)",
-          "city": "Chennai",
-          "fees": "₹3,000 per year",
-          "seats": 220,
-          "recognition": "NMC, MCI",
-          "ranking": "#5 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mmc-chennai.jpg"
-        },
-        {
-          "id": 8,
-          "name": "Christian Medical College (CMC)",
-          "city": "Vellore",
-          "fees": "₹18,00,000 per year",
-          "seats": 120,
-          "recognition": "NMC, MCI",
-          "ranking": "#6 in India",
-          "type": "Private",
-          "specializations": ["General Medicine", "General Surgery", "Cardiology", "Nephrology", "Gastroenterology", "Endocrinology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/cmc-vellore.jpg"
-        },
-        {
-          "id": 9,
-          "name": "Sri Ramachandra Institute of Higher Education",
-          "city": "Chennai",
-          "fees": "₹12,00,000 per year",
-          "seats": 100,
-          "recognition": "NMC, MCI",
-          "ranking": "#9 in India",
-          "type": "Private",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/sri-ramachandra.jpg"
-        }
+        { "id": 201, "name": "Pt. B.D. Sharma PGIMS", "city": "Rohtak", "seats": 200, "yearOfEstd": "1960", "fees": "INR 1.5 Lakh", "type": "Government" },
+        { "id": 202, "name": "SGT Medical College", "city": "Gurugram", "seats": 100, "yearOfEstd": "2010", "fees": "₹25L - ₹45L", "type": "Private" },
+        { "id": 203, "name": "MAMC Agroha", "city": "Hisar", "seats": 80, "yearOfEstd": "2002", "fees": "INR 4.5 Lakh", "type": "Government" }
       ]
     },
     {
       "id": 4,
-      "name": "Karnataka",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/karnataka.webp",
-      "description": "Medical Education Hub with Modern PG Facilities",
+      "name": "Madhya Pradesh",
+      "slug": "madhya-pradesh",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mp.webp",
+      "description": "Centrally located state offering diverse clinical experience in MD and MS specializations.",
       "colleges": [
-        {
-          "id": 10,
-          "name": "Bangalore Medical College and Research Institute (BMCRI)",
-          "city": "Bangalore",
-          "fees": "₹5,000 per year",
-          "seats": 180,
-          "recognition": "NMC, MCI",
-          "ranking": "#10 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/bmcri.jpg"
-        },
-        {
-          "id": 11,
-          "name": "Kasturba Medical College (KMC)",
-          "city": "Manipal",
-          "fees": "₹15,00,000 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#11 in India",
-          "type": "Private",
-          "specializations": ["General Medicine", "General Surgery", "Cardiology", "Nephrology", "Gastroenterology", "Neurology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/kmc-manipal.jpg"
-        },
-        {
-          "id": 12,
-          "name": "St. John's Medical College",
-          "city": "Bangalore",
-          "fees": "₹10,00,000 per year",
-          "seats": 80,
-          "recognition": "NMC, MCI",
-          "ranking": "#12 in India",
-          "type": "Private",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/st-johns.jpg"
-        }
+        { "id": 301, "name": "MGM Medical College", "city": "Indore", "seats": 150, "yearOfEstd": "1948", "fees": "INR 1.2 Lakh", "type": "Government" },
+        { "id": 302, "name": "Gandi Medical College", "city": "Bhopal", "seats": 140, "yearOfEstd": "1955", "fees": "INR 1.2 Lakh", "type": "Government" },
+        { "id": 303, "name": "Index Medical College", "city": "Indore", "seats": 90, "yearOfEstd": "2007", "fees": "₹15L - ₹30L", "type": "Private" }
       ]
     },
     {
-      "id": 5,
-      "name": "Uttar Pradesh",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
-      "description": "Large State with Comprehensive PG Medical Education",
+      "id": 7,
+      "name": "Maharashtra",
+      "slug": "maharashtra",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mahars.webp",
+      "description": "Highest number of medical PG seats in India with world-class hospital training.",
       "colleges": [
-        {
-          "id": 13,
-          "name": "King George's Medical University (KGMU)",
-          "city": "Lucknow",
-          "fees": "₹3,500 per year",
-          "seats": 200,
-          "recognition": "NMC, MCI",
-          "ranking": "#13 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/kgmu.jpg"
-        },
-        {
-          "id": 14,
-          "name": "Banaras Hindu University (BHU)",
-          "city": "Varanasi",
-          "fees": "₹3,000 per year",
-          "seats": 150,
-          "recognition": "NMC, MCI",
-          "ranking": "#14 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Orthopedics", "ENT", "Ophthalmology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/bhu.jpg"
-        }
+        { "id": 401, "name": "Grant Medical College", "city": "Mumbai", "seats": 250, "yearOfEstd": "1845", "fees": "INR 1.3 Lakh", "type": "Government" },
+        { "id": 402, "name": "Seth GS Medical College (KEM)", "city": "Mumbai", "seats": 220, "yearOfEstd": "1926", "fees": "INR 1.3 Lakh", "type": "Government" },
+        { "id": 403, "name": "BJ Medical College", "city": "Pune", "seats": 180, "yearOfEstd": "1946", "fees": "INR 1.3 Lakh", "type": "Government" },
+        { "id": 404, "name": "DY Patil Medical College", "city": "Pune", "seats": 150, "yearOfEstd": "1996", "fees": "₹25L - ₹50L", "type": "Private" }
       ]
     },
     {
-      "id": 6,
-      "name": "West Bengal",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/westbengal.webp",
-      "description": "Medical Excellence with Diverse PG Programs",
+      "id": 9,
+      "name": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/tamilnadu.webp",
+      "description": "Excellence in healthcare and surgery with some of the oldest medical institutions in Asia.",
       "colleges": [
-        {
-          "id": 15,
-          "name": "Medical College Kolkata (MCK)",
-          "city": "Kolkata",
-          "fees": "₹4,000 per year",
-          "seats": 160,
-          "recognition": "NMC, MCI",
-          "ranking": "#15 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Pediatrics", "Obstetrics & Gynecology", "Radiology", "Anesthesiology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/mck.jpg"
-        },
-        {
-          "id": 16,
-          "name": "IPGMER and SSKM Hospital",
-          "city": "Kolkata",
-          "fees": "₹4,500 per year",
-          "seats": 140,
-          "recognition": "NMC, MCI",
-          "ranking": "#16 in India",
-          "type": "Government",
-          "specializations": ["General Medicine", "General Surgery", "Cardiology", "Nephrology", "Gastroenterology", "Neurology"],
-          "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/ipgmer.jpg"
-        }
+        { "id": 501, "name": "Madras Medical College", "city": "Chennai", "seats": 280, "yearOfEstd": "1835", "fees": "INR 1.0 Lakh", "type": "Government" },
+        { "id": 502, "name": "Stanley Medical College", "city": "Chennai", "seats": 200, "yearOfEstd": "1938", "fees": "INR 1.0 Lakh", "type": "Government" },
+        { "id": 503, "name": "Christian Medical College (CMC)", "city": "Vellore", "seats": 180, "yearOfEstd": "1900", "fees": "INR 2.0 Lakh", "type": "Private" }
       ]
     }
   ]
