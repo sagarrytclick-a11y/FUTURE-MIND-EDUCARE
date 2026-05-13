@@ -923,47 +923,6 @@
       ]
     },
     {
-      "id": 5,
-      "name": "Tamil Nadu",
-      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
-      "description": "Medical Hub with Excellent Healthcare",
-      "colleges": [
-        {
-          "id": 15,
-          "name": "Madras Medical College (MMC)",
-          "city": "Chennai",
-          "fees": "₹2,000 per year",
-          "seats": 250,
-          "recognition": "NMC, MCI",
-          "ranking": "#4 in India",
-          "type": "Government",
-          "image": "https://i.ytimg.com/vi/AZ6BHMOPlEg/maxresdefault.jpg"
-        },
-        {
-          "id": 16,
-          "name": "Christian Medical College (CMC)",
-          "city": "Vellore",
-          "fees": "₹15,00,000 per year",
-          "seats": 100,
-          "recognition": "NMC, MCI",
-          "ranking": "#2 in India",
-          "type": "Private",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/CMCH_Vellore.JPG/1280px-CMCH_Vellore.JPG"
-        },
-        {
-          "id": 17,
-          "name": "Sri Ramachandra Institute of Higher Education",
-          "city": "Chennai",
-          "fees": "₹10,00,000 per year",
-          "seats": 250,
-          "recognition": "NMC, MCI",
-          "ranking": "#14 in India",
-          "type": "Private",
-          "image": "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/inline-images/Sri%20Ramachandra%20Institute.jpg?09nPJs_e5z_NvNgrV8wHwzYTy2IkEL31"
-        }
-      ]
-    },
-    {
       "id": 9,
       "name": "Madhya Pradesh",
       "image": "https://static.toiimg.com/photo/msid-106486632,width-96,height-65.cms",
@@ -1248,6 +1207,47 @@
         }
       ]
     },
+     {
+      "id": 5,
+      "name": "Tamil Nadu",
+      "image": "https://argroupofeducation.com/wp-content/uploads/2024/04/Sharda-1.webp",
+      "description": "Medical Hub with Excellent Healthcare",
+      "colleges": [
+        {
+          "id": 15,
+          "name": "Madras Medical College (MMC)",
+          "city": "Chennai",
+          "fees": "₹2,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#4 in India",
+          "type": "Government",
+          "image": "https://i.ytimg.com/vi/AZ6BHMOPlEg/maxresdefault.jpg"
+        },
+        {
+          "id": 16,
+          "name": "Christian Medical College (CMC)",
+          "city": "Vellore",
+          "fees": "₹15,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#2 in India",
+          "type": "Private",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/CMCH_Vellore.JPG/1280px-CMCH_Vellore.JPG"
+        },
+        {
+          "id": 17,
+          "name": "Sri Ramachandra Institute of Higher Education",
+          "city": "Chennai",
+          "fees": "₹10,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#14 in India",
+          "type": "Private",
+          "image": "https://dcx0p3on5z8dw.cloudfront.net/Aakash/s3fs-public/inline-images/Sri%20Ramachandra%20Institute.jpg?09nPJs_e5z_NvNgrV8wHwzYTy2IkEL31"
+        }
+      ]
+    },
     {
       "id": 7,
       "name": "Gujarat",
@@ -1278,6 +1278,7 @@
         }
       ]
     },
+
     {
       "id": 8,
       "name": "Rajasthan",

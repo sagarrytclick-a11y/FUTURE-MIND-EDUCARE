@@ -3,15 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   FaRegCalendarAlt,
   FaRegClock,
   FaArrowLeft,
-  FaShareAlt,
+  FaArrowRight,
   FaBookmark,
-  FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
   FaLink,
 } from "react-icons/fa";
 
@@ -132,19 +130,19 @@ const BlogPostPage: React.FC = () => {
   return (
     <div className="bg-[#f5f7fb] min-h-screen">
       {/* HERO */}
-      <section className="relative h-[500px] overflow-hidden">
+      <section className="relative h-[450px] md:h-[550px] lg:h-[600px] overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
           className="w-full h-full object-cover scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20"></div>
 
-        <div className="absolute top-6 left-6 z-20">
+        <div className="absolute top-4 left-4 md:top-8 md:left-8 z-20">
           <Link
             href="/blog"
-            className="flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-5 py-3 rounded-lg border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-md text-white px-4 py-2 md:px-6 md:py-3 rounded-xl border border-white/20 hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base font-semibold"
           >
             <FaArrowLeft />
             Back
@@ -152,56 +150,68 @@ const BlogPostPage: React.FC = () => {
         </div>
 
         <div className="absolute bottom-0 left-0 w-full z-20">
-          <div className="max-w-5xl mx-auto px-6 pb-16">
-            <span className="inline-block bg-blue-500 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow-lg mb-6">
+          <div className="max-w-5xl mx-auto px-4 md:px-6 pb-12 md:pb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-block bg-blue-500 text-white px-4 py-1.5 md:px-6 md:py-2 rounded-lg text-xs md:text-sm font-bold shadow-lg mb-4 md:mb-6 uppercase tracking-wider"
+            >
               {blog.category}
-            </span>
+            </motion.span>
 
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight max-w-4xl">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] max-w-4xl tracking-tight">
               {blog.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 mt-8 text-gray-200">
-              <span className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-4 md:gap-8 mt-6 md:mt-10 text-gray-200">
+              <div className="flex items-center gap-2 text-sm md:text-base">
                 <FaRegCalendarAlt className="text-blue-400" />
-                {blog.date}
-              </span>
+                <span className="font-medium">{blog.date}</span>
+              </div>
 
-              <span className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-sm md:text-base">
                 <FaRegClock className="text-blue-400" />
-                {blog.readTime}
-              </span>
+                <span className="font-medium">{blog.readTime}</span>
+              </div>
 
-              <span className="font-medium">By {blog.author}</span>
+              <div className="flex items-center gap-2 text-sm md:text-base">
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-[10px] font-bold text-white">
+                  {blog.author.charAt(0)}
+                </div>
+                <span className="font-semibold">By {blog.author}</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CONTENT */}
-      <section className="max-w-5xl mx-auto px-4 md:px-6 -mt-20 relative z-30">
-        <div className="bg-white rounded-[32px] shadow-2xl overflow-hidden border border-gray-100">
+      <section className="max-w-5xl mx-auto px-4 md:px-6 -mt-10 md:-mt-16 relative z-30 mb-12">
+        <div className="bg-white rounded-[24px] md:rounded-[40px] shadow-2xl overflow-hidden border border-gray-100">
           {/* DESCRIPTION */}
-          <div className="p-8 md:p-12 border-b border-gray-100">
-            <p className="text-xl leading-9 text-gray-700 font-light">
+          <div className="p-6 md:p-14 border-b border-gray-50 bg-gray-50/30">
+            <p className="text-lg md:text-2xl leading-[1.6] md:leading-[1.8] text-gray-700 font-medium italic opacity-90">
               {blog.description}
             </p>
           </div>
 
           {/* CONTENT */}
           {blog.content && (
-            <div className="p-8 md:p-12">
+            <div className="p-6 md:p-14">
               <div
                 className="
                   prose 
-                  prose-lg 
+                  prose-sm
+                  md:prose-xl
                   max-w-none
                   prose-headings:text-gray-900
+                  prose-headings:font-black
                   prose-p:text-gray-700
-                  prose-p:leading-8
+                  prose-p:leading-[1.8]
                   prose-strong:text-black
                   prose-a:text-blue-600
-                  prose-img:rounded-2xl
+                  prose-img:rounded-3xl
+                  prose-img:shadow-xl
                 "
                 dangerouslySetInnerHTML={{
                   __html: blog.content.replace(/\n/g, "<br />"),
@@ -211,21 +221,22 @@ const BlogPostPage: React.FC = () => {
           )}
 
           {/* TAGS */}
-          <div className="px-8 md:px-12 pb-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-5">
+          <div className="px-6 md:px-14 pb-12">
+            <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+              <span className="w-8 h-1 bg-blue-600 rounded-full"></span>
               Popular Tags
             </h3>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {blog.tags.map((tag, index) => (
                 <span
                   key={index}
                   className="
-                    px-4 py-2 rounded-lg
-                    bg-blue-50
-                    text-blue-600
-                    text-sm
-                    font-semibold
+                    px-4 py-2 rounded-xl
+                    bg-gray-100
+                    text-gray-700
+                    text-xs md:text-sm
+                    font-bold
                     hover:bg-blue-600
                     hover:text-white
                     transition-all
@@ -241,119 +252,111 @@ const BlogPostPage: React.FC = () => {
         </div>
 
         {/* SHARE */}
-        <div className="bg-white rounded-[28px] shadow-xl mt-10 p-8 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div className="bg-white rounded-[24px] md:rounded-[32px] shadow-xl mt-8 md:mt-12 p-6 md:p-10 border border-gray-100">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-3">
                 Share This Article
               </h3>
 
-              <p className="text-gray-600">
-                Help others discover this valuable content.
+              <p className="text-sm md:text-base text-gray-600 font-medium">
+                Help others discover this valuable medical education insight.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <button className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-all">
-                <FaFacebookF />
-              </button>
-
-              <button className="w-12 h-12 rounded-lg bg-sky-500 text-white flex items-center justify-center hover:scale-110 transition-all">
-                <FaTwitter />
-              </button>
-
-              <button className="w-12 h-12 rounded-lg bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-all">
-                <FaWhatsapp />
-              </button>
-
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
               <button
                 onClick={handleCopy}
-                className="w-12 h-12 rounded-lg bg-gray-800 text-white flex items-center justify-center hover:scale-110 transition-all"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 text-white font-bold text-sm hover:scale-105 transition-all shadow-lg"
               >
                 <FaLink />
+                {copied ? 'Copied!' : 'Copy Link'}
               </button>
 
-              <button className="w-12 h-12 rounded-lg border border-gray-300 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all">
+              <button className="w-12 h-12 rounded-xl border border-gray-200 text-gray-700 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm">
                 <FaBookmark />
               </button>
             </div>
           </div>
-
-          {copied && (
-            <p className="text-green-600 text-sm font-medium mt-4">
-              Link copied successfully!
-            </p>
-          )}
         </div>
 
         {/* RELATED BLOGS */}
         {relatedBlogs.length > 0 && (
-          <div className="mt-20 pb-20">
-            <div className="flex items-center justify-between mb-10">
+          <div className="mt-16 md:mt-24 pb-20">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
-                <h2 className="text-4xl font-black text-gray-900 mb-2">
+                <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-3">
                   Related Articles
                 </h2>
 
-                <p className="text-gray-600">
+                <p className="text-sm md:text-lg text-gray-600 font-medium">
                   Continue reading more medical education insights
                 </p>
               </div>
 
-              <FaShareAlt className="text-4xl text-blue-500 hidden md:block" />
+              <Link href="/blog" className="text-blue-600 font-bold hover:underline flex items-center gap-2">
+                View All Posts →
+              </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {relatedBlogs.map((relatedBlog) => (
                 <Link href={`/blog/${relatedBlog.id}`} key={relatedBlog.id}>
                   <div
                     className="
                       group
                       bg-white
-                      rounded-[28px]
+                      rounded-[24px] md:rounded-[32px]
                       overflow-hidden
-                      shadow-lg
+                      shadow-md
                       hover:shadow-2xl
                       transition-all
                       duration-500
                       hover:-translate-y-2
                       border border-gray-100
                       h-full
+                      flex flex-col
                     "
                   >
-                    <div className="relative h-56 overflow-hidden">
+                    <div className="relative h-48 md:h-56 overflow-hidden">
                       <img
                         src={relatedBlog.image}
                         alt={relatedBlog.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                      <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-lg">
+                      <span className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
                         {relatedBlog.category}
                       </span>
                     </div>
 
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
-                        <span>{relatedBlog.date}</span>
-                        <span>{relatedBlog.readTime}</span>
+                    <div className="p-6 md:p-8 flex-grow flex flex-col">
+                      <div className="flex items-center gap-4 text-[10px] md:text-xs font-bold text-gray-400 mb-4 uppercase tracking-widest">
+                        <span className="flex items-center gap-1.5">
+                          <FaRegCalendarAlt className="text-blue-500" />
+                          {relatedBlog.date}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <FaRegClock className="text-blue-500" />
+                          {relatedBlog.readTime}
+                        </span>
                       </div>
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-lg md:text-xl font-black text-gray-900 mb-4 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
                         {relatedBlog.title}
                       </h3>
 
-                      <p className="text-gray-600 text-sm leading-7 line-clamp-3">
+                      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mb-6 font-medium opacity-80">
                         {relatedBlog.description}
                       </p>
 
-                      <div className="mt-6 text-blue-600 font-semibold flex items-center gap-2">
-                        Read More
-                        <span className="group-hover:translate-x-1 transition-transform">
-                          →
-                        </span>
+                      <div className="mt-auto pt-6 border-t border-gray-50 text-blue-600 font-bold flex items-center justify-between">
+                        <span className="text-sm">Read Article</span>
+                        <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+                          <FaArrowRight className="text-[10px]" />
+                        </div>
                       </div>
                     </div>
                   </div>
