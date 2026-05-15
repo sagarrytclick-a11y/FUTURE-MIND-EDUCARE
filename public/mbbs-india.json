@@ -1860,8 +1860,8 @@
           "id": 72,
           "name": "Shri Ram Murti Smarak Institute of Medical Sciences",
           "city": "Bareilly",
-          "fees": "₹12,00,000 per year",
-          "seats": 150,
+          "fees": "₹19,78,214 per year",
+          "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#54 in India",
           "type": "Private",
@@ -1878,7 +1878,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹12,00,000 per year",
+            "tuitionFee": "₹19,78,214 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1897,8 +1897,8 @@
           "id": 73,
           "name": "Hind Institute of Medical Sciences",
           "city": "Sultanpur",
-          "fees": "₹10,00,000 per year",
-          "seats": 100,
+          "fees": "₹12,92,675 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#58 in India",
           "type": "Private",
@@ -1915,7 +1915,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹10,00,000 per year",
+            "tuitionFee": "₹12,92,675 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1934,8 +1934,8 @@
           "id": 74,
           "name": "Santosh Medical College",
           "city": "Ghaziabad",
-          "fees": "₹15,00,000 per year",
-          "seats": 200,
+          "fees": "₹24,00,000 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#47 in India",
           "type": "Private",
@@ -1952,7 +1952,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹15,00,000 per year",
+            "tuitionFee": "₹24,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2008,8 +2008,8 @@
           "id": 76,
           "name": "Teerthanker Mahaveer Medical College",
           "city": "Moradabad",
-          "fees": "₹11,00,000 per year",
-          "seats": 120,
+          "fees": "₹16,20,000 per year",
+          "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#56 in India",
           "type": "Private",
@@ -2026,7 +2026,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹11,00,000 per year",
+            "tuitionFee": "₹16,20,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2045,8 +2045,8 @@
           "id": 77,
           "name": "Rohilkhand Medical College",
           "city": "Bareilly",
-          "fees": "₹9,00,000 per year",
-          "seats": 100,
+          "fees": "₹18,72,361 per year",
+          "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#60 in India",
           "type": "Private",
@@ -2063,7 +2063,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹9,00,000 per year",
+            "tuitionFee": "₹18,72,361 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2119,8 +2119,8 @@
           "id": 79,
           "name": "Prasad Institute of Medical Sciences",
           "city": "Lucknow",
-          "fees": "₹7,00,000 per year",
-          "seats": 60,
+          "fees": "₹11,03,932 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#64 in India",
           "type": "Private",
@@ -2137,7 +2137,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹7,00,000 per year",
+            "tuitionFee": "₹11,03,932 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2175,6 +2175,1153 @@
           ],
           "detailedFees": {
             "tuitionFee": "₹6,00,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 123,
+          "name": "Autonomous State Medical College",
+          "city": "Uttar Pradesh",
+          "fees": "Contact for Fees",
+          "seats": 100,
+          "type": "Government",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://asmcgonda.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-21-at-3.21.24-PM-scaled.jpeg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "Contact for Fees",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 124,
+          "name": "Career Instt. Of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹16,50,000 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://ucsworld.com/wp-content/uploads/2018/06/Career_Institute_of_Medical_Sciences_Hospital.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,50,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 125,
+          "name": "Dr. B.S. Kushwah Medical College",
+          "city": "Kanpur",
+          "fees": "₹14,14,159 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.edufever.com/wp-content/uploads/2024/06/Dr-BS-Kushwah-Institute-of-Medical-Sciences-1-1.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,14,159 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 126,
+          "name": "Dr. KNS Memorial Medical College",
+          "city": "Lucknow",
+          "fees": "₹11,21,162 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mynursingadmission.com/uploads/college/012025/3bab10e84a85a54a9da719cfd5ec87d9.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,21,162 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 127,
+          "name": "Era Lucknow Medical College",
+          "city": "Lucknow",
+          "fees": "₹16,60,000 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://elmcindia.org/assets/images/slider_image/6.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,60,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 128,
+          "name": "F.H. Medical College",
+          "city": "Agra",
+          "fees": "₹17,95,000 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.fhmc.co.in/images/G1.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹17,95,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 129,
+          "name": "G.S. Medical College",
+          "city": "Hapur",
+          "fees": "₹14,42,654 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://gsmedicalcollege.in/images/about/gs-university-building-new.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,42,654 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 130,
+          "name": "Heritage Institute of Medical Sciences",
+          "city": "Varanasi",
+          "fees": "₹13,21,492 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://i.ytimg.com/vi/mWp-3KtwP08/maxresdefault.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,21,492 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 131,
+          "name": "Integral Institute of Medical Sciences",
+          "city": "Lucknow",
+          "fees": "₹18,00,000 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://ucsworld.com/wp-content/uploads/2018/06/Medical_College_Integral_University.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹18,00,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 132,
+          "name": "K.D. Medical College",
+          "city": "Mathura",
+          "fees": "₹12,28,240 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.edufever.com/wp-content/uploads/2021/08/KD-Medical-College-Mathura-3.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹12,28,240 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 133,
+          "name": "KMC Medical College",
+          "city": "Meerut",
+          "fees": "₹14,14,159 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2024/12/KMC-Medical-College-Maharajganj-Building.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,14,159 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 134,
+          "name": "Krishna Mohan Medical College",
+          "city": "Mathura",
+          "fees": "₹11,73,856 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2017/04/Krishna-Mohan-Medical-College-and-Hospital-Uttar-Pradesh.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,73,856 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 135,
+          "name": "Major S D Singh Medical College",
+          "city": "Farrukhabad",
+          "fees": "Contact for Fees",
+          "seats": 100,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://majorsdspgamc.com/wp-content/uploads/2026/01/clg_img1.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "Contact for Fees",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 136,
+          "name": "Muzaffarnagar Medical College",
+          "city": "Muzaffarnagar",
+          "fees": "₹16,72,660 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mmcollege.org/images/image_1.3.png",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,72,660 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 137,
+          "name": "Naraina Medical College",
+          "city": "Kanpur",
+          "fees": "₹12,14,683 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://lh4.googleusercontent.com/proxy/EXaOB6BbvXTscXI_SdvJTClQWAchYIU-pkY02GoHZXL-bfYYVExRf6vWa_uhv17mJR6veun39GvnXPmWDJd_TSWy7FsUk-j8r4C3KuizmK1-",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹12,14,683 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 138,
+          "name": "National Capital Region Institute",
+          "city": "Meerut",
+          "fees": "₹12,19,917 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://rmgoe.org/universities/India/images/1750832845_685b96cdc89e9.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹12,19,917 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 139,
+          "name": "Noida International Institute",
+          "city": "Noida",
+          "fees": "₹17,16,784 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://niims.edu.in/wp-content/uploads/2025/05/banner2-1536x581.png",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹17,16,784 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 140,
+          "name": "Punyashloka Medical College",
+          "city": "Uttar Pradesh",
+          "fees": "Contact for Fees",
+          "seats": 100,
+          "type": "Government",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://asmcs.in/uploads/1724499892.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "Contact for Fees",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 141,
+          "name": "Rajshree Medical Research Institute",
+          "city": "Bareilly",
+          "fees": "₹17,68,904 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://media.collegedekho.com/media/img/institute/crawled_images/None/sdfghj.jpeg?width=1080",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹17,68,904 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 142,
+          "name": "Rama Medical College",
+          "city": "Kanpur",
+          "fees": "₹11,73,856 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.ramamedicalcolleges.com/images/blog/blog-image.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,73,856 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 143,
+          "name": "Saraswati Institute of Medical Sciences",
+          "city": "Hapur",
+          "fees": "₹11,81,671 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2017/04/Saraswathi-medical-college-hapur-main-entrance.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,81,671 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 144,
+          "name": "Saraswati Medical College",
+          "city": "Unnao",
+          "fees": "₹11,59,610 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.justmbbs.com/img/college/uttar-pradesh/saraswati-medical-college-lucknow-banner.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,59,610 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 145,
+          "name": "Sharda School of Medical Sciences",
+          "city": "Greater Noida",
+          "fees": "₹15,23,183 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://www.edufever.com/wp-content/uploads/2021/08/Sharda-Medical-College-2.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹15,23,183 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 146,
+          "name": "Shri Gorakhnath Medical College",
+          "city": "Gorakhpur",
+          "fees": "₹14,14,159 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://sgmchrc.mgug.ac.in/assets/img/images/MBBS.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,14,159 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 147,
+          "name": "Shri Siddhi Vinayak Medical College",
+          "city": "Bareilly",
+          "fees": "₹14,14,159 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2024/12/Shri-Siddhi-Vinayak-Medical-College-Campus.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,14,159 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 148,
+          "name": "SKS Hospital Medical College",
+          "city": "Mathura",
+          "fees": "₹12,14,683 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://content.jdmagicbox.com/comp/mathura/z5/9999px565.x565.230728110525.d1z5/catalogue/sks-hospital-medical-college-and-research-centre-mathura-bypass-mathura-colleges-kz0f7lhxch.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹12,14,683 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 149,
+          "name": "Subharti Medical College",
+          "city": "Meerut",
+          "fees": "₹14,22,160 per year",
+          "seats": 200,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2018/07/slider1.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,22,160 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 150,
+          "name": "T S Misra Medical College",
+          "city": "Lucknow",
+          "fees": "₹18,70,847 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2020/10/13/c403e050f8844dd7ae7e45c2fad914eb.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹18,70,847 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 151,
+          "name": "United Institute of Medical Sciences",
+          "city": "Prayagraj",
+          "fees": "₹11,90,401 per year",
+          "seats": 150,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://blog.rmgoe.org/wp-content/uploads/2022/07/United-Institute-of-Medical-Sciences-Prayagraj-1.webp",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,90,401 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 152,
+          "name": "Varun Arjun Medical College",
+          "city": "Shahjahanpur",
+          "fees": "₹14,52,000 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://pub-3bd144a409f940998afd367af1dcde44.r2.dev/migrated/colleges/1765992384789-1131b7f0-s8sezdagmuwaptjrbzsb.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹14,52,000 per year",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 153,
+          "name": "Venkateshwara Institute of Medical Sciences",
+          "city": "Gajraula",
+          "fees": "₹11,10,508 per year",
+          "seats": 250,
+          "type": "Private",
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "image": "https://api.salahlo.in/media/university/photos/e83c5f5fd0cfddc9f901876e7f175172.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training",
+            "Research Opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,10,508 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
