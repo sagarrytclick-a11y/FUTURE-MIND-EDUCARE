@@ -20,7 +20,7 @@ const MbbsCard = () => {
             <Link href="/colleges/mbbs-india">
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
+                  <div className="absolute inset-0 bg-blue-600"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <div className="text-5xl font-black mb-2 flex items-center justify-center">
@@ -74,7 +74,7 @@ const MbbsCard = () => {
             <Link href="/colleges/mbbs-abroad">
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
+                  <div className="absolute inset-0 bg-blue-600"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <div className="text-5xl font-black mb-2 flex items-center justify-center">
