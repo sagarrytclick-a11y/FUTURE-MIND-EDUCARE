@@ -67,7 +67,7 @@ const ContactPopup: React.FC = () => {
       <div className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-[0_20px_80px_rgba(0,0,0,0.35)] animate-popup">
 
         {/* Header */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 px-7 py-7 text-white">
+        <div className="relative overflow-hidden bg-blue-600 to-cyan-500 px-7 py-7 text-white">
 
           <div className="absolute -top-10 right-0 h-40 w-40 rounded-lg bg-white/10 blur-3xl"></div>
 
