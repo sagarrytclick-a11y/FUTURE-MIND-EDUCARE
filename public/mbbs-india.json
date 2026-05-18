@@ -6479,7 +6479,7 @@
           "id": 22,
           "name": "S.M.S. Medical College",
           "city": "Jaipur",
-          "fees": "₹2,000 per year",
+          "fees": "\u20b92,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#20 in India",
@@ -6497,7 +6497,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹2,000 per year",
+            "tuitionFee": "\u20b92,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -6516,7 +6516,7 @@
           "id": 23,
           "name": "J.L.N. Medical College",
           "city": "Ajmer",
-          "fees": "₹1,800 per year",
+          "fees": "\u20b91,800 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#25 in India",
@@ -6534,7 +6534,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹1,800 per year",
+            "tuitionFee": "\u20b91,800 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -6548,7 +6548,489 @@
             "Provisional Allotment Letter",
             "Caste Certificate (if applicable)"
           ]
+        },
+        {
+          "id": 201,
+          "name": "American International Institute of Medical Sciences",
+          "city": "Udaipur",
+          "fees": "\u20b918,90,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.aiimsudr.ac.in/website/images/AIIMSudr_Medical_College.jpg",
+          "admissionProcess": "Admission is through Rajasthan NEET UG Counseling. Candidates must qualify NEET UG and meet the eligibility criteria set by RUHS and NMC.",
+          "placements": "Offers excellent clinical training at the attached 700+ bed multispecialty hospital. Graduates have high success rates in PG entrance exams.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Attached Multispecialty Hospital",
+            "Modern Infrastructure",
+            "Experienced Clinical Faculty",
+            "Research Facilities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b932,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 202,
+          "name": "Ananta Institute of Medical Sciences and Research Centre",
+          "city": "Rajsamand",
+          "fees": "\u20b918,90,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2021/09/29/26e33bf2dbd74c0cab9f34ea1fea4321.jpg",
+          "admissionProcess": "Admission is through Rajasthan NEET UG Counseling based on NEET UG rank. The process includes registration, choice filling, and seat allotment.",
+          "placements": "Excellent clinical exposure in a rural setup. The institute is known for its discipline and high-quality medical training.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "State-of-the-art Campus",
+            "Spacious Labs",
+            "700+ Bedded Hospital",
+            "Skill Development Center"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b928,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 203,
+          "name": "Arya Institute of Medical Sciences",
+          "city": "Jaipur",
+          "fees": "As per Govt. Norms",
+          "seats": 50,
+          "recognition": "NMC (New)",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.collegebatch.com/static/clg-gallery/ruhs-college-of-medical-sciences-jaipur-341847.webp",
+          "admissionProcess": "Admission for this new medical college is through Rajasthan State Counseling based on NEET UG scores.",
+          "placements": "As a new institute (2025), focus is on building strong foundations for medical graduates through quality clinical exposure.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern Infrastructure",
+            "Experienced Faculty",
+            "Strategic Location in Jaipur",
+            "Integrated Learning"
+          ],
+          "detailedFees": {
+            "tuitionFee": "To be announced",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 204,
+          "name": "Balvir NIMS Medical College",
+          "city": "Jaipur",
+          "fees": "\u20b924,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.edufever.com/wp-content/uploads/2025/10/Balvir-Singh-Tomar-Institute-of-Medical-Sciences-Jaipur.webp",
+          "admissionProcess": "Admission is through Rajasthan State NEET UG Counseling for State and Management seats. AIQ seats are handled by MCC.",
+          "placements": "Associated with NIMS University, providing global exposure and excellent residency opportunities within the NIMS hospital network.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Part of NIMS University",
+            "Advanced Tertiary Care Hospital",
+            "International Collaborations",
+            "Holistic Learning Environment"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b924,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b930,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 205,
+          "name": "Dr. S.S. Tantia Medical College, Hospital and Research Centre",
+          "city": "Sri Ganganagar",
+          "fees": "\u20b922,25,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://drsstantiamch.org/web_assets/assets/img/IMG_0356-scaled.jpg",
+          "admissionProcess": "Admission through State Counseling authority based on NEET UG merit rank.",
+          "placements": "The college has its own 700+ bed multispecialty hospital providing hands-on clinical experience across all specialties.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Large Intake (250 Seats)",
+            "Multispecialty Hospital Support",
+            "Advanced OT Complexes",
+            "Experienced Faculty Team"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b922,25,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b929,25,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 206,
+          "name": "GEETANJALI Medical College (RUHS)",
+          "city": "Udaipur",
+          "fees": "\u20b923,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC (New)",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://careerpaathshala.com/wp-content/uploads/2023/08/2-43.jpg",
+          "admissionProcess": "Admission through RUHS-led State Counseling based on NEET UG scores for the 2025 session.",
+          "placements": "Leverages the strong clinical network of the Geetanjali group to provide robust training and residency prospects.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "New Affiliation (2025)",
+            "Access to Geetanjali Hospital",
+            "Modern Lecture Theaters",
+            "Clinical-Centric Curriculum"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+      
+        {
+          "id": 208,
+          "name": "Jaipur National University Institute for Medical Sciences and Research Centre",
+          "city": "Jaipur",
+          "fees": "\u20b923,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://mbbsadvisor.in/rajasthan/images/jaipur-national-university-institute-for-medical-sciences-and-research-centre.jpg",
+          "admissionProcess": "Admission is through Rajasthan State Counseling for NEET UG qualified candidates.",
+          "placements": "Graduates have access to JNU's extensive hospital network and corporate placement cell for clinical roles.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Integrated Campus with JNU",
+            "Multi-specialty Hospital",
+            "Modern Research Labs",
+            "Extensive Clinical Exposure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b928,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 209,
+          "name": "JIET Medical College and Hospital",
+          "city": "Jodhpur",
+          "fees": "\u20b918,90,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://images.squarespace-cdn.com/content/v1/62fbe833a48ae5660accb5a8/3f01567e-04cb-40d8-b9ea-4cfff5a20a00/jiet+h.jpg",
+          "admissionProcess": "Admission via State NEET Counseling. Merit-based allotment for both state and management seats.",
+          "placements": "Provides training in the 700+ bed JIET hospital, focusing on practical clinical skills and patient care.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern Jodhpur Campus",
+            "Well-equipped OTs",
+            "24/7 Library Access",
+            "Experienced Faculty from Top AIIMS"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b928,20,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 210,
+          "name": "Mahatma Gandhi Medical College and Hospital",
+          "city": "Jaipur",
+          "fees": "\u20b919,50,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#25 in Private Medical Colleges (India)",
+          "type": "Private",
+          "image": "https://www.mgmch.org/images/building.webp",
+          "admissionProcess": "Admission through MGM University and State Counseling authorities based on NEET UG merit.",
+          "placements": "Outstanding track record with graduates placed in premier national and international medical institutions.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Premier Private Medical Institute",
+            "Attached 1000+ Bed Hospital",
+            "Advanced Super-specialty Units",
+            "Strong Alumni Network"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b919,50,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b926,75,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 211,
+          "name": "National Institute of Medical Sciences and Research (NIMS)",
+          "city": "Jaipur",
+          "fees": "\u20b924,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://image-static.collegedunia.com/public/college_data/images/appImage/1592586164Cover.png",
+          "admissionProcess": "Admission is through Rajasthan State Counseling for State/Management seats and MCC for AIQ seats.",
+          "placements": "NIMS graduates are highly sought after in corporate hospitals and many pursue higher studies abroad through university tie-ups.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2004",
+            "Integrated Healthcare Hub",
+            "Global Residency Programs",
+            "State-of-the-art ICUs and OTs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b924,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b930,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 212,
+          "name": "Pacific Institute of Medical Sciences",
+          "city": "Udaipur (Umarda)",
+          "fees": "\u20b925,00,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://admissionuniverse.in/img/pacific.jpg",
+          "admissionProcess": "Admission through Rajasthan NEET UG Counseling for both state and management quota seats.",
+          "placements": "Focuses on skill-based training in its large 800+ bed hospital, preparing students for clinical roles across India.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Sai Tirupati University Affiliation",
+            "Modern Diagnostic Center",
+            "Large Clinical Intake",
+            "Extensive Research Facilities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b925,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b934,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+     
+        {
+          "id": 214,
+          "name": "Sudha Medical College and Hospital",
+          "city": "Kota",
+          "fees": "\u20b918,90,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://sudhamedicalcollege.com/wp-content/uploads/2024/05/front.jpg",
+          "admissionProcess": "Admission is through Rajasthan state counseling based on NEET UG rankings.",
+          "placements": "Strategically located in the coaching hub of Kota, focusing on high academic standards and clinical proficiency.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern Kota Campus",
+            "Well-equipped Library",
+            "Focus on Competitive PG Prep",
+            "Patient-Centric Training"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b928,20,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
+        },
+        {
+          "id": 215,
+          "name": "Vyas Medical College and Hospital",
+          "city": "Jodhpur",
+          "fees": "\u20b923,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://nyraeducation.in/wp-content/uploads/2025/05/vyas-medical-college-and-hospital-jodhpur-jodhpur-colleges-b95v7lbt9b-1024x520.jpg",
+          "admissionProcess": "Admission through State Counseling based on NEET UG scores.",
+          "placements": "Strong focus on clinical residency training within the Vyas group's hospital network in Jodhpur.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established Infrastructure",
+            "Modern Lecture Halls",
+            "Integrated Research Approach",
+            "Digital Learning Resources"
+          ],
+          "detailedFees": {
+            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "managementQuotaFee": "\u20b930,00,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 & 12 Marksheets",
+            "Domicile Certificate",
+            "Category Certificate",
+            "ID Proof",
+            "Photographs"
+          ]
         }
+
       ]
     }
   ]
