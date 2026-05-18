@@ -6425,80 +6425,312 @@
       "name": "West Bengal",
       "image": "https://i.pinimg.com/1200x/9a/06/0e/9a060e0cea7350a1ed769b09eb5fa8b6.jpg",
       "description": "Cultural Capital with Premier Medical Colleges",
-      "colleges": [
+       "colleges": [
         {
-          "id": 18,
-          "name": "Medical College Kolkata (MCK)",
-          "city": "Kolkata",
-          "fees": "₹2,500 per year",
-          "seats": 200,
+          "id": 20,
+          "name": "East West Institute of Medical Sciences",
+          "city": "Durgapur",
+          "fees": "₹2,000,000 per year",
+          "seats": 100,
           "recognition": "NMC, MCI",
-          "ranking": "#8 in India",
-          "type": "Government",
-          "image": "https://www.moksh16.com/uploads/images/mck.webp",
-          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
-          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
-          "entranceExams": [
-            "NEET UG"
-          ],
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://ucsworld.com/wp-content/uploads/2024/11/EAST-WEST-MEDICAL-COLLEGE-WB.jpg.webp",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the state-level counseling process.",
+          "placements": "Clinical training and internship opportunities in the associated teaching hospital.",
+          "entranceExams": ["NEET UG"],
           "academicHighlights": [
-            "Experienced Faculty",
             "Modern Labs",
             "Clinical Training",
-            "Research Opportunities"
+            "Experienced Faculty"
           ],
           "detailedFees": {
-            "tuitionFee": "₹2,500 per year",
-            "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "tuitionFee": "₹2,00,000 per year",
+            "hostelFee": "Standard",
+            "otherFees": "As per university norms"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
             "NEET UG Scorecard",
-            "Class 10 Certificate and Marksheet",
-            "Class 12 Certificate and Marksheet",
-            "ID Proof (Aadhar/PAN/Driving License/Passport)",
-            "Passport size photographs",
-            "Provisional Allotment Letter",
-            "Caste Certificate (if applicable)"
+            "Class 10/12 Marksheet",
+            "ID Proof",
+            "Photographs"
           ]
         },
         {
-          "id": 19,
-          "name": "IPGMER and SSKM Hospital",
-          "city": "Kolkata",
-          "fees": "₹3,000 per year",
-          "seats": 150,
+          "id": 21,
+          "name": "Gouri Devi Institute of Medical Sciences",
+          "city": "Durgapur",
+          "fees": "₹2,188,000 per year",
+          "seats": 200,
           "recognition": "NMC, MCI",
-          "ranking": "#17 in India",
-          "type": "Government",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg/250px-%E0%A6%8F%E0%A6%B8%E0%A6%8F%E0%A6%B8%E0%A6%95%E0%A7%87%E0%A6%8F%E0%A6%AE_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE%E0%A6%B2_%E0%A7%A7.jpg",
-          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
-          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
-          "entranceExams": [
-            "NEET UG"
-          ],
+          "ranking": "N/A",
+          "type": "Society",
+          "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/COVER-IMAGE_4HyXXTt6q.webp?tr=w-3840",
+          "admissionProcess": "Admission via NEET UG merit and state quota/management counseling.",
+          "placements": "Excellent exposure in the 2016 established multi-specialty hospital.",
+          "entranceExams": ["NEET UG"],
           "academicHighlights": [
-            "Experienced Faculty",
-            "Modern Labs",
-            "Clinical Training",
-            "Research Opportunities"
+            "Advanced Clinical Research",
+            "Modern Classrooms"
           ],
           "detailedFees": {
-            "tuitionFee": "₹3,000 per year",
-            "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "tuitionFee": "₹2,188,000 per year",
+            "otherFees": "Examination fees extra"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
-            "NEET UG Scorecard",
-            "Class 10 Certificate and Marksheet",
-            "Class 12 Certificate and Marksheet",
-            "ID Proof (Aadhar/PAN/Driving License/Passport)",
-            "Passport size photographs",
-            "Provisional Allotment Letter",
-            "Caste Certificate (if applicable)"
+            "Scorecard",
+            "Academic Certificates",
+            "ID Proof"
           ]
+        },
+        {
+          "id": 22,
+          "name": "ICARE Institute of Medical Sciences",
+          "city": "Haldia",
+          "fees": "₹1,900,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.pathwayeducationtrust.in/public/images/52/1741083807.jpg",
+          "admissionProcess": "Selection through NEET UG performance and state counseling.",
+          "placements": "Internships provided at Dr. B.C. Roy Hospital.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Vibrant Campus", "Clinical Exposure"],
+          "detailedFees": {
+            "tuitionFee": "₹1,900,000 per year",
+            "otherFees": "Registration charges apply"
+          },
+          "documentsRequired": [
+            "NEET UG Details",
+            "Identity Proof",
+            "Academic Records"
+          ]
+        },
+        {
+          "id": 23,
+          "name": "IQ-City Medical College",
+          "city": "Durgapur",
+          "fees": "₹2,188,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://medical.iqcity.in/_next/image?url=https%3A%2F%2Fcms.medical.iqcity.in%2Fwp-content%2Fuploads%2F2025%2F03%2FIQCM_Exteriordaylight_EDITED-2-scaled-1.jpg&w=3840&q=75",
+          "admissionProcess": "NEET UG counseling through West Bengal state authorities.",
+          "placements": "Training at the multi-specialty IQ City Health Campus.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "High-end Infrastructure",
+            "Research Facilities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,188,000 per year",
+            "otherFees": "University fees separate"
+          },
+          "documentsRequired": ["NEET Documents", "Marksheets", "ID Proof"]
+        },
+        {
+          "id": 24,
+          "name": "Jagannath Gupta Institute of Medical Sciences (2025)",
+          "city": "Kolkata",
+          "fees": "₹2,000,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2017/04/Jagannath-Gupta-IMS-and-Hospital-Kolkata-1280x720.jpg",
+          "admissionProcess": "NEET UG based merit selection for upcoming 2025 batch.",
+          "placements": "Clinical training in the Budge Budge campus hospital.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["New Facilities", "Modern Labs"],
+          "detailedFees": {
+            "tuitionFee": "₹2,000,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Rank Card",
+            "Allotment Letter",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 26,
+          "name": "Jakir Hossain Medical College",
+          "city": "Murshidabad",
+          "fees": "₹2,000,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://jhmcri.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-25-at-7.30.20-PM.jpeg",
+          "admissionProcess": "Admission based on NEET UG rankings through the counseling portal.",
+          "placements": "Medical practice and internship at the district hospital level.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Dedicated Labs", "Community Medicine Focus"],
+          "detailedFees": {
+            "tuitionFee": "₹2,000,000 per year"
+          },
+          "documentsRequired": [
+            "NEET Documents",
+            "Caste Certificate if any",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 27,
+          "name": "JIS School of Medical Sciences",
+          "city": "Howrah",
+          "fees": "₹2,170,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.educationworldngo.com/wp-content/uploads/2024/01/jismsr-2-scaled-1.jpg",
+          "admissionProcess": "NEET UG score is mandatory for counseling participation.",
+          "placements": "Clinical rotations within the JIS group's medical facilities.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Renowned Management",
+            "Modern Infrastructure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,170,000 per year"
+          },
+          "documentsRequired": ["NEET UG Scorecard", "Certificates", "Photos"]
+        },
+        {
+          "id": 28,
+          "name": "JMN Medical College",
+          "city": "Nadia",
+          "fees": "₹1,900,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://jmnmedicalcollege.org.in/wp-content/uploads/2024/04/Campus3.webp",
+          "admissionProcess": "State counseling based on NEET UG rank.",
+          "placements": "Hands-on internship in the Nadia-based medical setup.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Holistic Learning", "Clinical Exposure"],
+          "detailedFees": {
+            "tuitionFee": "₹1,900,000 per year"
+          },
+          "documentsRequired": [
+            "NEET Admit Card",
+            "Marksheets",
+            "Identity Proof"
+          ]
+        },
+        {
+          "id": 29,
+          "name": "KPC Medical College and Hospital",
+          "city": "Kolkata",
+          "fees": "₹1,600,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "Top Private in WB",
+          "type": "Trust",
+          "image": "https://eduscope.co.in/wp-content/uploads/2024/10/kpc-medical-college.webp",
+          "admissionProcess": "Highly competitive NEET UG based counseling.",
+          "placements": "Premier clinical exposure at the Jadavpur hospital site.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Legacy Faculty", "Prime Location"],
+          "detailedFees": {
+            "tuitionFee": "₹1,600,000 per year"
+          },
+          "documentsRequired": [
+            "NEET Docs",
+            "Academic Proofs",
+            "Allotment Letter"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Krishnanagar Institute of Medical Sciences",
+          "city": "Krishnanagar",
+          "fees": "₹2,000,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://krishnanagarmedicalcollege.com/images/3.jpeg",
+          "admissionProcess": "Admission through NEET UG state-level counseling.",
+          "placements": "Internship opportunities in associated healthcare centers.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Developing Infrastructure",
+            "Experienced Staff"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,000,000 per year"
+          },
+          "documentsRequired": ["NEET Scorecard", "10/12 Marksheet", "ID Proof"]
+        },
+        {
+          "id": 31,
+          "name": "PKG Medical College",
+          "city": "Hooghly",
+          "fees": "₹2,000,000 per year",
+          "seats": 50,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://pkgmedicalcollege.in/wp-content/themes/my_theme_child/images/gal2.jpg",
+          "admissionProcess": "Counseling based on NEET UG merit list.",
+          "placements": "Personalized clinical training due to small batch sizes.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Focused Teaching", "Modern Equipment"],
+          "detailedFees": {
+            "tuitionFee": "₹2,000,000 per year"
+          },
+          "documentsRequired": [
+            "NEET Admit Card",
+            "Personal Documents",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 32,
+          "name": "Raniganj Institute of Medical Sciences",
+          "city": "Raniganj",
+          "fees": "₹2,000,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://rimsdh.in/wp-content/uploads/2025/05/Home-Banner-3.webp",
+          "admissionProcess": "NEET UG mandatory for admission counseling.",
+          "placements": "Clinical rotations in the local regional hospital.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Regional Focus", "New Labs"],
+          "detailedFees": {
+            "tuitionFee": "₹2,000,000 per year"
+          },
+          "documentsRequired": ["NEET Documents", "Academic Records", "Photos"]
+        },
+        {
+          "id": 33,
+          "name": "Santiniketan Medical College",
+          "city": "Bolpur",
+          "fees": "₹1,900,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.educationworldngo.com/wp-content/uploads/2024/01/5.webp",
+          "admissionProcess": "State counseling via NEET UG score.",
+          "placements": "Clinical practice in the cultural environment of Bolpur.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Unique Campus Location",
+            "Modern Teaching Aids"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,900,000 per year"
+          },
+          "documentsRequired": ["NEET UG Rank", "Marksheets", "Identity Card"]
         }
       ]
     },
