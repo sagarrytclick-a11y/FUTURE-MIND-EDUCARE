@@ -7191,79 +7191,224 @@
       "name": "Gujarat",
       "image": "https://i.pinimg.com/736x/02/9a/93/029a933377df613379a3acbc1f1f39d2.jpg",
       "description": "Developing State with Modern Medical Facilities",
-      "colleges": [
+       "colleges": [
         {
-          "id": 20,
-          "name": "B.J. Medical College (BJMC)",
-          "city": "Ahmedabad",
-          "fees": "₹2,000 per year",
-          "seats": 250,
+          "id": 22,
+          "name": "Banas Medical College and Research Institute",
+          "city": "Palanpur",
+          "fees": "₹8,94,000 per year (State)",
+          "seats": 200,
           "recognition": "NMC, MCI",
-          "ranking": "#19 in India",
-          "type": "Government",
-          "image": "https://medicalneetpg.com/_next/image?url=https%3A%2F%2Fi3c-medical-colleges-assets.blr1.digitaloceanspaces.com%2F2020%2F10%2F24%2F54223233169d47998d24a55cf98cbc6a.jpg&w=640&q=75",
-          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
-          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
-          "entranceExams": [
-            "NEET UG"
-          ],
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://content.jdmagicbox.com/comp/banaskantha/c3/9999p2748.2748.220920220601.s7c3/catalogue/banas-medical-college-and-hospital-banaskantha-colleges-0Q73QLQFgj.jpg",
+          "admissionProcess": "Admission for MBBS is based on the NEET UG score followed by state counseling through ACPUGMEC.",
+          "placements": "Provides internship and clinical exposure in the district's associated teaching hospital.",
+          "entranceExams": ["NEET UG"],
           "academicHighlights": [
-            "Experienced Faculty",
-            "Modern Labs",
-            "Clinical Training",
-            "Research Opportunities"
+            "Established 2018",
+            "Hemchandracharya North Gujarat University Affiliation",
+            "Modern Medical Equipment"
           ],
           "detailedFees": {
-            "tuitionFee": "₹2,000 per year",
-            "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "tuitionFee": "₹8,94,000 (State Quote)",
+            "managementFee": "₹18,19,000",
+            "nriFee": "6,500,000"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
-            "NEET UG Scorecard",
-            "Class 10 Certificate and Marksheet",
-            "Class 12 Certificate and Marksheet",
-            "ID Proof (Aadhar/PAN/Driving License/Passport)",
-            "Passport size photographs",
-            "Provisional Allotment Letter",
-            "Caste Certificate (if applicable)"
+            "Scorecard",
+            "Class 10/12 Marksheets",
+            "ID Proof",
+            "Allotment Letter"
           ]
         },
         {
-          "id": 21,
-          "name": "Medical College, Baroda",
-          "city": "Vadodara",
-          "fees": "₹2,500 per year",
-          "seats": 200,
+          "id": 23,
+          "name": "Bhagyoday Tirth Charitable Trust Medical College",
+          "city": "Sagar",
+          "fees": "₹10,14,000 per year (State)",
+          "seats": 100,
           "recognition": "NMC, MCI",
-          "ranking": "#22 in India",
-          "type": "Government",
-          "image": "https://www.medicalcollegebaroda.edu.in/img/6.jpg",
-          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
-          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
-          "entranceExams": [
-            "NEET UG"
-          ],
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://content.jdmagicbox.com/comp/sagar/s9/9999p7582.7582.120515174802.h5s9/catalogue/bhagyoday-tirth-charitable-trust-hospital-medical-research-centre-sagar-city-sagar-hospitals-1011kw6.jpg",
+          "admissionProcess": "NEET UG based merit entry via state authorities.",
+          "placements": "Clinical rotations in charitable multi-specialty hospitals.",
+          "entranceExams": ["NEET UG"],
           "academicHighlights": [
-            "Experienced Faculty",
-            "Modern Labs",
-            "Clinical Training",
-            "Research Opportunities"
+            "2024 Batch Intake",
+            "Charitable Healthcare Mission"
           ],
           "detailedFees": {
-            "tuitionFee": "₹2,500 per year",
-            "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "tuitionFee": "₹10,14,000 (State)",
+            "managementFee": "₹19,40,000",
+            "nriFee": "26,000 USD"
+          },
+          "documentsRequired": [
+            "NEET UG Documents",
+            "Academic Records",
+            "Identity Verification"
+          ]
+        },
+        {
+          "id": 24,
+          "name": "CU Shah Medical College",
+          "city": "Surendranagar",
+          "fees": "₹9,74,000 per year (State)",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://rmgoe.org/universities/India/image/1766394658_cu-shah-medical-college-surendranagar.jpg",
+          "admissionProcess": "Standard NEET UG counseling process for Saurashtra University affiliated colleges.",
+          "placements": "Extensive clinical training in the CU Shah Hospital.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Established 2000",
+            "Experienced Medical Staff",
+            "Saurashtra University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹9,74,000 (State)",
+            "managementFee": "₹22,00,000",
+            "nriFee": "2,500,000"
+          },
+          "documentsRequired": [
+            "NEET Scorecard",
+            "Passport Photos",
+            "Educational Certificates"
+          ]
+        },
+        {
+          "id": 25,
+          "name": "Dr. Kiran C. Patel Medical College",
+          "city": "Bharuch",
+          "fees": "₹9,50,000 per year (State)",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.moksh16.com/uploads/images/dkcpmcri-bharuch.webp",
+          "admissionProcess": "Selection through NEET UG rankings.",
+          "placements": "Clinical internships in the Veer Narmad South Gujarat University network.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["Established 2020", "Modern Infrastructure"],
+          "detailedFees": {
+            "tuitionFee": "₹9,50,000 (State)",
+            "managementFee": "₹19,00,000",
+            "nriFee": "2,600,000"
+          },
+          "documentsRequired": ["NEET Details", "Marksheets", "ID Proof"]
+        },
+        {
+          "id": 26,
+          "name": "Dr. M.K. Shah Medical College",
+          "city": "Ahmedabad",
+          "fees": "₹10,82,000 per year (State)",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2017/04/Dr-MK-Shah-Medical-College-Research-Centre-Ahmedabad.jpg",
+          "admissionProcess": "Counseling through Gujarat University for State Quota.",
+          "placements": "Associated with SMS Hospital for clinical practice.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": ["High Seat Capacity", "State-of-the-art Labs"],
+          "detailedFees": {
+            "tuitionFee": "₹10,82,000 (State)",
+            "managementFee": "₹21,64,000",
+            "nriFee": "30,000 USD"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
-            "NEET UG Scorecard",
-            "Class 10 Certificate and Marksheet",
-            "Class 12 Certificate and Marksheet",
-            "ID Proof (Aadhar/PAN/Driving License/Passport)",
-            "Passport size photographs",
-            "Provisional Allotment Letter",
-            "Caste Certificate (if applicable)"
+            "Marksheets",
+            "Caste Certificate if applicable"
+          ]
+        },
+        {
+          "id": 27,
+          "name": "GCS Medical College",
+          "city": "Ahmedabad",
+          "fees": "₹9,74,000 per year (State)",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.gcsmc.org/assets/images/about-home.jpg",
+          "admissionProcess": "NEET UG based admission through Gujarat University counseling.",
+          "placements": "Strong placement in the GCS multi-specialty hospital.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Established 2011",
+            "Prime Ahmedabad Location"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹9,74,000 (State)",
+            "managementFee": "₹18,27,000",
+            "nriFee": "25,000 USD"
+          },
+          "documentsRequired": [
+            "NEET UG Rank Card",
+            "ID Proof",
+            "Academic Certificates"
+          ]
+        },
+        {
+          "id": 28,
+          "name": "Parul Institute of Medical Sciences",
+          "city": "Vadodara",
+          "fees": "₹11,20,000 per year (State)",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://pimsr.paruluniversity.ac.in/wp-content/uploads/2024/02/buildingnew-768x576-1.jpg",
+          "admissionProcess": "Admission through NEET UG via Parul University's independent counseling process.",
+          "placements": "Excellent internships within the massive Parul University healthcare ecosystem.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Private University Status",
+            "Established 2016",
+            "Global Partnerships"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,20,000 (State)",
+            "managementFee": "₹20,90,000",
+            "nriFee": "30,000 USD"
+          },
+          "documentsRequired": [
+            "NEET Docs",
+            "University Registration",
+            "Educational Records"
+          ]
+        },
+        {
+          "id": 29,
+          "name": "Zydus Medical College and Hospital",
+          "city": "Dahod",
+          "fees": "₹10,49,000 per year (State)",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.zmchdahod.org/site_img/index/01.jpg",
+          "admissionProcess": "Selection based on NEET UG score via Gujarat government quota.",
+          "placements": "Clinical training in the Zydus hospital network.",
+          "entranceExams": ["NEET UG"],
+          "academicHighlights": [
+            "Established 2018",
+            "Shri Govind Guru University",
+            "Modern Medical Labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹10,49,000 (State)",
+            "managementFee": "₹20,98,000"
+          },
+          "documentsRequired": [
+            "NEET Scorecard",
+            "Identity Documents",
+            "Academic Proofs"
           ]
         }
       ]
