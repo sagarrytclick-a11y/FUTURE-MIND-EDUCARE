@@ -5731,13 +5731,13 @@
       "name": "Bihar",
       "image": "https://i.pinimg.com/736x/8a/11/3a/8a113af9ce9ab33a1cd1badc893debae.jpg",
       "description": "State with Rich History and Growing Medical Facilities",
-      "colleges": [
+       "colleges": [
         {
           "id": 111,
           "name": "Lord Buddha Koshi Medical College & Hospital",
           "city": "Saharsa",
-          "fees": "₹8,00,000 per year",
-          "seats": 100,
+          "fees": "₹12,00,000 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#75 in India",
           "type": "Private",
@@ -5754,9 +5754,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹8,00,000 per year",
+            "tuitionFee": "₹12,00,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$30,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -5773,8 +5774,8 @@
           "id": 112,
           "name": "Mata Gujri Memorial Medical College",
           "city": "Kishanganj",
-          "fees": "₹7,50,000 per year",
-          "seats": 100,
+          "fees": "₹9,63,000 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#78 in India",
           "type": "Private",
@@ -5791,9 +5792,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹7,50,000 per year",
+            "tuitionFee": "₹9,63,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$25,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -5810,8 +5812,8 @@
           "id": 113,
           "name": "Radha Devi Jageshwari Memorial Medical College Muzaffarpur",
           "city": "Muzaffarpur",
-          "fees": "₹7,00,000 per year",
-          "seats": 100,
+          "fees": "₹11,90,000 per year",
+          "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#80 in India",
           "type": "Private",
@@ -5828,9 +5830,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹7,00,000 per year",
+            "tuitionFee": "₹11,90,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$25,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -5847,8 +5850,8 @@
           "id": 114,
           "name": "Shree Narayan Medical Institute & Hospital Saharsa",
           "city": "Saharsa",
-          "fees": "₹6,50,000 per year",
-          "seats": 100,
+          "fees": "₹12,05,000 per year",
+          "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#82 in India",
           "type": "Private",
@@ -5865,9 +5868,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹6,50,000 per year",
+            "tuitionFee": "₹12,05,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$30,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -5884,8 +5888,8 @@
           "id": 115,
           "name": "Narayan Medical College & Hospital Bihar",
           "city": "Sasaram",
-          "fees": "₹6,00,000 per year",
-          "seats": 150,
+          "fees": "₹12,25,000 per year",
+          "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#72 in India",
           "type": "Private",
@@ -5902,9 +5906,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹6,00,000 per year",
+            "tuitionFee": "₹12,25,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$25,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -5921,8 +5926,8 @@
           "id": 116,
           "name": "Madhubani Medical College & Hospital Bihar",
           "city": "Madhubani",
-          "fees": "₹5,50,000 per year",
-          "seats": 100,
+          "fees": "₹14,00,000 per year",
+          "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#85 in India",
           "type": "Private",
@@ -5939,9 +5944,10 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "₹5,50,000 per year",
+            "tuitionFee": "₹14,00,000 per year",
             "hostelFee": "Included/Nominal",
-            "otherFees": "Registration & Examination fees as per university norms"
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$25,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -6000,7 +6006,7 @@
           "recognition": "NMC, MCI",
           "ranking": "#90 in India",
           "type": "Private",
-          "image": "https://www.jktmcm.in/wp-content/uploads/2020/03/college-building.jpg",
+          "image": "https://jnktmchmadhepura.org/assets/banner_4-6e0514e6.jpg",
           "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by MCC for All India Quota and respective state authorities for State Quota seats.",
           "placements": "Excellent clinical exposure and internship opportunities in associated hospitals. Graduates often pursue MD/MS in top institutes or join premier health organizations.",
           "entranceExams": [
@@ -6016,6 +6022,234 @@
             "tuitionFee": "₹4,80,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 222,
+          "name": "Himalaya Medical College and Hospital",
+          "city": "Patna",
+          "fees": "₹15,50,000 per year",
+          "seats": 150,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://hmcedu.in/slider-images/1753787188_1.png",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Clinical internship training is provided at the associated 900+ bed teaching hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Associated Multispecialty Teaching Hospital",
+            "Experienced Faculty",
+            "Modern Laboratories",
+            "Comprehensive Clinical Training"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹15,50,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$27,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 223,
+          "name": "Katihar Medical College",
+          "city": "Katihar",
+          "fees": "₹11,05,000 per year",
+          "seats": 200,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.kmckatihar.org/assets/media/main-slider/1.jpg",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Highly reputable for its clinical training and post-graduation placements across top medical institutions.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Well-established since 1987",
+            "Under Al-Karim University",
+            "Excellent Clinical Case Load",
+            "State-of-the-art Infrastructure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹11,05,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$28,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 224,
+          "name": "Mahabodhi Medical College & Hospital",
+          "city": "Gaya",
+          "fees": "₹16,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://mahabodhimedicalcollege.com/assets/images/mahabodhi-about.jpg",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Offers modern clinical internships and hands-on patient care training at the newly built hospital wing.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Affiliated with BUHS",
+            "Managed by Chanakya Trust",
+            "Modern Classrooms",
+            "State-of-the-art Laboratories"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,00,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$26,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 225,
+          "name": "Netaji Subhas Medical College and Hospital",
+          "city": "Patna",
+          "fees": "₹16,25,000 per year",
+          "seats": 150,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://i.ytimg.com/vi/27wBP8fnMRQ/maxresdefault.jpg",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Offers robust internship training with hands-on practice in the attached multispecialty hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2020",
+            "Affiliated with BUHS",
+            "State-of-the-art Campus",
+            "Highly Experienced Faculty"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,25,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 226,
+          "name": "Shyamlal Chandrashekhar Medical College & Hospital",
+          "city": "Khagaria",
+          "fees": "₹15,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.edufever.com/wp-content/uploads/2024/06/Shyamlal-Chandrashekhar-Medical-College-Khagaria-1.webp",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Equipped with the Shaheed Prabhunarayan Multi Speciality Hospital for extensive hands-on medical training.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2023",
+            "Affiliated with BUHS",
+            "Khagaria's Premier Medical Institute",
+            "Modern Campus and Lab Infrastructure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹15,50,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$27,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof (Aadhar/PAN/Driving License/Passport)",
+            "Passport size photographs",
+            "Provisional Allotment Letter",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 227,
+          "name": "Viraat Ramayan Institute of Medical Sciences",
+          "city": "East Champaran",
+          "fees": "₹16,00,000 per year",
+          "seats": 50,
+          "recognition": "NMC",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://vrimsedu.in/images/slider_img1.jpg",
+          "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the Bihar Combined Entrance Competitive Examination Board (BCECEB) counseling.",
+          "placements": "Offers extensive internship opportunities at its own VRIMS teaching hospital in Koyala Belwa.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2025",
+            "Affiliated with BUHS",
+            "Pioneering Medical Facility in East Champaran",
+            "50 Student Intake Capacity"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹16,00,000 per year",
+            "hostelFee": "As per college norms",
+            "otherFees": "Registration & Examination fees as per university norms",
+            "nriFee": "$28,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
