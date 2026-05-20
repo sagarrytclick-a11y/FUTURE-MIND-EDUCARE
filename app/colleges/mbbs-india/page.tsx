@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import {
   FaGraduationCap,
@@ -9,6 +9,9 @@ import {
   FaSearch,
   FaChevronLeft,
   FaChevronRight,
+  FaStar,
+  FaCheckCircle,
+  FaArrowRight,
 } from "react-icons/fa"
 import { dataCache, CACHE_KEYS } from "@/lib/data-cache"
 
@@ -107,6 +110,36 @@ const MbbsIndiaPage: React.FC = () => {
     indexOfFirstCollege,
     indexOfLastCollege
   )
+
+  const getPageNumbers = () => {
+    const pages: (number | string)[] = []
+    const maxVisiblePages = 5
+
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i += 1) pages.push(i)
+    } else {
+      const startPage = Math.max(2, currentPage - 1)
+      const endPage = Math.min(totalPages - 1, currentPage + 1)
+
+      pages.push(1)
+
+      if (startPage > 2) {
+        pages.push("...")
+      }
+
+      for (let i = startPage; i <= endPage; i += 1) {
+        pages.push(i)
+      }
+
+      if (endPage < totalPages - 1) {
+        pages.push("...")
+      }
+
+      pages.push(totalPages)
+    }
+
+    return pages
+  }
 
   // TOTAL SEATS
   const totalSeats = allColleges.reduce(
@@ -260,112 +293,68 @@ const MbbsIndiaPage: React.FC = () => {
           {currentColleges.map((college) => (
             <div
               key={college.id}
-              className="group bg-white rounded-xl sm:rounded-[32px] overflow-hidden border border-gray-100 hover:-translate-y-3 hover:shadow-2xl transition-all duration-500"
+              className="bg-white rounded-xl sm:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group"
             >
-              {/* IMAGE */}
-              <div className="relative h-56 sm:h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                   src={college.image}
                   alt={college.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-
-                {/* RANK */}
-                <div className="absolute top-4 sm:top-5 right-4 sm:right-5 bg-white/20 backdrop-blur-xl border border-white/20 text-white px-3 py-1 rounded-lg text-xs font-bold">
-                  {college.ranking}
-                </div>
-
-                {/* TYPE */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                   <span
-                    className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-xs font-bold ${
-                      college.type ===
-                      "Government"
-                        ? "bg-green-500 text-white"
-                        : "bg-purple-500 text-white"
+                    className={`px-2 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold text-white shadow-sm ${
+                      college.type === "Government"
+                        ? "bg-green-500"
+                        : "bg-blue-500"
                     }`}
                   >
-                    {college.type}
+                    {college.type || "Private"}
                   </span>
                 </div>
 
-                {/* TEXT */}
-                <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 text-white">
-                  <p className="text-xs sm:text-sm opacity-90">
-                    {college.city}
-                  </p>
-
-                  <h3 className="text-lg sm:text-2xl font-black leading-tight max-w-xs">
-                    {college.name}
-                  </h3>
-                </div>
+                {college.ranking && (
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1">
+                    <FaStar className="text-xs" />
+                    <span className="hidden sm:inline">{college.ranking}</span>
+                  </div>
+                )}
               </div>
 
-              {/* CONTENT */}
-              <div className="p-4 sm:p-7">
-                <h2 className="text-lg sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 line-clamp-1">
+              <div className="p-3 sm:p-4 lg:p-6">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 line-clamp-2 sm:line-clamp-1">
                   {college.name}
-                </h2>
+                </h3>
 
-                <div className="flex items-center gap-2 text-gray-500 mb-4 sm:mb-5">
-                  <FaMapMarkerAlt className="text-blue-500 text-sm sm:text-base" />
-
-                  <span className="text-sm sm:text-base">
-                    {college.city}
-                  </span>
-                </div>
-
-                {/* INFO BOX */}
-                <div className="bg-gray-50 border border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-5 space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-sm sm:text-base">
-                      Seats
-                    </span>
-
-                    <span className="font-bold text-gray-900 text-sm sm:text-base">
-                      {college.seats}
-                    </span>
+                <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 lg:mb-6">
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-gray-500">Fees</span>
+                    <span className="font-bold text-blue-700 text-xs sm:text-sm">{college.fees}</span>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-sm sm:text-base">
-                      Fees
-                    </span>
-
-                    <span className="font-bold text-gray-900 text-sm sm:text-base">
-                      {college.fees}
-                    </span>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-gray-500">City</span>
+                    <span className="text-gray-900 font-medium text-xs sm:text-sm">{college.city}</span>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-sm sm:text-base">
-                      Recognition
-                    </span>
-
-                    <span className="font-bold text-gray-900 text-sm sm:text-base">
-                      {college.recognition}
-                    </span>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span className="text-gray-500">Recognition</span>
+                    <span className="text-gray-900 font-medium text-xs sm:text-sm">{college.recognition}</span>
                   </div>
                 </div>
 
-                {/* BUTTON */}
+                <div className="flex items-center gap-2 text-green-600 text-xs sm:text-sm font-bold mb-2 sm:mb-3 lg:mb-4">
+                  <FaCheckCircle className="text-xs sm:text-sm" />
+                  <span className="text-xs sm:text-sm">WHO & NMC APPROVED</span>
+                </div>
+
                 <Link
-                  href={`/colleges/${college.name
-                    .toLowerCase()
-                    .replace(
-                      /[^a-z0-9\s]/g,
-                      ""
-                    )
-                    .replace(/\s+/g, "-")}`}
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold tracking-wide hover:scale-[1.02] transition-all duration-300 shadow-lg text-sm sm:text-base"
+                  href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-")}`}
+                  className="w-full py-2 sm:py-3 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-all text-sm sm:text-base"
                 >
-                  <FaUniversity className="text-sm sm:text-base" />
-
-                  <span>
-                    View Details
-                  </span>
+                  View Details
+                  <FaArrowRight className="text-sm sm:text-base" />
                 </Link>
               </div>
             </div>
@@ -375,91 +364,70 @@ const MbbsIndiaPage: React.FC = () => {
         {/* PAGINATION */}
         {totalPages > 1 && (
           <div className="max-w-7xl mx-auto py-8">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 sm:p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-                {/* PREVIOUS */}
+            <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-4 sm:p-6">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <button
                   onClick={() => {
-                    setCurrentPage(
-                      currentPage - 1
-                    )
-
-                    window.scrollTo({
-                      top: 400,
-                      behavior: "smooth",
-                    })
+                    setCurrentPage(currentPage - 1)
+                    window.scrollTo({ top: 400, behavior: "smooth" })
                   }}
                   disabled={currentPage === 1}
-                  className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-md text-sm sm:text-base"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 disabled:opacity-40 disabled:hover:bg-blue-600 disabled:cursor-not-allowed transition-all duration-200 shadow-sm text-sm"
                 >
-                  <FaChevronLeft className="text-sm sm:text-lg" />
-
-                  <span className="hidden sm:inline">
-                    Previous
-                  </span>
+                  <FaChevronLeft className="text-xs" />
+                  <span>Previous</span>
                 </button>
 
-                {/* PAGE BUTTONS */}
-                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-                  {Array.from(
-                    { length: totalPages },
-                    (_, i) => (
-                      <button
-                        key={i + 1}
-                        onClick={() => {
-                          setCurrentPage(i + 1)
+                <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto w-full sm:w-auto py-2">
+                  {getPageNumbers().map((page, index) => {
+                    if (page === "...") {
+                      return (
+                        <span
+                          key={`ellipsis-${index}`}
+                          className="w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center text-gray-400 font-medium text-sm select-none"
+                        >
+                          ...
+                        </span>
+                      )
+                    }
 
-                          window.scrollTo({
-                            top: 400,
-                            behavior:
-                              "smooth",
-                          })
+                    const isCurrent = currentPage === page
+
+                    return (
+                      <button
+                        key={`page-${page}`}
+                        onClick={() => {
+                          setCurrentPage(page as number)
+                          window.scrollTo({ top: 400, behavior: "smooth" })
                         }}
-                        disabled={
-                          currentPage === i + 1
-                        }
-                        className={`flex items-center justify-center gap-1 sm:gap-2 px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base ${
-                          currentPage ===
-                          i + 1
-                            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                            : "bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+                        disabled={isCurrent}
+                        className={`w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center rounded-xl font-semibold transition-all duration-200 text-sm ${
+                          isCurrent
+                            ? "bg-blue-50 text-blue-600 border-2 border-blue-600 cursor-not-allowed"
+                            : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200"
                         }`}
                       >
-                        {i + 1}
+                        {page}
                       </button>
                     )
-                  )}
+                  })}
                 </div>
 
-                {/* NEXT */}
                 <button
                   onClick={() => {
-                    setCurrentPage(
-                      currentPage + 1
-                    )
-
-                    window.scrollTo({
-                      top: 400,
-                      behavior: "smooth",
-                    })
+                    setCurrentPage(currentPage + 1)
+                    window.scrollTo({ top: 400, behavior: "smooth" })
                   }}
-                  disabled={
-                    currentPage === totalPages
-                  }
-                  className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-md text-sm sm:text-base"
+                  disabled={currentPage === totalPages}
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 disabled:opacity-40 disabled:hover:bg-blue-600 disabled:cursor-not-allowed transition-all duration-200 shadow-sm text-sm"
                 >
-                  <span className="hidden sm:inline">
-                    Next
-                  </span>
-
-                  <FaChevronRight className="text-sm sm:text-lg" />
+                  <span>Next</span>
+                  <FaChevronRight className="text-xs" />
                 </button>
               </div>
 
-              <div className="text-center mt-4 text-gray-600">
-                Page {currentPage} of{" "}
-                {totalPages} (
-                {filteredColleges.length} colleges)
+              <div className="text-center mt-4 text-gray-500 text-xs font-medium border-t border-gray-50 pt-3">
+                Showing Page {currentPage} of {totalPages} ({filteredColleges.length} Total Colleges)
               </div>
             </div>
           </div>

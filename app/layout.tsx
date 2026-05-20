@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { PopupProvider } from "@/contexts/PopupContext";
@@ -13,10 +13,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "FUTURE MIND EDUCARE - MBBS Admission Consultants",
   description: "Leading educational consultancy for MBBS admissions in India and abroad. Expert guidance for medical education at Andheri East, Mumbai.",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/logo.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
