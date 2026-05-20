@@ -1774,7 +1774,6 @@
             "Caste Certificate (if applicable)"
           ]
         },
-    
         {
           "id": 167,
           "name": "Indian Institute of Medical Science",
@@ -2071,7 +2070,6 @@
             "Caste Certificate (if applicable)"
           ]
         },
-     
         {
           "id": 176,
           "name": "MALATI Vasantdada Patil Medical College",
@@ -2368,8 +2366,6 @@
             "Caste Certificate (if applicable)"
           ]
         },
-     
-     
         {
           "id": 186,
           "name": "Sakhubai Medical College",
@@ -5386,6 +5382,259 @@
       ]
     },
     {
+      "id": 12,
+      "name": "Punjab",
+      "image": "https://cdn.britannica.com/53/176353-050-5B854179/Harmandir-Sahib-Amritsar-Punjab-India.jpg",
+      "description": "A state with a robust medical education infrastructure, featuring long-standing trust-run institutions and prestigious universities.",
+      "colleges": [
+        {
+          "id": 1001,
+          "name": "Adesh Institute of Medical Sciences",
+          "city": "Bathinda",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://aimsr.adeshuniversity.ac.in/images/aimsr.jpg",
+          "admissionProcess": "Admission is based on NEET UG scores followed by counseling conducted by the respective university/state authority.",
+          "placements": "Strong clinical exposure through the associated Adesh University hospital network.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2006",
+            "Affiliated with Adesh University",
+            "Modern Infrastructure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Extra",
+            "otherFees": "University and examination charges as applicable"
+          },
+          "documentsRequired": [
+            "NEET UG Scorecard",
+            "Class 10/12 Marksheets",
+            "ID Proof",
+            "Allotment Letter"
+          ]
+        },
+        {
+          "id": 1002,
+          "name": "Chintpurni Medical College",
+          "city": "Pathankot",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://medicaldialogues.in/h-upload/2022/04/26/750x450_175085-medical-college.webp",
+          "admissionProcess": "NEET UG merit-based admission via BFUHS counseling.",
+          "placements": "Internships provided in the multi-specialty teaching hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2011",
+            "Affiliated with Baba Farid University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Standard charges",
+            "otherFees": "Registration and security deposit"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "ID Proof",
+            "Academic Certificates"
+          ]
+        },
+        {
+          "id": 1003,
+          "name": "Christian Medical College (CMC)",
+          "city": "Ludhiana",
+          "fees": "₹1,094,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "Top Rated",
+          "type": "Trust",
+          "image": "https://www.cmcludhiana.in/wp-content/uploads/2024/06/CMC-HOSPITAL_LUDHIANA.webp",
+          "admissionProcess": "NEET UG score with specialized minority/open category counseling.",
+          "placements": "High placement rates in top hospitals and excellent PG track record.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 1953",
+            "Legacy Institution",
+            "Affiliated with Baba Farid University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Included/Nominal",
+            "otherFees": "Development and Library fees"
+          },
+          "documentsRequired": [
+            "NEET UG Scorecard",
+            "Minority Certificate (if any)",
+            "Academic Records"
+          ]
+        },
+        {
+          "id": 1004,
+          "name": "Dayanand Medical College (DMC)",
+          "city": "Ludhiana",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "A+ Grade",
+          "type": "Trust",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTz0OeZ79UR-B3gHKAs5UGoQHME-cr_6OcKg&s",
+          "admissionProcess": "Counseling through BFUHS based on NEET UG merit.",
+          "placements": "Extensive clinical training in one of Punjab's busiest hospitals.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 1963",
+            "Affiliated with Baba Farid University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Extra",
+            "otherFees": "Clinical and laboratory charges"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "Marksheets",
+            "Migration Certificate"
+          ]
+        },
+        {
+          "id": 1005,
+          "name": "Gian Sagar Medical College",
+          "city": "Banur",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://secureadmissions.in/wp-content/uploads/2025/06/2022-07-07-1.jpg",
+          "admissionProcess": "Admission via state level NEET UG counseling.",
+          "placements": "Hands-on internship in parent hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2020",
+            "Affiliated with Baba Farid University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "As per college norms",
+            "otherFees": "Misc university fees"
+          },
+          "documentsRequired": [
+            "NEET UG Scorecard",
+            "10+2 Certificates",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1006,
+          "name": "Punjab Institute of Medical Sciences (PIMS)",
+          "city": "Jalandhar",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.moksh16.com/uploads/images/pimsj.webp",
+          "admissionProcess": "Based on NEET UG ranking and BFUHS centralized counseling.",
+          "placements": "Good clinical rotation opportunities in Jalandhar city area.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2011",
+            "Affiliated with Baba Farid University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Extra",
+            "otherFees": "Exam and registration fees"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET Result",
+            "Provisional Allotment"
+          ]
+        },
+        {
+          "id": 1007,
+          "name": "RIMT University (Medical Wing)",
+          "city": "Mandi Gobindgarh",
+          "fees": "₹1,094,000 per year",
+          "seats": 50,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://rmgoe.org/universities/India/image/1735284505_rimt-medical-college-and-hospital-fatehgarh.webp",
+          "admissionProcess": "Direct admission based on NEET UG score following RIMT University guidelines.",
+          "placements": "Emerging clinical center with dedicated teaching facilities.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 2024",
+            "Affiliated with RIMT University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Nominal",
+            "otherFees": "Application and Lab fees"
+          },
+          "documentsRequired": [
+            "NEET UG Scorecard",
+            "School Leaving Certificate",
+            "Passport Photos"
+          ]
+        },
+        {
+          "id": 1008,
+          "name": "Sri Guru Ram Das Institute of Medical Sciences",
+          "city": "Amritsar",
+          "fees": "₹1,094,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "High Reputation",
+          "type": "Trust",
+          "image": "https://sgrdimsr.in/temp/newmedical/images/slider14.jpg",
+          "admissionProcess": "NEET UG score via SGRD University counseling for various categories.",
+          "placements": "Excellent exposure in the holy city with high patient footfall.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established in 1997",
+            "Affiliated with Sri Guru Ram Das University"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,094,000",
+            "hostelFee": "Standard rates",
+            "otherFees": "University development fund"
+          },
+          "documentsRequired": [
+            "NEET Admit Card",
+            "NEET Scorecard",
+            "Character Certificate",
+            "Aadhar Card"
+          ]
+        }
+      ]
+    },
+    {
       "id": 9,
       "name": "Madhya Pradesh",
       "image": "https://i.pinimg.com/736x/92/3a/c0/923ac067cd2e8f542190a04a80557737.jpg",
@@ -5731,7 +5980,7 @@
       "name": "Bihar",
       "image": "https://i.pinimg.com/736x/8a/11/3a/8a113af9ce9ab33a1cd1badc893debae.jpg",
       "description": "State with Rich History and Growing Medical Facilities",
-        "colleges": [
+      "colleges": [
         {
           "id": 111,
           "name": "Lord Buddha Koshi Medical College & Hospital",
@@ -6425,7 +6674,7 @@
       "name": "West Bengal",
       "image": "https://i.pinimg.com/1200x/9a/06/0e/9a060e0cea7350a1ed769b09eb5fa8b6.jpg",
       "description": "Cultural Capital with Premier Medical Colleges",
-       "colleges": [
+      "colleges": [
         {
           "id": 20,
           "name": "East West Institute of Medical Sciences",
@@ -6438,7 +6687,9 @@
           "image": "https://ucsworld.com/wp-content/uploads/2024/11/EAST-WEST-MEDICAL-COLLEGE-WB.jpg.webp",
           "admissionProcess": "Admission is based on the NEET UG score. Candidates must participate in the state-level counseling process.",
           "placements": "Clinical training and internship opportunities in the associated teaching hospital.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Modern Labs",
             "Clinical Training",
@@ -6469,7 +6720,9 @@
           "image": "https://ik.imagekit.io/syustaging/SYU_PREPROD/COVER-IMAGE_4HyXXTt6q.webp?tr=w-3840",
           "admissionProcess": "Admission via NEET UG merit and state quota/management counseling.",
           "placements": "Excellent exposure in the 2016 established multi-specialty hospital.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Advanced Clinical Research",
             "Modern Classrooms"
@@ -6497,8 +6750,13 @@
           "image": "https://www.pathwayeducationtrust.in/public/images/52/1741083807.jpg",
           "admissionProcess": "Selection through NEET UG performance and state counseling.",
           "placements": "Internships provided at Dr. B.C. Roy Hospital.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Vibrant Campus", "Clinical Exposure"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Vibrant Campus",
+            "Clinical Exposure"
+          ],
           "detailedFees": {
             "tuitionFee": "₹1,900,000 per year",
             "otherFees": "Registration charges apply"
@@ -6521,7 +6779,9 @@
           "image": "https://medical.iqcity.in/_next/image?url=https%3A%2F%2Fcms.medical.iqcity.in%2Fwp-content%2Fuploads%2F2025%2F03%2FIQCM_Exteriordaylight_EDITED-2-scaled-1.jpg&w=3840&q=75",
           "admissionProcess": "NEET UG counseling through West Bengal state authorities.",
           "placements": "Training at the multi-specialty IQ City Health Campus.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "High-end Infrastructure",
             "Research Facilities"
@@ -6530,7 +6790,11 @@
             "tuitionFee": "₹2,188,000 per year",
             "otherFees": "University fees separate"
           },
-          "documentsRequired": ["NEET Documents", "Marksheets", "ID Proof"]
+          "documentsRequired": [
+            "NEET Documents",
+            "Marksheets",
+            "ID Proof"
+          ]
         },
         {
           "id": 24,
@@ -6544,8 +6808,13 @@
           "image": "https://mbbscouncil.com/wp-content/uploads/2017/04/Jagannath-Gupta-IMS-and-Hospital-Kolkata-1280x720.jpg",
           "admissionProcess": "NEET UG based merit selection for upcoming 2025 batch.",
           "placements": "Clinical training in the Budge Budge campus hospital.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["New Facilities", "Modern Labs"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "New Facilities",
+            "Modern Labs"
+          ],
           "detailedFees": {
             "tuitionFee": "₹2,000,000 per year"
           },
@@ -6567,8 +6836,13 @@
           "image": "https://jhmcri.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-25-at-7.30.20-PM.jpeg",
           "admissionProcess": "Admission based on NEET UG rankings through the counseling portal.",
           "placements": "Medical practice and internship at the district hospital level.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Dedicated Labs", "Community Medicine Focus"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Dedicated Labs",
+            "Community Medicine Focus"
+          ],
           "detailedFees": {
             "tuitionFee": "₹2,000,000 per year"
           },
@@ -6590,7 +6864,9 @@
           "image": "https://www.educationworldngo.com/wp-content/uploads/2024/01/jismsr-2-scaled-1.jpg",
           "admissionProcess": "NEET UG score is mandatory for counseling participation.",
           "placements": "Clinical rotations within the JIS group's medical facilities.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Renowned Management",
             "Modern Infrastructure"
@@ -6598,7 +6874,11 @@
           "detailedFees": {
             "tuitionFee": "₹2,170,000 per year"
           },
-          "documentsRequired": ["NEET UG Scorecard", "Certificates", "Photos"]
+          "documentsRequired": [
+            "NEET UG Scorecard",
+            "Certificates",
+            "Photos"
+          ]
         },
         {
           "id": 28,
@@ -6612,8 +6892,13 @@
           "image": "https://jmnmedicalcollege.org.in/wp-content/uploads/2024/04/Campus3.webp",
           "admissionProcess": "State counseling based on NEET UG rank.",
           "placements": "Hands-on internship in the Nadia-based medical setup.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Holistic Learning", "Clinical Exposure"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Holistic Learning",
+            "Clinical Exposure"
+          ],
           "detailedFees": {
             "tuitionFee": "₹1,900,000 per year"
           },
@@ -6635,8 +6920,13 @@
           "image": "https://eduscope.co.in/wp-content/uploads/2024/10/kpc-medical-college.webp",
           "admissionProcess": "Highly competitive NEET UG based counseling.",
           "placements": "Premier clinical exposure at the Jadavpur hospital site.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Legacy Faculty", "Prime Location"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Legacy Faculty",
+            "Prime Location"
+          ],
           "detailedFees": {
             "tuitionFee": "₹1,600,000 per year"
           },
@@ -6658,7 +6948,9 @@
           "image": "https://krishnanagarmedicalcollege.com/images/3.jpeg",
           "admissionProcess": "Admission through NEET UG state-level counseling.",
           "placements": "Internship opportunities in associated healthcare centers.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Developing Infrastructure",
             "Experienced Staff"
@@ -6666,7 +6958,11 @@
           "detailedFees": {
             "tuitionFee": "₹2,000,000 per year"
           },
-          "documentsRequired": ["NEET Scorecard", "10/12 Marksheet", "ID Proof"]
+          "documentsRequired": [
+            "NEET Scorecard",
+            "10/12 Marksheet",
+            "ID Proof"
+          ]
         },
         {
           "id": 31,
@@ -6680,8 +6976,13 @@
           "image": "https://pkgmedicalcollege.in/wp-content/themes/my_theme_child/images/gal2.jpg",
           "admissionProcess": "Counseling based on NEET UG merit list.",
           "placements": "Personalized clinical training due to small batch sizes.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Focused Teaching", "Modern Equipment"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Focused Teaching",
+            "Modern Equipment"
+          ],
           "detailedFees": {
             "tuitionFee": "₹2,000,000 per year"
           },
@@ -6703,12 +7004,21 @@
           "image": "https://rimsdh.in/wp-content/uploads/2025/05/Home-Banner-3.webp",
           "admissionProcess": "NEET UG mandatory for admission counseling.",
           "placements": "Clinical rotations in the local regional hospital.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Regional Focus", "New Labs"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Regional Focus",
+            "New Labs"
+          ],
           "detailedFees": {
             "tuitionFee": "₹2,000,000 per year"
           },
-          "documentsRequired": ["NEET Documents", "Academic Records", "Photos"]
+          "documentsRequired": [
+            "NEET Documents",
+            "Academic Records",
+            "Photos"
+          ]
         },
         {
           "id": 33,
@@ -6722,7 +7032,9 @@
           "image": "https://www.educationworldngo.com/wp-content/uploads/2024/01/5.webp",
           "admissionProcess": "State counseling via NEET UG score.",
           "placements": "Clinical practice in the cultural environment of Bolpur.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Unique Campus Location",
             "Modern Teaching Aids"
@@ -6730,7 +7042,11 @@
           "detailedFees": {
             "tuitionFee": "₹1,900,000 per year"
           },
-          "documentsRequired": ["NEET UG Rank", "Marksheets", "Identity Card"]
+          "documentsRequired": [
+            "NEET UG Rank",
+            "Marksheets",
+            "Identity Card"
+          ]
         }
       ]
     },
@@ -7074,7 +7390,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": 99,
           "name": "Thanjavur Medical College",
           "city": "Thanjavur",
           "fees": "₹2,000 per year",
@@ -7191,7 +7507,7 @@
       "name": "Gujarat",
       "image": "https://i.pinimg.com/736x/02/9a/93/029a933377df613379a3acbc1f1f39d2.jpg",
       "description": "Developing State with Modern Medical Facilities",
-       "colleges": [
+      "colleges": [
         {
           "id": 22,
           "name": "Banas Medical College and Research Institute",
@@ -7204,7 +7520,9 @@
           "image": "https://content.jdmagicbox.com/comp/banaskantha/c3/9999p2748.2748.220920220601.s7c3/catalogue/banas-medical-college-and-hospital-banaskantha-colleges-0Q73QLQFgj.jpg",
           "admissionProcess": "Admission for MBBS is based on the NEET UG score followed by state counseling through ACPUGMEC.",
           "placements": "Provides internship and clinical exposure in the district's associated teaching hospital.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Established 2018",
             "Hemchandracharya North Gujarat University Affiliation",
@@ -7235,7 +7553,9 @@
           "image": "https://content.jdmagicbox.com/comp/sagar/s9/9999p7582.7582.120515174802.h5s9/catalogue/bhagyoday-tirth-charitable-trust-hospital-medical-research-centre-sagar-city-sagar-hospitals-1011kw6.jpg",
           "admissionProcess": "NEET UG based merit entry via state authorities.",
           "placements": "Clinical rotations in charitable multi-specialty hospitals.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "2024 Batch Intake",
             "Charitable Healthcare Mission"
@@ -7263,7 +7583,9 @@
           "image": "https://rmgoe.org/universities/India/image/1766394658_cu-shah-medical-college-surendranagar.jpg",
           "admissionProcess": "Standard NEET UG counseling process for Saurashtra University affiliated colleges.",
           "placements": "Extensive clinical training in the CU Shah Hospital.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Established 2000",
             "Experienced Medical Staff",
@@ -7292,14 +7614,23 @@
           "image": "https://www.moksh16.com/uploads/images/dkcpmcri-bharuch.webp",
           "admissionProcess": "Selection through NEET UG rankings.",
           "placements": "Clinical internships in the Veer Narmad South Gujarat University network.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["Established 2020", "Modern Infrastructure"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established 2020",
+            "Modern Infrastructure"
+          ],
           "detailedFees": {
             "tuitionFee": "₹9,50,000 (State)",
             "managementFee": "₹19,00,000",
             "nriFee": "2,600,000"
           },
-          "documentsRequired": ["NEET Details", "Marksheets", "ID Proof"]
+          "documentsRequired": [
+            "NEET Details",
+            "Marksheets",
+            "ID Proof"
+          ]
         },
         {
           "id": 26,
@@ -7313,8 +7644,13 @@
           "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2017/04/Dr-MK-Shah-Medical-College-Research-Centre-Ahmedabad.jpg",
           "admissionProcess": "Counseling through Gujarat University for State Quota.",
           "placements": "Associated with SMS Hospital for clinical practice.",
-          "entranceExams": ["NEET UG"],
-          "academicHighlights": ["High Seat Capacity", "State-of-the-art Labs"],
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "High Seat Capacity",
+            "State-of-the-art Labs"
+          ],
           "detailedFees": {
             "tuitionFee": "₹10,82,000 (State)",
             "managementFee": "₹21,64,000",
@@ -7338,7 +7674,9 @@
           "image": "https://www.gcsmc.org/assets/images/about-home.jpg",
           "admissionProcess": "NEET UG based admission through Gujarat University counseling.",
           "placements": "Strong placement in the GCS multi-specialty hospital.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Established 2011",
             "Prime Ahmedabad Location"
@@ -7366,7 +7704,9 @@
           "image": "https://pimsr.paruluniversity.ac.in/wp-content/uploads/2024/02/buildingnew-768x576-1.jpg",
           "admissionProcess": "Admission through NEET UG via Parul University's independent counseling process.",
           "placements": "Excellent internships within the massive Parul University healthcare ecosystem.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Private University Status",
             "Established 2016",
@@ -7395,7 +7735,9 @@
           "image": "https://www.zmchdahod.org/site_img/index/01.jpg",
           "admissionProcess": "Selection based on NEET UG score via Gujarat government quota.",
           "placements": "Clinical training in the Zydus hospital network.",
-          "entranceExams": ["NEET UG"],
+          "entranceExams": [
+            "NEET UG"
+          ],
           "academicHighlights": [
             "Established 2018",
             "Shri Govind Guru University",
@@ -7494,7 +7836,7 @@
           ]
         },
         {
-          "id": 201,
+          "id": 1000,
           "name": "American International Institute of Medical Sciences",
           "city": "Udaipur",
           "fees": "\u20b918,90,000 per year",
@@ -7713,7 +8055,6 @@
             "Photographs"
           ]
         },
-      
         {
           "id": 208,
           "name": "Jaipur National University Institute for Medical Sciences and Research Centre",
@@ -7899,7 +8240,6 @@
             "Photographs"
           ]
         },
-     
         {
           "id": 214,
           "name": "Sudha Medical College and Hospital",
@@ -7974,8 +8314,7 @@
             "Photographs"
           ]
         }
-
       ]
-    }
+    } 
   ]
 }
