@@ -460,7 +460,7 @@ const MbbsIndiaPage: React.FC = () => {
                 </Link>
 
                 <Link
-                  href="tel:+917076909090"
+                  href="tel:+919920798988"
                   className="border border-white/20 backdrop-blur-xl px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all"
                 >
                   Call Now

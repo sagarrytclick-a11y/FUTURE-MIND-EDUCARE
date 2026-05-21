@@ -279,7 +279,7 @@ const AboutPage: React.FC = () => {
             </Link>
 
             <Link
-              href="tel:+917076909090"
+              href="tel:+919920798988"
               className="border border-white/30 hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300"
             >
               Call Now
