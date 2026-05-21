@@ -8,7 +8,7 @@ const PopupModal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
-    }, 7000) 
+    }, 20000) 
 
     return () => clearTimeout(timer)
   }, [])
