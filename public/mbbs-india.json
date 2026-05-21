@@ -520,7 +520,7 @@
           "id": 5,
           "name": "Grant Medical College (GMC)",
           "city": "Mumbai",
-          "fees": "\u20b93,000 per year",
+          "fees": "₹3,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#7 in India",
@@ -538,7 +538,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,000 per year",
+            "tuitionFee": "₹3,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -557,7 +557,7 @@
           "id": 6,
           "name": "KEM Hospital and Seth G.S. Medical College",
           "city": "Mumbai",
-          "fees": "\u20b93,500 per year",
+          "fees": "₹3,500 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#9 in India",
@@ -575,7 +575,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,500 per year",
+            "tuitionFee": "₹3,500 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -594,7 +594,7 @@
           "id": 7,
           "name": "B.J. Government Medical College",
           "city": "Pune",
-          "fees": "\u20b92,800 per year",
+          "fees": "₹2,800 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#15 in India",
@@ -612,7 +612,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,800 per year",
+            "tuitionFee": "₹2,800 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -631,7 +631,7 @@
           "id": 8,
           "name": "Seth G.S. Medical College and KEM Hospital",
           "city": "Mumbai",
-          "fees": "\u20b94,000 per year",
+          "fees": "₹4,000 per year",
           "seats": 180,
           "recognition": "NMC, MCI",
           "ranking": "#11 in India",
@@ -649,7 +649,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b94,000 per year",
+            "tuitionFee": "₹4,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -668,7 +668,7 @@
           "id": 41,
           "name": "Topiwala National Medical College",
           "city": "Mumbai",
-          "fees": "\u20b93,200 per year",
+          "fees": "₹3,200 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#17 in India",
@@ -686,7 +686,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,200 per year",
+            "tuitionFee": "₹3,200 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -705,7 +705,7 @@
           "id": 42,
           "name": "Lokmanya Tilak Municipal Medical College",
           "city": "Mumbai",
-          "fees": "\u20b93,800 per year",
+          "fees": "₹3,800 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#13 in India",
@@ -723,7 +723,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,800 per year",
+            "tuitionFee": "₹3,800 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -742,7 +742,7 @@
           "id": 43,
           "name": "Armed Forces Medical College (AFMC)",
           "city": "Pune",
-          "fees": "\u20b925,000 per year",
+          "fees": "₹25,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#4 in India",
@@ -760,7 +760,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b925,000 per year",
+            "tuitionFee": "₹25,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -779,7 +779,7 @@
           "id": 44,
           "name": "Mahatma Gandhi Institute of Medical Sciences",
           "city": "Nagpur",
-          "fees": "\u20b94,200 per year",
+          "fees": "₹4,200 per year",
           "seats": 180,
           "recognition": "NMC, MCI",
           "ranking": "#19 in India",
@@ -797,7 +797,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b94,200 per year",
+            "tuitionFee": "₹4,200 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -816,7 +816,7 @@
           "id": 46,
           "name": "Siddhartha Medical College",
           "city": "Nashik",
-          "fees": "\u20b93,400 per year",
+          "fees": "₹3,400 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#26 in India",
@@ -834,7 +834,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,400 per year",
+            "tuitionFee": "₹3,400 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -853,7 +853,7 @@
           "id": 47,
           "name": "Maharashtra Institute of Medical Sciences",
           "city": "Aurangabad",
-          "fees": "\u20b93,800 per year",
+          "fees": "₹3,800 per year",
           "seats": 160,
           "recognition": "NMC, MCI",
           "ranking": "#28 in India",
@@ -871,7 +871,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b93,800 per year",
+            "tuitionFee": "₹3,800 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -890,7 +890,7 @@
           "id": 48,
           "name": "Bharati Vidyapeeth Medical College",
           "city": "Pune",
-          "fees": "\u20b915,00,000 per year",
+          "fees": "₹15,00,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#35 in India",
@@ -908,7 +908,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b915,00,000 per year",
+            "tuitionFee": "₹15,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -927,7 +927,7 @@
           "id": 49,
           "name": "Symbiosis Medical College",
           "city": "Pune",
-          "fees": "\u20b918,00,000 per year",
+          "fees": "₹18,00,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#32 in India",
@@ -945,7 +945,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b918,00,000 per year",
+            "tuitionFee": "₹18,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -964,7 +964,7 @@
           "id": 50,
           "name": "D.Y. Patil Medical College",
           "city": "Navi Mumbai",
-          "fees": "\u20b922,00,000 per year",
+          "fees": "₹22,00,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#30 in India",
@@ -982,7 +982,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b922,00,000 per year",
+            "tuitionFee": "₹22,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1001,7 +1001,7 @@
           "id": 52,
           "name": "K.J. Somaiya Medical College",
           "city": "Mumbai",
-          "fees": "\u20b916,00,000 per year",
+          "fees": "₹16,00,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#37 in India",
@@ -1019,7 +1019,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b916,00,000 per year",
+            "tuitionFee": "₹16,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1038,7 +1038,7 @@
           "id": 53,
           "name": "Tata Memorial Hospital Medical College",
           "city": "Mumbai",
-          "fees": "\u20b912,00,000 per year",
+          "fees": "₹12,00,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "#39 in India",
@@ -1056,7 +1056,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b912,00,000 per year",
+            "tuitionFee": "₹12,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1075,7 +1075,7 @@
           "id": 54,
           "name": "Nashik Medical College",
           "city": "Nashik",
-          "fees": "\u20b914,00,000 per year",
+          "fees": "₹14,00,000 per year",
           "seats": 120,
           "recognition": "NMC, MCI",
           "ranking": "#50 in India",
@@ -1093,7 +1093,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b914,00,000 per year",
+            "tuitionFee": "₹14,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1112,7 +1112,7 @@
           "id": 55,
           "name": "Aurangabad Medical College",
           "city": "Aurangabad",
-          "fees": "\u20b913,00,000 per year",
+          "fees": "₹13,00,000 per year",
           "seats": 110,
           "recognition": "NMC, MCI",
           "ranking": "#53 in India",
@@ -1130,7 +1130,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b913,00,000 per year",
+            "tuitionFee": "₹13,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1149,7 +1149,7 @@
           "id": 56,
           "name": "Solapur Medical College",
           "city": "Solapur",
-          "fees": "\u20b911,00,000 per year",
+          "fees": "₹11,00,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "#57 in India",
@@ -1167,7 +1167,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b911,00,000 per year",
+            "tuitionFee": "₹11,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1186,7 +1186,7 @@
           "id": 57,
           "name": "Kolhapur Medical College",
           "city": "Kolhapur",
-          "fees": "\u20b910,00,000 per year",
+          "fees": "₹10,00,000 per year",
           "seats": 90,
           "recognition": "NMC, MCI",
           "ranking": "#59 in India",
@@ -1204,7 +1204,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b910,00,000 per year",
+            "tuitionFee": "₹10,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1223,7 +1223,7 @@
           "id": 58,
           "name": "Sangli Medical College",
           "city": "Sangli",
-          "fees": "\u20b99,00,000 per year",
+          "fees": "₹9,00,000 per year",
           "seats": 80,
           "recognition": "NMC, MCI",
           "ranking": "#61 in India",
@@ -1241,7 +1241,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b99,00,000 per year",
+            "tuitionFee": "₹9,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1260,7 +1260,7 @@
           "id": 59,
           "name": "Satara Medical College",
           "city": "Satara",
-          "fees": "\u20b98,00,000 per year",
+          "fees": "₹8,00,000 per year",
           "seats": 70,
           "recognition": "NMC, MCI",
           "ranking": "#63 in India",
@@ -1278,7 +1278,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b98,00,000 per year",
+            "tuitionFee": "₹8,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1297,7 +1297,7 @@
           "id": 60,
           "name": "Amravati Medical College",
           "city": "Amravati",
-          "fees": "\u20b97,00,000 per year",
+          "fees": "₹7,00,000 per year",
           "seats": 60,
           "recognition": "NMC, MCI",
           "ranking": "#65 in India",
@@ -1315,7 +1315,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b97,00,000 per year",
+            "tuitionFee": "₹7,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1334,7 +1334,7 @@
           "id": 154,
           "name": "ACPM Medical College",
           "city": "Dhule",
-          "fees": "\u20b98,00,000 per year",
+          "fees": "₹8,00,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1352,7 +1352,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b98,00,000 per year",
+            "tuitionFee": "₹8,00,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1371,7 +1371,7 @@
           "id": 155,
           "name": "Ashwini Rural Medical College",
           "city": "Solapur",
-          "fees": "\u20b91,033,000 per year",
+          "fees": "₹1,033,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1389,7 +1389,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,033,000 per year",
+            "tuitionFee": "₹1,033,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1408,7 +1408,7 @@
           "id": 156,
           "name": "Bharati Vidyapeeth Medical College",
           "city": "Sangli",
-          "fees": "\u20b92,320,500 per year",
+          "fees": "₹2,320,500 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1426,7 +1426,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,320,500 per year",
+            "tuitionFee": "₹2,320,500 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1445,7 +1445,7 @@
           "id": 157,
           "name": "Bharatratna Atal Bihari Vajpayee Medical College",
           "city": "Pune",
-          "fees": "\u20b9750,000 per year",
+          "fees": "₹750,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1463,7 +1463,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9750,000 per year",
+            "tuitionFee": "₹750,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1482,7 +1482,7 @@
           "id": 158,
           "name": "B.K.L. Walawalkar Rural Medical College",
           "city": "Ratnagiri",
-          "fees": "\u20b91,165,000 per year",
+          "fees": "₹1,165,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1500,7 +1500,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,165,000 per year",
+            "tuitionFee": "₹1,165,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1519,7 +1519,7 @@
           "id": 159,
           "name": "Dr. D Y Patil Medical College",
           "city": "Navi Mumbai",
-          "fees": "\u20b92,700,000 per year",
+          "fees": "₹2,700,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1537,7 +1537,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,700,000 per year",
+            "tuitionFee": "₹2,700,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1556,7 +1556,7 @@
           "id": 160,
           "name": "Dr. D Y Patil Medical College",
           "city": "Kolhapur",
-          "fees": "\u20b92,410,000 per year",
+          "fees": "₹2,410,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1574,7 +1574,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,410,000 per year",
+            "tuitionFee": "₹2,410,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1593,7 +1593,7 @@
           "id": 161,
           "name": "Tasgaonkar Medical College",
           "city": "Raigad",
-          "fees": "\u20b9621,500 per year",
+          "fees": "₹621,500 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1611,7 +1611,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9621,500 per year",
+            "tuitionFee": "₹621,500 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1630,7 +1630,7 @@
           "id": 162,
           "name": "Panjabrao Deshmukh Memorial Medical College",
           "city": "Amravati",
-          "fees": "\u20b91,078,000 per year",
+          "fees": "₹1,078,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1648,7 +1648,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,078,000 per year",
+            "tuitionFee": "₹1,078,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1667,7 +1667,7 @@
           "id": 163,
           "name": "Dr. Ulhas Patil Medical College",
           "city": "Jalgaon",
-          "fees": "\u20b9700,000 per year",
+          "fees": "₹700,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1685,7 +1685,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9700,000 per year",
+            "tuitionFee": "₹700,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1704,7 +1704,7 @@
           "id": 164,
           "name": "Dr. Vasantrao Pawar Medical College",
           "city": "Nashik",
-          "fees": "\u20b91,196,000 per year",
+          "fees": "₹1,196,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1722,7 +1722,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,196,000 per year",
+            "tuitionFee": "₹1,196,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1741,7 +1741,7 @@
           "id": 165,
           "name": "Vithalrao Vikhe Patil Foundation Medical College",
           "city": "Ahmednagar",
-          "fees": "\u20b91,300,000 per year",
+          "fees": "₹1,300,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1759,7 +1759,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,300,000 per year",
+            "tuitionFee": "₹1,300,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1778,7 +1778,7 @@
           "id": 167,
           "name": "Indian Institute of Medical Science",
           "city": "Jalna",
-          "fees": "\u20b9750,000 per year",
+          "fees": "₹750,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1796,7 +1796,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9750,000 per year",
+            "tuitionFee": "₹750,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1815,7 +1815,7 @@
           "id": 168,
           "name": "Jawaharlal Nehru Medical College",
           "city": "Wardha",
-          "fees": "\u20b92,200,000 per year",
+          "fees": "₹2,200,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1833,7 +1833,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,200,000 per year",
+            "tuitionFee": "₹2,200,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1852,7 +1852,7 @@
           "id": 169,
           "name": "Krishna Institute of Medical Sciences",
           "city": "Karad",
-          "fees": "\u20b92,450,000 per year",
+          "fees": "₹2,450,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1870,7 +1870,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,450,000 per year",
+            "tuitionFee": "₹2,450,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1889,7 +1889,7 @@
           "id": 170,
           "name": "MIMER Medical College",
           "city": "Pune",
-          "fees": "\u20b91,130,000 per year",
+          "fees": "₹1,130,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1907,7 +1907,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,130,000 per year",
+            "tuitionFee": "₹1,130,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1926,7 +1926,7 @@
           "id": 171,
           "name": "MIMSR Medical College",
           "city": "Latur",
-          "fees": "\u20b9945,000 per year",
+          "fees": "₹945,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1944,7 +1944,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9945,000 per year",
+            "tuitionFee": "₹945,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -1963,7 +1963,7 @@
           "id": 172,
           "name": "Mahatma Gandhi Institute of Medical Sciences",
           "city": "Wardha",
-          "fees": "\u20b91,211,000 per year",
+          "fees": "₹1,211,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -1981,7 +1981,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,211,000 per year",
+            "tuitionFee": "₹1,211,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2000,7 +2000,7 @@
           "id": 173,
           "name": "MGM Medical College",
           "city": "Navi Mumbai",
-          "fees": "\u20b92,350,000 per year",
+          "fees": "₹2,350,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2018,7 +2018,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,350,000 per year",
+            "tuitionFee": "₹2,350,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2037,7 +2037,7 @@
           "id": 174,
           "name": "MGM Medical College",
           "city": "Aurangabad",
-          "fees": "\u20b92,350,000 per year",
+          "fees": "₹2,350,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2055,7 +2055,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,350,000 per year",
+            "tuitionFee": "₹2,350,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2074,7 +2074,7 @@
           "id": 176,
           "name": "MALATI Vasantdada Patil Medical College",
           "city": "Sangli",
-          "fees": "\u20b9850,000 per year",
+          "fees": "₹850,000 per year",
           "seats": 50,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2092,7 +2092,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9850,000 per year",
+            "tuitionFee": "₹850,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2111,7 +2111,7 @@
           "id": 177,
           "name": "N. K. P. Salve Institute of Medical Sciences",
           "city": "Nagpur",
-          "fees": "\u20b91,300,000 per year",
+          "fees": "₹1,300,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2129,7 +2129,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,300,000 per year",
+            "tuitionFee": "₹1,300,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2148,7 +2148,7 @@
           "id": 178,
           "name": "Padmashree Dr. D.Y. Patil Medical College",
           "city": "Navi Mumbai",
-          "fees": "\u20b92,700,000 per year",
+          "fees": "₹2,700,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2166,7 +2166,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,700,000 per year",
+            "tuitionFee": "₹2,700,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2185,7 +2185,7 @@
           "id": 179,
           "name": "Parbhani Medical College",
           "city": "Parbhani",
-          "fees": "\u20b9754,000 per year",
+          "fees": "₹754,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2203,7 +2203,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9754,000 per year",
+            "tuitionFee": "₹754,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2222,7 +2222,7 @@
           "id": 180,
           "name": "Prakash Institute of Medical Sciences",
           "city": "Sangli",
-          "fees": "\u20b9851,000 per year",
+          "fees": "₹851,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2240,7 +2240,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9851,000 per year",
+            "tuitionFee": "₹851,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2259,7 +2259,7 @@
           "id": 181,
           "name": "RK Damani Medical College",
           "city": "Akola",
-          "fees": "\u20b9850,000 per year",
+          "fees": "₹850,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2277,7 +2277,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9850,000 per year",
+            "tuitionFee": "₹850,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2296,7 +2296,7 @@
           "id": 182,
           "name": "Rural Medical College",
           "city": "Loni",
-          "fees": "\u20b91,900,000 per year",
+          "fees": "₹1,900,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2314,7 +2314,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,900,000 per year",
+            "tuitionFee": "₹1,900,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2333,7 +2333,7 @@
           "id": 183,
           "name": "Sindhudurg Medical College",
           "city": "Sindhudurg",
-          "fees": "\u20b9764,000 per year",
+          "fees": "₹764,000 per year",
           "seats": 149,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2351,7 +2351,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9764,000 per year",
+            "tuitionFee": "₹764,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2370,7 +2370,7 @@
           "id": 186,
           "name": "Sakhubai Medical College",
           "city": "Solapur",
-          "fees": "\u20b9772,000 per year",
+          "fees": "₹772,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2388,7 +2388,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9772,000 per year",
+            "tuitionFee": "₹772,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2407,7 +2407,7 @@
           "id": 187,
           "name": "Terna Medical College",
           "city": "Navi Mumbai",
-          "fees": "\u20b9790,000 per year",
+          "fees": "₹790,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2425,7 +2425,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9790,000 per year",
+            "tuitionFee": "₹790,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2444,7 +2444,7 @@
           "id": 188,
           "name": "Datta Meghe Medical College",
           "city": "Nagpur",
-          "fees": "\u20b92,325,000 per year",
+          "fees": "₹2,325,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2462,7 +2462,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,325,000 per year",
+            "tuitionFee": "₹2,325,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -2481,7 +2481,7 @@
           "id": 189,
           "name": "Rajendra Gode Medical College",
           "city": "Amravati",
-          "fees": "\u20b9771,000 per year",
+          "fees": "₹771,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -2499,7 +2499,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b9771,000 per year",
+            "tuitionFee": "₹771,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -7765,7 +7765,7 @@
           "id": 22,
           "name": "S.M.S. Medical College",
           "city": "Jaipur",
-          "fees": "\u20b92,000 per year",
+          "fees": "₹2,000 per year",
           "seats": 200,
           "recognition": "NMC, MCI",
           "ranking": "#20 in India",
@@ -7783,7 +7783,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b92,000 per year",
+            "tuitionFee": "₹2,000 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -7802,7 +7802,7 @@
           "id": 23,
           "name": "J.L.N. Medical College",
           "city": "Ajmer",
-          "fees": "\u20b91,800 per year",
+          "fees": "₹1,800 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "#25 in India",
@@ -7820,7 +7820,7 @@
             "Research Opportunities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b91,800 per year",
+            "tuitionFee": "₹1,800 per year",
             "hostelFee": "Included/Nominal",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -7839,7 +7839,7 @@
           "id": 1000,
           "name": "American International Institute of Medical Sciences",
           "city": "Udaipur",
-          "fees": "\u20b918,90,000 per year",
+          "fees": "₹18,90,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -7857,10 +7857,10 @@
             "Research Facilities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "tuitionFee": "₹18,90,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b932,00,000 per year"
+            "managementQuotaFee": "₹32,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -7876,7 +7876,7 @@
           "id": 202,
           "name": "Ananta Institute of Medical Sciences and Research Centre",
           "city": "Rajsamand",
-          "fees": "\u20b918,90,000 per year",
+          "fees": "₹18,90,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -7894,10 +7894,10 @@
             "Skill Development Center"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "tuitionFee": "₹18,90,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b928,00,000 per year"
+            "managementQuotaFee": "₹28,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -7949,7 +7949,7 @@
           "id": 204,
           "name": "Balvir NIMS Medical College",
           "city": "Jaipur",
-          "fees": "\u20b924,00,000 per year",
+          "fees": "₹24,00,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -7967,10 +7967,10 @@
             "Holistic Learning Environment"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b924,00,000 per year (State Quota)",
+            "tuitionFee": "₹24,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b930,00,000 per year"
+            "managementQuotaFee": "₹30,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -7986,7 +7986,7 @@
           "id": 205,
           "name": "Dr. S.S. Tantia Medical College, Hospital and Research Centre",
           "city": "Sri Ganganagar",
-          "fees": "\u20b922,25,000 per year",
+          "fees": "₹22,25,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8004,10 +8004,10 @@
             "Experienced Faculty Team"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b922,25,000 per year (State Quota)",
+            "tuitionFee": "₹22,25,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b929,25,000 per year"
+            "managementQuotaFee": "₹29,25,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8023,7 +8023,7 @@
           "id": 206,
           "name": "GEETANJALI Medical College (RUHS)",
           "city": "Udaipur",
-          "fees": "\u20b923,00,000 per year",
+          "fees": "₹23,00,000 per year",
           "seats": 150,
           "recognition": "NMC (New)",
           "ranking": "N/A",
@@ -8041,7 +8041,7 @@
             "Clinical-Centric Curriculum"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "tuitionFee": "₹23,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms"
           },
@@ -8059,7 +8059,7 @@
           "id": 208,
           "name": "Jaipur National University Institute for Medical Sciences and Research Centre",
           "city": "Jaipur",
-          "fees": "\u20b923,00,000 per year",
+          "fees": "₹23,00,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8077,10 +8077,10 @@
             "Extensive Clinical Exposure"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "tuitionFee": "₹23,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b928,00,000 per year"
+            "managementQuotaFee": "₹28,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8096,7 +8096,7 @@
           "id": 209,
           "name": "JIET Medical College and Hospital",
           "city": "Jodhpur",
-          "fees": "\u20b918,90,000 per year",
+          "fees": "₹18,90,000 per year",
           "seats": 150,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8114,10 +8114,10 @@
             "Experienced Faculty from Top AIIMS"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "tuitionFee": "₹18,90,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b928,20,000 per year"
+            "managementQuotaFee": "₹28,20,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8133,7 +8133,7 @@
           "id": 210,
           "name": "Mahatma Gandhi Medical College and Hospital",
           "city": "Jaipur",
-          "fees": "\u20b919,50,000 per year",
+          "fees": "₹19,50,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "#25 in Private Medical Colleges (India)",
@@ -8151,10 +8151,10 @@
             "Strong Alumni Network"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b919,50,000 per year (State Quota)",
+            "tuitionFee": "₹19,50,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b926,75,000 per year"
+            "managementQuotaFee": "₹26,75,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8170,7 +8170,7 @@
           "id": 211,
           "name": "National Institute of Medical Sciences and Research (NIMS)",
           "city": "Jaipur",
-          "fees": "\u20b924,00,000 per year",
+          "fees": "₹24,00,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8188,10 +8188,10 @@
             "State-of-the-art ICUs and OTs"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b924,00,000 per year (State Quota)",
+            "tuitionFee": "₹24,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b930,00,000 per year"
+            "managementQuotaFee": "₹30,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8207,7 +8207,7 @@
           "id": 212,
           "name": "Pacific Institute of Medical Sciences",
           "city": "Udaipur (Umarda)",
-          "fees": "\u20b925,00,000 per year",
+          "fees": "₹25,00,000 per year",
           "seats": 250,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8225,10 +8225,10 @@
             "Extensive Research Facilities"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b925,00,000 per year (State Quota)",
+            "tuitionFee": "₹25,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b934,00,000 per year"
+            "managementQuotaFee": "₹34,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8244,7 +8244,7 @@
           "id": 214,
           "name": "Sudha Medical College and Hospital",
           "city": "Kota",
-          "fees": "\u20b918,90,000 per year",
+          "fees": "₹18,90,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8262,10 +8262,10 @@
             "Patient-Centric Training"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b918,90,000 per year (State Quota)",
+            "tuitionFee": "₹18,90,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b928,20,000 per year"
+            "managementQuotaFee": "₹28,20,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8281,7 +8281,7 @@
           "id": 215,
           "name": "Vyas Medical College and Hospital",
           "city": "Jodhpur",
-          "fees": "\u20b923,00,000 per year",
+          "fees": "₹23,00,000 per year",
           "seats": 100,
           "recognition": "NMC, MCI",
           "ranking": "N/A",
@@ -8299,10 +8299,10 @@
             "Digital Learning Resources"
           ],
           "detailedFees": {
-            "tuitionFee": "\u20b923,00,000 per year (State Quota)",
+            "tuitionFee": "₹23,00,000 per year (State Quota)",
             "hostelFee": "As per college norms",
             "otherFees": "Registration & Examination fees as per university norms",
-            "managementQuotaFee": "\u20b930,00,000 per year"
+            "managementQuotaFee": "₹30,00,000 per year"
           },
           "documentsRequired": [
             "NEET UG Admit Card",
@@ -8315,6 +8315,740 @@
           ]
         }
       ]
-    } 
+    },
+    {
+      "id": 13,
+      "name": "Chhattisgarh",
+      "image": "https://i1-c.pinimg.com/1200x/fb/73/0c/fb730c4ac41e45ec40aaebe36890827f.jpg",
+      "description": "Emerging medical education hub in central India.",
+      "colleges": [
+        {
+          "id": 1009,
+          "name": "Abhishek Institute of Medical Sciences",
+          "city": "Raipur",
+          "fees": "₹13,32,887 per year",
+          "nriFee": "$35,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#145 in India",
+          "type": "Private",
+          "image": "https://ucsworld.com/wp-content/uploads/2024/08/Abhishek-Mishra-Memorial-Medical-College.jpg",
+          "admissionProcess": "Admission is based on NEET UG followed by state counseling for private quota seats.",
+          "placements": "Graduates receive strong placement support through regional hospital partnerships and private clinics.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern teaching facilities",
+            "Central location in Raipur",
+            "Industry-linked clinical training",
+            "Dedicated student support services"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,32,887 per year",
+            "hostelFee": "₹1,20,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "Domicile Certificate",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1010,
+          "name": "Raipur Pt. Medical College",
+          "city": "Raipur",
+          "fees": "₹13,15,187 per year",
+          "nriFee": "$35,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#150 in India",
+          "type": "Private",
+          "image": "https://collegekaka.com/wp-content/uploads/2023/12/Pt.-J-N-M-MEDICAL-COLLEGE-RAIPUR.jpg",
+          "admissionProcess": "NEET UG qualified candidates are admitted through state counseling and private management quota.",
+          "placements": "Offers placement guidance through hospital collaborations and health-care internships.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Strong practical training",
+            "Experienced faculty",
+            "Well-equipped labs",
+            "Student mentoring programs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,15,187 per year",
+            "hostelFee": "₹1,15,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "Domicile Certificate",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1011,
+          "name": "Shri Balaji Medical College",
+          "city": "Raipur",
+          "fees": "₹13,77,700 per year",
+          "nriFee": "$35,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#138 in India",
+          "type": "Private",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2022/06/Shri-Balaji-Institute-of-Medical-Science-Raipur-Campus.jpg",
+          "admissionProcess": "Admission through NEET UG and private quota counseling.",
+          "placements": "Strong internship links and a dedicated placement cell for graduate doctors.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Large clinical campus",
+            "Extensive patient exposure",
+            "Research and seminar programs",
+            "Dedicated preclinical labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,77,700 per year",
+            "hostelFee": "₹1,40,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "Domicile Certificate",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1012,
+          "name": "Shri Pandit Trust Medical College",
+          "city": "Raipur",
+          "fees": "₹13,30,187 per year",
+          "nriFee": "$15,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#160 in India",
+          "type": "Trust",
+          "image": "https://content.jdmagicbox.com/comp/bagalkot/11/9999pmulblrstd1200911/catalogue/sdm-trust-ayurvedic-medical-college-jamkhandi-bagalkot-institutes-for-ayurveda-ejilymyah9.jpg",
+          "admissionProcess": "NEET UG merit-based admissions via state counseling and trust seats.",
+          "placements": "Clinical placements focus on community hospital rotations and patient-centered care.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Trust-backed infrastructure",
+            "Focused small-batch clinical training",
+            "Personalized mentorship",
+            "Community health programs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,30,187 per year",
+            "hostelFee": "₹95,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$15,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "Domicile Certificate",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1013,
+          "name": "Shri Pt. Society Medical College",
+          "city": "Raipur",
+          "fees": "₹13,76,887 per year",
+          "nriFee": "$35,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#142 in India",
+          "type": "Society",
+          "image": "https://rmgoe.org/universities/India/images/1751178565_6860dd45d1ccd.png",
+          "admissionProcess": "NEET UG selection followed by society-managed admissions and counseling.",
+          "placements": "Offers clinical placement assistance and strong alumni employer connections.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Society-managed campus",
+            "Broad clinical exposure",
+            "Modern teaching hospital",
+            "Community outreach initiatives"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,76,887 per year",
+            "hostelFee": "₹1,30,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "Domicile Certificate",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Pondicherry",
+      "image": "https://www.earthvagabonds.com/wp-content/uploads/2024/01/white-town-puducherry.webp",
+      "description": "Union territory with emerging private medical colleges.",
+      "colleges": [
+        {
+          "id": 1014,
+          "name": "Aarupadai Vinayaka Medical College",
+          "city": "Pondicherry",
+          "university": "Vinayaka",
+          "management": "Trust",
+          "yearEstablished": 1999,
+          "fees": "₹2,300,000 per year",
+          "nriFee": "$35,000 per year",
+          "annualSeats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#120 in India",
+          "type": "Trust",
+          "image": "https://mdmsenquiry.com/wp-content/uploads/2021/03/Aarupadai-Veedu-Medical-College-Pondicherry.jpg",
+          "admissionProcess": "Admission through NEET UG followed by state and management quota counseling.",
+          "placements": "Students receive placement support via affiliated hospitals and clinical training centers.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Strong clinical exposure",
+            "Modern campus facilities",
+            "Experienced faculty",
+            "Student support programs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,300,000 per year",
+            "hostelFee": "₹1,75,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1015,
+          "name": "Mahatma Sri Balaji Medical College",
+          "city": "Pondicherry",
+          "university": "Sri Balaji",
+          "management": "Trust",
+          "yearEstablished": 2002,
+          "fees": "₹2,500,000 per year",
+          "nriFee": "$55,000 per year",
+          "annualSeats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#130 in India",
+          "type": "Trust",
+          "image": "https://images.shiksha.com/mediadata/images/1563193351php1REZTm.jpeg",
+          "admissionProcess": "NEET UG selection with admissions via state counseling and trust quota.",
+          "placements": "Provides internships and placements through local hospitals and healthcare networks.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Large annual intake",
+            "Comprehensive clinical training",
+            "Regular workshops",
+            "Student wellness programs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,500,000 per year",
+            "hostelFee": "₹1,80,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$55,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1016,
+          "name": "Pondicherry Institute of Medical Sciences",
+          "city": "Pondicherry",
+          "university": "Pondicherry",
+          "management": "Trust",
+          "yearEstablished": 2000,
+          "fees": "₹1,680,000 per year",
+          "nriFee": "₹2,100,000 per year",
+          "annualSeats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#140 in India",
+          "type": "Trust",
+          "image": "https://www.pimsmmm.com/pimshospital/assets/images/about/1.jpg",
+          "admissionProcess": "Admission through NEET UG and counseling by the Pondicherry medical authority.",
+          "placements": "Students benefit from strong local hospital connections and translational research opportunities.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Dedicated research wing",
+            "High patient exposure",
+            "Professional development programs",
+            "Strong alumni network"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,680,000 per year",
+            "hostelFee": "₹1,50,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "₹2,100,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1017,
+          "name": "Lakshmi Bharath Medical College",
+          "city": "Pondicherry",
+          "university": "Bharath",
+          "management": "Trust",
+          "yearEstablished": 2006,
+          "fees": "₹2,600,000 per year",
+          "nriFee": "₹2,100,000 per year",
+          "annualSeats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#135 in India",
+          "type": "Trust",
+          "image": "https://mbbscouncilcdn.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/04/Bhaarath-Medical-College-And-Hospital-Entrance-Chennai.jpg",
+          "admissionProcess": "NEET UG followed by state counseling and management quota allotment.",
+          "placements": "Offers clinical placements and medical training through affiliated hospitals.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern campus",
+            "Integrated clinical labs",
+            "Student mentoring",
+            "Exposure to multispecialty hospital care"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,600,000 per year",
+            "hostelFee": "₹1,90,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "₹2,100,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1018,
+          "name": "Manakula Medical College",
+          "city": "Pondicherry",
+          "university": "Pondicherry",
+          "management": "Trust",
+          "yearEstablished": 2006,
+          "fees": "₹1,680,000 per year",
+          "nriFee": "₹2,100,000 per year",
+          "annualSeats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#145 in India",
+          "type": "Trust",
+          "image": "https://smvmch.ac.in/images/AboutAS/about.jpg",
+          "admissionProcess": "NEET UG merit followed by counseling with private trust seat options.",
+          "placements": "Provides hospital-based internships and career support for graduates.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Community health programs",
+            "Strong faculty",
+            "Well-equipped clinical facilities",
+            "Extensive patient cases"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,680,000 per year",
+            "hostelFee": "₹1,45,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "₹2,100,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1019,
+          "name": "Venkateswara Medical College",
+          "city": "Pondicherry",
+          "university": "Vinayaka",
+          "management": "Trust",
+          "yearEstablished": 2007,
+          "fees": "₹1,680,000 per year",
+          "nriFee": "₹2,100,000 per year",
+          "annualSeats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#150 in India",
+          "type": "Trust",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2020/03/Sri-Venkateswara-Medical-College-Hospital-and-Research-Centre-Pondicherry-Hospital-Enterence-1280x720.jpg",
+          "admissionProcess": "Admission is through NEET UG and state counseling, with trust quota seats available.",
+          "placements": "Graduates receive support through affiliate hospitals and clinical training programs.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Strong clinical campus",
+            "Advanced laboratories",
+            "Experienced teaching staff",
+            "Community outreach"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹1,680,000 per year",
+            "hostelFee": "₹1,45,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "₹2,100,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        },
+        {
+          "id": 1020,
+          "name": "Vinayaka Missions Medical College",
+          "city": "Pondicherry",
+          "university": "Vinayaka",
+          "management": "Trust",
+          "yearEstablished": 1997,
+          "fees": "₹2,100,000 per year",
+          "nriFee": "$35,000 per year",
+          "annualSeats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#128 in India",
+          "type": "Trust",
+          "image": "https://www.moksh16.com/uploads/images/slnims-pondicherry.webp",
+          "admissionProcess": "Admission is based on NEET UG followed by trust and management quota counseling.",
+          "placements": "Offers strong clinical placements and a broad healthcare network for graduates.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Established institution",
+            "Trusted training programs",
+            "Well-connected hospitals",
+            "Research-focused curriculum"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹2,100,000 per year",
+            "hostelFee": "₹1,70,000 per year",
+            "otherFees": "Registration & Examination fees as per college policy",
+            "nriFee": "$35,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Domicile Certificate",
+            "Caste Certificate (if applicable)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Orissa",
+      "image": "https://i1-c.pinimg.com/1200x/72/24/b2/7224b21336810dbf881d06b20191612b.jpg",
+      "description": "Eastern State with Growing Medical Education",
+      "colleges": [
+        {
+          "id": 1,
+          "name": "DRIEMS",
+          "city": "Bhubaneswar",
+          "fees": "₹17,95,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#NA",
+          "type": "Private",
+          "image": "https://www.driems.ac.in/wp-content/uploads/2024/09/Reasearch-Academics.jpg",
+          "admissionProcess": "Admission is based on NEET UG score followed by state counseling and college-level verification.",
+          "placements": "Graduates secure placements in hospitals across India with strong emphasis on clinical training.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Collaborative clinical training",
+            "Modern laboratory facilities",
+            "Research and internship opportunities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹17,95,000 per year",
+            "hostelFee": "₹2,00,000 per year",
+            "otherFees": "Registration & examination charges as per college norms",
+            "nriFee": "$40,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹12 LPA",
+            "internshipStipend": "₹18,000 per month",
+            "topRecruiters": [
+              "State Hospitals",
+              "Private Hospitals"
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "name": "Hi-Tech Medical College, Utkal",
+          "city": "Bhubaneswar",
+          "fees": "₹21,95,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "#NA",
+          "type": "Private",
+          "image": "https://www.hi-techmedical.org/img/slides/image6.jpeg",
+          "admissionProcess": "NEET UG followed by state counseling and institute verification.",
+          "placements": "Strong clinical placements with both government and private hospital partners.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Advanced clinical teaching",
+            "Strong research support",
+            "Experienced faculty"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹21,95,000 per year",
+            "hostelFee": "₹2,50,000 per year",
+            "otherFees": "Registration & examination charges as per college norms",
+            "nriFee": "$40,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹11 LPA",
+            "internshipStipend": "₹18,500 per month",
+            "topRecruiters": [
+              "Regional Hospitals",
+              "Private Healthcare Groups"
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "name": "Hi-Tech Medical College, Sambalpur",
+          "city": "Sambalpur",
+          "fees": "₹18,50,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "#NA",
+          "type": "Private",
+          "image": "https://blog.rmgoe.org/wp-content/uploads/2022/09/Hi-Tech-Medical-College-Rourkela-2.webp",
+          "admissionProcess": "Candidates are admitted through NEET UG and state counseling.",
+          "placements": "Good internship opportunities and placements with local hospitals.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Nursing and clinical labs",
+            "City hospital exposure",
+            "Industry connections"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹18,50,000 per year",
+            "hostelFee": "₹2,20,000 per year",
+            "otherFees": "Registration & examination charges as per college norms",
+            "nriFee": "$40,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹10.5 LPA",
+            "internshipStipend": "₹18,000 per month",
+            "topRecruiters": [
+              "Sambalpur Hospitals",
+              "State Healthcare Centers"
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "name": "Institute of Siksha O",
+          "city": "Bhubaneswar",
+          "fees": "₹17,95,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#NA",
+          "type": "Private",
+          "image": "https://www.guidanceforever.org/wp-content/uploads/2023/10/siksha-o-anusandhan-bhubaneswar-featured-4.jpg",
+          "admissionProcess": "NEET UG followed by institute counseling and document verification.",
+          "placements": "Good placement support for graduates across major healthcare networks.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Large campus facilities",
+            "Strong clinical partnerships",
+            "Modern teaching resources"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹17,95,000 per year",
+            "hostelFee": "₹2,00,000 per year",
+            "otherFees": "Registration & examination charges as per college norms",
+            "nriFee": "$40,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹11 LPA",
+            "internshipStipend": "₹19,000 per month",
+            "topRecruiters": [
+              "National Hospitals",
+              "Regional Clinics"
+            ]
+          }
+        },
+         
+        {
+          "id": 6,
+          "name": "Kalinga Institute of Medical Sciences (KIMS)",
+          "city": "Bhubaneswar",
+          "fees": "₹18,50,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "#NA",
+          "type": "Private",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWNlp8JalED9UrxrYSPEPajodaUYUOgrYX1Q&s",
+          "admissionProcess": "Admission is through NEET UG followed by counseling and document verification.",
+          "placements": "Strong campus placements with access to KIMS Hospital and associated centers.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Integrated clinical exposure",
+            "Strong faculty support",
+            "Modern hospital facilities"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹18,50,000 per year",
+            "hostelFee": "₹2,20,000 per year",
+            "otherFees": "Registration & examination charges as per college norms",
+            "nriFee": "$40,000 per year"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Certificate and Marksheet",
+            "Class 12 Certificate and Marksheet",
+            "ID Proof",
+            "Passport size photographs",
+            "Caste Certificate (if applicable)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹12 LPA",
+            "internshipStipend": "₹19,000 per month",
+            "topRecruiters": [
+              "KIMS Hospital",
+              "National Health Systems"
+            ]
+          }
+        }
+      ]
+    }
   ]
 }
