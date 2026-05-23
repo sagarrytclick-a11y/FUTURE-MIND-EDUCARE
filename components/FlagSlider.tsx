@@ -58,7 +58,7 @@ const FlagSlider = () => {
       name: 'Russia',
       slug: 'russia',
       flag:
-        '/flag/russia.svg',
+        '/flag/russia.png',
       description: 'Historic Medical Tradition',
     },
     {
@@ -78,7 +78,6 @@ const FlagSlider = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4">
-        {/* TOP SECTION */}
         {/* TOP SECTION */}
         <div className="flex flex-col items-center justify-center text-center mb-14">
 

@@ -13,7 +13,6 @@ import {
   FaCheckCircle,
   FaArrowRight,
 } from "react-icons/fa"
-import { dataCache, CACHE_KEYS } from "@/lib/data-cache"
 
 interface CollegeData {
   id: number
@@ -49,10 +48,15 @@ const MbbsIndiaPage: React.FC = () => {
   const collegesPerPage = 12
 
   useEffect(() => {
-    const loadData = () => {
+    const loadData = async () => {
       try {
-        // Fast data loading from cache with fallback to static import
-        const data = dataCache.get(CACHE_KEYS.MBBS_INDIA)
+        const response = await fetch("/mbbs-india.json")
+
+        if (!response.ok) {
+          throw new Error("Failed to load MBBS India data")
+        }
+
+        const data: MbbsData = await response.json()
         setStates(data.states || [])
       } catch (err) {
         console.error("Data loading error:", err)
@@ -61,7 +65,6 @@ const MbbsIndiaPage: React.FC = () => {
       }
     }
 
-    // Load data immediately (no async delay)
     loadData()
   }, [])
 
