@@ -9493,6 +9493,623 @@
           "image": "https://news.medicalneetug.com/wp-content/uploads/2021/05/mnr_i3c.jpg"
         }
       ]
+    },
+    {
+      "id": 17,
+      "name": "Andhra Pradesh",
+      "image": "https://blogbox.indianeagle.com/wp-content/uploads/2026/04/All-about-Andhra-Capital-Amaravati.jpg",
+      "description": "Southern State with Extensive Medical Education Infrastructure",
+      "colleges": [
+        {
+          "id": 1263,
+          "name": "Alluri Sitaram Raju Academy of Medical Sciences",
+          "city": "Eluru",
+          "fees": "₹13,20,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://mbbscouncil.com/wp-content/uploads/2019/11/Alluri-Sitaramaraju-Academy-of-Medical-Sciences-College-1280x720.jpg",
+          "admissionProcess": "The admission process for MBBS is based on the NEET (National Eligibility cum Entrance Test) UG score. Candidates must participate in the counseling process conducted by Dr. N.T.R. University of Health Sciences.",
+          "placements": "Excellent clinical exposure and internship opportunities in associated hospitals.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Experienced Faculty",
+            "Modern Labs",
+            "Clinical Training"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "Registration & Examination fees as per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1264,
+          "name": "Anna Medical College",
+          "city": "Andhra Pradesh",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://content.jdmagicbox.com/v2/comp/bangalore/i5/080pxx80.xx80.190209203752.l4i5/catalogue/anna-medical-college-kacharakanahalli-bangalore-educational-institutes-5jpuim8hll.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Internships provided at parent hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Clinical Training",
+            "Modern Campus"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1265,
+          "name": "Apollo Institute of Medical Sciences",
+          "city": "Chittoor",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Society",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/11/Apollo-Institute-of-Medical-Sciences-and-Research-Hyderabad.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Exposure to Apollo's healthcare network.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Advanced Infrastructure",
+            "Expert Faculty"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1266,
+          "name": "Dr. P.S.I. Medical College",
+          "city": "Andhra Pradesh",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2020/09/29/fcd581a9e1754b2686f364be2d409467.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Clinical training in associated multi-specialty hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Research Labs",
+            "Experienced Mentors"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1267,
+          "name": "Fathima Institute of Medical Sciences",
+          "city": "Kadapa",
+          "fees": "₹13,20,000 per year",
+          "seats": 100,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.edufever.com/wp-content/uploads/2020/08/Fathima-Medical-College-Kadapa-1.webp",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Good clinical rotations in general medicine.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Supportive Faculty",
+            "Well-equipped library"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹2,790,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1268,
+          "name": "Gayathri Vidya Parishad Institute of Healthcare",
+          "city": "Visakhapatnam",
+          "fees": "₹13,20,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Society",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2020/05/02/a2012d9c52a14756b22255ce95d82853.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Standard internship opportunities in city-based healthcare.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern Labs",
+            "Community Outreach"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1269,
+          "name": "GITAM Institute of Medical Sciences",
+          "city": "Visakhapatnam",
+          "fees": "₹25,37,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Private",
+          "image": "https://www.justmbbs.com/img/college/andhra-pradesh/gitam-institute-of-medical-sciences-and-research-visakhapatnam-banner.jpg",
+          "admissionProcess": "Admission through NEET UG scores and MCC counseling.",
+          "placements": "High-end corporate hospital placements.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Premium Infrastructure",
+            "Research focus"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,37,000 per year",
+            "nriFee": "$45,000",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1270,
+          "name": "Great Eastern Medical School",
+          "city": "Srikakulam",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2020/10/21/586a0c4401884af399e9f5b098880162.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Good rural healthcare exposure.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Clinical Workshops",
+            "Modern Equipment"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1271,
+          "name": "GSL Medical College",
+          "city": "Rajahmundry",
+          "fees": "₹13,20,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://gslmc.com/img/gslhos.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Excellent exposure in one of AP's largest medical hospitals.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "High Patient Flow",
+            "Tertiary Care Exposure"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1272,
+          "name": "Katuri Medical College",
+          "city": "Guntur",
+          "fees": "₹13,37,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.edufever.com/wp-content/uploads/2020/09/Katuri-Medical-College-Guntur-.webp",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Reliable clinical internships in Guntur region.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Specialty Labs",
+            "Community Medicine"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,37,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1273,
+          "name": "Konaseema Institute of Medical Sciences",
+          "city": "Amalapuram",
+          "fees": "₹13,20,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://i3c-medical-colleges-assets.blr1.digitaloceanspaces.com/2021/09/20/6f47f444612d42daaad717cd915e02aa.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Good clinical rotation in Konaseema region.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Rural Health Focus",
+            "Modern OT"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1274,
+          "name": "Maharajah Institute of Medical Sciences",
+          "city": "Vizianagaram",
+          "fees": "₹13,20,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.justmbbs.com/img/college/andhra-pradesh/maharajah-institute-of-medical-sciences-vizianagaram-banner.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Clinical experience in district-level tertiary hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Historic Campus",
+            "Experienced Faculty"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1275,
+          "name": "Narayana Medical College",
+          "city": "Nellore",
+          "fees": "₹13,50,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://nmch.ac.in/wp-content/uploads/2023/08/banner_1557936742-1170x550.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "High clinical volume and post-grad opportunities.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Top Tier Infrastructure",
+            "Simulation Labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,50,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1276,
+          "name": "Nimra Institute of Medical Sciences",
+          "city": "Vijayawada",
+          "fees": "₹13,20,000 per year",
+          "seats": 200,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Society",
+          "image": "https://archive.siasat.com/wp-content/uploads/2016/08/nimra.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Good clinical internships in Vijayawada.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Student centered learning",
+            "Modern labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1277,
+          "name": "NRI Academy of Medical Sciences",
+          "city": "Guntur",
+          "fees": "₹13,20,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://www.edufever.com/wp-content/uploads/2020/08/NRI-Academy-of-Medical-Sciences-Guntur-1.webp",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Extensive internship in large super-specialty hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Super-specialty exposure",
+            "Research centers"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1279,
+          "name": "PES Institute of Medical Sciences",
+          "city": "Kuppam",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://i.ytimg.com/vi/qa2o1cfyaRA/maxresdefault.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Solid clinical foundation in rural medical care.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Modern Campus",
+            "Integrated Hospital"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1280,
+          "name": "Santhiram Medical College",
+          "city": "Nandyal",
+          "fees": "₹13,20,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://rmgoe.org/universities/India/images/1774937330_69cb64f232f48.webp",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Clinical training in Santhiram General Hospital.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "High patient diversity",
+            "Practical learning focus"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1281,
+          "name": "Sri Balaji Medical College",
+          "city": "Andhra Pradesh",
+          "fees": "₹13,20,000 per year",
+          "seats": 150,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Trust",
+          "image": "https://careerpaathshala.com/wp-content/uploads/2023/09/3-100.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Standard medical internships.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "Academic Excellence",
+            "Modern Labs"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        },
+        {
+          "id": 1282,
+          "name": "Viswabharathi Medical College",
+          "city": "Kurnool",
+          "fees": "₹13,20,000 per year",
+          "seats": 250,
+          "recognition": "NMC, MCI",
+          "ranking": "N/A",
+          "type": "Society",
+          "image": "https://content.jdmagicbox.com/comp/kurnool/x2/9999p8518.8518.170613110016.l3x2/catalogue/viswa-bharathi-medical-college-penchikalapadu-kurnool-medical-colleges-VLJRIJdtBc.jpg",
+          "admissionProcess": "Admission via NEET UG score followed by state counseling.",
+          "placements": "Clinical training in the Kurnool district hospital network.",
+          "entranceExams": [
+            "NEET UG"
+          ],
+          "academicHighlights": [
+            "High Seat Intake",
+            "Regional Health focus"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹13,20,000 per year",
+            "nriFee": "₹3,960,000 per year",
+            "otherFees": "As per university norms"
+          },
+          "documentsRequired": [
+            "NEET UG Admit Card",
+            "NEET UG Scorecard",
+            "Class 10 Marksheet",
+            "Class 12 Marksheet",
+            "ID Proof"
+          ]
+        }
+      ]
     }
   ]
 }
