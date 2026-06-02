@@ -1,19 +1,21 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
-import FlagSlider from "@/components/FlagSlider";
-import WhoWeAre from "@/components/WhoWeAre";
-import ProgressInNumbers from "@/components/ProgressInNumbers";
-import ServicesSection from "@/components/ServicesSection";
-import TopCountriesSection from "@/components/TopCountriesSection";
-import TargetSectorsSection from "@/components/TargetSectorsSection";
-import AwardsAchievementsSection from "@/components/AwardsAchievementsSection";
-import TopUniversitiesSection from "@/components/TopUniversitiesSection";
-import TopStatesSection from "@/components/TopStatesSection";
-import TestimonialSection from "@/components/TestimonialSection";
-import BlogSection from "@/components/BlogSection";
-import AirportDiariesSection from "@/components/AirportDiariesSection";
-import FAQSection from "@/components/FAQSection";
 import MbbsCard from "@/components/MbbsCard";
-import PopupModal from "@/components/PopupModal";
+
+const FlagSlider = dynamic(() => import("@/components/FlagSlider"));
+const TopCountriesSection = dynamic(() => import("@/components/TopCountriesSection"));
+const WhoWeAre = dynamic(() => import("@/components/WhoWeAre"));
+const ProgressInNumbers = dynamic(() => import("@/components/ProgressInNumbers"));
+const ServicesSection = dynamic(() => import("@/components/ServicesSection"));
+const TargetSectorsSection = dynamic(() => import("@/components/TargetSectorsSection"));
+const AwardsAchievementsSection = dynamic(() => import("@/components/AwardsAchievementsSection"));
+const TopUniversitiesSection = dynamic(() => import("@/components/TopUniversitiesSection"));
+const TopStatesSection = dynamic(() => import("@/components/TopStatesSection"));
+const TestimonialSection = dynamic(() => import("@/components/TestimonialSection"));
+const BlogSection = dynamic(() => import("@/components/BlogSection"));
+const AirportDiariesSection = dynamic(() => import("@/components/AirportDiariesSection"));
+const FAQSection = dynamic(() => import("@/components/FAQSection"));
+const PopupModal = dynamic(() => import("@/components/PopupModal"));
 
 export default function Home() {
   return (
@@ -24,7 +26,7 @@ export default function Home() {
       <TopCountriesSection />
       <WhoWeAre />
       <ProgressInNumbers />
-      <ServicesSection />   
+      <ServicesSection />
       <TargetSectorsSection />
       <AwardsAchievementsSection />
       <TopUniversitiesSection />

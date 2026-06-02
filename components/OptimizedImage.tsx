@@ -14,8 +14,8 @@ interface OptimizedImageProps {
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
-  width = 400,
-  height = 224,
+  width,
+  height,
   className = '',
   sizes = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw',
   priority = false,
@@ -33,9 +33,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   if (hasError) {
     return (
-      <div 
+      <div
         className={`bg-gray-200 flex items-center justify-center ${className}`}
-        style={{ width, height }}
+        style={width && height ? { width, height } : undefined}
       >
         <span className="text-gray-500 text-sm">Image not available</span>
       </div>
@@ -43,9 +43,15 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   }
 
   return (
-    <div className={`relative ${className}`} style={{ width, height }}>
+    <div
+      className={`relative overflow-hidden ${className}`}
+      style={width && height ? { width, height } : undefined}
+    >
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        <div
+          className="absolute inset-0 bg-gray-200 animate-pulse"
+          style={width && height ? { width, height } : undefined}
+        />
       )}
       <img
         src={src}
@@ -53,13 +59,14 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         width={width}
         height={height}
         loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : undefined}
+        decoding="async"
         onLoad={handleLoad}
         onError={handleError}
         sizes={sizes}
         className={`w-full h-full object-cover transition-opacity duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
-        decoding="async"
       />
     </div>
   );

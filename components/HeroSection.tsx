@@ -35,160 +35,99 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-2xl lg:max-w-3xl"
+            className="lg:pr-8 xl:pr-12"
           >
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 sm:px-4 py-2 mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/80 px-4 py-2 mb-5 sm:mb-7 shadow-xs">
               <FaStar className="text-yellow-500 text-xs sm:text-sm" />
-
-              <span className="text-xs sm:text-sm font-semibold text-blue-700">
+              <span className="text-xs sm:text-sm font-semibold text-blue-700 tracking-wide">
                 Premium Medical Guidance
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black leading-tight text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-gray-900">
               Build Your
               <span className="block text-blue-600 mt-1 sm:mt-2">
                 Medical Career
               </span>
-              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
-                With Top Universities
+              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-500 mt-3 sm:mt-4">
+                With Top Universities Worldwide
               </span>
             </h1>
 
             {/* DESCRIPTION */}
-            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl leading-6 sm:leading-7 text-gray-600 max-w-2xl">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 max-w-xl">
               Get complete guidance for MBBS admission in India & Abroad.
               From counseling to university selection — we help you at every step.
             </p>
 
             {/* FEATURES */}
-            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-
-              <div className="flex items-center gap-2 sm:gap-3">
-                <FaCheckCircle className="text-green-500 text-sm sm:text-base flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
-                  Expert Counselling
-                </span>
+            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                  <FaCheckCircle className="text-green-600 text-xs" />
+                </div>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Expert Counselling</span>
               </div>
-
-              <div className="flex items-center gap-2 sm:gap-3">
-                <FaCheckCircle className="text-green-500 text-sm sm:text-base flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
-                  Top Medical Universities
-                </span>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                  <FaCheckCircle className="text-green-600 text-xs" />
+                </div>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Top Medical Universities</span>
               </div>
-
-              <div className="flex items-center gap-2 sm:gap-3">
-                <FaCheckCircle className="text-green-500 text-sm sm:text-base flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
-                  Admission Assistance
-                </span>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                  <FaCheckCircle className="text-green-600 text-xs" />
+                </div>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Admission Assistance</span>
               </div>
-
-              <div className="flex items-center gap-2 sm:gap-3">
-                <FaCheckCircle className="text-green-500 text-sm sm:text-base flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
-                  Visa & Documentation
-                </span>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                  <FaCheckCircle className="text-green-600 text-xs" />
+                </div>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Visa & Documentation</span>
               </div>
             </div>
 
             {/* STATS */}
-            <div className="flex flex-wrap gap-3 sm:gap-5 mt-6 sm:mt-10">
-
-              <div className="rounded-2xl sm:rounded-3xl border border-gray-100 bg-white shadow-lg px-4 sm:px-5 py-3 sm:py-4 min-w-[140px] sm:min-w-[180px]">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  
-                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-blue-600">
-                    <FaUserGraduate className="text-white text-sm sm:text-lg" />
+            <div className="flex flex-wrap gap-4 sm:gap-6 mt-6 sm:mt-10">
+              <div className="rounded-2xl border border-gray-100 bg-white shadow-md px-5 py-4 min-w-[160px] sm:min-w-[190px]">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 shrink-0">
+                    <FaUserGraduate className="text-white text-lg" />
                   </div>
-
                   <div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900">
-                      5000+
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                      Students Guided
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">5000+</h3>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Students Guided</p>
                   </div>
                 </div>
               </div>
-
-              <div className="rounded-2xl sm:rounded-3xl border border-gray-100 bg-white shadow-lg px-4 sm:px-5 py-3 sm:py-4 min-w-[140px] sm:min-w-[180px]">
-                <div className="flex items-center gap-3 sm:gap-4">
-
-                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-cyan-500">
-                    <FaGlobeAsia className="text-white text-sm sm:text-lg" />
+              <div className="rounded-2xl border border-gray-100 bg-white shadow-md px-5 py-4 min-w-[160px] sm:min-w-[190px]">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500 shrink-0">
+                    <FaGlobeAsia className="text-white text-lg" />
                   </div>
-
                   <div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900">
-                      15+
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                      Countries Available
-                    </p>
+                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">15+</h3>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Countries Available</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-wrap sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-10">
-
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-10">
               <button
                 onClick={openPopup}
-                className="
-                  group
-                  h-12 sm:h-14
-                  px-6 sm:px-8
-                  rounded-lg
-                  bg-blue-600
-                  hover:bg-blue-700
-                  text-white
-                  font-bold
-                  shadow-xl
-                  transition-all
-                  duration-300
-                  flex
-                  items-center
-                  justify-center
-                  gap-3
-                  hover:scale-[1.03]
-                  text-sm sm:text-base
-                  w-full sm:w-auto
-                "
+                className="group h-12 sm:h-14 px-8 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.03] active:scale-[0.98] text-sm sm:text-base w-full sm:w-auto"
               >
                 Get Free Consultation
-
                 <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
               </button>
-
-              <Link
-              href="/colleges/mbbs-abroad"
-               
-              >
-                <button  className="
-                  h-12 sm:h-14
-                  px-6 sm:px-8
-                  rounded-lg
-                  border
-                  border-gray-200
-                  bg-white
-                  text-gray-800
-                  font-bold
-                  hover:bg-gray-50
-                  transition-all
-                  duration-300
-                  text-sm sm:text-base
-                  w-full sm:w-auto
-                ">
-
-                Explore Universities
+              <Link href="/colleges/mbbs-abroad">
+                <button className="h-12 sm:h-14 px-8 rounded-xl border-2 border-gray-200 bg-white text-gray-800 font-bold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] text-sm sm:text-base w-full sm:w-auto">
+                  Explore Universities
                 </button>
               </Link>
             </div>
@@ -210,6 +149,9 @@ const HeroSection = () => {
                 <img
                   src="https://i.pinimg.com/1200x/bc/68/a0/bc68a03939708cf66e303d252a27da48.jpg"
                   alt="Medical Student"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="h-[400px] sm:h-[500px] lg:h-[620px] w-full object-cover"
                 />
               </div>
