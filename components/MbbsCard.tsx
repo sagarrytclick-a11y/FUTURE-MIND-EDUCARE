@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaCheckCircle, FaArrowRight, FaGraduationCap, FaGlobeAmericas, FaStethoscope, FaRupeeSign, FaUniversity, FaHospital, FaUserMd, FaBookMedical, FaClipboardCheck } from 'react-icons/fa'
+import { FaCheckCircle, FaArrowRight, FaGraduationCap, FaGlobeAmericas, FaRupeeSign, FaUniversity, FaHospital, FaBookMedical, FaClipboardCheck } from 'react-icons/fa'
 
 const cardData = [
   {
@@ -38,24 +38,6 @@ const cardData = [
       { icon: FaBookMedical, text: "English medium programs" },
       { icon: FaCheckCircle, text: "No donation required" },
     ]
-  },
-  {
-    title: "MD / MS",
-    tagline: "Postgraduate Medical Specialization",
-    description: "Pursue your dream specialization with expert NEET PG counseling guidance and top-ranked institutions across India.",
-    href: "/colleges/md-ms",
-    gradient: "from-violet-600 to-violet-700",
-    lightBg: "bg-violet-50",
-    iconBg: "bg-violet-100",
-    iconColor: "text-violet-600",
-    badge: "New",
-    icon: FaStethoscope,
-    features: [
-      { icon: FaUserMd, text: "50+ PG specializations" },
-      { icon: FaHospital, text: "Top government & private hospitals" },
-      { icon: FaClipboardCheck, text: "NEET PG counseling support" },
-      { icon: FaCheckCircle, text: "Clinical & pre-clinical branches" },
-    ]
   }
 ]
 
@@ -65,18 +47,18 @@ const MbbsCard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-            <FaStethoscope className="text-xs" />
+            <FaGraduationCap className="text-xs" />
             Medical Pathways
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
-            Choose Your <span className="text-blue-600">Medical Career</span> Path
+            Choose Your <span className="text-blue-600">MBBS</span> Path
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            From undergraduate to postgraduate — find the right medical program with expert guidance every step of the way
+            Explore medical colleges in India and abroad with comprehensive guidance and support
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {cardData.map((card, index) => {
             const Icon = card.icon
             return (
