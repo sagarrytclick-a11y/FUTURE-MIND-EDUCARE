@@ -38,6 +38,24 @@ const cardData = [
       { icon: FaBookMedical, text: "English medium programs" },
       { icon: FaCheckCircle, text: "No donation required" },
     ]
+  },
+  {
+    title: "MD/MS in India",
+    tagline: "Post-Graduate Excellence",
+    description: "Pursue specialized medical degrees at top NEET PG approved institutes across India with expert faculty and state-of-the-art facilities.",
+    href: "/colleges/md-ms",
+    gradient: "from-purple-600 to-purple-700",
+    lightBg: "bg-purple-50",
+    iconBg: "bg-purple-100",
+    iconColor: "text-purple-600",
+    badge: "Specialization",
+    icon: FaBookMedical,
+    features: [
+      { icon: FaUniversity, text: "50+ Medical Colleges" },
+      { icon: FaRupeeSign, text: "Competitive Fees" },
+      { icon: FaCheckCircle, text: "NMC Recognized" },
+      { icon: FaClipboardCheck, text: "NEET PG based" },
+    ]
   }
 ]
 
@@ -58,7 +76,7 @@ const MbbsCard = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {cardData.map((card, index) => {
             const Icon = card.icon
             return (

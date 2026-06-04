@@ -9,6 +9,8 @@ import {
   FaUniversity,
   FaPhoneAlt,
   FaUserMd,
+  FaMapMarkerAlt,
+  FaArrowRight,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
 
@@ -17,9 +19,28 @@ interface CollegeData {
   name: string;
   city: string;
   seats: number;
-  yearOfEstd: string;
+  yearOfEstd?: string;
   fees: string;
   type: string;
+  image?: string;
+  recognition?: string;
+  ranking?: string;
+  admissionProcess?: string;
+  placements?: string;
+  entranceExams?: string[];
+  academicHighlights?: string[];
+  detailedFees?: {
+    tuitionFee: string;
+    hostelFee: string;
+    otherFees: string;
+  };
+  documentsRequired?: string[];
+  placementStats?: {
+    medianSalaryUG?: string;
+    medianSalaryPG?: string;
+    internshipStipend?: string;
+    topRecruiters?: string[];
+  };
 }
 
 interface StateData {
@@ -175,18 +196,22 @@ const MdMsStatePage: React.FC = () => {
         </div>
       </section>
 
-      {/* TABLES SECTION */}
+      {/* CARDS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-        <div className="space-y-12">
-          
+        <div className="space-y-16">
+
           {/* GOVT COLLEGES */}
-          <div className="bg-white rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
-            <div className="p-8 md:p-12 border-b border-slate-50 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                  <FaUniversity className="text-xs" />
+                  Government
+                </div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                  Government <span className="text-blue-600">Institutions</span>
+                  Government <span className="text-blue-600">Medical Colleges</span>
                 </h2>
-                <p className="text-slate-500 mt-2 font-medium">Top-ranked state and central government medical colleges.</p>
+                <p className="text-slate-500 mt-2 font-medium">Top-ranked government medical colleges in {stateData.name}.</p>
               </div>
               <button
                 onClick={() => {
@@ -199,59 +224,72 @@ const MdMsStatePage: React.FC = () => {
               </button>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[800px]">
-                <thead>
-                  <tr className="bg-slate-50/50">
-                    <th className="py-6 px-10 font-black text-slate-400 uppercase text-xs tracking-widest">College Name & Location</th>
-                    <th className="py-6 px-6 font-black text-slate-400 uppercase text-xs tracking-widest">Seats</th>
-                    <th className="py-6 px-6 font-black text-slate-400 uppercase text-xs tracking-widest text-center">Estd.</th>
-                    <th className="py-6 px-10 font-black text-slate-400 uppercase text-xs tracking-widest text-right">Fee Structure</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {govtColleges.map((college) => (
-                    <tr key={college.id} className="hover:bg-blue-50/40 transition-all group">
-                      <td className="py-8 px-10">
-                        <div className="font-black text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
-                          {college.name}
+            {govtColleges.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {govtColleges.map((college) => (
+                  <Link
+                    key={college.id}
+                    href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
+                    className="group bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={college.image || "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop"}
+                        alt={college.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                          (e.target as HTMLImageElement).parentElement!.classList.add('bg-gradient-to-br', 'from-green-600', 'to-emerald-700');
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <span className="absolute top-3 left-3 text-xs font-bold text-white bg-green-600/90 px-2.5 py-1 rounded-lg uppercase tracking-wider backdrop-blur-sm">
+                        Govt
+                      </span>
+                      <FaArrowRight className="absolute bottom-3 right-3 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all text-sm" />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-blue-600 transition-colors leading-snug">
+                        {college.name}
+                      </h3>
+                      <p className="text-xs text-slate-500 flex items-center gap-1 mb-4">
+                        <FaMapMarkerAlt className="text-blue-500" />
+                        {college.city}
+                      </p>
+                      <div className="flex items-end justify-between pt-3 border-t border-slate-100">
+                        <div>
+                          <div className="text-xs text-slate-400 font-medium">Fee / Year</div>
+                          <div className="text-lg font-bold text-blue-600">{college.fees}</div>
                         </div>
-                        <div className="flex items-center gap-2 mt-1 text-slate-500 font-bold text-sm uppercase tracking-tighter">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                          {college.city}
+                        <div className="text-right">
+                          <div className="text-xs text-slate-400 font-medium">Seats</div>
+                          <div className="text-lg font-bold text-slate-900">{college.seats || "—"}</div>
                         </div>
-                      </td>
-                      <td className="py-8 px-6">
-                        <div className="inline-flex items-center px-4 py-2 rounded-xl bg-slate-100 text-slate-900 font-black text-sm">
-                          {college.seats || "N/A"}
-                        </div>
-                      </td>
-                      <td className="py-8 px-6 text-center">
-                        <div className="text-slate-500 font-black text-sm tracking-widest">
-                          {college.yearOfEstd || "—"}
-                        </div>
-                      </td>
-                      <td className="py-8 px-10 text-right">
-                        <div className="text-blue-600 font-black text-xl tracking-tighter">
-                          {college.fees}
-                        </div>
-                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Per Academic Year</div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-12 text-center">
+                <FaUniversity className="text-5xl mx-auto text-slate-300 mb-3" />
+                <p className="text-slate-400 font-semibold">No government colleges available for {stateData.name}.</p>
+              </div>
+            )}
           </div>
 
           {/* PRIVATE COLLEGES */}
-          <div className="bg-white rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.08)] border border-slate-100 overflow-hidden">
-            <div className="p-8 md:p-12 border-b border-slate-50 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                  <FaUniversity className="text-xs" />
+                  Private
+                </div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                  Private <span className="text-blue-600">Universities</span>
+                  Private <span className="text-blue-600">Medical Colleges</span>
                 </h2>
-                <p className="text-slate-500 mt-2 font-medium">Leading private medical colleges with clinical excellence.</p>
+                <p className="text-slate-500 mt-2 font-medium">Leading private medical colleges in {stateData.name}.</p>
               </div>
               <button
                 onClick={() => {
@@ -264,62 +302,58 @@ const MdMsStatePage: React.FC = () => {
               </button>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[800px]">
-                <thead>
-                  <tr className="bg-slate-50/50">
-                    <th className="py-6 px-10 font-black text-slate-400 uppercase text-xs tracking-widest">College Name & Location</th>
-                    <th className="py-6 px-6 font-black text-slate-400 uppercase text-xs tracking-widest">Seats</th>
-                    <th className="py-6 px-6 font-black text-slate-400 uppercase text-xs tracking-widest text-center">Estd.</th>
-                    <th className="py-6 px-10 font-black text-slate-400 uppercase text-xs tracking-widest text-right">Fee Range</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {privateColleges.length > 0 ? (
-                    privateColleges.map((college) => (
-                      <tr key={college.id} className="hover:bg-blue-50/40 transition-all group">
-                        <td className="py-8 px-10">
-                          <div className="font-black text-slate-900 text-lg group-hover:text-blue-600 transition-colors">
-                            {college.name}
-                          </div>
-                          <div className="flex items-center gap-2 mt-1 text-slate-500 font-bold text-sm uppercase tracking-tighter">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                            {college.city}
-                          </div>
-                        </td>
-                        <td className="py-8 px-6">
-                          <div className="inline-flex items-center px-4 py-2 rounded-xl bg-slate-100 text-slate-900 font-black text-sm">
-                            {college.seats || "N/A"}
-                          </div>
-                        </td>
-                        <td className="py-8 px-6 text-center">
-                          <div className="text-slate-500 font-black text-sm tracking-widest">
-                            {college.yearOfEstd || "—"}
-                          </div>
-                        </td>
-                        <td className="py-8 px-10 text-right">
-                          <div className="text-blue-600 font-black text-xl tracking-tighter">
-                            {college.fees}
-                          </div>
-                          <div className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Per Academic Year</div>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={4} className="py-20 text-center">
-                        <div className="max-w-xs mx-auto">
-                          <div className="text-slate-300 mb-4">
-                            <FaUniversity className="text-6xl mx-auto opacity-20" />
-                          </div>
-                          <div className="text-slate-400 font-bold">No private colleges data available for this state.</div>
+            {privateColleges.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {privateColleges.map((college) => (
+                  <Link
+                    key={college.id}
+                    href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
+                    className="group bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={college.image || "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop"}
+                        alt={college.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                          (e.target as HTMLImageElement).parentElement!.classList.add('bg-gradient-to-br', 'from-blue-600', 'to-indigo-700');
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <span className="absolute top-3 left-3 text-xs font-bold text-white bg-blue-600/90 px-2.5 py-1 rounded-lg uppercase tracking-wider backdrop-blur-sm">
+                        Private
+                      </span>
+                      <FaArrowRight className="absolute bottom-3 right-3 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all text-sm" />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-blue-600 transition-colors leading-snug">
+                        {college.name}
+                      </h3>
+                      <p className="text-xs text-slate-500 flex items-center gap-1 mb-4">
+                        <FaMapMarkerAlt className="text-blue-500" />
+                        {college.city}
+                      </p>
+                      <div className="flex items-end justify-between pt-3 border-t border-slate-100">
+                        <div>
+                          <div className="text-xs text-slate-400 font-medium">Fee / Year</div>
+                          <div className="text-lg font-bold text-blue-600">{college.fees}</div>
                         </div>
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
+                        <div className="text-right">
+                          <div className="text-xs text-slate-400 font-medium">Seats</div>
+                          <div className="text-lg font-bold text-slate-900">{college.seats || "—"}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-12 text-center">
+                <FaUniversity className="text-5xl mx-auto text-slate-300 mb-3" />
+                <p className="text-slate-400 font-semibold">No private colleges data available for {stateData.name}.</p>
+              </div>
+            )}
           </div>
         </div>
 
