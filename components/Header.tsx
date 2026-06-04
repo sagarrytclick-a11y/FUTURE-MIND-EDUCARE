@@ -296,7 +296,7 @@ const Header = () => {
         -translate-x-1/2
         mt-[2px]
         z-[999]
-        ${item.name === 'MD/MS' ? 'w-[300px]' : 'w-[662px]'}
+        w-[662px]
       `}
                     >
                       {/* WRAPPER */}
@@ -392,7 +392,7 @@ const Header = () => {
 
                         {/* RIGHT PANEL */}
                         <AnimatePresence>
-                          {hoveredItemData && item.name !== 'MD/MS' && (
+                          {hoveredItemData && (
                             <motion.div
                               key={hoveredItemData.id}
                               initial={{ opacity: 0, x: -8 }}
@@ -445,7 +445,7 @@ const Header = () => {
                                     return (
                                       <Link
                                         key={college.id}
-                                        href={activeDropdown === 'MD/MS' ? `/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}` : `/colleges/${collegeSlug}`}
+                                        href={`/colleges/${collegeSlug}`}
                                         className="
                           block
                           text-[14px]
@@ -708,14 +708,24 @@ const Header = () => {
                                           >
                                             View All Details for {state.name}
                                           </Link>
-                                          {state.colleges && state.colleges.slice(0, 5).map((college: any) => (
-                                            <div
-                                              key={college.id}
-                                              className="block text-xs text-gray-600 py-1 px-3"
-                                            >
-                                              • {college.name}
-                                            </div>
-                                          ))}
+                                          {state.colleges && state.colleges.slice(0, 5).map((college: any) => {
+                                            const collegeSlug = college.name
+                                              .toLowerCase()
+                                              .replace(/[^a-z0-9\s]/g, '')
+                                              .replace(/\s+/g, '-')
+                                              .replace(/-+/g, '-')
+                                              .replace(/^-|-$/g, '');
+                                            return (
+                                              <Link
+                                                key={college.id}
+                                                href={`/colleges/${collegeSlug}`}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="block text-xs text-gray-600 hover:text-blue-600 py-1 px-3"
+                                              >
+                                                • {college.name}
+                                              </Link>
+                                            );
+                                          })}
                                         </motion.div>
                                       )}
                                     </AnimatePresence>

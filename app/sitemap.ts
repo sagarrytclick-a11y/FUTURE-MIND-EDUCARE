@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${siteUrl}/colleges/mbbs-india`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/colleges/mbbs-abroad`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${siteUrl}/colleges/md-ms`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+
   ];
 
   const collegeUrls: MetadataRoute.Sitemap = [];
@@ -86,6 +86,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.7,
       });
+      for (const college of state.colleges) {
+        collegeUrls.push({
+          url: `${siteUrl}/colleges/${slugify(college.name)}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly",
+          priority: 0.6,
+        });
+      }
     }
   } catch {}
 

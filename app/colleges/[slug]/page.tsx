@@ -68,7 +68,7 @@ interface MbbsAbroadData {
 const CollegeSlugPage: React.FC = () => {
   const params = useParams();
   const [college, setCollege] = useState<CollegeData | null>(null);
-  const [collegeType, setCollegeType] = useState<'india' | 'abroad'>('india');
+  const [collegeType, setCollegeType] = useState<'india' | 'abroad' | 'mdms'>('india');
   const [relatedColleges, setRelatedColleges] = useState<CollegeData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -132,13 +132,14 @@ const CollegeSlugPage: React.FC = () => {
         setLoading(true);
         const slug = params.slug as string;
         
-        // Fetch both India and Abroad data
-        const [indiaResponse, abroadResponse] = await Promise.all([
+        // Fetch India, Abroad, and MD/MS data
+        const [indiaResponse, abroadResponse, mdmsResponse] = await Promise.all([
           fetch('/mbbs-india.json'),
-          fetch('/mbbs-abroad.json')
+          fetch('/mbbs-abroad.json'),
+          fetch('/md-ms.json')
         ]);
 
-        if (!indiaResponse.ok && !abroadResponse.ok) {
+        if (!indiaResponse.ok && !abroadResponse.ok && !mdmsResponse.ok) {
           throw new Error('Failed to fetch college data');
         }
 
@@ -190,6 +191,31 @@ const CollegeSlugPage: React.FC = () => {
                 setLoading(false);
                 return;
               }
+            }
+          }
+        }
+
+        // Search in MD/MS data
+        if (mdmsResponse.ok) {
+          const mdmsData = await mdmsResponse.json();
+
+          for (const state of mdmsData.states) {
+            const college = state.colleges.find((c: CollegeData) => {
+              const collegeSlug = c.name
+                .toLowerCase()
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+              return collegeSlug === slug;
+            });
+            
+            if (college) {
+              setCollege(college);
+              setCollegeType('india');
+              setRelatedColleges(state.colleges.filter((c: CollegeData) => c.id !== college.id).slice(0, 6));
+              setLoading(false);
+              return;
             }
           }
         }
@@ -640,7 +666,7 @@ const CollegeSlugPage: React.FC = () => {
                 <button 
                   onClick={() => {
                     updateFormData({ 
-                      courseInterest: `${college.name} - ${collegeType === 'india' ? 'MBBS India' : 'MBBS Abroad'}` 
+                      courseInterest: `${college.name} - ${collegeType === 'india' ? 'MBBS India' : collegeType === 'mdms' ? 'MD/MS India' : 'MBBS Abroad'}` 
                     });
                     openPopup();
                   }}
@@ -673,7 +699,7 @@ const CollegeSlugPage: React.FC = () => {
                     className="flex items-center gap-3 p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-all"
                   >
                     <BookOpen size={16} />
-                    All India Colleges
+                    MBBS India
                   </Link>
                   <Link 
                     href="/colleges/mbbs-abroad"
@@ -682,6 +708,7 @@ const CollegeSlugPage: React.FC = () => {
                     <MapPin size={16} />
                     MBBS Abroad
                   </Link>
+
                 </div>
               </div>
             </div>
