@@ -447,36 +447,48 @@ const CollegeSlugPage: React.FC = () => {
                     Fee Structure
                   </h3>
                   
-                  <div className="overflow-hidden border border-gray-200 rounded-xl">
-                    <table className="w-full text-left">
-                      <thead className="bg-gray-50 border-b border-gray-200">
-                        <tr>
-                          <th className="px-6 py-4 text-sm font-bold text-gray-700 uppercase">Fee Component</th>
-                          <th className="px-6 py-4 text-sm font-bold text-gray-700 uppercase">Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr>
-                          <td className="px-6 py-4 text-gray-600 font-medium">Annual Tuition Fee</td>
-                          <td className="px-6 py-4 font-bold text-blue-600">{college.detailedFees?.tuitionFee || college.fees}</td>
-                        </tr>
-                        <tr>
-                          <td className="px-6 py-4 text-gray-600 font-medium">Hostel & Mess Charges</td>
-                          <td className="px-6 py-4 font-bold text-gray-900">{college.detailedFees?.hostelFee || "Included/Nominal"}</td>
-                        </tr>
-                        <tr>
-                          <td className="px-6 py-4 text-gray-600 font-medium">Other Fees (Library, Exam, Lab)</td>
-                          <td className="px-6 py-4 font-bold text-gray-900">{college.detailedFees?.otherFees || "As per University norms"}</td>
-                        </tr>
-                      </tbody>
-                      <tfoot className="bg-blue-50 font-bold">
-                        <tr>
-                          <td className="px-6 py-4 text-blue-900">Approx. Annual Total</td>
-                          <td className="px-6 py-4 text-blue-600 text-xl">{college.fees}</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
+                  {college.detailedFees ? (
+                    <div className="overflow-hidden border border-gray-200 rounded-xl">
+                      <table className="w-full text-left">
+                        <thead className="bg-gray-50 border-b border-gray-200">
+                          <tr>
+                            <th className="px-6 py-4 text-sm font-bold text-gray-700 uppercase">Fee Component</th>
+                            <th className="px-6 py-4 text-sm font-bold text-gray-700 uppercase">Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                          <tr>
+                            <td className="px-6 py-4 text-gray-600 font-medium">Annual Tuition Fee</td>
+                            <td className="px-6 py-4 font-bold text-blue-600">{college.detailedFees.tuitionFee}</td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 text-gray-600 font-medium">Hostel & Mess Charges</td>
+                            <td className="px-6 py-4 font-bold text-gray-900">{college.detailedFees.hostelFee}</td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 text-gray-600 font-medium">Other Fees (Library, Exam, Lab)</td>
+                            <td className="px-6 py-4 font-bold text-gray-900">{college.detailedFees.otherFees}</td>
+                          </tr>
+                        </tbody>
+                        <tfoot className="bg-blue-50 font-bold">
+                          <tr>
+                            <td className="px-6 py-4 text-blue-900">Approx. Annual Total</td>
+                            <td className="px-6 py-4 text-blue-600 text-xl">{college.fees}</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  ) : (
+                    <div className="bg-blue-50 rounded-xl border border-blue-100 p-6">
+                      <div className="flex items-start gap-4">
+                        <IndianRupee className="text-blue-600 shrink-0 mt-1" size={24} />
+                        <div>
+                          <p className="text-sm font-bold text-blue-900 mb-2">Fee Structure</p>
+                          <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-line">{college.fees}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-100 text-yellow-800 text-sm flex gap-3">
                     <Info size={20} className="shrink-0 mt-0.5" />
@@ -678,9 +690,9 @@ const CollegeSlugPage: React.FC = () => {
               
               <div className="p-6">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="text-sm">
                     <span className="text-gray-500">Fees</span>
-                    <span className="font-bold text-blue-600">{college.fees}</span>
+                    <p className="font-bold text-blue-600 mt-0.5 text-xs leading-relaxed line-clamp-2" title={college.fees}>{college.fees}</p>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Seats</span>
@@ -735,7 +747,7 @@ const CollegeSlugPage: React.FC = () => {
                           <MapPin size={12} />
                           {relatedCollege.city}
                         </span>
-                        <span className="text-blue-600 font-semibold">{relatedCollege.fees}</span>
+                        <span className="text-blue-600 font-semibold text-xs truncate max-w-[140px]" title={relatedCollege.fees}>{relatedCollege.fees}</span>
                       </div>
                     </Link>
                   ))}
