@@ -276,9 +276,9 @@ const MbbsAbroadPage: React.FC = () => {
                     </h3>
 
                     <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 lg:mb-6">
-                      <div className="flex justify-between text-xs sm:text-sm">
+                      <div className="text-xs sm:text-sm">
                         <span className="text-gray-500">Fees</span>
-                        <span className="font-bold text-blue-700 text-xs sm:text-sm">{college.fees}</span>
+                        <p className="font-bold text-blue-700 text-xs leading-relaxed mt-0.5 line-clamp-2" title={college.fees}>{college.fees}</p>
                       </div>
 
                       <div className="flex justify-between text-xs sm:text-sm">
