@@ -11,7 +11,7 @@ export const SITE_IDENTITY = {
   },
   contact: {
     phone: "9920798988",
-    email: "info@futuremindeducare.com",
+    email: "edufuturemind@gmail.com",
     googleMapsUrl: "https://share.google/wy9AJuMuQVABHu5eV"
   },
   officeHours: {
