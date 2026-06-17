@@ -46,7 +46,8 @@
               "Apollo Hospitals",
               "Max Healthcare"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2002,
@@ -87,7 +88,8 @@
               "Fortis Healthcare",
               "Govt Medical Colleges"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2003,
@@ -127,7 +129,8 @@
               "Apollo",
               "RMLIMS Hospital network"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2004,
@@ -167,7 +170,8 @@
               "Sir Ganga Ram Hospital",
               "State Health Services"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2005,
@@ -207,7 +211,8 @@
               "Max Hospitals",
               "UP Provincial Medical Services"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2006,
@@ -249,7 +254,8 @@
               "Fortis",
               "Artemis Hospitals"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2007,
@@ -289,7 +295,8 @@
               "Medanta The Medicity",
               "Apollo Healthcare Groups"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2008,
@@ -329,7 +336,8 @@
               "Metro Hospitals Meerut",
               "Fortis Noida"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 2009,
@@ -369,7 +377,8 @@
               "Sahara Hospital",
               "Apollo Medics Lucknow"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     },
@@ -420,7 +429,8 @@
               "Narayana Health",
               "Manipal Health Systems"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 3002,
@@ -462,7 +472,8 @@
               "Medanta Systems",
               "Global Clinical Fellowships"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 3003,
@@ -504,7 +515,8 @@
               "Columbia Asia Labs",
               "Max Healthcare Group Systems"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 3004,
@@ -545,7 +557,8 @@
               "Apollo Clinics",
               "JSS Hospital Infrastructure Networks"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 3005,
@@ -587,7 +600,8 @@
               "Cloudnine Hospitals",
               "Aster CMI Grid Systems"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     },
@@ -638,7 +652,8 @@
               "Max Hospital",
               "Govt Health System Networks"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 4002,
@@ -680,7 +695,8 @@
               "Artemis Hospitals",
               "Fortis Gurgaon"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     },
@@ -731,7 +747,8 @@
               "Apollo Rajshree Hospital",
               "State Medical Services"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 5002,
@@ -773,7 +790,8 @@
               "Fortis",
               "Govt Teaching Cadres"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 5003,
@@ -815,7 +833,8 @@
               "Bombay Hospital Indore",
               "Max Healthcare"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     },
@@ -866,7 +885,8 @@
               "Fortis Health",
               "Tata Memorial Center"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 6002,
@@ -907,7 +927,8 @@
               "Apollo Group Clinics",
               "Major Municipal Corporation Medical Units"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 6003,
@@ -949,7 +970,8 @@
               "Medanta Systems",
               "D.Y. Patil Corporate Network"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     },
@@ -1000,7 +1022,8 @@
               "Fortis Malar",
               "State Teaching Cadres"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 7002,
@@ -1042,7 +1065,8 @@
               "Max Group Platforms",
               "Global Clinical Fellowships"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         },
         {
           "id": 7003,
@@ -1084,7 +1108,8 @@
               "Apollo Coimbatore",
               "Aster DM Healthcare"
             ]
-          }
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
     }
