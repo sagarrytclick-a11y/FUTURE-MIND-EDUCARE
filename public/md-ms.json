@@ -255,7 +255,7 @@
               "Artemis Hospitals"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$35,000 per year"
         },
         {
           "id": 2007,
@@ -296,7 +296,7 @@
               "Apollo Healthcare Groups"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$35,000 per year"
         },
         {
           "id": 2008,
@@ -337,7 +337,7 @@
               "Fortis Noida"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$35,000 per year"
         },
         {
           "id": 2009,
@@ -378,7 +378,7 @@
               "Apollo Medics Lucknow"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$35,000 per year"
         }
       ]
     },
@@ -473,7 +473,7 @@
               "Global Clinical Fellowships"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "₹1,780,000 per year"
         },
         {
           "id": 3003,
@@ -601,7 +601,7 @@
               "Aster CMI Grid Systems"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "₹25,00,000 per year"
         }
       ]
     },
@@ -696,7 +696,7 @@
               "Fortis Gurgaon"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$45,000 per year"
         }
       ]
     },
@@ -834,7 +834,7 @@
               "Max Healthcare"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "₹52,20,000 per year"
         }
       ]
     },
@@ -971,7 +971,7 @@
               "D.Y. Patil Corporate Network"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "$62,000 per year"
         }
       ]
     },
@@ -1066,7 +1066,7 @@
               "Global Clinical Fellowships"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "₹2,700,000 per year"
         },
         {
           "id": 7003,
@@ -1109,7 +1109,7 @@
               "Aster DM Healthcare"
             ]
           },
-          "nriFees": "NOT AVAILABLE"
+          "nriFees": "₹25,00,000 per year"
         }
       ]
     }
