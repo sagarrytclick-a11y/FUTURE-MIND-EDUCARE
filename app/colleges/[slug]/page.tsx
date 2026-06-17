@@ -34,6 +34,7 @@ interface CollegeData {
   placements?: string;
   entranceExams?: string[];
   academicHighlights?: string[];
+  nriFees?: string;
   detailedFees?: {
     tuitionFee: string;
     hostelFee: string;
@@ -469,6 +470,14 @@ const CollegeSlugPage: React.FC = () => {
                             <td className="px-6 py-4 text-gray-600 font-medium">Other Fees (Library, Exam, Lab)</td>
                             <td className="px-6 py-4 font-bold text-gray-900">{college.detailedFees.otherFees}</td>
                           </tr>
+                          {college.nriFees && (
+                            <tr className="bg-purple-50">
+                              <td className="px-6 py-4 text-purple-700 font-medium">NRI Quota Fees</td>
+                              <td className="px-6 py-4 font-bold text-purple-600">
+                                {college.nriFees === "NOT AVAILABLE" ? "Not Available" : college.nriFees}
+                              </td>
+                            </tr>
+                          )}
                         </tbody>
                         <tfoot className="bg-blue-50 font-bold">
                           <tr>
@@ -485,6 +494,11 @@ const CollegeSlugPage: React.FC = () => {
                         <div>
                           <p className="text-sm font-bold text-blue-900 mb-2">Fee Structure</p>
                           <p className="text-sm text-blue-800 leading-relaxed whitespace-pre-line">{college.fees}</p>
+                          {college.nriFees && (
+                            <p className="text-sm text-purple-700 font-bold mt-2">
+                              NRI Quota Fees: {college.nriFees === "NOT AVAILABLE" ? "Not Available" : college.nriFees}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -694,6 +708,14 @@ const CollegeSlugPage: React.FC = () => {
                     <span className="text-gray-500">Fees</span>
                     <p className="font-bold text-blue-600 mt-0.5 text-xs leading-relaxed line-clamp-2" title={college.fees}>{college.fees}</p>
                   </div>
+                  {college.nriFees && (
+                    <div className="text-sm">
+                      <span className="text-gray-500">NRI Quota Fees</span>
+                      <p className="font-bold text-purple-600 mt-0.5 text-xs">
+                        {college.nriFees === "NOT AVAILABLE" ? "Not Available" : college.nriFees}
+                      </p>
+                    </div>
+                  )}
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Seats</span>
                     <span className="font-bold text-gray-900">{college.seats}</span>
