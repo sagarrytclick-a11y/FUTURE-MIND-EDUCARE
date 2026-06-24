@@ -80,7 +80,10 @@ const Header = () => {
       hasDropdown: true,
     },
     { name: 'Blog', href: '/blog' },
-    { name: 'About Us', href: '/about' },
+    {
+      name: 'Packages',
+      hasDropdown: true,
+    },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -244,7 +247,7 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter(item.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                {item.name === 'MD/MS' ? (
+                {item.name === 'MD/MS' || item.name === 'Packages' ? (
                   <div
                     className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 cursor-pointer ${activeDropdown === item.name
                       ? 'text-blue-600'
@@ -261,13 +264,14 @@ const Header = () => {
                     />
                   </div>
                 ) : (
-                  <Link
-                    href={item.href}
-                    className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
-                      }`}
-                  >
+                    <Link
+                      href={item.href || '#'}
+                      className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
+                        ? 'text-blue-600'
+                        : 'text-gray-700 hover:text-blue-600'
+                        }`}
+                    >
+
                     {item.name}
                     {item.hasDropdown && (
                       <FaChevronDown className="ml-2 text-[10px]" />
@@ -292,19 +296,23 @@ const Header = () => {
                       className={`
         absolute
         top-full
-        left-1/2
-        -translate-x-1/2
+        ${item.name === 'Packages' ? 'left-0' : 'left-1/2 -translate-x-1/2'}
         mt-[2px]
         z-[999]
-        w-[662px]
+        ${item.name === 'Packages' ? 'w-48' : 'w-[662px]'}
       `}
                     >
-                      {/* WRAPPER */}
-                      <div className="relative flex items-start w-full">
-
-                        {/* LEFT PANEL */}
-                        <div
-                          className="
+                      {item.name === 'Packages' ? (
+                        <div className="bg-white rounded-xl shadow-[0_20px_70px_rgba(0,0,0,0.10)] border border-gray-100 p-2">
+                          <Link href="/neet-ug-packages" className="block px-4 py-2 text-[14px] font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-300">NEET UG</Link>
+                          <Link href="/mbbs-abroad" className="block px-4 py-2 text-[14px] font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-300">MBBS Abroad</Link>
+                        </div>
+                      ) : (
+                        /* WRAPPER FOR MEGA MENU */
+                        <div className="relative flex items-start w-full">
+                          {/* LEFT PANEL */}
+                          <div
+                            className="
             w-[300px]
             bg-white
             rounded-[22px]
@@ -314,18 +322,18 @@ const Header = () => {
             overflow-hidden
             min-h-[400px]
           "
-                        >
-                          <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
-                            {(item.name === 'MBBS India'
-                              ? indiaStates
-                              : item.name === 'MBBS Abroad'
-                                ? abroadCountries
-                                : mdmsStates
-                            ).map((loc: any) => {
-                              const isMdMs = item.name === 'MD/MS';
-                              const Content = (
-                                <div
-                                  className={`
+                          >
+                            <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
+                              {(item.name === 'MBBS India'
+                                ? indiaStates
+                                : item.name === 'MBBS Abroad'
+                                  ? abroadCountries
+                                  : mdmsStates
+                              ).map((loc: any) => {
+                                const isMdMs = item.name === 'MD/MS';
+                                const Content = (
+                                  <div
+                                    className={`
                     h-[65px]
                     px-5
                     flex
@@ -337,22 +345,22 @@ const Header = () => {
                     border-b
                     border-gray-100
                     ${hoveredItemData?.id === loc.id
-                                      ? 'bg-blue-500 text-white'
-                                      : 'hover:bg-gray-50 text-[#111827]'
-                                    }
+                                        ? 'bg-blue-500 text-white'
+                                        : 'hover:bg-gray-50 text-[#111827]'
+                                      }
                   `}
-                                >
-                                  <span className="text-[14px] font-semibold">
-                                    {item.name === 'MBBS India'
-                                      ? `MBBS in ${loc.name}`
-                                      : item.name === 'MD/MS'
-                                        ? `MD/MS in ${loc.name}`
-                                        : loc.name}
-                                  </span>
+                                  >
+                                    <span className="text-[14px] font-semibold">
+                                      {item.name === 'MBBS India'
+                                        ? `MBBS in ${loc.name}`
+                                        : item.name === 'MD/MS'
+                                          ? `MD/MS in ${loc.name}`
+                                          : loc.name}
+                                    </span>
 
-                                  {!isMdMs && (
-                                    <FaChevronDown
-                                      className={`
+                                    {!isMdMs && (
+                                      <FaChevronDown
+                                        className={`
                         text-[11px]
                         transition-all
                         duration-300
@@ -361,45 +369,45 @@ const Header = () => {
                                           : 'rotate-[-90deg] text-gray-500'
                                         }
                       `}
-                                    />
-                                  )}
-                                </div>
-                              );
+                                      />
+                                    )}
+                                  </div>
+                                );
 
-                              return isMdMs ? (
-                                <Link
-                                  key={loc.id}
-                                  href={`/colleges/md-ms/${loc.slug || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                  onMouseEnter={() => setHoveredItemData(loc)}
-                                  onClick={() => {
-                                    setActiveDropdown(null);
-                                    setMobileMenuOpen(false);
-                                  }}
-                                >
-                                  {Content}
-                                </Link>
-                              ) : (
-                                <div
-                                  key={loc.id}
-                                  onMouseEnter={() => setHoveredItemData(loc)}
-                                >
-                                  {Content}
-                                </div>
-                              );
-                            })}
+                                return isMdMs ? (
+                                  <Link
+                                    key={loc.id}
+                                    href={`/colleges/md-ms/${loc.slug || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                    onMouseEnter={() => setHoveredItemData(loc)}
+                                    onClick={() => {
+                                      setActiveDropdown(null);
+                                      setMobileMenuOpen(false);
+                                    }}
+                                  >
+                                    {Content}
+                                  </Link>
+                                ) : (
+                                  <div
+                                    key={loc.id}
+                                    onMouseEnter={() => setHoveredItemData(loc)}
+                                  >
+                                    {Content}
+                                  </div>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
 
-                        {/* RIGHT PANEL */}
-                        <AnimatePresence>
-                          {hoveredItemData && (
-                            <motion.div
-                              key={hoveredItemData.id}
-                              initial={{ opacity: 0, x: -8 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: -8 }}
-                              transition={{ duration: 0.18 }}
-                              className="
+                          {/* RIGHT PANEL */}
+                          <AnimatePresence>
+                            {hoveredItemData && (
+                              <motion.div
+                                key={hoveredItemData.id}
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -8 }}
+                                transition={{ duration: 0.18 }}
+                                className="
                 absolute
                 left-[302px]
                 top-0
@@ -412,12 +420,12 @@ const Header = () => {
                 overflow-hidden
                 min-h-[400px]
               "
-                            >
-                              <div className="space-y-3 max-h-[500px] overflow-y-auto custom-scrollbar">
-                                {activeDropdown === 'MD/MS' && hoveredItemData && (
-                                  <Link
-                                    href={`/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="
+                              >
+                                <div className="space-y-3 max-h-[500px] overflow-y-auto custom-scrollbar">
+                                  {activeDropdown === 'MD/MS' && hoveredItemData && (
+                                    <Link
+                                      href={`/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                      className="
                       block
                       text-[14px]
                       p-4
@@ -429,24 +437,24 @@ const Header = () => {
                       border-b
                       border-blue-50
                     "
-                                  >
-                                    View All {hoveredItemData.name} MD/MS Details →
-                                  </Link>
-                                )}
-                                {hoveredItemData.colleges && hoveredItemData.colleges.length > 0 ? (
-                                  hoveredItemData.colleges.map((college: College) => {
-                                    const collegeSlug = college.name
-                                      .toLowerCase()
-                                      .replace(/[^a-z0-9\s]/g, '')
-                                      .replace(/\s+/g, '-')
-                                      .replace(/-+/g, '-')
-                                      .replace(/^-|-$/g, '');
+                                    >
+                                      View All {hoveredItemData.name} MD/MS Details →
+                                    </Link>
+                                  )}
+                                  {hoveredItemData.colleges && hoveredItemData.colleges.length > 0 ? (
+                                    hoveredItemData.colleges.map((college: College) => {
+                                      const collegeSlug = college.name
+                                        .toLowerCase()
+                                        .replace(/[^a-z0-9\s]/g, '')
+                                        .replace(/\s+/g, '-')
+                                        .replace(/-+/g, '-')
+                                        .replace(/^-|-$/g, '');
 
-                                    return (
-                                      <Link
-                                        key={college.id}
-                                        href={`/colleges/${collegeSlug}`}
-                                        className="
+                                      return (
+                                        <Link
+                                          key={college.id}
+                                          href={`/colleges/${collegeSlug}`}
+                                          className="
                           block
                           text-[14px]
                           p-4
@@ -458,21 +466,22 @@ const Header = () => {
                           duration-300
                           leading-snug
                         "
-                                      >
-                                        {college.name}
-                                      </Link>
-                                    );
-                                  })
-                                ) : (
-                                  <div className="p-8 text-center text-gray-500 text-sm">
-                                    No colleges found for this region.
-                                  </div>
-                                )}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
+                                        >
+                                          {college.name}
+                                        </Link>
+                                      );
+                                    })
+                                  ) : (
+                                    <div className="p-8 text-center text-gray-500 text-sm">
+                                      No colleges found for this region.
+                                    </div>
+                                  )}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -547,7 +556,7 @@ const Header = () => {
                 <div key={link.name}>
                   {!link.hasDropdown ? (
                     <Link
-                      href={link.href}
+                      href={link.href || '#'}
                       onClick={() => setMobileMenuOpen(false)}
                       className="block text-[15px] sm:text-[16px] font-semibold text-gray-800 hover:text-blue-600 transition-all py-2"
                     >
@@ -575,6 +584,24 @@ const Header = () => {
                             transition={{ duration: 0.3 }}
                             className="ml-4 mt-2 space-y-2 overflow-hidden"
                           >
+                            {link.name === 'Packages' && (
+                              <div className="space-y-2">
+                                <Link
+                                  href="/neet-ug-packages"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                >
+                                  NEET UG
+                                </Link>
+                                <Link
+                                  href="/mbbs-abroad"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                >
+                                  MBBS Abroad
+                                </Link>
+                              </div>
+                            )}
                             {link.name === 'MBBS India' && indiaStates.length > 0 && (
                               <div className="space-y-2">
                                 {indiaStates.map((state) => (
