@@ -4,25 +4,25 @@ import React from "react";
 import { FaPaperPlane, FaArrowRight } from "react-icons/fa";
 
 const FixedBottomCarousel: React.FC = () => {
-  const countries = [
-    "Russia",
-    "Georgia",
-    "Kazakhstan",
-    "Philippines",
-    "China",
-    "Nepal",
-    "Bangladesh",
-    "Armenia",
-    "Kyrgyzstan",
-    "Belarus",
-    "Egypt",
-    "Uzbekistan",
+  const states = [
+    "Delhi",
+    "Maharashtra",
+    "Uttar Pradesh",
+    "Karnataka",
+    "Tamil Nadu",
+    "Kerala",
+    "Gujarat",
+    "Rajasthan",
+    "Madhya Pradesh",
+    "West Bengal",
+    "Punjab",
+    "Bihar",
   ];
 
-  const duplicatedCountries = [
-    ...countries,
-    ...countries,
-    ...countries,
+  const duplicatedStates = [
+    ...states,
+    ...states,
+    ...states,
   ];
 
   return (
@@ -37,7 +37,7 @@ const FixedBottomCarousel: React.FC = () => {
           <div className="relative py-1.5 sm:py-2">
             <div className="overflow-hidden">
               <div className="flex animate-marquee gap-2 sm:gap-3 w-max px-2 sm:px-3">
-                {duplicatedCountries.map((country, index) => (
+                {duplicatedStates.map((state, index) => (
                   <button
                     key={index}
                     className="group flex items-center gap-1.5 sm:gap-2 rounded-lg border border-white/10 bg-white/5 px-2 sm:px-3 py-1 sm:py-1.5 text-white transition-all duration-300 hover:bg-blue-600 hover:border-blue-500"
@@ -54,7 +54,7 @@ const FixedBottomCarousel: React.FC = () => {
                       </span>
 
                       <span className="text-xs sm:text-sm font-semibold text-white">
-                        {country}
+                        {state}
                       </span>
                     </div>
 
