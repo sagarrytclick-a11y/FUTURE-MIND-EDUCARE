@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useMemo, useState } from "react"
+import React, { Suspense, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import {
@@ -39,7 +39,7 @@ interface MbbsData {
   states: StateData[]
 }
 
-const MbbsIndiaPage: React.FC = () => {
+const MbbsIndiaPageContent: React.FC = () => {
   const searchParams = useSearchParams()
   const [states, setStates] = useState<StateData[]>([])
   const [loading, setLoading] = useState(true)
@@ -488,5 +488,13 @@ const MbbsIndiaPage: React.FC = () => {
     </div>
   )
 }
+
+const MbbsIndiaPage: React.FC = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div></div>}>
+      <MbbsIndiaPageContent />
+    </Suspense>
+  );
+};
 
 export default MbbsIndiaPage
