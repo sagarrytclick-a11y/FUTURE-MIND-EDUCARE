@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import {
   FaGraduationCap,
   FaMapMarkerAlt,
@@ -39,6 +40,7 @@ interface MbbsData {
 }
 
 const MbbsIndiaPage: React.FC = () => {
+  const searchParams = useSearchParams()
   const [states, setStates] = useState<StateData[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedState, setSelectedState] = useState("")
@@ -58,6 +60,16 @@ const MbbsIndiaPage: React.FC = () => {
 
         const data: MbbsData = await response.json()
         setStates(data.states || [])
+
+        const stateParam = searchParams.get("state")
+        if (stateParam) {
+          const matchedState = data.states.find(
+            (s: StateData) => s.name.toLowerCase().replace(/\s+/g, "-") === stateParam
+          )
+          if (matchedState) {
+            setSelectedState(matchedState.name)
+          }
+        }
       } catch (err) {
         console.error("Data loading error:", err)
       } finally {
@@ -66,7 +78,7 @@ const MbbsIndiaPage: React.FC = () => {
     }
 
     loadData()
-  }, [])
+  }, [searchParams])
 
   // ALL COLLEGES
   const allColleges = states.flatMap(

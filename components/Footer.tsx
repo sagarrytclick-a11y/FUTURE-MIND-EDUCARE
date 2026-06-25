@@ -24,13 +24,13 @@ const Footer: React.FC = () => {
     { name: "Terms & Conditions", href: "/terms" }
   ];
 
-  const mbbsAbroadLinks = [
-    { name: "MBBS In Kazakhstan", href: "/country/kazakhstan" },
-    { name: "MBBS In Bangladesh", href: "/country/bangladesh" },
-    { name: "MBBS In Georgia", href: "/country/georgia" },
-    { name: "MBBS In Philippines", href: "/country/philippines" },
-    { name: "MBBS In Russia", href: "/country/russia" },
-    { name: "MBBS In Uzbekistan", href: "/country/uzbekistan" },
+  const mbbsIndiaLinks = [
+    { name: "MBBS In Delhi", href: "/colleges/mbbs-india?state=delhi" },
+    { name: "MBBS In Maharashtra", href: "/colleges/mbbs-india?state=maharashtra" },
+    { name: "MBBS In Uttar Pradesh", href: "/colleges/mbbs-india?state=uttar-pradesh" },
+    { name: "MBBS In Karnataka", href: "/colleges/mbbs-india?state=karnataka" },
+    { name: "MBBS In Tamil Nadu", href: "/colleges/mbbs-india?state=tamil-nadu" },
+    { name: "MBBS In Kerala", href: "/colleges/mbbs-india?state=kerala" },
   ];
 
   const socialLinks = [
@@ -110,14 +110,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* MBBS Abroad */}
+          {/* MBBS India */}
           <div>
             <h3 className="text-xl font-bold mb-6">
-              MBBS Abroad
+              MBBS in India
             </h3>
 
             <ul className="space-y-3">
-              {mbbsAbroadLinks.map((link, index) => (
+              {mbbsIndiaLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <p className="text-gray-300">
-                  info@futuremindeducare.com
+                  edufuturemind@gmail.com
                 </p>
               </div>
             </div>
