@@ -7,7 +7,7 @@ export const SITE_IDENTITY = {
     details: "Near Western Express Highway Metro Station, Opp Kanakia Wall Street",
     area: "Andheri East",
     city: "Mumbai",
-    pincode: "400069"
+    pincode: "400093"
   },
   contact: {
     phone: "9920798988",
