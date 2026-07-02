@@ -1332,7 +1332,7 @@
         }
       ]
     },
-    {
+   {
       "id": 8,
       "name": "Rajasthan",
       "slug": "rajasthan",
@@ -1469,25 +1469,26 @@
           "id": 7012,
           "name": "Mahatma Gandhi Medical College & Hospital",
           "city": "Jaipur",
-          "fees": "₹32,50,000 per year",
+          "fees": "₹18,75,000 - ₹63,00,000 per year",
           "seats": 140,
           "recognition": "NMC",
           "ranking": "Top Private Medical College in Rajasthan",
           "type": "Private",
           "image": "https://www.mgmch.org/images/building.webp",
-          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling and All India Quota through MCC.",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling conducted by Rajasthan PG Medical Counselling Board.",
           "placements": "Graduates secure senior residency roles in top hospitals and healthcare systems across India.",
           "entranceExams": [
             "NEET PG"
           ],
           "academicHighlights": [
-            "Advanced clinical training",
-            "Multi-specialty hospital exposure"
+            "Premier private health university in Jaipur",
+            "Advanced research and clinical facilities",
+            "Very high clinical workload and patient flow"
           ],
           "detailedFees": {
-            "tuitionFee": "₹32,50,000 per year (Clinical), ₹15,00,000 (Non-Clinical)",
-            "hostelFee": "₹1,00,000 per year",
-            "otherFees": "University registration and examination fees extra"
+            "tuitionFee": "₹18,75,000 - ₹63,00,000 per year (Clinical - State Seats), Management Seats: ₹58,75,000 - ₹78,75,000, Non-Clinical: ₹0 - ₹15,75,000",
+            "hostelFee": "₹3,15,700 (Double Sharing), ₹4,61,300 (Single Room) per year",
+            "otherFees": "Caution Deposit (College): ₹3,00,000 (Refundable)"
           },
           "documentsRequired": [
             "NEET PG Scorecard",
@@ -1511,25 +1512,26 @@
           "id": 7013,
           "name": "Geetanjali Medical College & Hospital",
           "city": "Udaipur",
-          "fees": "₹28,00,000 per year",
+          "fees": "₹25,00,000 - ₹1,00,00,000 per year",
           "seats": 120,
           "recognition": "NMC",
           "ranking": "Premier Private Medical Institute in Rajasthan",
           "type": "Private",
           "image": "https://admissionuniverse.in/img/geetanjali.jpg",
-          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling and All India Quota through MCC.",
-          "placements": "Graduates secure senior residency roles in top hospitals and healthcare systems across India.",
+          "admissionProcess": "Admission via NEET PG score followed by Rajasthan state centralized counseling.",
+          "placements": "Graduates secure clinical and specialist residency positions in premium corporate hospital networks.",
           "entranceExams": [
             "NEET PG"
           ],
           "academicHighlights": [
-            "Advanced clinical training",
-            "Multi-specialty hospital exposure"
+            "Modern super-specialty hospital with state-of-the-art oncology and cardiac wing",
+            "Rich diagnostic facilities and operation theatres",
+            "Reputed postgraduate academic guidance and faculty"
           ],
           "detailedFees": {
-            "tuitionFee": "₹28,00,000 per year (Clinical), ₹12,00,000 (Non-Clinical)",
-            "hostelFee": "₹1,00,000 per year",
-            "otherFees": "University registration and examination fees extra"
+            "tuitionFee": "₹25,00,000 - ₹1,00,00,000 per year (Clinical - State Seats), Management Seats: ₹31,25,000 - ₹1,25,00,000, Non-Clinical: ₹7,00,000 - ₹18,75,000",
+            "hostelFee": "₹4,00,000 per year (Double Sharing)",
+            "otherFees": "Admission Fee: ₹25,000, Caution Deposit (College): ₹3,00,000, Caution Deposit (Hostel): ₹2,00,000, Additional Charges: ₹3,25,200"
           },
           "documentsRequired": [
             "NEET PG Scorecard",
@@ -1548,9 +1550,324 @@
             ]
           },
           "nriFees": "$45,000 per year"
+        },
+        {
+          "id": 7501,
+          "name": "Dr. S.S Tantia Medical College, Hospital and Research Center",
+          "city": "Sri Ganganagar",
+          "fees": "₹25,00,000 - ₹95,00,000 per year",
+          "seats": 100,
+          "recognition": "NMC",
+          "ranking": "Premier Private Medical Institute in Sri Ganganagar",
+          "type": "Private",
+          "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling conducted by Rajasthan NEET PG Counselling Board.",
+          "placements": "Excellent placements in corporate and private hospitals as consultants, senior residents, and specialists.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "State-of-the-art diagnostic labs and operation theatres",
+            "Substantial clinical exposure with rich OPD/IPD count",
+            "Highly experienced postgraduate medical guides"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,00,000 - ₹95,00,000 per year (Clinical), ₹4,650 per year (Non-Clinical)",
+            "hostelFee": "₹3,00,000 (Double Sharing), ₹6,00,000 (Single Room) per year",
+            "otherFees": "Admission Fee: ₹1,00,000 (One-time), Caution Deposit (Hostel): ₹55,000 (Refundable), Additional Charges: ₹50,000 per year"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Card & Scorecard",
+            "MBBS Degree Certificate & Marksheets",
+            "Compulsory Rotatory Internship Certificate",
+            "NMC/State Medical Council Registration",
+            "Caution Money Receipt & Allotment Letter"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹16 LPA",
+            "internshipStipend": "₹50,000 per month",
+            "topRecruiters": [
+              "Fortis Hospitals",
+              "Manipal Hospitals",
+              "Government Residency Programs",
+              "Apollo Hospitals"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7502,
+          "name": "Jaipur National University Institute for Medical Sciences and Research Centre",
+          "city": "Jaipur",
+          "fees": "₹25,00,000 - ₹83,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC",
+          "ranking": "Top Private Medical Institute in Jaipur",
+          "type": "Private",
+          "image": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=600&h=400&fit=crop",
+          "admissionProcess": "Admission via NEET PG score followed by Rajasthan state centralized counseling.",
+          "placements": "Superb post-graduation placements in elite corporate hospitals and academic medical institutions across India.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Advanced multi-specialty hospital with 1000+ beds",
+            "In-depth clinical and surgical hands-on exposure",
+            "Excellent research facilities and modern skills lab"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,00,000 - ₹83,00,000 per year (Clinical - State Seats), Management Seats: ₹75,00,000 - ₹95,00,000, Non-Clinical: ₹6,00,000 - ₹15,00,000",
+            "hostelFee": "₹4,00,000 (Double Seater AC), ₹4,64,000 (Single Seater AC) per year",
+            "otherFees": "Admission Fee: ₹5,000 (One-time), Caution Deposit (College): ₹2,00,000 (Refundable), Caution Deposit (Hostel): ₹50,000 (Refundable), Additional Charges: ₹5,00,000"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard & Admit Card",
+            "MBBS Degree & Marksheets",
+            "Provisional/Permanent NMC Registration",
+            "Internship Completion Certificate",
+            "Bank Guarantee/Post-dated Cheques"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹9 LPA",
+            "medianSalaryPG": "₹18 LPA",
+            "internshipStipend": "₹55,000 per month",
+            "topRecruiters": [
+              "JNU Hospital",
+              "Fortis Escorts",
+              "Narayana Health",
+              "SMS Medical College Residency"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7503,
+          "name": "National Institute of Medical Sciences & Research (NIMS)",
+          "city": "Jaipur",
+          "fees": "₹20,00,000 - ₹1,00,00,000 per year",
+          "seats": 150,
+          "recognition": "NMC",
+          "ranking": "Renowned Deemed/Private Medical University in Rajasthan",
+          "type": "Private",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling.",
+          "placements": "Excellent internship and consultant opportunities within NIMS Super Specialty Hospital and top-tier national medical chains.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Massive clinical workload in a 1400+ bedded super-specialty hospital",
+            "State-of-the-art medical equipment including advanced MRI and CT",
+            "Global research collaborations and active academic publications"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹20,00,000 - ₹1,00,00,000 per year (Clinical), Management Seats: ₹40,00,000 - ₹1,25,00,000 per year, Non-Clinical: ₹20,000 - ₹12,00,000",
+            "hostelFee": "₹5,00,000 (Double Sharing), ₹10,00,000 (Single Room AC with VRV system, Laundry, Mess) per year",
+            "otherFees": "Admission Fee: ₹0, Caution Deposit: ₹0, Additional Charges: ₹2,30,000"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "MBBS Degree & Transcript",
+            "NMC/State SMC Registration",
+            "Internship Certificate",
+            "Post-dated Cheques for 2 years (College & Hostel)"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8.5 LPA",
+            "medianSalaryPG": "₹17 LPA",
+            "internshipStipend": "₹60,000 per month",
+            "topRecruiters": [
+              "NIMS Hospital",
+              "Medanta",
+              "Max Healthcare",
+              "Apollo Hospitals"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7504,
+          "name": "American International Institute of Medical Sciences",
+          "city": "Udaipur",
+          "fees": "₹28,00,000 - ₹32,55,000 per year",
+          "seats": 100,
+          "recognition": "NMC",
+          "ranking": "Premier Private Medical College in Udaipur",
+          "type": "Private",
+          "image": "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=600&h=400&fit=crop",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling.",
+          "placements": "Graduates are highly sought after for senior residency and consultant positions across Rajasthan and neighboring states.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Ultra-modern infrastructure with integrated hospital information system",
+            "High-volume clinical caseload in Southern Rajasthan",
+            "Dedicated skill development centers and interactive pedagogy"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹28,00,000 - ₹32,55,000 per year (Clinical), Management Seats: ₹75,00,000 - ₹1,20,00,000 per year, Non-Clinical: ₹3,00,000 - ₹12,00,000",
+            "hostelFee": "₹3,50,000 (Single Room), ₹4,00,000 (1-BHK Non AC) per year",
+            "otherFees": "Admission Fee: ₹10,000 (One-time), Caution Deposit (College): ₹4,50,000 (Refundable), Additional Charges: ₹35,000"
+          },
+          "documentsRequired": [
+            "NEET PG Admit Card",
+            "NEET PG Scorecard",
+            "MBBS Degree Certificate",
+            "Permanent NMC Registration",
+            "Bond / Bank Guarantee documents"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹15.5 LPA",
+            "internshipStipend": "₹50,000 per month",
+            "topRecruiters": [
+              "GBH American Hospital",
+              "Geetanjali Hospital",
+              "Fortis Udaipur",
+              "Paras Hospitals"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7505,
+          "name": "Ananta Institute of Medical Sciences and Research Centre",
+          "city": "Rajsamand",
+          "fees": "₹25,00,000 - ₹32,55,000 per year",
+          "seats": 100,
+          "recognition": "NMC",
+          "ranking": "Top Emerging Private PG Medical College in Rajasthan",
+          "type": "Private",
+          "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling.",
+          "placements": "Excellent opportunities for residency and clinical roles in leading multi-specialty healthcare networks.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Advanced clinical teaching hospital serving Rajsamand and Udaipur region",
+            "Comprehensive library with international medical journals",
+            "Hands-on diagnostic and interventional training"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,00,000 - ₹32,55,000 per year (Clinical), Management Seats: ₹55,00,000 - ₹1,10,00,000 per year, Non-Clinical: ₹3,00,000 - ₹12,00,000",
+            "hostelFee": "₹3,50,000 per year (Single Seater AC)",
+            "otherFees": "Admission Fee: ₹10,000 (One-time), Caution Deposit (College): ₹5,00,000 (Refundable), Additional Charges: ₹35,000"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard & Admit Card",
+            "MBBS Original Degree & Marksheets",
+            "NMC/SMC Registration Certificate",
+            "Bank Guarantee / Bond",
+            "Caution Money Deposit Receipt"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹7.5 LPA",
+            "medianSalaryPG": "₹15 LPA",
+            "internshipStipend": "₹45,000 per month",
+            "topRecruiters": [
+              "Ananta Hospital",
+              "Narayana Health",
+              "Manipal Hospitals",
+              "HCG Oncology"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7506,
+          "name": "Pacific Institute of Medical Sciences",
+          "city": "Udaipur",
+          "fees": "₹25,00,000 - ₹1,25,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC",
+          "ranking": "Premier Private Medical Institution in Udaipur (Umarda)",
+          "type": "Private",
+          "image": "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2019/02/Pacific-Institute-of-medical-science-campus.jpg",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling.",
+          "placements": "High selection rate in senior residency and fellowship programs in reputed healthcare centers.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Massive hospital campus with super-specialty units",
+            "Outstanding academic track record with regular seminars and CMEs",
+            "Highly experienced medical team and postgraduate guides"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹25,00,000 - ₹1,25,00,000 per year (Clinical), Management Seats: ₹1,00,00,000 - ₹1,50,00,000 per year, Non-Clinical: ₹25,00,000",
+            "hostelFee": "₹6,75,000 (Double Sharing), ₹10,50,000 (Suite Apartment) per year",
+            "otherFees": "Admission Fee: ₹25,000 (One-time), Caution Deposit (College): ₹5,00,000 (Refundable), Additional Charges: ₹2,25,000"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "MBBS Degree & Marksheets",
+            "Provisional/Permanent NMC Registration",
+            "Internship Completion Certificate",
+            "FDR for remaining tuition fees / One-year advance fee"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹16 LPA",
+            "internshipStipend": "₹50,000 per month",
+            "topRecruiters": [
+              "PIMS Hospital",
+              "Geetanjali Health",
+              "Max Healthcare",
+              "Apollo"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
+        },
+        {
+          "id": 7507,
+          "name": "Pacific Medical College & Hospital",
+          "city": "Udaipur",
+          "fees": "₹40,00,000 - ₹1,20,00,000 per year",
+          "seats": 120,
+          "recognition": "NMC",
+          "ranking": "Top-Rated Private Medical College in Udaipur region",
+          "type": "Private",
+          "image": "https://assets.findmycollege.com/FMC_IMAGES/63473/assets/12345.jpg",
+          "admissionProcess": "Admission via NEET PG score followed by state centralized counseling.",
+          "placements": "Excellent track record of clinical residencies and specialist placements in premium hospitals.",
+          "entranceExams": [
+            "NEET PG"
+          ],
+          "academicHighlights": [
+            "Advanced medical infrastructure with specialized trauma care",
+            "High clinical caseload enabling intensive diagnostic experience",
+            "Active medical research division with regular workshops"
+          ],
+          "detailedFees": {
+            "tuitionFee": "₹40,00,000 - ₹1,20,00,000 per year (Clinical), Management Seats: ₹85,00,000 - ₹1,50,00,000 per year, Non-Clinical: ₹0",
+            "hostelFee": "₹4,00,000 (Twin Sharing 2 BHK Flat AC), ₹7,50,000 (Single 2 BHK Flat AC) per year",
+            "otherFees": "Admission Fee: ₹1,00,000 (One-time), Caution Deposit (College): ₹3,00,000 (Refundable), Caution Deposit (Hostel): ₹2,00,000 (Refundable), Additional Charges: ₹1,00,000"
+          },
+          "documentsRequired": [
+            "NEET PG Scorecard",
+            "MBBS Degree Certificate & Transcripts",
+            "Permanent NMC/SMC Registration",
+            "Internship Completion Certificate",
+            "Admission Fee Receipt"
+          ],
+          "placementStats": {
+            "medianSalaryUG": "₹8 LPA",
+            "medianSalaryPG": "₹16.5 LPA",
+            "internshipStipend": "₹50,000 per month",
+            "topRecruiters": [
+              "PMCH Hospital",
+              "Manipal Hospitals",
+              "Fortis Escorts",
+              "Medanta"
+            ]
+          },
+          "nriFees": "NOT AVAILABLE"
         }
       ]
-    },
+    }, 
     {
       "id": 9,
       "name": "Punjab",
