@@ -2264,8 +2264,132 @@
             ]
           },
           "nriFees": "Radio/Derma: $90,000 | Medicine: $79,300 | Gyne: $66,300 | Ortho: $64,500 | Paedia: $64,300 | Surgery: $60,300 | Pschy: $37,280 | Anaesthesia: $39,220 | Patho: $29,240 | Others: NOT SPECIFIED"
-        }
+        } , 
+        {
+    "id": 6012,
+    "name": "BLDE Deemed to be University",
+    "city": "Vijayapura, Karnataka",
+    "fees": "₹9,00,000 to ₹39,00,000 per year",
+    "seats": 110,
+    "recognition": "NMC",
+    "ranking": "Renowned Heritage Deemed System in Karnataka",
+    "type": "Deemed University",
+    "image": "https://bldedu.ac.in/wp-content/uploads/2022/12/AAA-External-2022-15.jpg",
+    "admissionProcess": "100% centralized counseling via MCC based completely on NEET PG AIQ merits.",
+    "placements": "Excellent diagnostic consultant roles and premium regional healthcare attachments.",
+    "entranceExams": [
+      "NEET PG"
+    ],
+    "academicHighlights": [
+      "Sprawling campus infrastructure with high clinical flow and patient load",
+      "Rigorous scholarly environment with deep-seated residency monitoring"
+    ],
+    "detailedFees": {
+      "tuitionFee": "Radio/Derma: ₹39,00,000 | Medicine/Gyne/Paedia: ₹35,00,000 | Ortho/Surgery: ₹34,00,000 | Pschy/Opthal/TB Chest/Ent/Anaesthesia: ₹22,00,000 | Patho: ₹9,00,000",
+      "hostelFee": "₹1,80,000 to ₹2,50,000 per year setups",
+      "otherFees": "₹50,000 university registration processing charges"
+    },
+    "documentsRequired": [
+      "NEET PG Allotment Letter",
+      "MBBS Final Degree Portfolios",
+      "NMC Permanent Track Document"
+    ],
+    "placementStats": {
+      "medianSalaryUG": "₹7.2 LPA",
+      "medianSalaryPG": "₹14.2 LPA",
+      "internshipStipend": "₹48,000 per month clinical compensation",
+      "topRecruiters": [
+        "BLDE Hospital Network",
+        "Apollo Hospitals Bangalore",
+        "Fortis Healthcare"
       ]
+    },
+    "nriFees": "Radio/Derma: $1,18,000 | Medicine/Gyne: $1,04,000 | Ortho/Paedia: $98,300 | Patho: ₹25,00,000 | Others: NOT SPECIFIED"
+  }, 
+      {
+    "id": 6013,
+    "name": "Sri Devaraj Urs Medical College (SDU KOLAR)",
+    "city": "Kolar, Karnataka",
+    "fees": "₹30,50,000 to ₹34,00,000 per year",
+    "seats": 120,
+    "recognition": "NMC",
+    "ranking": "Highly Reputed Deemed Institute in Karnataka",
+    "type": "Deemed University",
+    "image": "https://sdumc.ac.in/storage/1744276297.85121672661172.1126217.aXEo.n9Qk.webp",
+    "admissionProcess": "Allocated via central MCC registration matrix based entirely on NEET PG rank index.",
+    "placements": "Exceptional transitions into premium fellowships and consultant tracks.",
+    "entranceExams": [
+      "NEET PG"
+    ],
+    "academicHighlights": [
+      "Sophisticated medical care unit tracking huge crowd indices",
+      "Rigorous academic training and clinical monitoring setup"
+    ],
+    "detailedFees": {
+      "tuitionFee": "Surgery/Ortho: ₹34,00,000 | Pschy/Opthal/Ent/Anaesthesia: ₹30,50,000 | Radio/Derma/Medicine/Gyne/Paedia/TB Chest/Patho: NOT SPECIFIED",
+      "hostelFee": "₹1,50,000 per year standard tier layout",
+      "otherFees": "₹50,000 campus facility configurations"
+    },
+    "documentsRequired": [
+      "NEET PG Allotment Tracking Slip",
+      "MBBS Final Core Portfolio",
+      "NMC Active Slip"
+    ],
+    "placementStats": {
+      "medianSalaryUG": "₹7.5 LPA",
+      "medianSalaryPG": "₹14.0 LPA",
+      "internshipStipend": "₹48,000 per month standard metrics",
+      "topRecruiters": [
+        "SDUMC Care Hospital Network",
+        "Narayana Health",
+        "Columbia Asia"
+      ]
+    },
+    "nriFees": "NOT SPECIFIED"
+  },
+        {
+    "id": 6014,
+    "name": "Rajarajeswari Medical College and Hospital",
+    "city": "Bengaluru, Karnataka",
+    "fees": "₹23,00,000 to ₹42,00,000 per year",
+    "seats": 150,
+    "recognition": "NMC",
+    "ranking": "Top Private Deemed System in Karnataka",
+    "type": "Deemed University",
+    "image": "https://media.licdn.com/dms/image/v2/C4E1BAQF6SHS5eYrxTw/company-background_10000/company-background_10000/0/1584210059664?e=2147483647&v=beta&t=INicriGPE6deJQ9M7Xb9Ac9aGf3gotgqsF2yIf0j44Y",
+    "admissionProcess": "100% centralized counseling via Medical Counselling Committee (MCC) based entirely on NEET PG merits.",
+    "placements": "Excellent domestic and corporate hospital integrations across Bengaluru region.",
+    "entranceExams": [
+      "NEET PG"
+    ],
+    "academicHighlights": [
+      "Highly advanced tertiary care center with massive clinical flow index",
+      "Comprehensive residency training across major clinical specialities"
+    ],
+    "detailedFees": {
+      "tuitionFee": "Surgery: ₹42,00,000 | Pschy: ₹30,00,000 | Opthal/TB Chest/Ent/Anaesthesia: ₹32,00,000 | Radio/Derma/Medicine: ₹26,00,000 | Gyne: ₹23,00,000 | Ortho/Paedia: ₹26,00,000 | Patho: NOT SPECIFIED",
+      "hostelFee": "₹2,00,000 to ₹3,00,000 per year dynamic structure",
+      "otherFees": "₹1,00,000 university development and processing charges"
+    },
+    "documentsRequired": [
+      "NEET PG Allotment Letter from MCC",
+      "MBBS Degree Credentials & Marksheets",
+      "KMC / NMC Registration Proof",
+      "Internship Completion Certificate"
+    ],
+    "placementStats": {
+      "medianSalaryUG": "₹8.0 LPA",
+      "medianSalaryPG": "₹15.0 LPA",
+      "internshipStipend": "₹50,000 per month standard resident compensation",
+      "topRecruiters": [
+        "Apollo Clinics",
+        "Manipal Hospitals",
+        "Narayana Health"
+      ]
+    },
+    "nriFees": "Radio/Derma: $80,00,00 | Medicine/Gyne/Ortho/Paedia: $60,00,00 | Others: NOT SPECIFIED"
+  }
+      ]   
     },
     {
       "id": 6,
