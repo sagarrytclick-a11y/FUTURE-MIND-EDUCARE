@@ -1,6 +1,5 @@
 import React from "react";
 import SinglePackageSection from "@/components/SinglePackageSection";
-import Footer from "@/components/Footer";
 
 export default function MbbsAbroadPage() {
   return (
@@ -18,7 +17,6 @@ export default function MbbsAbroadPage() {
           "Dedicated 1-on-1 counselor",
         ]}
       />
-      <Footer />
     </main>
   );
 }
