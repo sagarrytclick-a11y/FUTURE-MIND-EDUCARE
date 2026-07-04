@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaCheckCircle, FaSpinner } from "react-icons/fa";
 
-export default function SuccessPage() {
+function SuccessPageContent() {
   const searchParams = useSearchParams();
   const dbOrderId = searchParams.get("dbOrderId");
   const [order, setOrder] = useState<any>(null);
@@ -47,5 +47,13 @@ export default function SuccessPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#12141D] flex items-center justify-center text-[#94A3B8]"><FaSpinner className="animate-spin text-3xl" /></div>}>
+      <SuccessPageContent />
+    </Suspense>
   );
 }
