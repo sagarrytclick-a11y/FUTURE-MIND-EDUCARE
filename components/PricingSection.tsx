@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
-import { usePopup } from "../contexts/PopupContext";
+import CheckoutModal from "./CheckoutModal";
 
 const plans = [
   {
+    id: "NEET_UG_PLAN_1",
     name: "PLAN 1",
-    price: "10,000",
+    price: 10000,
     subtitle: "(Information based package)",
     features: [
       "Will be added in a Personal Whatsapp Group for all Updates related to NEET UG 2025 Colleges & Counseling.",
@@ -18,8 +19,9 @@ const plans = [
     ],
   },
   {
+    id: "NEET_UG_PLAN_2",
     name: "PLAN 2",
-    price: "25,000",
+    price: 25000,
     subtitle: "Personalized Counseling Service",
     highlighted: true,
     features: [
@@ -32,8 +34,9 @@ const plans = [
     ],
   },
   {
+    id: "NEET_UG_PLAN_3",
     name: "PLAN 3",
-    price: "50,000",
+    price: 50000,
     subtitle: "ONE TO ONE counseling service",
     features: [
       "Complete Counseling Process will be taken care By Team Sri Sai Consultancy From Day one of Counseling till the End of Counseling.",
@@ -44,8 +47,9 @@ const plans = [
     ],
   },
   {
+    id: "NEET_UG_PLAN_4",
     name: "PLAN 4",
-    price: "10,0000",
+    price: 100000,
     subtitle: "NRI/MNGT Quota Admission service",
     features: [
       "NRI Documentation verification",
@@ -58,11 +62,19 @@ const plans = [
 ];
 
 const PricingSection = () => {
-  const { openPopup } = usePopup();
+  const [checkoutPlan, setCheckoutPlan] = useState<{
+    id: string;
+    name: string;
+    price: number;
+  } | null>(null);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <section className="py-24 bg-gray-50"><div className="max-w-7xl mx-auto text-center">Loading...</div></section>;
 
   return (
     <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-24">
-      {/* BACKGROUND DESIGN */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-[-120px] right-[-100px] h-[300px] w-[300px] rounded-full bg-blue-100 blur-3xl opacity-50"></div>
         <div className="absolute bottom-[-120px] left-[-100px] h-[300px] w-[300px] rounded-full bg-cyan-100 blur-3xl opacity-50"></div>
@@ -81,7 +93,7 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, index) => (
             <motion.div
-              key={index}
+              key={plan.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -99,7 +111,7 @@ const PricingSection = () => {
                 {plan.name}
               </h3>
               <div className="text-4xl sm:text-5xl font-black mb-1">
-                ₹{plan.price}
+                ₹{plan.price.toLocaleString()}
               </div>
               <p
                 className={`text-sm mb-6 ${
@@ -129,7 +141,13 @@ const PricingSection = () => {
               </ul>
 
               <button
-                onClick={openPopup}
+                onClick={() =>
+                  setCheckoutPlan({
+                    id: plan.id,
+                    name: plan.name,
+                    price: plan.price,
+                  })
+                }
                 className={`w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 ${
                   plan.highlighted
                     ? "bg-white text-blue-600 hover:bg-blue-50"
@@ -142,6 +160,16 @@ const PricingSection = () => {
           ))}
         </div>
       </div>
+
+      {checkoutPlan && (
+        <CheckoutModal
+          isOpen={!!checkoutPlan}
+          onClose={() => setCheckoutPlan(null)}
+          planId={checkoutPlan.id}
+          planName={checkoutPlan.name}
+          planPrice={checkoutPlan.price}
+        />
+      )}
     </section>
   );
 };

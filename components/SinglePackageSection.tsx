@@ -1,14 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
-import { usePopup } from "../contexts/PopupContext";
+import CheckoutModal from "./CheckoutModal";
 
 interface SinglePackageSectionProps {
   title: string;
   subtitle: string;
   price: string;
+  priceNumeric: number;
+  planId: string;
   description: string;
   features: string[];
 }
@@ -17,14 +19,15 @@ const SinglePackageSection = ({
   title,
   subtitle,
   price,
+  priceNumeric,
+  planId,
   description,
   features,
 }: SinglePackageSectionProps) => {
-  const { openPopup } = usePopup();
+  const [showCheckout, setShowCheckout] = useState(false);
 
   return (
     <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-24">
-      {/* BACKGROUND DESIGN */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-[-100px] left-[-100px] h-[400px] w-[400px] rounded-full bg-blue-100 blur-3xl opacity-50"></div>
         <div className="absolute bottom-[-100px] right-[-100px] h-[400px] w-[400px] rounded-full bg-cyan-100 blur-3xl opacity-50"></div>
@@ -63,13 +66,21 @@ const SinglePackageSection = ({
           </ul>
 
           <button
-            onClick={openPopup}
+            onClick={() => setShowCheckout(true)}
             className="w-full py-4 px-8 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-blue-200"
           >
             Get Started Now →
           </button>
         </motion.div>
       </div>
+
+      <CheckoutModal
+        isOpen={showCheckout}
+        onClose={() => setShowCheckout(false)}
+        planId={planId}
+        planName={title}
+        planPrice={priceNumeric}
+      />
     </section>
   );
 };

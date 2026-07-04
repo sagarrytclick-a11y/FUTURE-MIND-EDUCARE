@@ -8,6 +8,8 @@ export default function MbbsAbroadPage() {
         title="MBBS Abroad Pathway"
         subtitle="Your Dream Medical Career Awaits"
         price="1,00,000"
+        priceNumeric={100000}
+        planId="MBBS_ABROAD"
         description="Premium guidance for MBBS admission in top international medical universities."
         features={[
           "University selection based on your profile",
