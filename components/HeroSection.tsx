@@ -1,207 +1,185 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePopup } from "../contexts/PopupContext";
-import {
-  FaArrowRight,
-  FaUserGraduate,
-  FaGlobeAsia,
-  FaStar,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+
+const TYPED_COLLEGES = [
+  "Yaroslavl The Wise Novgorod State University, Russia",
+  "Kyrgyz State Medical Academy, Kyrgyzstan",
+  "Grant Medical College, Mumbai",
+  "Tbilisi State Medical University, Georgia",
+];
+
+function useTypewriter() {
+  const [text, setText] = useState("");
+  useEffect(() => {
+    let college = 0;
+    let char = 0;
+    let deleting = false;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      const current = TYPED_COLLEGES[college];
+      if (!deleting) {
+        char += 1;
+        setText(current.slice(0, char));
+        if (char === current.length) {
+          deleting = true;
+          timer = setTimeout(tick, 1800);
+          return;
+        }
+        timer = setTimeout(tick, 45);
+      } else {
+        char -= 1;
+        setText(current.slice(0, char));
+        if (char === 0) {
+          deleting = false;
+          college = (college + 1) % TYPED_COLLEGES.length;
+          timer = setTimeout(tick, 400);
+          return;
+        }
+        timer = setTimeout(tick, 18);
+      }
+    };
+
+    timer = setTimeout(tick, 500);
+    return () => clearTimeout(timer);
+  }, []);
+  return text;
+}
 
 const HeroSection = () => {
   const { openPopup } = usePopup();
+  const typed = useTypewriter();
 
   return (
-    <section className="relative overflow-hidden bg-white">
-      
-      {/* BACKGROUND DESIGN */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-120px] right-[-100px] h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] lg:h-[350px] lg:w-[350px] rounded-lg bg-blue-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
-
-        <div className="absolute bottom-[-120px] left-[-100px] h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] lg:h-[300px] lg:w-[300px] rounded-lg bg-cyan-100 blur-2xl sm:blur-3xl opacity-60 sm:opacity-70"></div>
+    <section className="relative overflow-hidden bg-gradient-to-r from-brand-950 via-blue-900 to-brand-900">
+      {/* Globe line-art decoration */}
+      <div className="absolute inset-y-0 right-[-160px] hidden md:flex items-center opacity-100 pointer-events-none">
+        <div className="relative h-[560px] w-[560px]">
+          <div className="absolute inset-0 rounded-full border border-white/15" />
+          <div className="absolute inset-8 rounded-full border border-white/10" />
+          <div className="absolute inset-20 rounded-full border border-white/10" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10" />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10" />
+          <div className="absolute left-1/2 top-1/2 h-[560px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-white/10" />
+          <div className="absolute left-1/2 top-1/2 h-[560px] w-[140px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-white/10" />
+        </div>
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-15 py-12 sm:py-16 lg:py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-14 sm:pb-20">
+        <div className="grid lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] gap-8 items-center">
+          {/* DOCTOR CUTOUT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative hidden lg:block self-end"
+          >
+            <Image
+              src="/hero.png"
+              alt="Future Mind Educare — medical student guidance"
+              width={500}
+              height={500}
+              priority
+              className="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl"
+            />
+          </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-
-          {/* LEFT CONTENT */}
+          {/* COPY */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="lg:pr-8 xl:pr-12"
           >
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50/80 px-4 py-2 mb-5 sm:mb-7 shadow-xs">
-              <FaStar className="text-yellow-500 text-xs sm:text-sm" />
-              <span className="text-xs sm:text-sm font-semibold text-blue-700 tracking-wide">
-                Premium Medical Guidance
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 mb-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-white">
+                MBBS INDIA & ABROAD — GLOBAL PATHWAYS
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-gray-900">
+            <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white text-balance">
               Build Your
-              <span className="block text-blue-600 mt-1 sm:mt-2">
+              <span className="block text-accent-400 mt-1">
                 Medical Career
-              </span>
-              <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-500 mt-3 sm:mt-4">
-                With Top Universities Worldwide
               </span>
             </h1>
 
+            {/* FEATURED GLASS BOX */}
+            <div className="mt-6 max-w-xl rounded-2xl border border-white/15 bg-brand-950/60 backdrop-blur px-4 py-3.5">
+              <p className="text-[11px] font-bold tracking-[0.18em] text-slate-300">
+                FEATURED COLLEGE (ABROAD)
+              </p>
+              <p className="mt-1 text-sm sm:text-base font-semibold text-white min-h-[1.75rem]">
+                {typed}
+                <span className="ml-0.5 inline-block h-4 w-[2px] translate-y-[2px] animate-pulse bg-accent-400" />
+              </p>
+            </div>
+
             {/* DESCRIPTION */}
-            <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 max-w-xl">
-              Get complete guidance for MBBS admission in India & Abroad.
-              From counseling to university selection — we help you at every step.
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300 max-w-xl">
+              Trusted support for MBBS in India & abroad — university selection,
+              applications, counselling and visa assistance end to end.
             </p>
 
-            {/* FEATURES */}
-            <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                  <FaCheckCircle className="text-green-600 text-xs" />
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Expert Counselling</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                  <FaCheckCircle className="text-green-600 text-xs" />
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Top Medical Universities</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                  <FaCheckCircle className="text-green-600 text-xs" />
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Admission Assistance</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                  <FaCheckCircle className="text-green-600 text-xs" />
-                </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-base">Visa & Documentation</span>
-              </div>
-            </div>
-
-            {/* STATS */}
-            <div className="flex flex-wrap gap-4 sm:gap-6 mt-6 sm:mt-10">
-              <div className="rounded-2xl border border-gray-100 bg-white shadow-md px-5 py-4 min-w-[160px] sm:min-w-[190px]">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 shrink-0">
-                    <FaUserGraduate className="text-white text-lg" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">5000+</h3>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Students Guided</p>
-                  </div>
-                </div>
-              </div>
-              <div className="rounded-2xl border border-gray-100 bg-white shadow-md px-5 py-4 min-w-[160px] sm:min-w-[190px]">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500 shrink-0">
-                    <FaGlobeAsia className="text-white text-lg" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 leading-none">15+</h3>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Countries Available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-10">
+            <div className="flex flex-col sm:flex-row gap-3 mt-6">
               <button
                 onClick={openPopup}
-                className="group h-12 sm:h-14 px-8 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.03] active:scale-[0.98] text-sm sm:text-base w-full sm:w-auto"
+                className="group h-12 px-7 rounded-full bg-white hover:bg-accent-100 text-brand-950 font-bold text-sm shadow-lg transition-all duration-300 flex items-center justify-center gap-2.5 hover:scale-[1.03] active:scale-[0.98] w-full sm:w-auto"
               >
-                Get Free Consultation
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
+                Get Expert Counselling
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-950/10">
+                  <FaArrowRight className="text-[11px] transition-transform duration-300 group-hover:translate-x-0.5" />
+                </span>
               </button>
               <Link href="/colleges/mbbs-abroad">
-                <button className="h-12 sm:h-14 px-8 rounded-xl border-2 border-gray-200 bg-white text-gray-800 font-bold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] text-sm sm:text-base w-full sm:w-auto">
-                  Explore Universities
+                <button className="h-12 px-7 rounded-full border border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
+                  Explore Countries
                 </button>
               </Link>
             </div>
-          </motion.div>
 
-          {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-
-            {/* MAIN IMAGE */}
-            <div className="relative w-full max-w-[400px] sm:max-w-[520px]">
-
-              <div className="overflow-hidden rounded-[25px] sm:rounded-[35px] shadow-2xl border border-gray-100 bg-white">
-
-                <img
-                  src="https://i.pinimg.com/1200x/bc/68/a0/bc68a03939708cf66e303d252a27da48.jpg"
-                  alt="Medical Student"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="h-[400px] sm:h-[500px] lg:h-[620px] w-full object-cover"
-                />
+            {/* MINI STATS */}
+            <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
+              <div>
+                <p className="text-2xl font-extrabold text-white leading-none">5000+</p>
+                <p className="text-xs text-slate-300 mt-1">Students Guided</p>
               </div>
-
-              {/* FLOATING CARD 1 */}
-              <div className="absolute top-4 sm:top-6 -left-6 sm:-left-10 rounded-2xl sm:rounded-3xl bg-white shadow-2xl border border-gray-100 p-3 sm:p-5 w-[160px] sm:w-[220px] hidden sm:block">
-
-                <div className="flex items-center gap-3 sm:gap-4">
-
-                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-blue-600 flex items-center justify-center">
-                    <FaUserGraduate className="text-white text-sm sm:text-xl" />
-                  </div>
-
-                  <div>
-                    <h4 className="text-xl sm:text-3xl font-black text-gray-900">
-                      5000+
-                    </h4>
-
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                      Students Guided
-                    </p>
-                  </div>
-                </div>
+              <div className="border-l border-white/15 pl-8">
+                <p className="text-2xl font-extrabold text-white leading-none">15+</p>
+                <p className="text-xs text-slate-300 mt-1">Countries Available</p>
               </div>
-
-              {/* FLOATING CARD 2 */}
-              <div className="absolute bottom-4 sm:bottom-8 -right-6 sm:-right-8 rounded-2xl sm:rounded-3xl bg-white shadow-2xl border border-gray-100 p-3 sm:p-5 w-[170px] sm:w-[230px] hidden sm:block">
-
-                <div className="flex items-center gap-3 sm:gap-4">
-
-                  <div className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl bg-cyan-500 flex items-center justify-center">
-                    <FaGlobeAsia className="text-white text-sm sm:text-xl" />
-                  </div>
-
-                  <div>
-                    <h4 className="text-xl sm:text-3xl font-black text-gray-900">
-                      15+
-                    </h4>
-
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                      Countries Available
-                    </p>
-                  </div>
-                </div>
+              <div className="border-l border-white/15 pl-8">
+                <p className="text-2xl font-extrabold text-accent-400 leading-none">19+</p>
+                <p className="text-xs text-slate-300 mt-1">Years Experience</p>
               </div>
-
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* ECG baseline */}
+      <svg
+        className="absolute bottom-0 left-0 w-full h-8 text-white/20"
+        viewBox="0 0 1200 32"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <polyline
+          points="0,20 480,20 500,20 510,6 520,28 530,20 560,20 1200,20"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      </svg>
     </section>
   );
 };

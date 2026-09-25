@@ -4,16 +4,18 @@ import React, { Suspense, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import {
-  FaGraduationCap,
-  FaMapMarkerAlt,
-  FaUniversity,
   FaSearch,
   FaChevronLeft,
   FaChevronRight,
   FaStar,
   FaCheckCircle,
   FaArrowRight,
+  FaRupeeSign,
+  FaUserGraduate,
 } from "react-icons/fa"
+import PageHero from "@/components/PageHero"
+import Section from "@/components/Section"
+import SectionHeading from "@/components/SectionHeading"
 
 interface CollegeData {
   id: number
@@ -80,51 +82,30 @@ const MbbsIndiaPageContent: React.FC = () => {
     loadData()
   }, [searchParams])
 
-  // ALL COLLEGES
-  const allColleges = states.flatMap(
-    (state) => state.colleges
-  )
+  const allColleges = useMemo(() => states.flatMap((state) => state.colleges || []), [states])
 
-  // FILTERED COLLEGES
-  const filteredColleges = allColleges.filter(
+  const filteredColleges = useMemo(() => allColleges.filter(
     (college) => {
       const matchesState =
         selectedState === "" ||
         states.find(
           (s) =>
             s.name === selectedState &&
-            s.colleges.some(
-              (c) => c.id === college.id
-            )
+            s.colleges.some((c) => c.id === college.id)
         )
 
       const matchesSearch =
-        college.name
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        college.city
-          .toLowerCase()
-          .includes(search.toLowerCase())
+        college.name.toLowerCase().includes(search.toLowerCase()) ||
+        college.city.toLowerCase().includes(search.toLowerCase())
 
       return matchesState && matchesSearch
     }
-  )
+  ), [allColleges, selectedState, search, states])
 
-  // PAGINATION
-  const totalPages = Math.ceil(
-    filteredColleges.length / collegesPerPage
-  )
-
-  const indexOfLastCollege =
-    currentPage * collegesPerPage
-
-  const indexOfFirstCollege =
-    indexOfLastCollege - collegesPerPage
-
-  const currentColleges = filteredColleges.slice(
-    indexOfFirstCollege,
-    indexOfLastCollege
-  )
+  const totalPages = Math.ceil(filteredColleges.length / collegesPerPage)
+  const indexOfLastCollege = currentPage * collegesPerPage
+  const indexOfFirstCollege = indexOfLastCollege - collegesPerPage
+  const currentColleges = filteredColleges.slice(indexOfFirstCollege, indexOfLastCollege)
 
   const getPageNumbers = () => {
     const pages: (number | string)[] = []
@@ -137,277 +118,235 @@ const MbbsIndiaPageContent: React.FC = () => {
       const endPage = Math.min(totalPages - 1, currentPage + 1)
 
       pages.push(1)
-
-      if (startPage > 2) {
-        pages.push("...")
-      }
-
-      for (let i = startPage; i <= endPage; i += 1) {
-        pages.push(i)
-      }
-
-      if (endPage < totalPages - 1) {
-        pages.push("...")
-      }
-
+      if (startPage > 2) pages.push("...")
+      for (let i = startPage; i <= endPage; i += 1) pages.push(i)
+      if (endPage < totalPages - 1) pages.push("...")
       pages.push(totalPages)
     }
 
     return pages
   }
 
-  // TOTAL SEATS
-  const totalSeats = allColleges.reduce(
-    (acc, college) => acc + college.seats,
-    0
-  )
+  const totalSeats = useMemo(() => allColleges.reduce((acc, college) => acc + (college.seats || 0), 0), [allColleges])
 
-  // LOADING
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50">
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-
-          <p className="text-gray-600 text-lg">
-            Loading Medical Colleges...
-          </p>
+          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm">Loading Medical Colleges...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/40 to-gray-100">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-800 to-cyan-700 py-24 text-white">
-        <div className="absolute top-0 left-0 h-72 w-72 rounded-lg bg-cyan-400/20 blur-3xl"></div>
+    <div className="min-h-screen bg-slate-50">
+      <PageHero
+        align="center"
+        variant="light"
+        eyebrow="India's Top Medical Colleges"
+        title="MBBS Colleges"
+        highlight="in India"
+        description="Discover top government & private medical colleges with complete details about fees, seats, rankings and admissions."
+        crumbs={[{ label: "Home", href: "/" }, { label: "Colleges" }, { label: "MBBS India" }]}
+      />
 
-        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-lg bg-blue-400/20 blur-3xl"></div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-lg backdrop-blur-xl mb-6">
-              <FaGraduationCap />
-
-              <span className="text-sm font-medium">
-                India’s Top Medical Colleges
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-              MBBS Colleges
-
-              <span className="block text-cyan-300">
-                in India
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-              Discover top government & private
-              medical colleges with complete
-              details about fees, seats,
-              rankings and admissions.
-            </p>
-
-            {/* STATS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <h2 className="text-4xl font-black">
-                  {states.length}+
-                </h2>
-
-                <p className="text-blue-100 mt-2">
-                  States Covered
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <h2 className="text-4xl font-black">
-                  {allColleges.length}+
-                </h2>
-
-                <p className="text-blue-100 mt-2">
-                  Medical Colleges
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <h2 className="text-4xl font-black">
-                  {totalSeats.toLocaleString()}+
-                </h2>
-
-                <p className="text-blue-100 mt-2">
-                  MBBS Seats
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MAIN CONTENT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        {/* FILTER SECTION */}
-        <div className="bg-white rounded-xl sm:rounded-[32px] shadow-xl border border-gray-100 p-4 sm:p-8 mb-8 sm:mb-12">
-          <div className="flex flex-col lg:flex-row gap-4 sm:gap-5 lg:items-center lg:justify-between">
-            {/* SEARCH */}
-            <div className="relative w-full lg:w-[350px]">
-              <FaSearch className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm sm:text-base" />
-
-              <input
-                type="text"
-                placeholder="Search colleges..."
-                value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value)
-                  setCurrentPage(1)
-                }}
-                className="w-full h-10 sm:h-14 rounded-lg sm:rounded-2xl border border-gray-200 bg-gray-50 pl-9 sm:pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-              />
-            </div>
-
-            {/* STATES */}
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              <button
-                onClick={() => {
-                  setSelectedState("")
-                  setCurrentPage(1)
-                }}
-                className={`px-3 py-2 sm:px-5 sm:py-3 rounded-lg sm:rounded-2xl font-semibold transition-all duration-300 text-sm sm:text-base ${
-                  selectedState === ""
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-gray-100 hover:bg-blue-50 text-gray-700"
-                }`}
-              >
-                All States
-              </button>
-
-              {states.map((state) => (
-                <button
-                  key={state.id}
-                  onClick={() => {
-                    setSelectedState(state.name)
-                    setCurrentPage(1)
-                  }}
-                  className={`px-3 py-2 sm:px-5 sm:py-3 rounded-lg sm:rounded-2xl font-semibold transition-all duration-300 text-sm sm:text-base ${
-                    selectedState === state.name
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "bg-gray-100 hover:bg-blue-50 text-gray-700"
-                  }`}
-                >
-                  {state.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {currentColleges.map((college) => (
+      <Section spacing="md">
+        {/* STAT CARDS */}
+        <div className="mb-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {[
+            { value: `${states.length}+`, label: "States Covered" },
+            { value: `${allColleges.length}+`, label: "Medical Colleges" },
+            { value: `${totalSeats.toLocaleString()}+`, label: "MBBS Seats" },
+            {
+              value: `${allColleges.filter((c) => c.type === "Government").length}+`,
+              label: "Government Colleges",
+            },
+          ].map((item) => (
             <div
-              key={college.id}
-              className="bg-white rounded-xl sm:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              key={item.label}
+              className="group rounded-3xl border border-slate-200 bg-white px-4 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent-400 hover:shadow-lg"
             >
-              <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img
-                  src={college.image}
-                  alt={college.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-
-                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                  <span
-                    className={`px-2 py-1 sm:px-3 sm:py-1 rounded-lg text-xs font-bold text-white shadow-sm ${
-                      college.type === "Government"
-                        ? "bg-green-500"
-                        : "bg-blue-500"
-                    }`}
-                  >
-                    {college.type || "Private"}
-                  </span>
-                </div>
-
-                {college.ranking && (
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-lg flex items-center gap-1">
-                    <FaStar className="text-xs" />
-                    <span className="hidden sm:inline">{college.ranking}</span>
-                  </div>
-                )}
-              </div>
-
-              <div className="p-3 sm:p-4 lg:p-6">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 line-clamp-2 sm:line-clamp-1">
-                  {college.name}
-                </h3>
-
-                <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 lg:mb-6">
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-500">Fees</span>
-                    <span className="font-bold text-blue-700 text-xs sm:text-sm">{college.fees}</span>
-                  </div>
-
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-500">City</span>
-                    <span className="text-gray-900 font-medium text-xs sm:text-sm">{college.city}</span>
-                  </div>
-
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-500">Recognition</span>
-                    <span className="text-gray-900 font-medium text-xs sm:text-sm">{college.recognition}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 text-green-600 text-xs sm:text-sm font-bold mb-2 sm:mb-3 lg:mb-4">
-                  <FaCheckCircle className="text-xs sm:text-sm" />
-                  <span className="text-xs sm:text-sm">WHO & NMC APPROVED</span>
-                </div>
-
-                <Link
-                  href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-")}`}
-                  className="w-full py-2 sm:py-3 rounded-xl bg-blue-600 text-white font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-all text-sm sm:text-base"
-                >
-                  View Details
-                  <FaArrowRight className="text-sm sm:text-base" />
-                </Link>
-              </div>
+              <p className="text-xl font-extrabold leading-none tracking-tight text-accent-600 sm:text-2xl">
+                {item.value}
+              </p>
+              <p className="mt-1.5 text-[11px] font-semibold text-gray-600">{item.label}</p>
             </div>
           ))}
         </div>
 
-        {/* PAGINATION */}
+        {/* CENTERED search + state pills */}
+        <div className="mx-auto mb-6 w-full max-w-4xl rounded-3xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+          <div className="relative mb-3">
+            <FaSearch className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-base text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search colleges by name, city or recognition..."
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value)
+                setCurrentPage(1)
+              }}
+              className="h-14 w-full rounded-2xl border border-slate-200 bg-slate-50 pl-12 pr-28 text-base font-medium text-gray-800 outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-accent-400 focus:bg-white focus:ring-4 focus:ring-accent-100"
+            />
+            {search && (
+              <button
+                onClick={() => {
+                  setSearch("")
+                  setCurrentPage(1)
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold uppercase tracking-wide text-gray-500 transition-colors hover:text-brand-950"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          <div className="no-scrollbar flex justify-start gap-2 overflow-x-auto pb-1 lg:justify-center">
+            <button
+              onClick={() => {
+                setSelectedState("")
+                setCurrentPage(1)
+              }}
+              className={`h-10 shrink-0 rounded-full border px-5 text-sm font-bold transition-all duration-300 ${
+                selectedState === ""
+                  ? "border-brand-950 bg-brand-950 text-white"
+                  : "border-slate-200 bg-slate-50 text-slate-600 hover:border-accent-400 hover:bg-accent-100 hover:text-brand-950"
+              }`}
+            >
+              All States
+            </button>
+            {states.map((state) => (
+              <button
+                key={state.id}
+                onClick={() => {
+                  setSelectedState(state.name)
+                  setCurrentPage(1)
+                }}
+                className={`h-10 shrink-0 rounded-full border px-5 text-sm font-bold transition-all duration-300 ${
+                  selectedState === state.name
+                    ? "border-brand-950 bg-brand-950 text-white"
+                    : "border-slate-200 bg-slate-50 text-slate-600 hover:border-accent-400 hover:bg-accent-100 hover:text-brand-950"
+                }`}
+              >
+                {state.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <SectionHeading
+          eyebrow={`${filteredColleges.length} results`}
+          title="Top Medical Colleges in India"
+          className="mb-5"
+        />
+
+        {/* COLLEGE CARD GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {currentColleges.map((college) => (
+            <Link
+              key={college.id}
+              href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-")}`}
+              className="group flex flex-col h-full bg-white border border-slate-200 hover:border-brand-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-3xl"
+            >
+              <div className="relative overflow-hidden bg-slate-100">
+                <img
+                  src={college.image}
+                  alt={college.name}
+                  loading="lazy"
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* hover overlay */}
+                <div className="absolute inset-0 flex items-end justify-center bg-brand-950/0 pb-4 transition-colors duration-300 group-hover:bg-brand-950/55">
+                  <span className="inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent-400 px-4 py-2 text-xs font-bold text-brand-950 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    View College <FaArrowRight className="text-[10px]" />
+                  </span>
+                </div>
+                <span
+                  className={`absolute top-2.5 left-2.5 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 ${
+                    college.type === "Government"
+                      ? "bg-brand-950 text-white"
+                      : "bg-accent-400 text-brand-950"
+                  }`}
+                >
+                  {college.type || "Private"}
+                </span>
+                <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 bg-white/95 text-green-700 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                  <FaCheckCircle className="text-[10px]" />
+                  NMC Approved
+                </span>
+              </div>
+
+              <div className="p-4 flex flex-col flex-1">
+                {college.ranking && (
+                  <span className="inline-flex w-fit items-center gap-1 rounded-full bg-accent-100 px-2.5 py-1 text-[11px] font-bold uppercase text-accent-600 transition-colors duration-300 group-hover:bg-accent-400 group-hover:text-brand-950">
+                    <FaStar className="text-[10px]" />
+                    {college.ranking}
+                  </span>
+                )}
+
+                <h3 className="mt-2 line-clamp-2 text-base font-extrabold leading-snug tracking-tight text-brand-950 transition-colors duration-300 group-hover:text-accent-600">
+                  {college.name}
+                </h3>
+
+                <p className="mt-1 truncate text-sm text-gray-600">
+                  {college.city} • {college.recognition}
+                </p>
+
+                <div className="mt-3">
+                  <div className="rounded-2xl border border-accent-100 bg-accent-100/50 px-3 py-2.5">
+                    <p className="flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-wide text-accent-600">
+                      <FaRupeeSign className="text-[10px]" />
+                      Fees
+                    </p>
+                    <p className="text-sm font-extrabold text-brand-950 leading-snug break-words mt-0.5">
+                      {college.fees}
+                    </p>
+                  </div>
+
+                  <div className="mt-2.5 flex items-center justify-between gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-semibold text-gray-600 transition-colors duration-300 group-hover:border-accent-400 group-hover:bg-accent-100">
+                      <FaUserGraduate className="text-[11px] text-accent-600" />
+                      {college.seats} seats
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-accent-600 group-hover:text-brand-950 text-sm font-bold transition-colors duration-300">
+                      Details
+                      <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
         {totalPages > 1 && (
-          <div className="max-w-7xl mx-auto py-8">
-            <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-4 sm:p-6">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="py-6">
+            <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
                 <button
                   onClick={() => {
                     setCurrentPage(currentPage - 1)
                     window.scrollTo({ top: 400, behavior: "smooth" })
                   }}
                   disabled={currentPage === 1}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 disabled:opacity-40 disabled:hover:bg-blue-600 disabled:cursor-not-allowed transition-all duration-200 shadow-sm text-sm"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 h-11 px-6 bg-brand-950 text-white rounded-full text-sm font-bold hover:bg-brand-900 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300"
                 >
                   <FaChevronLeft className="text-xs" />
                   <span>Previous</span>
                 </button>
-
-                <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto w-full sm:w-auto py-2">
+                <div className="flex items-center justify-center gap-1.5 overflow-x-auto w-full sm:w-auto py-1">
                   {getPageNumbers().map((page, index) => {
                     if (page === "...") {
                       return (
-                        <span
-                          key={`ellipsis-${index}`}
-                          className="w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center text-gray-400 font-medium text-sm select-none"
-                        >
+                        <span key={`ellipsis-${index}`} className="w-9 h-9 flex items-center justify-center text-gray-400 text-sm select-none">
                           ...
                         </span>
                       )
                     }
-
                     const isCurrent = currentPage === page
-
                     return (
                       <button
                         key={`page-${page}`}
@@ -416,10 +355,10 @@ const MbbsIndiaPageContent: React.FC = () => {
                           window.scrollTo({ top: 400, behavior: "smooth" })
                         }}
                         disabled={isCurrent}
-                        className={`w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center rounded-xl font-semibold transition-all duration-200 text-sm ${
+                        className={`w-9 h-9 shrink-0 flex items-center justify-center rounded-full font-bold transition-colors text-sm ${
                           isCurrent
-                            ? "bg-blue-50 text-blue-600 border-2 border-blue-600 cursor-not-allowed"
-                            : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-200"
+                            ? "bg-brand-950 text-white cursor-not-allowed"
+                            : "bg-slate-100 text-slate-600 hover:bg-brand-950 hover:text-white"
                         }`}
                       >
                         {page}
@@ -427,71 +366,49 @@ const MbbsIndiaPageContent: React.FC = () => {
                     )
                   })}
                 </div>
-
                 <button
                   onClick={() => {
                     setCurrentPage(currentPage + 1)
                     window.scrollTo({ top: 400, behavior: "smooth" })
                   }}
                   disabled={currentPage === totalPages}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 disabled:opacity-40 disabled:hover:bg-blue-600 disabled:cursor-not-allowed transition-all duration-200 shadow-sm text-sm"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 h-11 px-6 bg-brand-950 text-white rounded-full text-sm font-bold hover:bg-brand-900 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300"
                 >
                   <span>Next</span>
                   <FaChevronRight className="text-xs" />
                 </button>
               </div>
-
-              <div className="text-center mt-4 text-gray-500 text-xs font-medium border-t border-gray-50 pt-3">
+              <div className="text-center mt-3 text-gray-600 text-xs font-medium border-t border-slate-200 pt-3">
                 Showing Page {currentPage} of {totalPages} ({filteredColleges.length} Total Colleges)
               </div>
             </div>
           </div>
         )}
 
-        {/* CTA */}
-        <div className="mt-24">
-          <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-blue-700 via-blue-800 to-cyan-700 p-12 shadow-2xl">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 blur-3xl rounded-lg"></div>
-
-            <div className="relative z-10 text-center text-white max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-black mb-6">
-                Need MBBS Admission Guidance?
-              </h2>
-
-              <p className="text-blue-100 text-lg leading-relaxed mb-10">
-                Get expert counseling for
-                NEET, admission process,
-                counseling, documentation and
-                direct guidance from our MBBS
-                experts.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
-                <Link
-                  href="/contact"
-                  className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all"
-                >
-                  Get Free Counseling
-                </Link>
-
-                <Link
-                  href="tel:+919920798988"
-                  className="border border-white/20 backdrop-blur-xl px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all"
-                >
-                  Call Now
-                </Link>
-              </div>
+        <div className="mt-6">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+            <h2 className="mb-2 text-base font-extrabold tracking-tight text-brand-950 sm:text-lg">Need MBBS <span className="text-accent-600">Admission Guidance?</span></h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-2xl mx-auto">
+              Get expert counseling for NEET, admission process, counseling, documentation and direct guidance from our MBBS experts.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/contact" className="inline-flex h-11 items-center justify-center rounded-full bg-accent-400 px-6 text-sm font-bold text-brand-950 transition-colors hover:bg-accent-500">
+                Get Free Counseling
+              </Link>
+              <Link href="tel:+919920798988" className="inline-flex h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-6 text-sm font-bold text-brand-950 transition-colors hover:border-brand-900 hover:bg-accent-100">
+                Call Now
+              </Link>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </div>
   )
 }
 
 const MbbsIndiaPage: React.FC = () => {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div></div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-950"></div></div>}>
       <MbbsIndiaPageContent />
     </Suspense>
   );

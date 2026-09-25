@@ -79,12 +79,12 @@ export async function GET(request: NextRequest) {
       todayEnquiries,
       weekEnquiries,
       monthEnquiries,
-      statusStats: statusStats.reduce((acc: any, stat: any) => {
-        acc[stat._id] = stat.count;
+      statusStats: statusStats.reduce<Record<string, number>>((acc, stat) => {
+        acc[String(stat._id)] = stat.count;
         return acc;
       }, {}),
-      courseStats: courseStats.reduce((acc: any, stat: any) => {
-        acc[stat._id] = stat.count;
+      courseStats: courseStats.reduce<Record<string, number>>((acc, stat) => {
+        acc[String(stat._id)] = stat.count;
         return acc;
       }, {}),
       recentEnquiries,

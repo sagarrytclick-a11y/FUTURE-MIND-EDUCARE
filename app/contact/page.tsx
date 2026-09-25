@@ -13,8 +13,11 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaArrowRight,
-  FaUserGraduate,
+  FaStar,
 } from "react-icons/fa";
+import PageHero from "@/components/PageHero";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -83,265 +86,308 @@ const ContactPage: React.FC = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: FaPhone,
-      title: "Call Us",
-      details: [SITE_IDENTITY.contact.phone],
-      bg: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: FaEnvelope,
-      title: "Email Us",
-      details: [
-        SITE_IDENTITY.contact.email,
-        "admission@futuremindeducare.com",
-      ],
-      bg: "from-emerald-500 to-green-500",
-    },
-    {
-      icon: FaMapMarkerAlt,
-      title: "Visit Office",
-      details: [
-        `${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city}`,
-        `Maharashtra - ${SITE_IDENTITY.address.pincode}`,
-      ],
-      bg: "from-rose-500 to-red-500",
-    },
-    {
-      icon: FaClock,
-      title: "Working Hours",
-      details: [
-        `Mon - Sat : ${SITE_IDENTITY.officeHours.mondayToSaturday}`,
-        `Sunday : ${SITE_IDENTITY.officeHours.sunday}`,
-      ],
-      bg: "from-violet-500 to-purple-500",
-    },
+  const socialLinks = [
+    { icon: FaFacebookF, link: "#" },
+    { icon: FaInstagram, link: "#" },
+    { icon: FaTwitter, link: "#" },
+    { icon: FaLinkedinIn, link: "#" },
+    { icon: FaYoutube, link: "#" },
   ];
 
-  const socialLinks = [
-    {
-      icon: FaFacebookF,
-      link: "#",
-      hover: "hover:bg-blue-600",
-    },
-    {
-      icon: FaInstagram,
-      link: "#",
-      hover: "hover:bg-pink-600",
-    },
-    {
-      icon: FaTwitter,
-      link: "#",
-      hover: "hover:bg-sky-500",
-    },
-    {
-      icon: FaLinkedinIn,
-      link: "#",
-      hover: "hover:bg-blue-700",
-    },
-    {
-      icon: FaYoutube,
-      link: "#",
-      hover: "hover:bg-red-600",
-    },
-  ];
+  const inputClass =
+    "w-full h-11 px-5 rounded-full border border-slate-200 text-sm focus:border-brand-800 focus:ring-2 focus:ring-accent-100 outline-none transition-all bg-white";
+  const labelClass = "block text-xs font-bold text-accent-600 uppercase tracking-wide mb-1.5";
 
   return (
-    <div className="bg-white min-h-screen overflow-hidden">
-      {/* HERO SECTION */}
-      <section className="relative py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-lg blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400/10 rounded-lg blur-3xl"></div>
+    <div className="bg-slate-50 min-h-screen">
+      <PageHero
+        align="center"
+        variant="light"
+        eyebrow="FUTURE MIND EDUCARE"
+        title="Let's Build Your"
+        highlight="Medical Career"
+        description="Connect with expert counselors for MBBS admissions in India & Abroad. We guide you through counseling, admissions, visas, scholarships, and everything in between."
+        crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+      />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            {/* LEFT */}
-            <div>
-              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-5 py-2 rounded-lg text-sm font-medium backdrop-blur-md mb-6">
-                <FaUserGraduate />
-                FUTURE MIND EDUCARE
-              </span>
-
-              <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-                Let’s Build Your
-                <span className="block text-cyan-300">
-                  Medical Career
+      <Section spacing="md">
+        {/* QUICK CONTACT CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+          {[
+            {
+              icon: FaPhone,
+              label: "Phone",
+              value: SITE_IDENTITY.contact.phone,
+              href: `tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, "")}`,
+            },
+            {
+              icon: FaEnvelope,
+              label: "Email",
+              value: SITE_IDENTITY.contact.email,
+              href: `mailto:${SITE_IDENTITY.contact.email}`,
+            },
+            {
+              icon: FaMapMarkerAlt,
+              label: "Office",
+              value: `${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city}`,
+            },
+            {
+              icon: FaClock,
+              label: "Open Hours",
+              value: `Mon - Sat : ${SITE_IDENTITY.officeHours.mondayToSaturday}`,
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            const inner = (
+              <>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-100 text-accent-600 transition-colors duration-300 group-hover:bg-accent-400 group-hover:text-brand-950">
+                  <Icon className="text-sm" />
                 </span>
-              </h1>
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-bold uppercase tracking-wide text-gray-500">
+                    {item.label}
+                  </span>
+                  <span className="block text-sm font-bold text-brand-950 truncate">
+                    {item.value}
+                  </span>
+                </span>
+              </>
+            );
 
-              <p className="text-lg text-blue-100 leading-relaxed max-w-xl mb-8">
-                Connect with expert counselors for MBBS admissions in India &
-                Abroad. We guide you through counseling, admissions, visas,
-                scholarships, and everything in between.
-              </p>
+            return item.href ? (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-900 hover:shadow-lg"
+              >
+                {inner}
+              </a>
+            ) : (
+              <div
+                key={item.label}
+                className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-900 hover:shadow-lg"
+              >
+                {inner}
+              </div>
+            );
+          })}
+        </div>
 
-              <div className="flex flex-wrap gap-4">
+        {/* Split: brand-950 info panel + form */}
+        <div className="grid gap-4 lg:grid-cols-[360px_1fr]">
+          {/* Left info panel */}
+          <aside className="flex flex-col rounded-3xl bg-brand-950 p-5 text-white">
+            <h2 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg !text-white">Contact Information</h2>
+            <p className="mt-1 text-sm leading-relaxed text-gray-300">
+              Have questions about MBBS admissions? Our expert counselors will get back to you within 24 hours.
+            </p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-400 text-brand-950">
+                  <FaPhone className="text-xs" />
+                </span>
+                <span>
+                  <span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">Phone</span>
+                  <span className="font-bold">{SITE_IDENTITY.contact.phone}</span>
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-400 text-brand-950">
+                  <FaEnvelope className="text-xs" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">Email</span>
+                  <a
+                    href={`mailto:${SITE_IDENTITY.contact.email}`}
+                    className="block truncate font-bold transition-colors hover:text-accent-400"
+                  >
+                    {SITE_IDENTITY.contact.email}
+                  </a>
+                  <span className="mt-0.5 block text-xs text-gray-300">
+                    Mon - Sat, {SITE_IDENTITY.officeHours.mondayToSaturday}
+                  </span>
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-400 text-brand-950">
+                  <FaMapMarkerAlt className="text-xs" />
+                </span>
+                <span>
+                  <span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">Address</span>
+                  <span className="text-sm leading-relaxed text-gray-200">
+                    {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city}, Maharashtra - {SITE_IDENTITY.address.pincode}
+                  </span>
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-400 text-brand-950">
+                  <FaClock className="text-xs" />
+                </span>
+                <span>
+                  <span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">Office Hours</span>
+                  <span className="block text-sm text-gray-200">Mon - Sat : {SITE_IDENTITY.officeHours.mondayToSaturday}</span>
+                  <span className="block text-sm text-gray-200">Sunday : {SITE_IDENTITY.officeHours.sunday}</span>
+                </span>
+              </li>
+            </ul>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-white/10">
+              <iframe
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  `${SITE_IDENTITY.address.building}, ${SITE_IDENTITY.address.landmark}, ${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city} ${SITE_IDENTITY.address.pincode}`
+                )}&output=embed`}
+                width="100%"
+                height="100%"
+                loading="lazy"
+                style={{ border: 0 }}
+                className="h-40 w-full"
+              />
+            </div>
+            <a
+              href={SITE_IDENTITY.contact.googleBusinessUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 transition-colors duration-300 hover:border-accent-400 hover:bg-white/10"
+            >
+              <span>
+                <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </span>
+                <span className="mt-0.5 block text-xs font-bold text-white">4.2 · 115 Google reviews</span>
+              </span>
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-accent-400">
+                Write a review
+                <FaArrowRight className="text-[9px]" />
+              </span>
+            </a>
+
+            <div className="mt-4 border-t border-white/10 pt-4">
+              <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">Follow Us</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-accent-400 hover:text-brand-950"
+                  >
+                    <social.icon className="text-sm" />
+                  </a>
+                ))}
+              </div>
+              <div className="mt-3 flex flex-col gap-2">
                 <a
                   href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
-                  className="bg-white text-[#0B2447] hover:bg-cyan-300 px-7 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-xl"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-brand-950 transition-colors hover:bg-accent-100"
                 >
-                  Call Now
+                  <FaPhone className="text-xs" /> Call Now
                 </a>
-
                 <a
-                  href="#contact-form"
-                  className="border border-white/30 hover:bg-white/10 px-7 py-4 rounded-2xl font-semibold transition-all duration-300"
+                  href={`mailto:${SITE_IDENTITY.contact.email}`}
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-6 text-sm font-bold text-white transition-colors hover:bg-white/10"
                 >
-                  Get Free Counseling
+                  <FaEnvelope className="text-xs" /> Mail Us
                 </a>
               </div>
             </div>
+          </aside>
 
-            {/* RIGHT CARD */}
-            <div className="relative">
-              <div className="bg-white/10 border border-white/20 backdrop-blur-xl rounded-[32px] p-8 shadow-2xl">
-                <div className="grid grid-cols-2 gap-5">
-                  {contactInfo.map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-white/10 rounded-2xl p-5 border border-white/10 hover:scale-105 transition-all duration-300"
-                    >
-                      <div
-                        className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${item.bg} flex items-center justify-center mb-4`}
-                      >
-                        <item.icon className="text-white text-xl" />
-                      </div>
-
-                      <h3 className="font-bold text-lg mb-2">
-                        {item.title}
-                      </h3>
-
-                      {item.details.map((detail, i) => (
-                        <p
-                          key={i}
-                          className="text-sm text-blue-100 leading-relaxed"
-                        >
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MAIN CONTACT SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-10">
-          {/* FORM */}
+          {/* Right form */}
           <div
             id="contact-form"
-            className="bg-white rounded-[32px] p-8 md:p-10 shadow-xl border border-gray-100"
+            className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm"
           >
-            <div className="mb-8">
-              <span className="text-blue-600 font-semibold uppercase tracking-wider text-sm">
-                Contact Form
-              </span>
-
-              <h2 className="text-4xl font-black text-gray-900 mt-2 mb-4">
-                Get Free MBBS Counseling
-              </h2>
-
-              <p className="text-gray-600 leading-relaxed">
-                Fill out the form and our expert counselor will contact you
-                within 24 hours.
-              </p>
-            </div>
+            <SectionHeading
+              align="center"
+              eyebrow="Contact Us"
+              title="Get in Touch"
+              description="Fill out the form and our expert counselor will contact you within 24 hours."
+              className="mb-5"
+            />
 
             {submitStatus === "success" && (
-              <div className="mb-6 bg-green-50 border border-green-200 text-green-700 px-5 py-4 rounded-2xl">
+              <div className="mb-4 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
                 Your inquiry has been submitted successfully.
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-5 py-4 rounded-2xl">
+              <div className="mb-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
                 Something went wrong. Please try again.
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-2">
-                    Full Name
+                  <label className={labelClass}>
+                    Full Name *
                   </label>
-
                   <input
                     type="text"
                     name="name"
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Enter your name"
-                    className="w-full h-14 px-5 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                    placeholder="Enter your full name"
+                    className={inputClass}
                   />
                 </div>
-
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-2">
-                    Phone Number
+                  <label className={labelClass}>
+                    Phone Number *
                   </label>
-
                   <input
                     type="tel"
                     name="phone"
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Enter your number"
-                    className="w-full h-14 px-5 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                    placeholder="Enter your phone number"
+                    className={inputClass}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-semibold text-gray-700 block mb-2">
-                  Email Address
+                <label className={labelClass}>
+                  Email Address *
                 </label>
-
                 <input
                   type="email"
                   name="email"
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full h-14 px-5 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                  placeholder="Enter your email address"
+                  className={inputClass}
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid gap-4 md:grid-cols-2">
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-2">
-                    Interested In
+                  <label className={labelClass}>
+                    Service Interest
                   </label>
-
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full h-14 px-5 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                    className={inputClass}
                   >
                     <option value="mbbs-abroad">MBBS Abroad</option>
                     <option value="mbbs-india">MBBS India</option>
                     <option value="neet-ug">NEET UG Counseling</option>
                     <option value="neet-pg">NEET PG Counseling</option>
-                    <option value="general-inquiry">
-                      General Inquiry
-                    </option>
+                    <option value="general-inquiry">General Inquiry</option>
                   </select>
                 </div>
-
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 block mb-2">
+                  <label className={labelClass}>
                     NEET Score
                   </label>
-
                   <input
                     type="number"
                     name="neetScore"
@@ -349,8 +395,8 @@ const ContactPage: React.FC = () => {
                     max="720"
                     value={formData.neetScore}
                     onChange={handleChange}
-                    placeholder="e.g. 620"
-                    className="w-full h-14 px-5 rounded-2xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                    placeholder="Enter your NEET score (if applicable)"
+                    className={inputClass}
                   />
                 </div>
               </div>
@@ -358,112 +404,21 @@ const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group w-full h-14 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-[1.01] transition-all duration-300 text-white font-bold shadow-xl flex items-center justify-center gap-3 disabled:opacity-70"
+                className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent-400 text-sm font-bold text-brand-950 transition-all duration-300 hover:bg-accent-500 hover:shadow-lg disabled:opacity-70"
               >
                 {isSubmitting ? (
                   "Submitting..."
                 ) : (
                   <>
                     Submit Inquiry
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    <FaArrowRight className="text-xs" />
                   </>
                 )}
               </button>
             </form>
           </div>
-
-          {/* RIGHT SIDE */}
-          <div className="space-y-8">
-            {/* MAP */}
-            <div className="bg-white rounded-[32px] p-6 shadow-xl border border-gray-100 overflow-hidden">
-              <h3 className="text-2xl font-black text-gray-900 mb-4">
-                Visit Our Office
-              </h3>
-
-              <div className="rounded-3xl overflow-hidden h-[350px]">
-                <iframe
-                  src="https://www.google.com/maps?q=Mumbai&output=embed"
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  style={{ border: 0 }}
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
-
-            {/* QUICK CONTACT */}
-            <div className="bg-gradient-to-br from-[#071952] to-[#19376D] rounded-[32px] p-8 text-white shadow-2xl">
-              <h3 className="text-3xl font-black mb-4">
-                Need Immediate Help?
-              </h3>
-
-              <p className="text-blue-100 mb-8 leading-relaxed">
-                Speak directly with our MBBS admission experts for quick
-                counseling support.
-              </p>
-
-              <div className="space-y-5">
-                <a
-                  href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
-                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 transition-all"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center">
-                    <FaPhone />
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-blue-200">Call Us</p>
-                    <h4 className="font-bold text-lg">
-                      {SITE_IDENTITY.contact.phone}
-                    </h4>
-                  </div>
-                </a>
-
-                <a
-                  href={`mailto:${SITE_IDENTITY.contact.email}`}
-                  className="flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 transition-all"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center">
-                    <FaEnvelope />
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-blue-200">Mail Us</p>
-                    <h4 className="font-bold text-lg">
-                      {SITE_IDENTITY.contact.email}
-                    </h4>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            {/* SOCIAL */}
-            <div className="bg-white rounded-[32px] p-8 shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-black text-gray-900 mb-3">
-                Follow Us
-              </h3>
-
-              <p className="text-gray-600 mb-6">
-                Stay updated with MBBS admissions, NEET counseling, and medical
-                career tips.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    className={`w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center text-gray-700 ${social.hover} hover:text-white transition-all duration-300 hover:-translate-y-1`}
-                  >
-                    <social.icon className="text-lg" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

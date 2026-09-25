@@ -62,7 +62,7 @@ const AdminPanel: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'enquiries' | 'orders'>('enquiries');
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -79,12 +79,6 @@ const AdminPanel: React.FC = () => {
 
   const enquiriesPerPage = 10;
 
-  useEffect(() => {
-    fetchStats();
-    fetchEnquiries();
-    fetchOrders();
-  }, [currentPage, statusFilter, search, ordersPage, ordersStatusFilter, ordersSearch]);
-
   const fetchStats = async () => {
     try {
       const response = await fetch('/api/admin/stats');
@@ -97,7 +91,6 @@ const AdminPanel: React.FC = () => {
 
   const fetchEnquiries = async () => {
     try {
-      setLoading(true);
       const params = new URLSearchParams({
         page: currentPage.toString(),
         limit: enquiriesPerPage.toString(),
@@ -107,13 +100,12 @@ const AdminPanel: React.FC = () => {
 
       const response = await fetch(`/api/admin/enquiries?${params}`);
       const data = await response.json();
-      
+
       setEnquiries(data.enquiries);
       setTotalPages(data.pagination.pages);
     } catch (error) {
       console.error('Error fetching enquiries:', error);
-    } finally {
-      setLoading(false);
+      setLoadFailed(true);
     }
   };
 
@@ -135,6 +127,15 @@ const AdminPanel: React.FC = () => {
       console.error('Error fetching orders:', error);
     }
   };
+
+  useEffect(() => {
+    const load = async () => {
+      await Promise.all([fetchStats(), fetchEnquiries(), fetchOrders()]);
+    };
+
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, statusFilter, search, ordersPage, ordersStatusFilter, ordersSearch]);
 
   const updateEnquiryStatus = async (id: string, status: string) => {
     try {
@@ -230,7 +231,7 @@ const AdminPanel: React.FC = () => {
     }
   };
 
-  if (loading && enquiries.length === 0) {
+  if (!loadFailed && enquiries.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>

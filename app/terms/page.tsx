@@ -8,10 +8,14 @@ import {
   FaUserShield,
   FaArrowRight,
 } from "react-icons/fa";
+import PageHero from "@/components/PageHero";
+import Section from "@/components/Section";
+import { SITE_IDENTITY } from "@/app/config/site_identity";
 
 const TermsPage: React.FC = () => {
   const sections = [
     {
+      id: "service",
       icon: FaFileContract,
       title: "Terms of Service",
       content: [
@@ -21,6 +25,7 @@ const TermsPage: React.FC = () => {
       ],
     },
     {
+      id: "responsibilities",
       icon: FaUserShield,
       title: "User Responsibilities",
       content: [
@@ -31,6 +36,7 @@ const TermsPage: React.FC = () => {
       ],
     },
     {
+      id: "services",
       icon: FaShieldAlt,
       title: "Service Terms",
       content: [
@@ -41,6 +47,7 @@ const TermsPage: React.FC = () => {
       ],
     },
     {
+      id: "disclaimer",
       icon: FaGavel,
       title: "Legal Disclaimer",
       content: [
@@ -87,165 +94,150 @@ const TermsPage: React.FC = () => {
     },
   ];
 
+  const toc = [
+    { href: "#overview", label: "Overview" },
+    ...sections.map((s) => ({ href: `#${s.id}`, label: s.title })),
+    { href: "#policies", label: "Detailed Policies" },
+    { href: "#help", label: "Need Help?" },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#f7f9fc]">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#2563eb] py-24">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-lg"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400/20 blur-3xl rounded-lg"></div>
+    <div className="min-h-screen bg-slate-50">
+      <PageHero
+        align="center"
+        variant="light"
+        eyebrow="FUTURE MIND EDUCARE"
+        title="Terms &"
+        highlight="Conditions"
+        description="Please read our terms carefully before using our services. These guidelines help ensure a safe and transparent experience for all students and parents."
+        crumbs={[{ label: "Home", href: "/" }, { label: "Terms & Conditions" }]}
+      />
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center text-white">
-          <span className="inline-block px-5 py-2 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md text-sm mb-6">
-            FUTURE MIND EDUCARE
-          </span>
+      <Section spacing="md">
+        {/* CENTERED TOC + doc sections */}
+        <div>
+          <div className="mx-auto w-full max-w-4xl">
+            {/* CENTERED TOC PILLS */}
+            <nav className="rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent-600">Contents</p>
+              <ol className="mt-3 flex flex-wrap items-center justify-center gap-2">
+                {toc.map((item, i) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="flex items-baseline gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors hover:border-accent-400 hover:bg-accent-100 hover:text-brand-950"
+                    >
+                      <span className="text-xs font-bold text-accent-600">{String(i + 1).padStart(2, "0")}</span>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-3 text-xs text-gray-600">
+                Last Updated{" "}
+                <span className="font-bold text-brand-950">
+                  {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                </span>
+              </p>
+            </nav>
 
-          <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-            Terms & <span className="text-cyan-300">Conditions</span>
-          </h1>
-
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-blue-100 leading-relaxed">
-            Please read our terms carefully before using our services. These
-            guidelines help ensure a safe and transparent experience for all
-            students and parents.
-          </p>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-10">
-        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Important Information
-              </h2>
-
-              <p className="text-gray-600 leading-relaxed max-w-3xl">
-                By accessing this website and using our counseling services,
-                you agree to comply with all applicable terms, policies, and
-                legal requirements. Our mission is to provide transparent,
-                ethical, and professional MBBS admission guidance.
+            <div className="min-w-0">
+            <div id="overview" className="mt-6 scroll-mt-header rounded-3xl border border-slate-200 bg-white p-5 text-center sm:p-6">
+              <h2 className="text-brand-950 font-extrabold tracking-tight text-lg sm:text-xl mb-2">Important Information</h2>
+              <p className="mx-auto max-w-2xl text-sm text-gray-600 leading-relaxed">
+                By accessing this website and using our counseling services, you agree to comply with all applicable terms, policies, and legal requirements. Our mission is to provide transparent, ethical, and professional MBBS admission guidance.
               </p>
             </div>
 
-            <div className="bg-blue-50 rounded-2xl p-6 min-w-[250px] border border-blue-100">
-              <p className="text-sm text-gray-500 mb-2">Last Updated</p>
-              <h3 className="text-xl font-bold text-blue-700">
-                {new Date().toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
+            <ol className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {sections.map((section, index) => (
+                <li
+                  key={section.id}
+                  id={section.id}
+                  className="group scroll-mt-header rounded-3xl border border-slate-200 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-lg"
+                >
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-400 text-sm font-extrabold text-brand-950 transition-colors duration-300 group-hover:bg-brand-950 group-hover:text-white">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-3 flex items-center justify-center gap-2 text-brand-950 font-extrabold tracking-tight text-base sm:text-lg">
+                    <section.icon className="text-sm text-accent-600" />
+                    {section.title}
+                  </h3>
+                  <ul className="mx-auto mt-2.5 max-w-md space-y-2 text-left">
+                    {section.content.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>
+                        <p className="text-sm text-gray-600 leading-relaxed">{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
 
-      {/* MAIN TERMS */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
-                <section.icon />
+            <div id="policies" className="mt-6 scroll-mt-header overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              <div className="bg-brand-900 px-5 py-4 text-center text-white">
+                <h2 className="font-extrabold tracking-tight !text-white text-lg sm:text-xl">Detailed Policies</h2>
+                <p className="mx-auto mt-1 max-w-2xl text-sm text-slate-300">Additional policies regarding payments, refunds, privacy, and student responsibilities.</p>
               </div>
-
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {section.title}
-              </h3>
-
-              <div className="space-y-4">
-                {section.content.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="mt-2 w-2 h-2 rounded-lg bg-blue-600 shrink-0"></div>
-                    <p className="text-gray-600 leading-relaxed">{item}</p>
+              <div className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2">
+                {additionalTerms.map((term, index) => (
+                  <div key={index} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                    <h3 className="mb-2 flex items-center justify-center gap-2 text-sm font-extrabold tracking-tight text-brand-950">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-100 text-brand-950">
+                        <FaArrowRight size={12} />
+                      </span>
+                      {term.title}
+                    </h3>
+                    <ul className="space-y-2">
+                      {term.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-950"></span>
+                          <p className="text-sm text-gray-600 leading-relaxed">{point}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* DETAILED TERMS */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-700 to-cyan-600 px-8 py-8 text-white">
-            <h2 className="text-3xl font-bold mb-2">Detailed Policies</h2>
-            <p className="text-blue-100">
-              Additional policies regarding payments, refunds, privacy, and
-              student responsibilities.
-            </p>
-          </div>
-
-          <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-            {additionalTerms.map((term, index) => (
-              <div key={index}>
-                <h3 className="text-xl font-bold text-gray-900 mb-5 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
-                    <FaArrowRight size={14} />
-                  </span>
-                  {term.title}
-                </h3>
-
-                <div className="space-y-3">
-                  {term.points.map((point, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="mt-2 w-2 h-2 rounded-lg bg-cyan-500 shrink-0"></div>
-                      <p className="text-gray-600 leading-relaxed">{point}</p>
-                    </div>
-                  ))}
+            <div id="help" className="mt-6 scroll-mt-header rounded-3xl bg-brand-950 p-5 text-center text-white sm:p-6">
+              <h2 className="mb-2 font-extrabold tracking-tight !text-white text-lg sm:text-xl">Need Help With Our <span className="text-accent-400">Terms?</span></h2>
+              <p className="mx-auto mb-5 max-w-2xl text-sm leading-relaxed text-slate-300">
+                Our support team is available to answer your questions related to admissions, policies, refunds, and counseling services.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <a
+                  href={`mailto:${SITE_IDENTITY.contact.email}`}
+                  className="rounded-2xl border border-white/10 bg-white/10 p-5 text-center transition-colors duration-300 hover:border-accent-400 hover:bg-white/15"
+                >
+                  <p className="mb-0.5 text-xs text-gray-300">Email</p>
+                  <h3 className="truncate text-sm font-bold">{SITE_IDENTITY.contact.email}</h3>
+                </a>
+                <a
+                  href={`tel:+91${SITE_IDENTITY.contact.phone}`}
+                  className="rounded-2xl border border-white/10 bg-white/10 p-5 text-center transition-colors duration-300 hover:border-accent-400 hover:bg-white/15"
+                >
+                  <p className="mb-0.5 text-xs text-gray-300">Phone</p>
+                  <h3 className="text-sm font-bold">+91 {SITE_IDENTITY.contact.phone}</h3>
+                </a>
+                <div className="rounded-2xl border border-white/10 bg-white/10 p-5 text-center">
+                  <p className="mb-0.5 text-xs text-gray-300">Office</p>
+                  <h3 className="text-sm font-bold leading-snug">
+                    {SITE_IDENTITY.address.building}, {SITE_IDENTITY.address.landmark},<br />
+                    {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city} {SITE_IDENTITY.address.pincode}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-slate-300">
+                    Mon - Sat: {SITE_IDENTITY.officeHours.mondayToSaturday}
+                  </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0f172a] to-[#1d4ed8] p-10 md:p-14 text-white shadow-2xl">
-          <div className="absolute right-0 top-0 w-72 h-72 bg-cyan-400/10 rounded-lg blur-3xl"></div>
-
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-black mb-4">
-              Need Help With Our Terms?
-            </h2>
-
-            <p className="text-blue-100 max-w-2xl leading-relaxed mb-8">
-              Our support team is available to answer your questions related to
-              admissions, policies, refunds, and counseling services.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
-                <p className="text-sm text-blue-200 mb-1">Email</p>
-                <h3 className="font-semibold text-lg">
-                  info@futuremindeducare.com
-                </h3>
-              </div>
-
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
-                <p className="text-sm text-blue-200 mb-1">Phone</p>
-                <h3 className="font-semibold text-lg">
-                  +91 98765 43210
-                </h3>
-              </div>
-
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
-                <p className="text-sm text-blue-200 mb-1">Office</p>
-                <h3 className="font-semibold text-lg">
-                  Mumbai, Maharashtra
-                </h3>
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 "use client"
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import {
   FaChevronLeft,
   FaChevronRight,
-  FaRegCalendarAlt,
-  FaRegClock,
 } from 'react-icons/fa';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface BlogItem {
   id: number;
@@ -83,265 +84,139 @@ const BlogSection: React.FC = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-block h-12 w-12 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin" />
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <div className="inline-block h-10 w-10 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin" />
         </div>
-      </section>
+      </Section>
     );
   }
 
   const BlogCard = ({ blog }: { blog: BlogItem }) => {
     return (
-      <div
-        className="
-          group
-          bg-white
-          rounded-[28px]
-          overflow-hidden
-          border
-          border-slate-200
-          hover:border-blue-200
-          transition-all
-          duration-500
-          hover:-translate-y-2
-          hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
-          flex
-          flex-col
-          h-full
-        "
+      <Link
+        href={`/blog/${blog.id}`}
+        className="group bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
       >
-        {/* IMAGE */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative overflow-hidden">
           <img
             src={blog.image}
             alt={blog.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+            className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
           />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-          <div className="absolute top-4 left-4">
-            <span className="bg-blue-600 text-white text-[11px] font-bold px-4 py-1.5 rounded-lg uppercase tracking-wider shadow-lg">
-              {blog.category}
-            </span>
-          </div>
+          <span className="absolute top-2.5 left-2.5 bg-accent-400 text-brand-950 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 shadow-sm">
+            {blog.category}
+          </span>
         </div>
-
-        {/* CONTENT */}
-        <div className="p-6 flex flex-col flex-1">
-          {/* META */}
-          <div className="flex items-center gap-4 text-xs text-slate-500 mb-4">
-            <span className="flex items-center gap-2">
-              <FaRegCalendarAlt className="text-blue-600" />
-              {blog.date}
-            </span>
-
-            <span className="flex items-center gap-2">
-              <FaRegClock className="text-blue-600" />
-              {blog.readTime}
-            </span>
-          </div>
-
-          {/* TITLE */}
-          <h3
-            className="
-              text-xl
-              font-black
-              text-slate-900
-              leading-snug
-              mb-3
-              line-clamp-2
-              group-hover:text-blue-600
-              transition-colors
-            "
-          >
+        <div className="p-4 flex flex-col flex-1">
+          <p className="text-[11px] uppercase text-gray-400 group-hover:text-slate-400 font-semibold tracking-wide transition-colors duration-300">
+            {blog.date} · {blog.readTime}
+          </p>
+          <h3 className="mt-1.5 font-bold text-brand-950 group-hover:text-white leading-snug line-clamp-2 transition-colors duration-300">
             {blog.title}
           </h3>
-
-          {/* DESC */}
-          <p className="text-slate-600 text-sm leading-7 line-clamp-3 mb-6">
+          <p className="text-gray-600 group-hover:text-slate-300 text-sm leading-6 line-clamp-2 mt-1.5 transition-colors duration-300">
             {blog.description}
           </p>
-
-          {/* FOOTER */}
-          <div className="mt-auto flex items-center justify-between">
-            <div className="flex flex-wrap gap-2">
-              {blog.tags.slice(0, 2).map((tag, i) => (
-                <span
-                  key={i}
-                  className="
-                    text-[11px]
-                    font-semibold
-                    text-blue-700
-                    bg-blue-50
-                    px-3
-                    py-1
-                    rounded-lg
-                  "
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-
-            <button
-              className="
-                flex
-                items-center
-                gap-2
-                text-blue-600
-                font-bold
-                text-sm
-                group/btn
-              "
-            >
-              Read More
-
-              <span className="group-hover/btn:translate-x-1 transition-transform">
-                →
-              </span>
-            </button>
-          </div>
+          <span className="mt-3 inline-flex items-center gap-1.5 text-brand-950 group-hover:text-accent-400 font-semibold text-sm transition-colors duration-300">
+            Read article
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </span>
         </div>
-      </div>
+      </Link>
     );
   };
 
   return (
-    <section className="py-20 px-4 bg-[#F8FAFC] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
-          <div className="max-w-2xl">
-            <span
-              className="
-                inline-block
-                text-blue-600
-                bg-blue-50
-                border
-                border-blue-100
-                px-4
-                py-2
-                rounded-lg
-                text-xs
-                font-bold
-                tracking-[0.2em]
-                uppercase
-                mb-5
-              "
+    <Section spacing="md" className="bg-slate-50 overflow-hidden">
+      {/* HEADER */}
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
+        <SectionHeading
+          align="left"
+          className="!mb-0"
+          eyebrow="Latest Articles"
+          title={
+            <>
+              Explore Our <span className="text-accent-600">MBBS Blogs</span>
+            </>
+          }
+          description="Latest updates, admission guidance, university insights, and MBBS abroad tips."
+        />
+
+        {/* NAV BUTTONS */}
+        {!showAllBlogs && (
+          <div className="flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => {
+                setIsAutoPlay(false);
+                handlePrev();
+              }}
+              aria-label="Previous blogs"
+              className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-brand-900 flex items-center justify-center text-slate-700 hover:text-brand-900 shadow-sm transition-all duration-300 text-sm"
             >
-              Latest Articles
-            </span>
+              <FaChevronLeft />
+            </button>
 
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-              Explore Our
-              <span className="text-blue-600"> MBBS Blogs</span>
-            </h2>
+            <button
+              onClick={() => {
+                setIsAutoPlay(false);
+                handleNext();
+              }}
+              aria-label="Next blogs"
+              className="w-10 h-10 rounded-full bg-brand-950 hover:bg-brand-900 flex items-center justify-center text-white shadow-lg transition-all duration-300 text-sm"
+            >
+              <FaChevronRight />
+            </button>
 
-            <p className="mt-5 text-slate-500 text-lg leading-8">
-              Get the latest updates, admission guidance, university insights,
-              and MBBS abroad tips from our experts.
-            </p>
-          </div>
-
-          {/* NAV BUTTONS */}
-          {!showAllBlogs && (
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => {
-                  setIsAutoPlay(false);
-                  handlePrev();
-                }}
-                className="
-                  w-12
-                  h-12
-                  rounded-2xl
-                  bg-white
-                  border
-                  border-slate-200
-                  hover:border-blue-200
-                  flex
-                  items-center
-                  justify-center
-                  text-slate-700
-                  hover:text-blue-600
-                  shadow-sm
-                  transition-all
-                  duration-300
-                "
-              >
-                <FaChevronLeft />
-              </button>
-
-              <button
-                onClick={() => {
-                  setIsAutoPlay(false);
-                  handleNext();
-                }}
-                className="
-                  w-12
-                  h-12
-                  rounded-2xl
-                  bg-blue-600
-                  hover:bg-blue-700
-                  flex
-                  items-center
-                  justify-center
-                  text-white
-                  shadow-lg
-                  transition-all
-                  duration-300
-                "
-              >
-                <FaChevronRight />
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* BLOG GRID */}
-        {!showAllBlogs ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredBlogs
-              .slice(currentIndex, currentIndex + CARDS_PER_VIEW)
-              .map((blog) => (
-                <BlogCard key={blog.id} blog={blog} />
-              ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
+            <Link
+              href="/blog"
+              className="ml-1 inline-flex h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 text-xs font-bold uppercase tracking-wide text-brand-950 shadow-sm transition-all duration-300 hover:border-brand-900 hover:bg-accent-100"
+            >
+              All blogs
+              <FaChevronRight className="text-[10px]" />
+            </Link>
           </div>
         )}
-
-        {/* BUTTON */}
-        <div className="flex justify-center mt-16">
-          <button
-            onClick={() => setShowAllBlogs(!showAllBlogs)}
-            className="
-              px-8
-              py-4
-              rounded-lg
-              bg-blue-600
-              hover:bg-blue-700
-              text-white
-              font-bold
-              shadow-lg
-              transition-all
-              duration-300
-              hover:scale-105
-            "
-          >
-            {showAllBlogs
-              ? 'Show Featured Blogs'
-              : `View All ${blogs.length} Blogs`}
-          </button>
-        </div>
       </div>
-    </section>
+
+      {/* ARTICLE CARDS */}
+      {!showAllBlogs ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {featuredBlogs
+            .slice(currentIndex, currentIndex + CARDS_PER_VIEW)
+            .map((blog) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {blogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
+        </div>
+      )}
+
+      {/* BUTTON */}
+      <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+        <button
+          onClick={() => setShowAllBlogs(!showAllBlogs)}
+          className="inline-flex items-center gap-1.5 h-11 px-6 rounded-full bg-accent-400 text-brand-950 text-sm font-bold border border-accent-400 hover:bg-accent-500 transition-all duration-300"
+        >
+          {showAllBlogs ? 'Show featured articles →' : 'View all articles →'}
+        </button>
+
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 h-11 px-6 rounded-full bg-brand-950 text-white text-sm font-bold hover:bg-brand-900 transition-colors duration-300"
+        >
+          Browse blog library
+          <FaChevronRight className="text-[10px]" />
+        </Link>
+      </div>
+    </Section>
   );
 };
 

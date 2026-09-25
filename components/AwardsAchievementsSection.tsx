@@ -2,36 +2,51 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaAward, FaArrowRight } from "react-icons/fa";
+import { FaAward, FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { usePopup } from "../contexts/PopupContext";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
+
+const MINI_STATS = [
+  { value: "5000+", label: "Students Guided" },
+  { value: "15+", label: "Countries Covered" },
+  { value: "150+", label: "Partner Universities" },
+  { value: "95%", label: "Visa Success Rate" },
+];
+
+const TRUST_POINTS = [
+  "NMC-aware university shortlisting",
+  "Transparent fees, no hidden charges",
+];
 
 const AwardsAchievementsSection: React.FC = () => {
   const { openPopup } = usePopup();
 
   return (
-    <section className="relative py-20 overflow-hidden bg-[#121826]">
-      
+    <Section
+      spacing="md"
+      className="relative overflow-hidden bg-brand-950"
+    >
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a,#121826,#1e293b)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f1a44,#172554,#1e3a8a)]" />
 
       {/* LIGHT EFFECT */}
-      <div className="absolute top-10 left-20 w-[300px] h-[300px] bg-blue-600/20 blur-3xl rounded-lg" />
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-blue-500/10 blur-3xl rounded-lg" />
+      <div className="absolute top-6 left-16 w-[240px] h-[200px] bg-white/10 blur-3xl rounded-xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[280px] h-[220px] bg-white/5 blur-3xl rounded-xl pointer-events-none" />
+      {/* Accent glow */}
+      <div className="absolute top-1/2 left-1/3 w-[200px] h-[200px] bg-accent-500/10 blur-3xl rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          
+      <div className="relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
           {/* LEFT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className="relative flex justify-center lg:justify-start"
           >
-            <div className="relative flex items-center">
-              
+            <div className="relative flex items-center pb-8">
               {/* CERTIFICATE 1 */}
               <motion.div
                 whileHover={{ rotate: 3, y: -8 }}
@@ -39,18 +54,22 @@ const AwardsAchievementsSection: React.FC = () => {
                 className="
                   relative
                   z-20
-                  rounded-[28px]
+                  rounded-xl
                   overflow-hidden
                   border
                   border-white/10
-                  shadow-[0_25px_60px_rgba(0,0,0,0.35)]
+                  shadow-[0_20px_50px_rgba(0,0,0,0.35)]
                 "
               >
                 <img
                   src="/paper/image-1.png"
                   alt="Award Certificate"
-                  className="w-[230px] md:w-[260px] object-cover"
+                  className="w-[150px] md:w-[170px] h-40 object-cover"
                 />
+                {/* Accent corner tag */}
+                <span className="absolute top-2 left-2 bg-accent-400 text-brand-950 text-[10px] font-extrabold uppercase tracking-wide rounded-full px-2 py-0.5">
+                  Awarded
+                </span>
               </motion.div>
 
               {/* CERTIFICATE 2 */}
@@ -59,19 +78,19 @@ const AwardsAchievementsSection: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 className="
                   relative
-                  -ml-12
-                  mt-14
-                  rounded-[28px]
+                  -ml-10
+                  mt-10
+                  rounded-xl
                   overflow-hidden
                   border
                   border-white/10
-                  shadow-[0_25px_60px_rgba(0,0,0,0.35)]
+                  shadow-[0_20px_50px_rgba(0,0,0,0.35)]
                 "
               >
                 <img
                   src="/paper/image-2.png"
                   alt="Achievement Certificate"
-                  className="w-[230px] md:w-[260px] object-cover"
+                  className="w-[150px] md:w-[170px] h-40 object-cover"
                 />
               </motion.div>
 
@@ -79,32 +98,32 @@ const AwardsAchievementsSection: React.FC = () => {
               <div
                 className="
                   absolute
-                  -bottom-5
+                  -bottom-0
                   left-1/2
                   -translate-x-1/2
                   bg-white
-                  rounded-2xl
-                  px-6
-                  py-4
+                  rounded-xl
+                  px-4
+                  py-2.5
                   shadow-2xl
                   border
                   border-slate-100
                   flex
                   items-center
-                  gap-4
+                  gap-3
                   z-30
                 "
               >
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                <div className="w-10 h-10 rounded-xl bg-accent-400 text-brand-950 flex items-center justify-center text-base">
                   <FaAward />
                 </div>
 
                 <div>
-                  <h4 className="text-slate-900 font-black text-lg leading-none">
+                  <h4 className="text-gray-900 font-bold text-base leading-none">
                     19+ Years
                   </h4>
 
-                  <p className="text-slate-500 text-sm font-medium mt-1">
+                  <p className="text-gray-600 text-xs font-medium mt-1">
                     Trusted Excellence
                   </p>
                 </div>
@@ -114,57 +133,66 @@ const AwardsAchievementsSection: React.FC = () => {
 
           {/* RIGHT SIDE */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/10 mb-6">
-              <FaAward className="text-blue-400 text-sm" />
+            {/* TITLE — SectionHeading scale, light variant for dark bg */}
+            <SectionHeading
+              align="left"
+              dark
+              eyebrow="Awards & Recognition"
+              title={<>Our <span className="text-accent-400">Achievements</span></>}
+              description="With over 19 years of experience, Future Mind Educare has helped thousands of aspiring medical students secure admissions in top medical universities across India and abroad."
+              className="mb-0"
+            />
 
-              <span className="text-blue-300 text-xs font-bold tracking-widest uppercase">
-                Awards & Recognition
-              </span>
+            {/* MINI GLASS STATS */}
+            <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-xl">
+              {MINI_STATS.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="group rounded-xl border border-white/15 bg-white/10 backdrop-blur px-3 py-2.5 text-center transition-all duration-300 hover:bg-accent-400 hover:border-accent-400 hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  <p className="text-lg font-extrabold text-white group-hover:text-brand-950 leading-none transition-colors duration-300">
+                    {stat.value}
+                  </p>
+                  <p className="text-[11px] text-slate-300 group-hover:text-brand-950/80 mt-1 leading-tight transition-colors duration-300">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            {/* TITLE */}
-            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
-              Our
-              <span className="text-blue-500"> Achievements</span>
-            </h2>
-
-            {/* DESCRIPTION */}
-            <p className="mt-6 text-slate-300 text-base md:text-lg leading-8 font-medium max-w-xl">
-              With over 19 years of experience, Future Mind Educare has helped
-              thousands of aspiring medical students secure admissions in top
-              medical universities across India and abroad.
-            </p>
-
-            <p className="mt-5 text-slate-400 leading-8 text-sm md:text-base">
-              Our dedication, transparency, and student-first approach have made
-              us one of the most trusted education consultancies for MBBS
-              admissions.
-            </p>
+            {/* TRUST POINTS */}
+            <ul className="mt-4 space-y-2">
+              {TRUST_POINTS.map((point) => (
+                <li key={point} className="flex items-center gap-2 text-sm text-slate-200">
+                  <FaCheckCircle className="text-accent-400 text-xs shrink-0" />
+                  {point}
+                </li>
+              ))}
+            </ul>
 
             {/* BUTTON */}
             <button
               onClick={openPopup}
               className="
                 group
-                mt-10
+                mt-5
                 inline-flex
                 items-center
-                gap-3
-                bg-blue-600
-                hover:bg-blue-700
+                gap-2
+                bg-brand-950
+                hover:bg-brand-900
                 text-white
-                h-14
-                px-8
-                rounded-lg
+                h-11
+                px-6
+                rounded-full
                 font-bold
                 text-sm
-                shadow-[0_15px_40px_rgba(37,99,235,0.30)]
+                shadow-[0_12px_30px_rgba(23,37,84,0.30)]
                 transition-all
                 duration-300
                 hover:scale-[1.03]
@@ -177,7 +205,7 @@ const AwardsAchievementsSection: React.FC = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

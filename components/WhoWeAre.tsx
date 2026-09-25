@@ -3,74 +3,100 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  FaUserGraduate,
-  FaGlobeAsia,
-  FaUniversity,
+  FaCheckCircle,
   FaArrowRight,
+  FaStar,
+  FaQuoteLeft,
 } from 'react-icons/fa';
 import { usePopup } from '@/contexts/PopupContext';
 import Link from 'next/link';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
+import { SITE_IDENTITY } from '@/app/config/site_identity';
 
 const WhoWeAre: React.FC = () => {
-  const stats = [
-    {
-      icon: <FaUserGraduate />,
-      number: '5000+',
-      label: 'Students Guided',
-    },
-    {
-      icon: <FaGlobeAsia />,
-      number: '15+',
-      label: 'Countries',
-    },
-    {
-      icon: <FaUniversity />,
-      number: '100+',
-      label: 'Medical Universities',
-    },
+  const checklist = [
+    'University selection guidance',
+    'Admission process & documentation',
+    'Visa assistance & pre-departure support',
+    'Career counselling from experts',
   ];
 
-  const {openPopup} = usePopup();
+  const stats = [
+    { number: '5000+', label: 'Students Guided' },
+    { number: '15+', label: 'Countries' },
+    { number: '100+', label: 'Medical Universities' },
+  ];
+
+  const { openPopup } = usePopup();
 
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
+    <Section spacing="md" className="relative bg-white overflow-hidden">
+      {/* soft background accents */}
+      <span className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-accent-100/50 blur-3xl" />
+      <span className="pointer-events-none absolute -right-20 bottom-0 h-56 w-56 rounded-full bg-accent-200/40 blur-3xl" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          
+      <div className="relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* LEFT IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative flex justify-center lg:justify-start order-2 lg:order-1"
+            className="relative order-2 lg:order-1 lg:self-stretch"
           >
-            {/* MAIN IMAGE */}
-            <div className="relative w-full max-w-[400px] sm:max-w-[450px] lg:max-w-[520px]">
-              
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-blue-100 rounded-lg blur-2xl sm:blur-3xl opacity-50 sm:opacity-60" />
-
-              <div className="relative overflow-hidden rounded-[20px] sm:rounded-[24px] lg:rounded-[32px] border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
+            <div className="group relative mx-auto w-full max-w-[520px] lg:mx-0">
+              <div className="relative h-full min-h-[240px] max-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
                 <img
                   src="/medical.png"
                   alt="Future Mind Educare Team"
-                  className="w-full h-[300px] sm:h-[350px] lg:h-[400px] object-cover"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
+
+                {/* HOVER OVERLAY */}
+                <div className="absolute inset-0 flex items-end bg-brand-950/0 transition-colors duration-300 group-hover:bg-brand-950/80">
+                  <div className="w-full translate-y-4 p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <FaQuoteLeft className="text-accent-400 text-xl" />
+                    <p className="mt-1.5 text-sm font-semibold leading-relaxed text-white">
+                      One stop solution for MBBS guidance — India &amp; abroad.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* FLOATING CARD */}
-              <div className="absolute -bottom-4 -right-3 sm:-bottom-6 sm:-right-4 lg:-bottom-8 lg:-right-5 bg-white rounded-[16px] sm:rounded-[20px] lg:rounded-[24px] p-3 sm:p-4 lg:p-5 shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-slate-100">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900">
+              {/* FLOATING: YEARS EXPERIENCE */}
+              <div className="absolute -bottom-3 left-3 sm:left-4 flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-lg">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-400 text-sm font-extrabold text-brand-950">
                   10+
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
-                  Years Experience
-                </p>
+                </span>
+                <span className="text-xs font-semibold leading-tight text-gray-600">
+                  Years
+                  <br />
+                  Experience
+                </span>
               </div>
+
+              {/* FLOATING: GOOGLE REVIEWS */}
+              <a
+                href={SITE_IDENTITY.contact.googleBusinessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute -right-2 -top-3 hidden items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-400 sm:inline-flex"
+              >
+                <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </span>
+                <span className="text-xs font-semibold leading-tight text-gray-600">
+                  4.2 · 115
+                  <br />
+                  Google reviews
+                </span>
+              </a>
             </div>
           </motion.div>
 
@@ -80,104 +106,75 @@ const WhoWeAre: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="max-w-2xl order-1 lg:order-2"
+            className="order-1 lg:order-2"
           >
-            {/* BADGE */}
-            <div onClick={() =>  openPopup()} className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-4 sm:mb-6">
-              <span className="text-blue-700 text-xs font-bold tracking-wide uppercase">
-                About Future Mind Educare
-              </span>
-            </div>
+            <SectionHeading
+              align="left"
+              className="!mb-0"
+              eyebrow="About Future Mind Educare"
+              title={
+                <>
+                  Guiding Future <span className="text-accent-600">Medical Professionals</span>
+                </>
+              }
+              description="Future Mind Educare is a trusted educational consultancy helping aspiring students secure MBBS admissions in top medical universities across India and abroad."
+            />
 
-            {/* HEADING */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-              Guiding Future
-              <span className="text-blue-600 block"> Medical Professionals</span>
-            </h2>
-
-            {/* DESCRIPTION */}
-            <div className="mt-4 sm:mt-6 lg:mt-7 space-y-4 sm:space-y-5">
-              <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-7 sm:leading-8 font-medium">
-                Future Mind Educare is a trusted educational consultancy helping
-                aspiring students secure MBBS admissions in top medical
-                universities across India and abroad.
-              </p>
-
-              <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-7 sm:leading-8 font-medium">
-                Our experienced counselors provide complete guidance from
-                university selection and admission process to documentation,
-                visa assistance, and career counseling.
-              </p>
-            </div>
-
-            {/* STATS */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8 lg:mt-10">
-              {stats.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-[16px] sm:rounded-[20px] lg:rounded-[24px]
-                    p-4 sm:p-5
-                    hover:border-blue-100
-                    hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-                    transition-all
-                    duration-300
-                    text-center
-                  "
+            {/* CHECKLIST — 2 column cards */}
+            <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {checklist.map((item) => (
+                <li
+                  key={item}
+                  className="group flex items-start gap-2.5 rounded-2xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-900 hover:shadow-md"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-600 text-white flex items-center justify-center text-sm sm:text-lg mb-3 sm:mb-4 mx-auto">
-                    {item.icon}
-                  </div>
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-100 text-brand-950 transition-colors duration-300 group-hover:bg-accent-400">
+                    <FaCheckCircle className="text-[11px]" />
+                  </span>
+                  <span className="text-sm font-medium leading-snug text-gray-700">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900">
+            {/* STAT CARDS */}
+            <div className="mt-4 grid grid-cols-3 gap-2.5">
+              {stats.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-slate-200 bg-white px-3 py-3 text-center shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-400 hover:shadow-md"
+                >
+                  <p className="text-xl font-extrabold leading-none tracking-tight text-accent-600 sm:text-2xl">
                     {item.number}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold leading-tight text-gray-600">
                     {item.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* BUTTON */}
-            <Link href={'/about'}>
-             <button
-              className="
-                group
-                mt-6 sm:mt-8 lg:mt-10
-                h-12 sm:h-13
-                px-5 sm:px-6 lg:px-7
-                rounded-lg
-                bg-blue-600
-                hover:bg-blue-700
-                text-white
-                font-bold
-                text-xs sm:text-sm
-                shadow-[0_10px_25px_rgba(37,99,235,0.25)]
-                transition-all
-                duration-300
-                flex
-                items-center
-                justify-center
-                gap-2 sm:gap-3
-                hover:scale-[1.02]
-                w-full sm:w-auto
-              "
-            >
-              Learn More About Us
+            {/* BUTTONS */}
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
+              <Link
+                href="/about"
+                className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand-950 px-6 text-sm font-bold text-white transition-colors duration-300 hover:bg-brand-900 sm:w-auto"
+              >
+                Learn More About Us
+                <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
 
-              <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
-            </Link>
-           
+              <button
+                onClick={() => openPopup()}
+                className="inline-flex h-11 w-full items-center justify-center rounded-full border border-accent-400 bg-accent-400 px-6 text-sm font-bold text-brand-950 transition-colors duration-300 hover:bg-accent-500 sm:w-auto"
+              >
+                Talk to a Counselor
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

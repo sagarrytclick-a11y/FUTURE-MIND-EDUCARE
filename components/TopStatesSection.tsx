@@ -2,6 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface StateItem {
   name: string;
@@ -48,175 +50,92 @@ const TopStatesSection: React.FC = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="text-slate-500 font-medium">Loading Top States...</p>
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-brand-950 mx-auto"></div>
+          <p className="text-gray-600 text-sm font-medium mt-3">Loading Top States...</p>
         </div>
-      </section>
+      </Section>
     );
   }
 
   if (error) {
     return (
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <h2 className="text-2xl font-extrabold text-brand-950 mb-3">
             Something Went Wrong
           </h2>
 
-          <p className="text-red-500 mb-6">{error}</p>
+          <p className="text-red-500 text-sm mb-5">{error}</p>
 
           <button
             onClick={() => window.location.reload()}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+            className="bg-brand-950 hover:bg-brand-900 text-white h-11 px-6 rounded-full text-sm font-bold transition-all duration-300"
           >
             Try Again
           </button>
         </div>
-      </section>
+      </Section>
     );
   }
 
   return (
-    <section className="py-20 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-4">
-        
-        {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
-            MBBS In India
-          </span>
+    <Section spacing="md" className="bg-slate-50">
+      <SectionHeading
+        eyebrow="MBBS In India"
+        title={
+          <>
+            Explore Top States For{" "}
+            <span className="text-accent-600">Medical Education</span>
+          </>
+        }
+        description="Find the best states across India offering top-ranked MBBS colleges and excellent career opportunities."
+      />
 
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
-            Explore Top States For
-            <span className="text-blue-600"> Medical Education</span>
-          </h2>
-
-          <p className="mt-5 text-slate-500 text-base md:text-lg leading-8 font-medium">
-            Find the best states across India offering top-ranked MBBS colleges,
-            advanced infrastructure, and excellent career opportunities.
-          </p>
-        </div>
-
-        {/* STATES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {states.map((state, index) => (
-            <Link
-              href={`/states/${getStateSlug(state.name)}`}
-              key={index}
-              className="group"
-            >
-              <div
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[28px]
-                  bg-white
-                  border
-                  border-slate-200
-                  hover:border-blue-100
-                  transition-all
-                  duration-500
-                  hover:-translate-y-2
-                  hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]
-                "
-              >
-                {/* IMAGE */}
-                <div className="relative h-[260px] overflow-hidden">
-                  <img
-                    src={state.image}
-                    alt={state.name}
-                    className="
-                      w-full
-                      h-full
-                      object-cover
-                      transition-transform
-                      duration-700
-                      group-hover:scale-110
-                    "
-                  />
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-500" />
-
-                  {/* STATE NAME */}
-                  <div className="absolute bottom-0 left-0 w-full p-6">
-                    <div className="flex items-end justify-between">
-                      <div>
-                        <h3 className="text-2xl font-black text-white drop-shadow-lg">
-                          {state.name}
-                        </h3>
-
-                        <p className="text-white/80 text-sm mt-1 font-medium">
-                          Top MBBS Colleges
-                        </p>
-                      </div>
-
-                      <div
-                        className="
-                          w-12
-                          h-12
-                          rounded-2xl
-                          bg-white/20
-                          backdrop-blur-md
-                          flex
-                          items-center
-                          justify-center
-                          group-hover:bg-blue-600
-                          transition-all
-                          duration-300
-                        "
-                      >
-                        <FaArrowRight className="text-white text-sm group-hover:translate-x-1 transition-transform duration-300" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* BOTTOM */}
-                <div className="px-6 py-5 flex items-center justify-between">
-                  <p className="text-sm font-bold tracking-wide uppercase text-slate-400">
-                    Explore Colleges
-                  </p>
-
-                  <span className="text-blue-600 font-bold text-sm">
-                    View Details
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* BUTTON */}
-        <div className="text-center mt-14">
+      {/* 4-COL IMAGE CARDS — same card language */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {states.map((state, index) => (
           <Link
-            href="/states"
-            className="
-              inline-flex
-              items-center
-              gap-3
-              bg-blue-600
-              hover:bg-blue-700
-              text-white
-              px-8
-              py-4
-              rounded-lg
-              font-bold
-              shadow-lg
-              hover:scale-105
-              transition-all
-              duration-300
-            "
+            href={`/states/${getStateSlug(state.name)}`}
+            key={index}
+            className="group block bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
           >
-            Explore All States
-
-            <FaArrowRight className="text-sm" />
+            <div className="overflow-hidden">
+              <img
+                src={state.image}
+                alt={state.name}
+                loading="lazy"
+                className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-4">
+              <span className="bg-slate-100 group-hover:bg-white/15 text-slate-600 group-hover:text-slate-200 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 transition-colors duration-300">
+                MBBS India
+              </span>
+              <div className="mt-2 flex items-center justify-between gap-2">
+                <h3 className="text-base font-bold text-brand-950 group-hover:text-white leading-snug truncate transition-colors duration-300">
+                  {state.name}
+                </h3>
+                <span className="w-10 h-10 rounded-full bg-accent-100 text-accent-600 group-hover:bg-accent-400 group-hover:text-brand-950 flex items-center justify-center transition-all duration-300 shrink-0 group-hover:rotate-45">
+                  <FaArrowRight className="text-xs" />
+                </span>
+              </div>
+            </div>
           </Link>
-        </div>
+        ))}
       </div>
-    </section>
+
+      <div className="text-center mt-6">
+        <Link
+          href="/states"
+          className="inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white h-11 px-6 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-all duration-300"
+        >
+          Explore All States
+          <FaArrowRight className="text-xs" />
+        </Link>
+      </div>
+    </Section>
   );
 };
 

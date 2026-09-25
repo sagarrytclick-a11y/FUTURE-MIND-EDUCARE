@@ -1,27 +1,21 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaLock, FaShieldAlt, FaEye, FaEyeSlash, FaSignOutAlt, FaUser, FaChartLine } from 'react-icons/fa';
 import Image from 'next/image';
+import { useAdminAuth } from '@/lib/use-admin-auth';
 
 interface AuthWrapperProps {
   children: React.ReactNode;
 }
 
 export default function AuthWrapper({ children }: AuthWrapperProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
-
-  useEffect(() => {
-    const auth = localStorage.getItem('adminAuth');
-    if (auth === 'true') setIsAuthenticated(true);
-    setIsLoading(false);
-  }, []);
+  const { isAuthenticated, login, logout } = useAdminAuth();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,9 +23,7 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
     const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin123';
     
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      localStorage.setItem('adminAuth', 'true');
-      localStorage.setItem('adminUser', username);
+      login(username);
       setError('');
     } else {
       setError('Invalid credentials');
@@ -39,27 +31,9 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem('adminAuth');
+    logout();
     router.push('/');
   };
-
-  // 1. Loading State
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-[#0F172A] flex items-center justify-center">
-        <div className="text-center">
-          <div className="relative">
-            <div className="w-16 h-16 border-4 border-[#334155] border-t-[#0EA5E9] rounded-full animate-spin"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <FaShieldAlt className="text-[#0EA5E9] text-xl animate-pulse" />
-            </div>
-          </div>
-          <p className="mt-4 text-[#94A3B8] font-medium">Loading Admin Panel...</p>
-        </div>
-      </div>
-    );
-  }
 
   // 2. Login Screen (Dark Mode)
   if (!isAuthenticated) {

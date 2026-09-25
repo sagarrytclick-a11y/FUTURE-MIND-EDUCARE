@@ -9,264 +9,114 @@ import {
   FaUserGraduate,
   FaGlobeAsia,
   FaShieldAlt,
+  FaArrowRight,
 } from "react-icons/fa";
+import { usePopup } from "@/contexts/PopupContext";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 interface ServiceItem {
   title: string;
   description: string;
   icon: React.ReactNode;
-  position: "left" | "right";
 }
 
 const ServicesSection: React.FC = () => {
+  const { openPopup } = usePopup();
+
   const services: ServiceItem[] = [
     {
       title: "100% Admission Assistance",
       description:
-        "Complete support from university selection to documentation and admission process for a smooth journey.",
+        "Complete support from university selection to documentation and admission.",
       icon: <FaUniversity />,
-      position: "left",
     },
     {
       title: "Free Career Counseling",
       description:
-        "Expert guidance for students and parents to choose the best MBBS destination and career path.",
+        "Expert guidance to choose the best MBBS destination and career path.",
       icon: <FaComments />,
-      position: "left",
     },
     {
       title: "95% Visa Success Rate",
       description:
-        "Professional visa assistance with proper documentation and travel support for students.",
+        "Professional visa assistance with documentation and travel support.",
       icon: <FaPlaneDeparture />,
-      position: "left",
     },
     {
       title: "University & Course Selection",
       description:
-        "We help students choose the best medical universities according to their goals and budget.",
+        "Choose the best medical universities matched to goals and budget.",
       icon: <FaUserGraduate />,
-      position: "right",
     },
     {
       title: "Personalized Guidance",
       description:
-        "Customized counseling and one-to-one mentorship for every student throughout the process.",
+        "One-to-one mentorship for every student throughout the process.",
       icon: <FaShieldAlt />,
-      position: "right",
     },
     {
       title: "Pre-Departure Support",
       description:
-        "Complete assistance before departure including accommodation, travel, and student orientation.",
+        "Accommodation, travel and orientation assistance before departure.",
       icon: <FaGlobeAsia />,
-      position: "right",
     },
   ];
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#ffffff,#f8fafc)]" />
+    <Section spacing="md" className="relative bg-white overflow-hidden">
 
-      {/* LIGHT EFFECT */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-100 blur-3xl opacity-30 rounded-lg" />
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* HEADER */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          
-          {/* BADGE */}
-          <div className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
-            <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
-              Our Premium Services
-            </span>
-          </div>
-
-          {/* TITLE */}
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-            Services At
-            <span className="text-blue-600"> Future Mind Educare</span>
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p className="mt-6 text-slate-500 text-base md:text-lg leading-8 font-medium">
-            We provide complete MBBS admission guidance for students planning to
-            study in India or abroad with trusted support at every step.
-          </p>
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6 sm:gap-8 items-start">
+        {/* LEFT STICKY */}
+        <div className="lg:sticky top-header-gap">
+          <SectionHeading
+            align="left"
+            className="!mb-0"
+            eyebrow="Our Premium Services"
+            title={
+              <>
+                Services At <span className="text-accent-600">Future Mind Educare</span>
+              </>
+            }
+            description="Complete MBBS admission guidance for India and abroad, with trusted support at every step."
+          />
+          <button
+            onClick={openPopup}
+            className="group mt-4 inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-bold h-11 px-6 rounded-full text-sm transition-colors duration-300"
+          >
+            Get Free Counseling
+            <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
         </div>
 
-        {/* MAIN LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-          
-          {/* LEFT SERVICES */}
-          <div className="space-y-6">
-            {services
-              .filter((service) => service.position === "left")
-              .map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                  }}
-                  viewport={{ once: true }}
-                  className="
-                    group
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-[28px]
-                    p-6
-                    hover:border-blue-100
-                    hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
-                    transition-all
-                    duration-500
-                  "
-                >
-                  <div className="flex items-start gap-5">
-                    
-                    {/* ICON */}
-                    <div
-                      className="
-                        w-14
-                        h-14
-                        rounded-2xl
-                        bg-blue-50
-                        text-blue-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        shrink-0
-                        group-hover:bg-blue-600
-                        group-hover:text-white
-                        transition-all
-                        duration-300
-                      "
-                    >
-                      {service.icon}
-                    </div>
-
-                    {/* TEXT */}
-                    <div>
-                      <h3 className="text-xl font-black text-slate-900 mb-3">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-slate-500 leading-7 text-sm font-medium">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-          </div>
-
-          {/* CENTER IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center"
-          >
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-blue-100 blur-3xl opacity-40 rounded-lg" />
-
-            {/* IMAGE CARD */}
-            <div className="relative bg-white rounded-[36px] border border-slate-200 overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.08)]">
-              
-              <img
-                src="/docter.png"
-                alt="Doctor"
-                className="w-full max-w-[400px] object-cover"
-              />
-
-              {/* FLOATING CARD */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white shadow-xl rounded-2xl px-6 py-4 border border-slate-100 w-[85%]">
-                <h3 className="text-lg font-black text-slate-900 text-center">
-                  Trusted MBBS Guidance
+        {/* RIGHT COMPACT CARD GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="group flex items-start gap-3 bg-white border border-slate-200 rounded-xl p-3.5 hover:bg-brand-950 hover:border-brand-900 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-9 h-9 rounded-lg bg-accent-100 group-hover:bg-accent-400 text-brand-950 group-hover:text-brand-950 flex items-center justify-center text-sm shrink-0 transition-colors duration-300">
+                {service.icon}
+              </div>
+              <div className="min-w-0">
+                <h3 className="text-brand-950 group-hover:text-white font-bold text-sm leading-snug transition-colors duration-300">
+                  {service.title}
                 </h3>
-
-                <p className="text-sm text-slate-500 text-center mt-2 font-medium">
-                  Expert counseling & admission support for medical aspirants.
+                <p className="text-gray-600 group-hover:text-slate-300 text-xs leading-5 mt-0.5 line-clamp-2 transition-colors duration-300">
+                  {service.description}
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT SERVICES */}
-          <div className="space-y-6">
-            {services
-              .filter((service) => service.position === "right")
-              .map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                  }}
-                  viewport={{ once: true }}
-                  className="
-                    group
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-[28px]
-                    p-6
-                    hover:border-blue-100
-                    hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
-                    transition-all
-                    duration-500
-                  "
-                >
-                  <div className="flex items-start gap-5">
-                    
-                    {/* ICON */}
-                    <div
-                      className="
-                        w-14
-                        h-14
-                        rounded-2xl
-                        bg-blue-50
-                        text-blue-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        shrink-0
-                        group-hover:bg-blue-600
-                        group-hover:text-white
-                        transition-all
-                        duration-300
-                      "
-                    >
-                      {service.icon}
-                    </div>
-
-                    {/* TEXT */}
-                    <div>
-                      <h3 className="text-xl font-black text-slate-900 mb-3">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-slate-500 leading-7 text-sm font-medium">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-          </div>
+              <FaArrowRight className="ml-auto mt-1 text-slate-300 group-hover:text-accent-400 transition-all duration-300 text-[10px] shrink-0 group-hover:translate-x-0.5" />
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

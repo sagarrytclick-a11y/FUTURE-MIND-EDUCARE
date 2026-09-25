@@ -61,6 +61,7 @@ const Header = () => {
   const [mdmsStates, setMdmsStates] = useState<State[]>([]);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -176,70 +177,94 @@ const Header = () => {
     }
   }, [abroadCountries]);
 
+  // Publish the real header height to CSS so sticky bars and anchor scrolling
+  // never leave a gap or slide under the header.
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const publish = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      if (height > 0) {
+        document.documentElement.style.setProperty('--site-header-h', `${height}px`);
+      }
+    };
+
+    publish();
+
+    const observer = new ResizeObserver(publish);
+    observer.observe(header);
+    window.addEventListener('resize', publish);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', publish);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header ref={headerRef} className="sticky top-0 z-50 w-full">
       {/* TOP BAR */}
-      <div className="bg-[#0F172A] border-b border-white/10">
-        <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between">
-          {/* SOCIAL */}
-          <div className="flex items-center gap-5">
-            <FaInstagram className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
-
-            <FaFacebook className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
-
-            <FaLinkedin className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 cursor-pointer text-[15px]" />
-          </div>
-
+      <div className="bg-slate-50 border-b border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-4 py-1.5 flex items-center justify-between">
           {/* CONTACT */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-2">
             <a
               href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
-              className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
+              className="flex items-center text-xs font-semibold bg-brand-950 text-white rounded-full px-3 py-1"
             >
-              <FaPhoneAlt className="mr-2 text-blue-500" />
+              <FaPhoneAlt className="mr-1.5 text-[10px]" />
               {SITE_IDENTITY.contact.phone}
             </a>
 
             <a
               href={`mailto:${SITE_IDENTITY.contact.email}`}
-              className="flex items-center text-[14px] font-medium text-gray-300 hover:text-white transition-all"
+              className="hidden sm:flex items-center text-xs font-semibold bg-accent-100 text-accent-600 rounded-full px-3 py-1"
             >
-              <FaEnvelope className="mr-2 text-blue-500" />
+              <FaEnvelope className="mr-1.5 text-[10px]" />
               {SITE_IDENTITY.contact.email}
             </a>
+          </div>
+
+          {/* SOCIAL */}
+          <div className="flex items-center gap-4">
+            <FaInstagram className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
+
+            <FaFacebook className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
+
+            <FaLinkedin className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
           </div>
         </div>
       </div>
 
       {/* MAIN NAVBAR */}
-      <div className="bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-        <div className="max-w-[1400px] mx-auto px-4 h-[88px] flex items-center justify-between">
+      <div className="bg-white border-b border-slate-200 shadow-sm">
+        <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
               <Image
                 src="/header.png"
                 alt="FM Education"
-                width={54}
-                height={54}
+                width={40}
+                height={40}
                 className="object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
             <div className="leading-tight">
-              <h2 className="text-[24px] font-black tracking-tight text-[#111827] uppercase">
+              <h2 className="text-lg font-extrabold tracking-tight text-brand-950 uppercase">
                 FM Education
               </h2>
 
-              <p className="text-[11px] tracking-[2px] uppercase font-semibold text-gray-500">
+              <p className="text-[10px] tracking-[1.5px] uppercase font-semibold text-slate-500">
                 Study MBBS Worldwide
               </p>
             </div>
           </Link>
 
           {/* DESKTOP NAV */}
-          {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-10 h-full">
+          <nav className="hidden lg:flex items-center gap-1 h-full">
             {navLinks.map((item) => (
               <div
                 key={item.name}
@@ -249,39 +274,27 @@ const Header = () => {
               >
                 {item.name === 'MD/MS' || item.name === 'Packages' ? (
                   <div
-                    className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 cursor-pointer ${activeDropdown === item.name
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
+                    className={`relative flex items-center text-sm font-semibold transition-colors cursor-pointer rounded-full px-4 py-2 ${activeDropdown === item.name
+                      ? 'bg-brand-950 text-white'
+                      : 'text-brand-950 hover:bg-slate-100'
                       }`}
                   >
                     {item.name}
-                    <FaChevronDown className="ml-2 text-[10px]" />
-                    <span
-                      className={`absolute -bottom-2 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
-                        ? 'w-full'
-                        : 'w-0 group-hover:w-full'
-                        }`}
-                    />
+                    <FaChevronDown className="ml-1.5 text-[10px]" />
                   </div>
                 ) : (
                     <Link
                       href={item.href || '#'}
-                      className={`relative flex items-center text-[15px] font-semibold transition-all duration-300 ${activeDropdown === item.name
-                        ? 'text-blue-600'
-                        : 'text-gray-700 hover:text-blue-600'
+                      className={`relative flex items-center text-sm font-semibold transition-colors rounded-full px-4 py-2 ${activeDropdown === item.name
+                        ? 'bg-brand-950 text-white'
+                        : 'text-brand-950 hover:bg-slate-100'
                         }`}
                     >
 
                     {item.name}
                     {item.hasDropdown && (
-                      <FaChevronDown className="ml-2 text-[10px]" />
+                      <FaChevronDown className="ml-1.5 text-[10px]" />
                     )}
-                    <span
-                      className={`absolute -bottom-2 left-0 h-[2px] bg-blue-600 transition-all duration-300 ${activeDropdown === item.name
-                        ? 'w-full'
-                        : 'w-0 group-hover:w-full'
-                        }`}
-                    />
                   </Link>
                 )}
 
@@ -299,13 +312,13 @@ const Header = () => {
         ${item.name === 'Packages' ? 'left-0' : 'left-1/2 -translate-x-1/2'}
         mt-[2px]
         z-[999]
-        ${item.name === 'Packages' ? 'w-48' : 'w-[662px]'}
+        ${item.name === 'Packages' ? 'w-48' : 'w-[620px]'}
       `}
                     >
                       {item.name === 'Packages' ? (
-                        <div className="bg-white rounded-xl shadow-[0_20px_70px_rgba(0,0,0,0.10)] border border-gray-100 p-2">
-                          <Link href="/neet-ug-packages" className="block px-4 py-2 text-[14px] font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-300">NEET UG</Link>
-                          <Link href="/mbbs-abroad" className="block px-4 py-2 text-[14px] font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-all duration-300">MBBS Abroad</Link>
+                        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-2">
+                          <Link href="/neet-ug-packages" className="block px-4 py-2.5 text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-xl transition-colors">NEET UG</Link>
+                          <Link href="/mbbs-abroad" className="block px-4 py-2.5 text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-xl transition-colors">MBBS Abroad</Link>
                         </div>
                       ) : (
                         /* WRAPPER FOR MEGA MENU */
@@ -313,17 +326,17 @@ const Header = () => {
                           {/* LEFT PANEL */}
                           <div
                             className="
-            w-[300px]
+            w-[280px]
             bg-white
-            rounded-[22px]
-            shadow-[0_20px_70px_rgba(0,0,0,0.10)]
+            rounded-2xl
+            shadow-sm
             border
-            border-gray-100
+            border-slate-200
             overflow-hidden
-            min-h-[400px]
+            min-h-[360px]
           "
                           >
-                            <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
+                            <div className="max-h-[440px] overflow-y-auto custom-scrollbar">
                               {(item.name === 'MBBS India'
                                 ? indiaStates
                                 : item.name === 'MBBS Abroad'
@@ -334,23 +347,22 @@ const Header = () => {
                                 const Content = (
                                   <div
                                     className={`
-                    h-[65px]
-                    px-5
+                    h-12
+                    px-4
                     flex
                     items-center
                     justify-between
                     cursor-pointer
-                    transition-all
-                    duration-300
-                    border-b
-                    border-gray-100
-                    ${hoveredItemData?.id === loc.id
-                                        ? 'bg-blue-500 text-white'
-                                        : 'hover:bg-gray-50 text-[#111827]'
+                                    transition-colors
+                                    border-b
+                                    border-slate-200
+                                    ${hoveredItemData?.id === loc.id
+                                        ? 'bg-brand-950 text-white'
+                                        : 'hover:bg-slate-100 text-brand-950'
                                       }
                   `}
                                   >
-                                    <span className="text-[14px] font-semibold">
+                                    <span className="text-sm font-medium">
                                       {item.name === 'MBBS India'
                                         ? `MBBS in ${loc.name}`
                                         : item.name === 'MD/MS'
@@ -361,12 +373,11 @@ const Header = () => {
                                     {!isMdMs && (
                                       <FaChevronDown
                                         className={`
-                        text-[11px]
-                        transition-all
-                        duration-300
-                        ${hoveredItemData?.id === loc.id
+                        text-[10px]
+                        transition-transform
+                                        ${hoveredItemData?.id === loc.id
                                           ? 'rotate-[-90deg] text-white'
-                                          : 'rotate-[-90deg] text-gray-500'
+                                          : 'rotate-[-90deg] text-slate-500'
                                         }
                       `}
                                       />
@@ -409,33 +420,34 @@ const Header = () => {
                                 transition={{ duration: 0.18 }}
                                 className="
                 absolute
-                left-[302px]
+                left-[282px]
                 top-0
-                w-[360px]
+                w-[336px]
                 bg-white
-                rounded-[22px]
-                shadow-[0_20px_70px_rgba(0,0,0,0.10)]
+                rounded-2xl
+                shadow-sm
                 border
-                border-gray-100
+                border-slate-200
                 overflow-hidden
-                min-h-[400px]
+                min-h-[360px]
               "
                               >
-                                <div className="space-y-3 max-h-[500px] overflow-y-auto custom-scrollbar">
+                                <div className="space-y-1 max-h-[440px] overflow-y-auto custom-scrollbar p-2">
                                   {activeDropdown === 'MD/MS' && hoveredItemData && (
                                     <Link
                                       href={`/colleges/md-ms/${(hoveredItemData as State).slug || hoveredItemData.name.toLowerCase().replace(/\s+/g, '-')}`}
                                       className="
                       block
-                      text-[14px]
-                      p-4
-                      font-bold
-                      text-blue-600
-                      hover:bg-blue-50
-                      transition-all
-                      duration-300
+                      text-sm
+                      px-4
+                      py-2.5
+                      font-semibold
+                      text-brand-950
+                      hover:bg-accent-400 hover:text-brand-950
+                      rounded-xl
+                      transition-colors
                       border-b
-                      border-blue-50
+                      border-blue-100
                     "
                                     >
                                       View All {hoveredItemData.name} MD/MS Details →
@@ -456,14 +468,15 @@ const Header = () => {
                                           href={`/colleges/${collegeSlug}`}
                                           className="
                           block
-                          text-[14px]
-                          p-4
+                          text-sm
+                          px-4
+                          py-2.5
                           font-medium
-                          text-[#111827]
-                          hover:bg-blue-500
+                          text-brand-950
+                          hover:bg-brand-950
                           hover:text-white
-                          transition-all
-                          duration-300
+                          rounded-xl
+                          transition-colors
                           leading-snug
                         "
                                         >
@@ -472,7 +485,7 @@ const Header = () => {
                                       );
                                     })
                                   ) : (
-                                    <div className="p-8 text-center text-gray-500 text-sm">
+                                    <div className="p-5 text-center text-gray-500 text-sm">
                                       No colleges found for this region.
                                     </div>
                                   )}
@@ -494,30 +507,28 @@ const Header = () => {
             onClick={openPopup}
             className="
               hidden
-              lg:flex
+              lg:inline-flex
               items-center
               justify-center
-              px-7
-              h-12
-              rounded-lg
-              bg-blue-600
-              text-white
+              h-11
+              px-6
+              rounded-full
+              bg-accent-400
+              text-brand-950
               font-bold
               text-sm
-              shadow-[0_10px_30px_rgba(37,99,235,0.25)]
-              hover:shadow-[0_15px_40px_rgba(37,99,235,0.35)]
-              hover:scale-[1.03]
-              transition-all
-              duration-300
+              hover:bg-accent-500
+              transition-colors
             "
           >
-            Get Free Consultation
+            Get Guidance
           </button>
 
           {/* MOBILE BTN */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-2xl text-gray-700"
+            className="lg:hidden text-xl text-brand-950 p-1"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -531,24 +542,24 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-y-auto max-h-[80vh]"
+            className="lg:hidden bg-white border-b border-slate-200 overflow-y-auto max-h-[80vh]"
           >
-            <div className="p-4 sm:p-5 space-y-4 sm:space-y-5">
-              <div className="border-b border-gray-200 pb-4 sm:pb-5">
+            <div className="p-5 space-y-3">
+              <div className="border-b border-slate-200 pb-4">
                 <a
                   href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
-                  className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700 mb-3 sm:mb-4"
+                  className="flex items-center text-sm font-medium text-gray-600 mb-3"
                 >
-                  <FaPhoneAlt className="mr-3 text-blue-600 flex-shrink-0" />
-                  <span className="text-sm sm:text-base">{SITE_IDENTITY.contact.phone}</span>
+                  <FaPhoneAlt className="mr-2.5 text-brand-950 text-xs flex-shrink-0" />
+                  <span>{SITE_IDENTITY.contact.phone}</span>
                 </a>
 
                 <a
                   href={`mailto:${SITE_IDENTITY.contact.email}`}
-                  className="flex items-center text-[14px] sm:text-[15px] font-semibold text-gray-700"
+                  className="flex items-center text-sm font-medium text-gray-600"
                 >
-                  <FaEnvelope className="mr-3 text-blue-600 flex-shrink-0" />
-                  <span className="text-sm sm:text-base break-words">{SITE_IDENTITY.contact.email}</span>
+                  <FaEnvelope className="mr-2.5 text-brand-950 text-xs flex-shrink-0" />
+                  <span className="break-words">{SITE_IDENTITY.contact.email}</span>
                 </a>
               </div>
 
@@ -558,7 +569,7 @@ const Header = () => {
                     <Link
                       href={link.href || '#'}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-[15px] sm:text-[16px] font-semibold text-gray-800 hover:text-blue-600 transition-all py-2"
+                      className="block text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-full px-4 py-2 transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -566,7 +577,7 @@ const Header = () => {
                     <div>
                       <button
                         onClick={() => toggleMobileItem(link.name)}
-                        className="flex items-center justify-between w-full text-[15px] sm:text-[16px] font-semibold text-gray-800 hover:text-blue-600 transition-all py-2"
+                        className="flex items-center justify-between w-full text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-full px-4 py-2 transition-colors"
                       >
                         <span>{link.name}</span>
                         <FaChevronDown
@@ -582,33 +593,33 @@ const Header = () => {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="ml-4 mt-2 space-y-2 overflow-hidden"
+                            className="ml-4 mt-1 space-y-1 overflow-hidden"
                           >
                             {link.name === 'Packages' && (
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 <Link
                                   href="/neet-ug-packages"
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                  className="block text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
                                 >
                                   NEET UG
                                 </Link>
                                 <Link
                                   href="/mbbs-abroad"
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                  className="block text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
                                 >
                                   MBBS Abroad
                                 </Link>
                               </div>
                             )}
                             {link.name === 'MBBS India' && indiaStates.length > 0 && (
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 {indiaStates.map((state) => (
                                   <div key={state.id} className="border-l-2 border-gray-200">
                                     <button
                                       onClick={() => toggleMobileItem(`state-${state.id}`)}
-                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
                                     >
                                       <span>MBBS in {state.name}</span>
                                       <FaChevronDown
@@ -639,7 +650,7 @@ const Header = () => {
                                                 key={college.id}
                                                 href={`/colleges/${collegeSlug}`}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="block text-xs text-gray-600 hover:text-blue-600 py-1 px-3 transition-all"
+                                                className="block text-xs text-gray-600 hover:text-brand-900 py-1 px-3 transition-colors"
                                               >
                                                 • {college.name}
                                               </Link>
@@ -654,12 +665,12 @@ const Header = () => {
                             )}
 
                             {link.name === 'MBBS Abroad' && abroadCountries.length > 0 && (
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 {abroadCountries.map((country) => (
                                   <div key={country.id} className="border-l-2 border-gray-200">
                                     <button
                                       onClick={() => toggleMobileItem(`country-${country.id}`)}
-                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
                                     >
                                       <span>{country.name}</span>
                                       <FaChevronDown
@@ -690,7 +701,7 @@ const Header = () => {
                                                 key={college.id}
                                                 href={`/colleges/${collegeSlug}`}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="block text-xs text-gray-600 hover:text-blue-600 py-1 px-3 transition-all"
+                                                className="block text-xs text-gray-600 hover:text-brand-900 py-1 px-3 transition-colors"
                                               >
                                                 • {college.name}
                                               </Link>
@@ -705,12 +716,12 @@ const Header = () => {
                             )}
 
                             {link.name === 'MD/MS' && mdmsStates.length > 0 && (
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 {mdmsStates.map((state) => (
                                   <div key={state.id} className="border-l-2 border-gray-200">
                                     <button
                                       onClick={() => toggleMobileItem(`mdms-${state.id}`)}
-                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-blue-600 py-2 px-3 transition-all"
+                                      className="flex items-center justify-between w-full text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
                                     >
                                       <span>MD/MS in {state.name}</span>
                                       <FaChevronDown
@@ -731,7 +742,7 @@ const Header = () => {
                                           <Link
                                             href={`/colleges/md-ms/${state.slug || state.name.toLowerCase().replace(/\s+/g, '-')}`}
                                             onClick={() => setMobileMenuOpen(false)}
-                                            className="block text-xs text-blue-600 font-bold py-2 px-3 transition-all"
+                                            className="block text-xs text-brand-950 font-semibold py-2 px-3 transition-colors"
                                           >
                                             View All Details for {state.name}
                                           </Link>
@@ -747,7 +758,7 @@ const Header = () => {
                                                 key={college.id}
                                                 href={`/colleges/${collegeSlug}`}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="block text-xs text-gray-600 hover:text-blue-600 py-1 px-3"
+                                                className="block text-xs text-gray-600 hover:text-brand-900 py-1 px-3"
                                               >
                                                 • {college.name}
                                               </Link>
@@ -775,13 +786,14 @@ const Header = () => {
                 }}
                 className="
                   w-full
-                  h-12
-                  rounded-xl
-                  bg-blue-600
-                  text-white
+                  h-11
+                  px-6
+                  rounded-full
+                  bg-accent-400
+                  hover:bg-accent-500
+                  text-brand-950
                   font-bold
-                  shadow-lg
-                  text-sm sm:text-base
+                  text-sm
                 "
               >
                 Get Free Consultation

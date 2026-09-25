@@ -2,12 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   FaArrowRight,
-  FaGlobeAsia,
   FaUniversity,
 } from "react-icons/fa";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 interface CountryItem {
   id: number;
@@ -68,230 +68,102 @@ const TopCountriesSection: React.FC = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="inline-block h-12 w-12 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin mx-auto"></div>
-          <h2 className="text-4xl font-black text-slate-900 mt-4">
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <div className="inline-block h-10 w-10 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin mx-auto"></div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 tracking-tight mt-4">
             Loading Countries...
           </h2>
         </div>
-      </section>
+      </Section>
     );
   }
 
   if (error) {
     return (
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black text-slate-900 mb-4">
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 tracking-tight mb-2">
             Something Went Wrong
           </h2>
 
-          <p className="text-red-500 font-medium">{error}</p>
+          <p className="text-red-500 text-sm font-medium">{error}</p>
         </div>
-      </section>
+      </Section>
     );
   }
 
   return (
-    <section className="relative py-20 bg-[#F8FAFC] overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#f8fafc,#ffffff)]" />
+    <Section spacing="md" className="relative bg-slate-50 overflow-hidden">
+      <div className="relative z-10">
+        <SectionHeading
+          eyebrow="Global MBBS Destinations"
+          title={<>Top Countries For <span className="text-accent-600">MBBS Abroad</span></>}
+          description="Explore world-class medical universities with affordable tuition fees and global recognition."
+        />
 
-      {/* LIGHT EFFECT */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-100 blur-3xl opacity-40 rounded-lg" />
+        {/* AUTO-SCROLLING COUNTRY ROW — infinite marquee, pauses on hover */}
+        <div className="marquee-viewport -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="marquee-track gap-4">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex gap-4 pr-4" aria-hidden={copy === 1}>
+                {countries.map((country) => (
+                  <Link
+                    key={`${copy}-${country.id}`}
+                    href={`/country/${getCountrySlug(country.name)}`}
+                    tabIndex={copy === 1 ? -1 : undefined}
+                    className="group block w-[240px] shrink-0"
+                  >
+                    <div className="h-full bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                      {/* IMAGE */}
+                      <div className="relative h-28 overflow-hidden">
+                        <img
+                          src={country.image}
+                          alt={country.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <span className="absolute top-2 left-2.5 inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full pl-1 pr-2.5 py-1">
+                          <img
+                            src={country.flag}
+                            alt={country.name}
+                            className="w-5 h-5 rounded-full object-cover"
+                          />
+                        </span>
+                      </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* HEADER */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          
-          {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 border border-blue-100 mb-6">
-            <FaGlobeAsia className="text-blue-600 text-sm" />
-
-            <span className="text-blue-700 text-xs font-bold tracking-widest uppercase">
-              Global MBBS Destinations
-            </span>
-          </div>
-
-          {/* TITLE */}
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-            Top Countries For
-            <span className="text-blue-600"> MBBS Abroad</span>
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p className="mt-6 text-slate-500 text-base md:text-lg leading-8 font-medium">
-            Explore world-class medical universities with affordable tuition
-            fees, global recognition, and outstanding career opportunities.
-          </p>
-        </div>
-
-        {/* COUNTRIES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-          {countries.map((country, index) => (
-            <motion.div
-              key={country.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              viewport={{ once: true }}
-            >
-              <Link
-                href={`/country/${getCountrySlug(country.name)}`}
-                className="group block h-full"
-              >
-                <div
-                  className="
-                    relative
-                    h-full
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-[32px]
-                    overflow-hidden
-                    hover:border-blue-100
-                    hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
-                    transition-all
-                    duration-500
-                  "
-                >
-                  {/* TOP LINE */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
-
-                  {/* IMAGE */}
-                  <div className="relative h-[240px] overflow-hidden">
-                    <img
-                      src={country.image}
-                      alt={country.name}
-                      className="
-                        w-full
-                        h-full
-                        object-cover
-                        group-hover:scale-110
-                        transition-transform
-                        duration-700
-                      "
-                    />
-
-                    {/* OVERLAY */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                    {/* UNIVERSITIES */}
-                    <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <FaUniversity className="text-blue-600 text-xs" />
-
-                        <span className="text-xs font-bold text-slate-800">
+                      {/* BODY — name + count + View link */}
+                      <div className="p-3">
+                        <h3 className="text-brand-950 group-hover:text-white font-bold leading-tight truncate transition-colors duration-300">
+                          {country.name}
+                        </h3>
+                        <p className="mt-0.5 inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 group-hover:text-slate-300 transition-colors duration-300">
+                          <FaUniversity className="text-brand-950 group-hover:text-accent-400 text-xs shrink-0 transition-colors duration-300" />
                           {country.universities} Universities
+                        </p>
+                        <span className="mt-1.5 inline-flex items-center gap-1 text-sm font-bold text-brand-950 group-hover:text-accent-400 transition-colors duration-300">
+                          View <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
                         </span>
                       </div>
                     </div>
-
-                    {/* COUNTRY NAME */}
-                    <div className="absolute bottom-5 left-5 flex items-center gap-3">
-                      <img
-                        src={country.flag}
-                        alt={country.name}
-                        className="w-10 h-7 rounded-md object-cover border border-white/20 shadow-md"
-                      />
-
-                      <h3 className="text-2xl font-black text-white">
-                        {country.name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* CONTENT */}
-                  {/* CONTENT */}
-<div className="p-7 flex flex-col">
-  
-  {/* DESCRIPTION */}
-  <p className="text-slate-500 leading-7 text-sm font-medium">
-    {country.description}
-  </p>
-
-  {/* COURSE TAG */}
-  <div className="mt-5">
-    <span className="inline-flex items-center bg-blue-50 text-blue-700 text-xs font-bold px-4 py-2 rounded-lg border border-blue-100">
-      {country.courses}
-    </span>
-  </div>
-
-  {/* BUTTON */}
-  <div
-    className="
-      mt-6
-      flex
-      items-center
-      justify-between
-      border-t
-      border-slate-100
-      pt-5
-    "
-  >
-    <span className="text-slate-900 font-black text-sm">
-      View Country
-    </span>
-
-    <div
-      className="
-        w-11
-        h-11
-        rounded-2xl
-        bg-slate-100
-        group-hover:bg-blue-600
-        flex
-        items-center
-        justify-center
-        transition-all
-        duration-300
-      "
-    >
-      <FaArrowRight className="text-slate-500 group-hover:text-white transition-colors duration-300 text-sm" />
-    </div>
-  </div>
-</div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* VIEW ALL BUTTON */}
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-6">
           <Link
             href="/colleges/mbbs-abroad"
-            className="
-              group
-              inline-flex
-              items-center
-              gap-3
-              bg-blue-600
-              hover:bg-blue-700
-              text-white
-              h-14
-              px-8
-              rounded-lg
-              font-bold
-              text-sm
-              shadow-[0_15px_35px_rgba(37,99,235,0.25)]
-              transition-all
-              duration-300
-              hover:scale-[1.03]
-            "
+            className="group inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white font-bold h-11 px-6 rounded-full text-sm transition-colors duration-300"
           >
             View All Countries
-
             <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
           </Link>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

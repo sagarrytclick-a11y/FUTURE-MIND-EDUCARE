@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useDeferredValue } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import {
   FaUsers,
@@ -66,21 +66,9 @@ const AdminPanel: React.FC = () => {
   const [search, setSearch] = useState('');
   const [enquiriesPerPage] = useState(10);
 
-  // Debounced search to prevent excessive API calls
-  const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [searchTimeout, setSearchTimeout] = useState<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (searchTimeout) {
-      clearTimeout(searchTimeout);
-    }
-
-    const timeout = setTimeout(() => {
-      setDebouncedSearch(search);
-    }, 500);
-
-    setSearchTimeout(timeout);
-  }, [search]);
+  // Debounced search to prevent excessive API calls.
+  // useDeferredValue debounces during render instead of via a state + effect.
+  const debouncedSearch = useDeferredValue(search);
 
   // Fetch enquiries with React Query
   const { data: enquiriesData, isLoading: enquiriesLoading, error: enquiriesError, refetch: refetchEnquiries } = useQuery<EnquiriesResponse>({

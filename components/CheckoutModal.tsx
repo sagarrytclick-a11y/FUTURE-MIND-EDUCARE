@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTimes, FaSpinner, FaCheckCircle } from "react-icons/fa";
+import { FaTimes, FaSpinner } from "react-icons/fa";
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -65,7 +65,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
             contact: mobile,
           },
           theme: {
-            color: "#12141D",
+            color: "#2563EB",
           },
           handler: async function (response: any) {
             try {
@@ -125,6 +125,10 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
 
   if (!mounted) return null;
 
+  const labelClass = "block text-xs font-semibold text-gray-700 mb-1.5";
+  const inputClass =
+    "w-full h-11 px-4 text-sm bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-800 focus:border-transparent transition-colors";
+
   return createPortal(
     <AnimatePresence>
       {isOpen && (
@@ -140,71 +144,72 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md bg-[#1E212B] border border-[#2A2D3A] rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
           >
-            <div className="p-6">
+            <div className="p-5">
               <button
                 onClick={handleClose}
                 disabled={loading}
-                className="absolute top-4 right-4 text-[#94A3B8] hover:text-[#F8FAFC] transition-colors disabled:opacity-50"
+                aria-label="Close checkout"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-900 transition-colors disabled:opacity-50"
               >
-                <FaTimes />
+                <FaTimes className="text-sm" />
               </button>
 
-              <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">Complete Your Purchase</h3>
-              <p className="text-[#94A3B8] text-sm mb-6">{planName} — ₹{planPrice.toLocaleString()}</p>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Complete Your Purchase</h3>
+              <p className="text-sm text-gray-600 mb-5">{planName} — ₹{planPrice.toLocaleString()}</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#94A3B8] mb-1.5">Full Name</label>
+                  <label className={labelClass}>Full Name</label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your full name"
-                    className="w-full px-4 py-3 bg-[#12141D] border border-[#2A2D3A] rounded-lg text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#4A90E2] focus:border-transparent transition-colors"
+                    className={inputClass}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#94A3B8] mb-1.5">Email Address</label>
+                  <label className={labelClass}>Email Address</label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-[#12141D] border border-[#2A2D3A] rounded-lg text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#4A90E2] focus:border-transparent transition-colors"
+                    className={inputClass}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#94A3B8] mb-1.5">Mobile Number</label>
+                  <label className={labelClass}>Mobile Number</label>
                   <input
                     type="tel"
                     required
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                     placeholder="Enter your mobile number"
-                    className="w-full px-4 py-3 bg-[#12141D] border border-[#2A2D3A] rounded-lg text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#4A90E2] focus:border-transparent transition-colors"
+                    className={inputClass}
                   />
                 </div>
 
                 {error && (
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
-                    <p className="text-red-400 text-sm">{error}</p>
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-3">
+                    <p className="text-red-600 text-sm">{error}</p>
                   </div>
                 )}
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 rounded-lg bg-[#4A90E2] hover:bg-[#3A7BD5] disabled:opacity-60 text-white font-semibold transition-all flex items-center justify-center gap-2"
+                  className="inline-flex w-full items-center justify-center h-11 px-6 rounded-xl bg-brand-950 hover:bg-brand-900 disabled:opacity-60 text-white text-sm font-semibold transition-colors gap-2"
                 >
                   {loading ? (
                     <>
-                      <FaSpinner className="animate-spin" />
+                      <FaSpinner className="animate-spin text-sm" />
                       Processing...
                     </>
                   ) : (
@@ -212,7 +217,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
                   )}
                 </button>
 
-                <p className="text-xs text-center text-[#64748B]">
+                <p className="text-xs text-center text-gray-500">
                   Secure payment powered by Razorpay
                 </p>
               </form>

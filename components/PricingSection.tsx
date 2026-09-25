@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
 import CheckoutModal from "./CheckoutModal";
+import Section from "./Section";
+import SectionHeading from "./SectionHeading";
 
 const plans = [
   {
@@ -71,69 +73,48 @@ const PricingSection = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <section className="py-24 bg-gray-50"><div className="max-w-7xl mx-auto text-center">Loading...</div></section>;
+  if (!mounted) return <section className="py-10 bg-gray-50"><div className="max-w-7xl mx-auto text-center text-sm text-gray-600">Loading...</div></section>;
 
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-24">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-120px] right-[-100px] h-[300px] w-[300px] rounded-full bg-blue-100 blur-3xl opacity-50"></div>
-        <div className="absolute bottom-[-120px] left-[-100px] h-[300px] w-[300px] rounded-full bg-cyan-100 blur-3xl opacity-50"></div>
-      </div>
+    <Section spacing="md" className="bg-gray-50">
+        <SectionHeading
+          eyebrow="NEET UG Pathway"
+          title="Explore Our Packages for NEET UG"
+        />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-15">
-        <div className="text-center mb-12 sm:mb-16">
-          <p className="text-orange-600 font-bold tracking-wider uppercase mb-2 text-sm">
-            NEET UG Pathway
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
-            Explore Our Packages for NEET UG
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col ${
+              className={`relative rounded-2xl p-5 bg-white shadow-sm flex flex-col ${
                 plan.highlighted
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-900"
+                  ? "border-2 border-accent-500"
+                  : "border border-slate-200"
               }`}
             >
-              <h3
-                className={`font-bold mb-2 ${
-                  plan.highlighted ? "text-blue-100" : "text-gray-500"
-                }`}
-              >
+              {plan.highlighted && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-400 text-brand-950 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                  Popular
+                </span>
+              )}
+              <h3 className="text-xs font-bold uppercase tracking-wide text-gray-600 mb-1.5">
                 {plan.name}
               </h3>
-              <div className="text-4xl sm:text-5xl font-black mb-1">
+              <div className="text-3xl font-extrabold text-brand-950 mb-1 tracking-tight">
                 ₹{plan.price.toLocaleString()}
               </div>
-              <p
-                className={`text-sm mb-6 ${
-                  plan.highlighted ? "text-blue-50" : "text-gray-500"
-                }`}
-              >
+              <p className="text-sm text-gray-600 mb-4">
                 {plan.subtitle}
               </p>
 
-              <ul className="space-y-4 mb-8 flex-grow">
+              <ul className="space-y-2.5 mb-5 flex-grow">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm">
-                    <FaCheck
-                      className={`mt-1 shrink-0 ${
-                        plan.highlighted ? "text-blue-200" : "text-blue-600"
-                      }`}
-                    />
-                    <span
-                      className={
-                        plan.highlighted ? "text-white" : "text-gray-700"
-                      }
-                    >
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <FaCheck className="mt-1 shrink-0 text-xs text-brand-950" />
+                    <span className="text-sm leading-relaxed text-gray-600">
                       {feature}
                     </span>
                   </li>
@@ -148,18 +129,13 @@ const PricingSection = () => {
                     price: plan.price,
                   })
                 }
-                className={`w-full py-3 px-6 rounded-xl font-bold transition-all duration-300 ${
-                  plan.highlighted
-                    ? "bg-white text-blue-600 hover:bg-blue-50"
-                    : "bg-blue-600 text-white hover:bg-blue-700"
-                }`}
+                className="inline-flex w-full items-center justify-center h-11 px-6 rounded-full bg-brand-950 text-white hover:bg-brand-900 text-sm font-bold transition-colors"
               >
                 Pick This Package →
               </button>
             </motion.div>
           ))}
         </div>
-      </div>
 
       {checkoutPlan && (
         <CheckoutModal
@@ -170,7 +146,7 @@ const PricingSection = () => {
           planPrice={checkoutPlan.price}
         />
       )}
-    </section>
+    </Section>
   );
 };
 

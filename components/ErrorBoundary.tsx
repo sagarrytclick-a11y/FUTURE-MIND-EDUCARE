@@ -38,7 +38,7 @@ class ErrorBoundary extends Component<Props, State> {
             <p className="text-gray-600 text-sm mb-4">Please try refreshing the page</p>
             <button
               onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
+              className="px-4 py-2 bg-brand-900 text-white rounded-lg hover:bg-brand-950 transition-colors text-sm"
             >
               Refresh Page
             </button>

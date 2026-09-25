@@ -8,7 +8,7 @@ const PopupModal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
-    }, 20000) 
+    }, 20000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -21,33 +21,26 @@ const PopupModal = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      {/* 
-          Container: Changed bg to #1E212B (Surface) 
-          max-w-md ensures it doesn't get too wide on desktop while fitting mobile.
+      {/*
+          Compact promo modal: rounded-2xl, max-w-sm, consistent with site modals.
       */}
-      <div className="relative bg-[#1E212B] rounded-2xl shadow-2xl max-w-md w-full overflow-hidden animate-in fade-in zoom-in duration-300">
-        
-        {/* Close Button: Updated to use #4A90E2 for a themed look */}
+      <div className="relative bg-white rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden animate-in fade-in zoom-in duration-300">
+
+        {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 bg-[#12141D] border border-[#94A3B8]/20 rounded-full flex items-center justify-center shadow-lg hover:bg-[#4A90E2] group transition-colors duration-200"
+          className="absolute top-3 right-3 z-10 w-8 h-8 bg-gray-900/80 border border-white/20 rounded-xl flex items-center justify-center shadow-lg hover:bg-brand-950 group transition-colors duration-200"
           aria-label="Close modal"
         >
-          <FaTimes className="text-[#F8FAFC] group-hover:text-white text-sm" />
+          <FaTimes className="text-white text-xs" />
         </button>
 
         {/* Image Container */}
-        <div className="w-full flex justify-center items-center">
-          <img 
+        <div className="w-full flex justify-center items-center p-2">
+          <img
             src="/banner.png"
             alt="Promotion Banner"
-            /* 
-               Changes made:
-               1. Removed max-w-sm to let it fill the max-w-md container.
-               2. Changed object-cover to object-contain to prevent "cutting" or cropping.
-               3. Set height to auto or h-full to respect the image's original aspect ratio.
-            */
-            className="w-full h-auto max-h-[80vh] object-contain block"
+            className="w-full h-auto max-h-[75vh] object-contain block rounded-xl"
           />
         </div>
       </div>

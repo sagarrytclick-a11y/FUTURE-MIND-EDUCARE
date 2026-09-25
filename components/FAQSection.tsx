@@ -1,6 +1,9 @@
 "use client"
 import React, { useState, useMemo } from 'react';
 import { usePopup } from '../contexts/PopupContext';
+import { FaArrowRight, FaHeadset } from 'react-icons/fa';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface FAQ {
   question: string;
@@ -89,160 +92,184 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white overflow-x-hidden to-blue-50">
-      <div className="max-w-5xl mx-auto">
+    <Section
+      spacing="md"
+      className="bg-white overflow-x-hidden"
+    >
+      {/* SPLIT — sticky heading + help card left, accordion right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 sm:gap-8 items-start">
+        <div className="lg:sticky top-header-gap">
+          <SectionHeading
+            align="left"
+            className="!mb-0"
+            eyebrow="FAQs"
+            title="Frequently Asked Questions"
+            description="Answers on NEET, MBBS admissions, counseling and eligibility."
+          />
 
-        {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
-            FAQs
-          </span>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Frequently Asked Questions
-          </h2>
-
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
-            Find answers related to NEET, MBBS admissions, counseling,
-            eligibility, and more.
-          </p>
-        </div>
-
-        {/* Search */}
-        <div className="mb-8">
-          <div className="relative max-w-2xl mx-auto">
-            <input
-              type="text"
-              placeholder="Search your question..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-white border border-gray-200 rounded-xl sm:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 pl-10 sm:pl-12 text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-            />
-
-            <svg
-              className="absolute left-3 sm:left-4 top-3 sm:top-4 w-4 h-4 sm:w-5 sm:h-5 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* COMPACT HELP CARD */}
+          <div className="mt-4 bg-brand-950 hover:bg-brand-900 rounded-2xl p-5 border border-brand-900 transition-colors duration-300">
+            <div className="w-10 h-10 rounded-xl bg-accent-400 text-brand-950 flex items-center justify-center text-base mb-3">
+              <FaHeadset />
+            </div>
+            <h3 className="font-bold text-white">
+              Still have questions?
+            </h3>
+            <p className="text-gray-300 text-sm leading-6 mt-1">
+              Talk to our counselors for MBBS guidance in India & abroad.
+            </p>
+            <button
+              onClick={openPopup}
+              className="group mt-3 inline-flex items-center gap-2 bg-white hover:bg-accent-100 text-brand-950 h-11 px-6 rounded-full text-sm font-bold transition-all duration-300"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+              Talk to Expert
+              <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
           </div>
         </div>
 
-        {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setFilteredCategory(category)}
-              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                filteredCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-blue-400'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        <div className="min-w-0">
+          {/* Search */}
+          <div className="mb-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search your question..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 pl-10 text-gray-800 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-800"
+              />
 
-        {/* FAQ List */}
-        <div className="space-y-4">
-          {filteredFaqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300"
-            >
-              {/* Question */}
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between text-left p-4 sm:p-6"
+              <svg
+                className="absolute left-3 top-3.5 w-4 h-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <div>
-                  <span className="inline-block text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded-lg mb-2 sm:mb-3">
-                    {faq.category}
-                  </span>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          </div>
 
-                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 pr-2">
-                    {faq.question}
-                  </h3>
-                </div>
-
-                <div
-                  className={`ml-4 transition-transform duration-300 ${
-                    activeIndex === index ? 'rotate-180' : ''
-                  }`}
-                >
-                  <svg
-                    className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-              </button>
-
-              {/* Answer */}
-              <div
-                className={`transition-all duration-500 overflow-hidden ${
-                  activeIndex === index
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
+          {/* Categories */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilteredCategory(category)}
+                className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase transition-all duration-300 ${
+                  filteredCategory === category
+                    ? 'bg-brand-950 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-600 hover:bg-accent-100 hover:text-brand-900'
                 }`}
               >
-                <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-gray-600 leading-relaxed text-sm sm:text-base">
-                  {faq.answer}
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Result count */}
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <p className="text-xs font-bold uppercase tracking-wide text-gray-500">
+              {filteredFaqs.length} {filteredFaqs.length === 1 ? 'question' : 'questions'}
+              {filteredCategory !== 'All' ? ` in ${filteredCategory}` : ''}
+            </p>
+            {(searchTerm || filteredCategory !== 'All') && (
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setFilteredCategory('All');
+                }}
+                className="text-[11px] font-bold uppercase tracking-wide text-accent-600 hover:text-brand-950 transition-colors"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          {/* FAQ List — 2 columns like beehive */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
+            {filteredFaqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`group bg-white rounded-2xl border overflow-hidden shadow-sm transition-all duration-300 ${
+                  activeIndex === index
+                    ? 'border-accent-400 shadow-lg'
+                    : 'border-slate-200 hover:-translate-y-0.5 hover:shadow-lg'
+                }`}
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={activeIndex === index}
+                  className="w-full flex items-start gap-3 text-left p-4"
+                >
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-100 text-[11px] font-extrabold text-brand-950 transition-colors duration-300 group-hover:bg-accent-400">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[10px] font-bold uppercase tracking-wide text-accent-600">
+                      {faq.category}
+                    </span>
+                    <span className="mt-1 block text-sm font-bold leading-snug text-brand-950">
+                      {faq.question}
+                    </span>
+                  </span>
+
+                  <span
+                    className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-brand-950 transition-all duration-300 ${
+                      activeIndex === index
+                        ? 'rotate-180 border-accent-400 bg-accent-400'
+                        : 'group-hover:border-accent-400 group-hover:bg-accent-100'
+                    }`}
+                  >
+                    <svg
+                      className="h-3.5 w-3.5 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                <div
+                  className={`transition-all duration-500 overflow-hidden ${
+                    activeIndex === index
+                      ? 'max-h-96 opacity-100'
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="mx-4 mb-4 rounded-xl border border-accent-100 bg-accent-100/40 px-3 py-2.5 text-sm leading-relaxed text-gray-700">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
 
-        {/* Bottom CTA */}
-        <div className="mt-12 sm:mt-16">
-          <div className="bg-blue-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 text-center text-white shadow-2xl">
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
-              Still Have Questions?
-            </h3>
-
-            <p className="text-blue-100 text-sm sm:text-base max-w-2xl mx-auto mb-6 sm:mb-8">
-              Talk to our expert counselors and get complete guidance
-              for MBBS admission in India & Abroad.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button
-                onClick={openPopup}
-                className="bg-white text-blue-600 px-6 py-2.5 sm:px-8 sm:py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300 text-sm sm:text-base"
-              >
-                Talk to Expert
-              </button>
-
-              <button
-                onClick={openPopup}
-                className="bg-blue-500 border border-white/20 text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-xl font-semibold hover:bg-blue-400 transition-all duration-300 text-sm sm:text-base"
-              >
-                Download Brochure
-              </button>
-            </div>
+            {filteredFaqs.length === 0 && (
+              <div className="md:col-span-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+                <p className="text-sm font-bold text-brand-950">No questions found</p>
+                <p className="mt-1 text-sm text-gray-600">
+                  Try a different keyword or clear the filters.
+                </p>
+              </div>
+            )}
           </div>
         </div>
-
       </div>
-    </section>
+    </Section>
   );
 };
 
