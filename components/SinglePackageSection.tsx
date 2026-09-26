@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
 import CheckoutModal from "./CheckoutModal";
+import Section from "./Section";
+import SectionHeading from "./SectionHeading";
 
 interface SinglePackageSectionProps {
   title: string;
@@ -14,6 +16,12 @@ interface SinglePackageSectionProps {
   description: string;
   features: string[];
 }
+
+const trustPoints = [
+  "Secure payment via Razorpay",
+  "Instant access after payment",
+  "1-on-1 support from counseling experts",
+];
 
 const SinglePackageSection = ({
   title,
@@ -27,51 +35,67 @@ const SinglePackageSection = ({
   const [showCheckout, setShowCheckout] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-24">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-100px] left-[-100px] h-[400px] w-[400px] rounded-full bg-blue-100 blur-3xl opacity-50"></div>
-        <div className="absolute bottom-[-100px] right-[-100px] h-[400px] w-[400px] rounded-full bg-cyan-100 blur-3xl opacity-50"></div>
-      </div>
+    <Section spacing="md" className="bg-gray-50">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeading
+          eyebrow="Single Package"
+          title={title}
+          description={subtitle}
+        />
 
-      <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-            {title}
-          </h2>
-          <p className="text-gray-600 mt-3">{subtitle}</p>
-        </div>
+        <div className="grid gap-4 lg:grid-cols-[1fr_320px] items-start">
+          {/* Left: package details */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5"
+          >
+            <h3 className="text-base sm:text-lg font-extrabold text-brand-950 mb-1">
+              What&apos;s included
+            </h3>
+            <p className="text-sm text-gray-600 mb-4">{description}</p>
+            <ul className="space-y-2.5">
+              {features.map((feature, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <div className="mt-0.5 shrink-0 h-5 w-5 rounded-full bg-accent-100 flex items-center justify-center">
+                    <FaCheck className="text-brand-950 text-[10px]" />
+                  </div>
+                  <span className="text-sm text-gray-600 leading-relaxed">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gray-100"
-        >
-          <div className="text-center mb-8">
-            <div className="text-5xl sm:text-6xl font-black text-gray-900 mb-2">
+          {/* Right: sticky price card */}
+          <motion.aside
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:sticky top-header-gap bg-brand-950 rounded-2xl p-5 text-center"
+          >
+            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
+              One-time payment
+            </p>
+            <div className="text-3xl font-extrabold text-accent-400 mt-1 tracking-tight">
               ₹{price}
             </div>
-            <p className="text-gray-500 font-medium">{description}</p>
-          </div>
-
-          <ul className="space-y-4 mb-10">
-            {features.map((feature, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <div className="mt-1 shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center">
-                  <FaCheck className="text-blue-600 text-xs" />
-                </div>
-                <span className="text-gray-700 text-lg">{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            onClick={() => setShowCheckout(true)}
-            className="w-full py-4 px-8 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-blue-200"
-          >
-            Get Started Now →
-          </button>
-        </motion.div>
+            <button
+              onClick={() => setShowCheckout(true)}
+              className="mt-4 inline-flex w-full items-center justify-center h-11 px-6 rounded-full bg-white hover:bg-accent-100 text-brand-950 font-bold text-sm transition-colors"
+            >
+              Get Started Now →
+            </button>
+            <ul className="mt-4 pt-4 border-t border-white/10 space-y-2 text-left">
+              {trustPoints.map((point) => (
+                <li key={point} className="flex items-start gap-2 text-sm text-slate-300">
+                  <FaCheck className="mt-1 shrink-0 text-xs text-accent-400" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </motion.aside>
+        </div>
       </div>
 
       <CheckoutModal
@@ -81,7 +105,7 @@ const SinglePackageSection = ({
         planName={title}
         planPrice={priceNumeric}
       />
-    </section>
+    </Section>
   );
 };
 

@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import { SITE_IDENTITY } from '../app/config/site_identity';
+import Section from './Section';
+import SectionHeading from './SectionHeading';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,10 +24,10 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     console.log('🚀 Form submission started');
     console.log('📋 Form data:', formData);
-    
+
     try {
       const payload = {
         name: formData.name,
@@ -35,9 +37,9 @@ const ContactForm = () => {
         neetScore: formData.neetScore,
         message: formData.message
       };
-      
+
       console.log('📤 Sending payload:', payload);
-      
+
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -74,27 +76,72 @@ const ContactForm = () => {
     }
   };
 
-  return (
-    <section className="py-12 sm:py-16 px-4 bg-white">
-      <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            Have questions about MBBS admissions? Fill out the form below and 
-            our expert counselors will get back to you with personalized guidance.
-          </p>
-        </div>
+  const inputClass =
+    "w-full h-11 px-4 text-sm border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-800 focus:border-transparent bg-white text-gray-900";
+  const labelClass = "block text-xs font-semibold text-brand-950 mb-1.5";
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+  return (
+    <Section spacing="md" className="bg-white">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeading
+          eyebrow="Contact Us"
+          title="Get in Touch"
+          description="Have questions about MBBS admissions? Fill out the form and our expert counselors will get back to you."
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 items-start">
+          {/* Compact info panel */}
+          <div className="bg-brand-950 rounded-2xl p-5">
+            <h3 className="text-base font-extrabold text-white mb-4">Contact Information</h3>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <svg className="w-4 h-4 mr-2.5 mt-0.5 flex-shrink-0 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                <div>
+                  <p className="font-bold text-xs uppercase tracking-wide text-slate-400">Phone</p>
+                  <p className="text-white text-sm break-words">{SITE_IDENTITY.contact.phone}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <svg className="w-4 h-4 mr-2.5 mt-0.5 flex-shrink-0 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <div>
+                  <p className="font-bold text-xs uppercase tracking-wide text-slate-400">Email</p>
+                  <p className="text-white text-sm break-words">{SITE_IDENTITY.contact.email}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <svg className="w-4 h-4 mr-2.5 mt-0.5 flex-shrink-0 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <div>
+                  <p className="font-bold text-xs uppercase tracking-wide text-slate-400">Address</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    {SITE_IDENTITY.address.building}, {SITE_IDENTITY.address.landmark}, {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city} - {SITE_IDENTITY.address.pincode}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Office Hours */}
+            <div className="pt-4 mt-4 border-t border-white/10">
+              <h4 className="font-bold mb-1.5 text-xs uppercase tracking-wide text-slate-400">Office Hours</h4>
+              <p className="text-slate-300 text-sm">Monday - Saturday: {SITE_IDENTITY.officeHours.mondayToSaturday}</p>
+              <p className="text-slate-300 text-sm">Sunday: {SITE_IDENTITY.officeHours.sunday}</p>
+            </div>
+          </div>
+
           {/* Contact Form */}
-          <div className="bg-gray-50 rounded-xl p-6 sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-5">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Name Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className={labelClass}>
                   Full Name *
                 </label>
                 <input
@@ -103,14 +150,14 @@ const ContactForm = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                  className={inputClass}
                   placeholder="Enter your full name"
                 />
               </div>
 
               {/* Email Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className={labelClass}>
                   Email Address *
                 </label>
                 <input
@@ -119,14 +166,14 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                  className={inputClass}
                   placeholder="Enter your email address"
                 />
               </div>
 
               {/* Phone Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className={labelClass}>
                   Phone Number *
                 </label>
                 <input
@@ -135,21 +182,38 @@ const ContactForm = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                  className={inputClass}
                   placeholder="Enter your phone number"
                 />
               </div>
 
-              {/* Service Selection */}
+              {/* NEET Score Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className={labelClass}>
+                  NEET Score
+                </label>
+                <input
+                  type="number"
+                  name="neetScore"
+                  value={formData.neetScore}
+                  onChange={handleInputChange}
+                  className={inputClass}
+                  placeholder="Enter your NEET score (if applicable)"
+                  min="0"
+                  max="720"
+                />
+              </div>
+
+              {/* Service Selection */}
+              <div className="sm:col-span-2">
+                <label className={labelClass}>
                   Service Interest
                 </label>
                 <select
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
+                  className={inputClass}
                 >
                   <option value="mbbs-abroad">MBBS Abroad</option>
                   <option value="mbbs-india">MBBS India</option>
@@ -159,26 +223,9 @@ const ContactForm = () => {
                 </select>
               </div>
 
-              {/* NEET Score Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  NEET Score
-                </label>
-                <input
-                  type="number"
-                  name="neetScore"
-                  value={formData.neetScore}
-                  onChange={handleInputChange}
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
-                  placeholder="Enter your NEET score (if applicable)"
-                  min="0"
-                  max="720"
-                />
-              </div>
-
               {/* Message Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+              <div className="sm:col-span-2">
+                <label className={labelClass}>
                   Message *
                 </label>
                 <textarea
@@ -187,7 +234,7 @@ const ContactForm = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base resize-none"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-800 focus:border-transparent text-sm resize-none bg-white"
                   placeholder="Tell us about your MBBS admission requirements..."
                 />
               </div>
@@ -196,11 +243,11 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed text-sm sm:text-base"
+                className="sm:col-span-2 inline-flex w-full items-center justify-center h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 disabled:bg-gray-400 text-white text-sm font-bold transition-colors disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
-                    <svg className="animate-spin h-5 w-5 mr-3 rounded-full" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-4 w-4 mr-2 rounded-full" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 4-8v4a8 8 0 0-8 8zm0 4a8 8 0 0 8 4z"/>
                     </svg>
@@ -212,55 +259,9 @@ const ContactForm = () => {
               </button>
             </form>
           </div>
-
-          {/* Contact Information */}
-          <div className="bg-blue-900 text-white rounded-xl p-6 sm:p-8">
-            <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Contact Information</h3>
-            <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-start">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <div>
-                  <p className="font-semibold text-sm sm:text-base">Phone:</p>
-                  <p className="text-blue-200 text-sm sm:text-base break-words">{SITE_IDENTITY.contact.phone}</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <div>
-                  <p className="font-semibold text-sm sm:text-base">Email:</p>
-                  <p className="text-blue-200 text-sm sm:text-base break-words">{SITE_IDENTITY.contact.email}</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <div>
-                  <p className="font-semibold text-sm sm:text-base">Address:</p>
-                  <p className="text-blue-200 text-sm sm:text-base leading-relaxed">
-                    {SITE_IDENTITY.address.building}, {SITE_IDENTITY.address.landmark}, {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city} - {SITE_IDENTITY.address.pincode}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Office Hours */}
-            <div className="pt-4 sm:pt-6 border-t border-blue-800">
-              <h4 className="font-semibold mb-2 text-sm sm:text-base">Office Hours</h4>
-              <p className="text-blue-200 text-sm sm:text-base">Monday - Saturday: {SITE_IDENTITY.officeHours.mondayToSaturday}</p>
-              <p className="text-blue-200 text-sm sm:text-base">Sunday: {SITE_IDENTITY.officeHours.sunday}</p>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react';
+import Section from './Section';
+import SectionHeading from './SectionHeading';
 
 interface College {
   id: number;
@@ -27,7 +29,7 @@ const MbbsAbroadSearch: React.FC = () => {
     {
       id: 2,
       name: "Kazakhstan Medical University",
-      country: "Kazakhstan", 
+      country: "Kazakhstan",
       fees: "$4,000 - $6,000/year",
       duration: "5 years",
       recognition: "WHO, MCI, NMC approved"
@@ -44,7 +46,7 @@ const MbbsAbroadSearch: React.FC = () => {
       id: 4,
       name: "Bangladesh Medical College",
       country: "Bangladesh",
-      fees: "$4,000 - $7,000/year", 
+      fees: "$4,000 - $7,000/year",
       duration: "6 years",
       recognition: "WHO, BMDC, NMC approved"
     },
@@ -72,136 +74,110 @@ const MbbsAbroadSearch: React.FC = () => {
   const filteredColleges = colleges.filter(college => {
     const matchesSearch = college.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCountry = selectedCountry === 'all' || college.country === selectedCountry;
-    const matchesFeeRange = selectedFeeRange === 'all' || 
+    const matchesFeeRange = selectedFeeRange === 'all' ||
       (selectedFeeRange === 'low' && college.fees.includes('$3,000')) ||
       (selectedFeeRange === 'medium' && college.fees.includes('$5,000')) ||
       (selectedFeeRange === 'high' && college.fees.includes('$6,000'));
-    
+
     return matchesSearch && matchesCountry && matchesFeeRange;
   });
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            MBBS Abroad - Search Colleges
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Find and filter medical colleges abroad based on country, fees, and 
-            recognition. Explore WHO approved universities for your MBBS journey.
-          </p>
-        </div>
+    <Section spacing="md" className="bg-slate-50">
+        <SectionHeading
+          eyebrow="Find Your University"
+          title="MBBS Abroad - Search Colleges"
+          description="Filter WHO-approved medical colleges abroad by country, fees, and recognition."
+        />
 
-        {/* Filters */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Search Filter */}
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Search Colleges</label>
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Enter college name..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            {/* Country Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
-              <select 
-                value={selectedCountry}
-                onChange={(e) => setSelectedCountry(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="all">All Countries</option>
-                {countries.map(country => (
-                  <option key={country} value={country}>{country}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Fee Range Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Fee Range</label>
-              <select 
-                value={selectedFeeRange}
-                onChange={(e) => setSelectedFeeRange(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                <option value="all">All Fees</option>
-                <option value="low">Low ($3,000-4,000)</option>
-                <option value="medium">Medium ($5,000-6,000)</option>
-                <option value="high">High ($6,000-8,000)</option>
-              </select>
-            </div>
+        {/* Slim pill filter bar */}
+        <div className="bg-white border border-slate-200 rounded-full p-2 mb-4 flex flex-col md:flex-row gap-2">
+          <div className="flex-1">
+            <label htmlFor="college-search" className="sr-only">Search Colleges</label>
+            <input
+              id="college-search"
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search colleges..."
+              className="w-full h-11 px-5 text-sm border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-800 bg-white"
+            />
+          </div>
+          <div>
+            <label htmlFor="country-filter" className="sr-only">Country</label>
+            <select
+              id="country-filter"
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className="w-full md:w-auto h-11 px-5 text-sm border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-800 bg-white"
+            >
+              <option value="all">All Countries</option>
+              {countries.map(country => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="fee-filter" className="sr-only">Fee Range</label>
+            <select
+              id="fee-filter"
+              value={selectedFeeRange}
+              onChange={(e) => setSelectedFeeRange(e.target.value)}
+              className="w-full md:w-auto h-11 px-5 text-sm border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-800 bg-white"
+            >
+              <option value="all">All Fees</option>
+              <option value="low">Low ($3,000-4,000)</option>
+              <option value="medium">Medium ($5,000-6,000)</option>
+              <option value="high">High ($6,000-8,000)</option>
+            </select>
           </div>
         </div>
 
         {/* Results Count */}
-        <div className="mb-4 text-center">
-          <p className="text-gray-600">
-            Found <span className="font-semibold text-blue-600">{filteredColleges.length}</span> colleges
-          </p>
-        </div>
+        <p className="mb-3 text-sm text-gray-600 text-center">
+          Found <span className="font-bold text-brand-950">{filteredColleges.length}</span> colleges
+        </p>
 
-        {/* Colleges Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Compact horizontal rows */}
+        <div className="space-y-2.5">
           {filteredColleges.map((college) => (
-            <div
+            <article
               key={college.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 cursor-pointer"
+              className="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center gap-3 cursor-pointer"
             >
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {college.name}
-                  </h3>
-                  <div className="flex items-center text-sm text-gray-600 space-x-4">
-                    <span className="flex items-center">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657a1 1 0 00-1.414 1.414 0 1-.586V8a2 2 0 00-2 2-2h2.586l-1.414 1.414a1 1 0 001.414-1.414 1.414-1.586V8a2 2 0 00-2 2-2h2.586l1.414-1.414a1 1 0 001.414-1.414 1.414-1.586z"/>
-                      </svg>
-                      {college.country}
-                    </span>
-                    <span>{college.fees}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 4m0 0l-3-4m3 4H3"/>
-                      </svg>
-                      {college.duration}
-                  </div>
-                </div>
+              <div className="w-full sm:w-28 h-20 rounded-lg bg-accent-100 text-accent-600 font-extrabold text-xl flex items-center justify-center shrink-0">
+                {college.country.slice(0, 2).toUpperCase()}
               </div>
-              
-              <div className="text-sm text-gray-600 mb-4">
-                <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 rounded-lg text-xs font-medium">
-                  ✓
-                </span>
-                {college.recognition}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg truncate">
+                  {college.name}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {college.country} · {college.fees} · {college.duration}
+                </p>
+                <p className="mt-1.5 text-xs text-gray-600">
+                  <span className="bg-accent-100 text-accent-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 mr-1.5">
+                    ✓ Approved
+                  </span>
+                  {college.recognition}
+                </p>
               </div>
-              
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button className="inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 text-white text-sm font-bold transition-colors shrink-0">
                 View Details
               </button>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* No Results Message */}
         {filteredColleges.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-500 text-lg">
+          <div className="text-center py-10">
+            <div className="text-gray-600 text-sm">
               No colleges found matching your criteria. Try adjusting your filters.
             </div>
           </div>
         )}
-      </div>
-    </section>
+    </Section>
   );
 };
 

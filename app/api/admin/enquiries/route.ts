@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     const skip = (page - 1) * limit;
     
     // Build query
-    let query: any = {};
+    const query: Record<string, unknown> = {};
     
     if (status && status !== 'all') {
       query.status = status;
@@ -71,7 +71,7 @@ export async function PUT(request: NextRequest) {
       );
     }
     
-    const updateData: any = {};
+    const updateData: Record<string, unknown> = {};
     if (status) updateData.status = status;
     if (notes !== undefined) updateData.notes = notes;
     

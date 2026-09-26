@@ -1,26 +1,17 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAdminAuth } from '@/lib/use-admin-auth';
 
 interface AuthWrapperProps {
   children: React.ReactNode;
 }
 
 export default function AuthWrapper({ children }: AuthWrapperProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
-
-  useEffect(() => {
-    // Check if already authenticated
-    const auth = localStorage.getItem('adminAuth');
-    if (auth === 'true') {
-      setIsAuthenticated(true);
-    }
-    setIsLoading(false);
-  }, []);
+  const { isAuthenticated, login, logout } = useAdminAuth();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,8 +20,7 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
     const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin123';
     
     if (password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      localStorage.setItem('adminAuth', 'true');
+      login();
       setError('');
     } else {
       setError('Invalid password');
@@ -38,18 +28,9 @@ export default function AuthWrapper({ children }: AuthWrapperProps) {
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem('adminAuth');
+    logout();
     router.push('/');
   };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
 
   if (!isAuthenticated) {
     return (

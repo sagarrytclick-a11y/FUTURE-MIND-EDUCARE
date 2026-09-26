@@ -4,16 +4,17 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
-  FaGraduationCap,
-  FaHospital,
-  FaMapMarkerAlt,
   FaUniversity,
   FaArrowRight,
   FaStar,
   FaChevronLeft,
   FaChevronRight,
+  FaCheckCircle,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
+import PageHero from "@/components/PageHero";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 interface CollegeData {
   id: number;
@@ -93,11 +94,8 @@ const StatePage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-
-          <p className="text-slate-600 text-lg font-medium">
-            Loading State Information...
-          </p>
+          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm font-medium">Loading State Information...</p>
         </div>
       </div>
     );
@@ -106,18 +104,12 @@ const StatePage: React.FC = () => {
   if (error || !state) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-        <div className="bg-white max-w-lg w-full rounded-3xl shadow-xl p-10 text-center border border-slate-100">
-          <h1 className="text-3xl font-bold text-slate-900 mb-3">
-            State Not Found
-          </h1>
-
-          <p className="text-slate-600 mb-8">
-            {error || "The requested state could not be found."}
-          </p>
-
+        <div className="bg-white max-w-lg w-full rounded-2xl p-5 text-center border border-slate-200">
+          <h1 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-2">State Not Found</h1>
+          <p className="text-sm text-gray-600 mb-5">{error || "The requested state could not be found."}</p>
           <Link
             href="/states"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-xl font-semibold transition-all duration-300"
+            className="inline-flex items-center gap-2 h-11 px-6 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
           >
             Browse All States
           </Link>
@@ -126,20 +118,10 @@ const StatePage: React.FC = () => {
     );
   }
 
-  const totalSeats = state.colleges.reduce(
-    (sum, c) => sum + c.seats,
-    0
-  );
+  const totalSeats = state.colleges.reduce((sum, c) => sum + c.seats, 0);
+  const govtColleges = state.colleges.filter((c) => c.type === "Government").length;
+  const privateColleges = state.colleges.filter((c) => c.type === "Private").length;
 
-  const govtColleges = state.colleges.filter(
-    (c) => c.type === "Government"
-  ).length;
-
-  const privateColleges = state.colleges.filter(
-    (c) => c.type === "Private"
-  ).length;
-
-  // Pagination logic
   const indexOfLastCollege = currentPage * collegesPerPage;
   const indexOfFirstCollege = indexOfLastCollege - collegesPerPage;
   const currentColleges = state.colleges.slice(indexOfFirstCollege, indexOfLastCollege);
@@ -151,389 +133,190 @@ const StatePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+      <PageHero
+        align="center"
+        variant="light"
+        eyebrow="MBBS Admission 2026"
+        title={`MBBS Colleges in ${state.name}`}
+        description={state.description}
+        crumbs={[{ label: "Home", href: "/" }, { label: "States", href: "/states" }, { label: state.name }]}
+      />
+
+      <Section spacing="md">
+        {/* Slim stat band with banner thumb */}
+        <div className="mb-5 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-3 sm:flex-row sm:items-center">
           <img
             src={state.image}
             alt={state.name}
-            className="w-full h-full object-cover"
+            className="h-20 w-full rounded-lg bg-slate-100 object-cover sm:w-28"
           />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-blue-950/80 to-blue-900/70"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
-          {/* Breadcrumb */}
-          <div className="flex items-center flex-wrap gap-2 text-sm text-blue-100 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-
-            <span>/</span>
-
-            <Link
-              href="/states"
-              className="hover:text-white transition-colors"
-            >
-              States
-            </Link>
-
-            <span>/</span>
-
-            <span className="text-white font-semibold">
-              {state.name}
-            </span>
-          </div>
-
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-lg mb-6">
-              <FaGraduationCap />
-              <span className="text-sm font-medium">
-                MBBS Admission 2026
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-              MBBS Colleges in{" "}
-              <span className="text-blue-300">{state.name}</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-3xl mb-10">
-              {state.description}
-            </p>
-
-            {/* STATS */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <FaUniversity className="text-2xl text-blue-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
-                    Colleges
-                  </span>
-                </div>
-
-                <h3 className="text-4xl font-black text-white">
-                  {state.colleges.length}
-                </h3>
-
-                <p className="text-blue-100 mt-2">
-                  Medical Colleges
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <FaHospital className="text-2xl text-green-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
-                    Seats
-                  </span>
-                </div>
-
-                <h3 className="text-4xl font-black text-white">
-                  {totalSeats}
-                </h3>
-
-                <p className="text-blue-100 mt-2">
-                  MBBS Seats Available
-                </p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <FaStar className="text-2xl text-yellow-300" />
-                  <span className="text-xs bg-white/10 px-3 py-1 rounded-lg text-blue-100">
-                    Govt
-                  </span>
-                </div>
-
-                <h3 className="text-4xl font-black text-white">
-                  {govtColleges}
-                </h3>
-
-                <p className="text-blue-100 mt-2">
-                  Government Colleges
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MAIN CONTENT */}
-      <section className="relative -mt-14 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        {/* TOP INFO CARD */}
-        <div className="bg-white rounded-[32px] shadow-2xl border border-slate-100 p-8 mb-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-slate-50 rounded-2xl p-6">
-              <p className="text-sm text-slate-500 mb-2">
-                Government Colleges
+          <div className="grid flex-1 grid-cols-3 gap-3">
+            <div className="rounded-2xl bg-slate-50 px-3 py-2.5 text-center">
+              <p className="flex items-center justify-center gap-1 text-brand-950 font-extrabold tracking-tight text-base">
+                <FaUniversity className="text-xs text-brand-950" />
+                {state.colleges.length}
               </p>
-
-              <h3 className="text-3xl font-black text-slate-900">
+              <p className="text-xs text-gray-600">Colleges</p>
+            </div>
+            <div className="rounded-2xl bg-slate-50 px-3 py-2.5 text-center">
+              <p className="text-brand-950 font-extrabold tracking-tight text-base">{totalSeats}</p>
+              <p className="text-xs text-gray-600">MBBS Seats</p>
+            </div>
+            <div className="rounded-2xl bg-slate-50 px-3 py-2.5 text-center">
+              <p className="flex items-center justify-center gap-1 text-brand-950 font-extrabold tracking-tight text-base">
+                <FaStar className="text-xs text-yellow-500" />
                 {govtColleges}
-              </h3>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-6">
-              <p className="text-sm text-slate-500 mb-2">
-                Private Colleges
               </p>
-
-              <h3 className="text-3xl font-black text-slate-900">
-                {privateColleges}
-              </h3>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-6">
-              <p className="text-sm text-slate-500 mb-2">
-                Total MBBS Seats
-              </p>
-
-              <h3 className="text-3xl font-black text-slate-900">
-                {totalSeats}
-              </h3>
+              <p className="text-xs text-gray-600">Govt Colleges</p>
             </div>
           </div>
+          <button
+            onClick={openPopup}
+            className="h-11 shrink-0 rounded-full bg-brand-950 px-6 text-sm font-bold text-white transition-colors hover:bg-brand-900"
+          >
+            Free Counseling
+          </button>
         </div>
 
-        {/* COLLEGES GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <SectionHeading eyebrow={`${state.colleges.length} colleges`} title={`Top Colleges in ${state.name}`} className="mb-5" />
+
+        {/* COLLEGE CARD GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {currentColleges.map((college) => (
             <div
               key={college.id}
-              className="group bg-white rounded-[28px] overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
             >
-              {/* IMAGE */}
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-40 overflow-hidden bg-slate-100">
                 <img
                   src={college.image}
                   alt={college.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "/placeholder-college.png";
                   }}
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-
-                <div className="absolute top-4 left-4">
-                  <span
-                    className={`px-4 py-2 rounded-lg text-xs font-bold shadow-lg ${
-                      college.type === "Government"
-                        ? "bg-green-500 text-white"
-                        : "bg-purple-500 text-white"
-                    }`}
-                  >
-                    {college.type}
-                  </span>
-                </div>
-
+                <span
+                  className={`absolute left-2.5 top-2.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${
+                    college.type === "Government"
+                      ? "bg-brand-950 text-white"
+                      : "bg-accent-400 text-brand-950"
+                  }`}
+                >
+                  {college.type}
+                </span>
                 {college.ranking && (
-                  <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-2 rounded-lg text-xs font-bold shadow-lg">
+                  <span className="absolute bottom-2.5 right-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase text-accent-600">
                     {college.ranking}
-                  </div>
+                  </span>
                 )}
-
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="flex items-center gap-2 text-white text-sm">
-                    <FaMapMarkerAlt />
-                    <span>{college.city}</span>
-                  </div>
-                </div>
               </div>
 
-              {/* CONTENT */}
-              <div className="p-7">
-                <h3 className="text-2xl font-black text-slate-900 leading-snug mb-5 line-clamp-2">
+              <div className="flex flex-1 flex-col p-4">
+                <h3 className="text-brand-950 font-extrabold tracking-tight text-base leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-accent-600">
                   {college.name}
                 </h3>
 
-                <div className="space-y-4 mb-7">
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-500 text-sm">
-                      Total Seats
-                    </span>
+                <p className="mt-1 text-sm text-gray-600 truncate">
+                  {college.city} • {college.seats} seats
+                </p>
 
-                    <span className="font-bold text-slate-900">
-                      {college.seats}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-slate-500 text-sm">
-                      Annual Fees
-                    </span>
-
-                    <span className="font-bold text-blue-600">
-                      {college.fees}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-slate-500 text-sm">
-                      Recognition
-                    </span>
-
-                    <span className="font-semibold text-slate-900 text-right">
-                      {college.recognition}
-                    </span>
-                  </div>
+                <div className="mt-3 rounded-2xl border border-accent-100 bg-accent-100/50 px-3 py-2.5">
+                  <p className="text-[10px] font-extrabold uppercase tracking-wide text-accent-600">
+                    Fees
+                  </p>
+                  <p className="text-sm font-extrabold text-brand-950 leading-snug break-words mt-0.5">
+                    {college.fees}
+                  </p>
                 </div>
 
-                <button
-                  onClick={() => {
-                    updateFormData({
-                      courseInterest: `${college.name} - ${state.name} - MBBS India`,
-                    });
-
-                    openPopup();
-                  }}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-blue-500/30"
-                >
-                  Apply Now
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                <div className="mt-2.5 flex items-center justify-between gap-2">
+                  <span className="text-xs text-gray-500 truncate">{college.recognition}</span>
+                  <button
+                    onClick={() => {
+                      updateFormData({ courseInterest: `${college.name} - ${state.name} - MBBS India` });
+                      openPopup();
+                    }}
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-brand-950 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-brand-900"
+                  >
+                    Apply Now
+                    <FaArrowRight className="text-[10px]" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* PAGINATION */}
         {totalPages > 1 && (
-          <div className="mt-12 flex items-center justify-center">
-            <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-2">
-              {/* Previous Button */}
+          <div className="mt-6 flex items-center justify-center">
+            <div className="bg-white rounded-full border border-slate-200 p-2 flex items-center gap-1.5">
               <button
                 onClick={prevPage}
                 disabled={currentPage === 1}
-                className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-11 h-11 rounded-full hover:bg-accent-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
               >
-                <FaChevronLeft className="text-slate-600" />
+                <FaChevronLeft className="text-gray-600 text-xs" />
               </button>
-
-              {/* Page Numbers */}
               <div className="flex items-center gap-1">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                  // Show first page, last page, current page, and pages around current
-                  if (
-                    page === 1 ||
-                    page === totalPages ||
-                    (page >= currentPage - 1 && page <= currentPage + 1)
-                  ) {
+                  if (page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)) {
                     return (
                       <button
                         key={page}
                         onClick={() => paginate(page)}
-                        className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
-                          currentPage === page
-                            ? "bg-blue-600 text-white"
-                            : "hover:bg-slate-50 text-slate-600"
+                        className={`w-11 h-11 rounded-full text-sm font-bold transition-colors ${
+                          currentPage === page ? "bg-brand-950 text-white" : "hover:bg-accent-100 text-slate-600"
                         }`}
                       >
                         {page}
                       </button>
                     );
                   }
-
-                  // Show ellipsis for gaps
-                  if (
-                    (page === 2 && currentPage > 3) ||
-                    (page === totalPages - 1 && currentPage < totalPages - 2)
-                  ) {
+                  if ((page === 2 && currentPage > 3) || (page === totalPages - 1 && currentPage < totalPages - 2)) {
                     return (
-                      <span key={page} className="px-2 text-slate-400">
-                        ...
-                      </span>
+                      <span key={page} className="px-1.5 text-gray-400 text-sm">...</span>
                     );
                   }
-
                   return null;
                 })}
               </div>
-
-              {/* Next Button */}
               <button
                 onClick={nextPage}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-11 h-11 rounded-full hover:bg-accent-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
               >
-                <FaChevronRight className="text-slate-600" />
+                <FaChevronRight className="text-gray-600 text-xs" />
               </button>
             </div>
           </div>
         )}
 
-        {/* ABOUT SECTION */}
-        <div className="mt-20 bg-white rounded-[32px] shadow-xl border border-slate-100 overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-10 lg:p-14">
-              <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold mb-5">
-                Medical Education
-              </span>
-
-              <h2 className="text-4xl font-black text-slate-900 leading-tight mb-6">
-                Why Study MBBS in {state.name}?
-              </h2>
-
-              <p className="text-slate-600 leading-relaxed mb-8">
-                Medical colleges in {state.name} offer high-quality
-                education, experienced faculty, modern hospitals, and
-                excellent clinical exposure for aspiring doctors.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  `${govtColleges} Government Medical Colleges`,
-                  `${privateColleges} Private Medical Colleges`,
-                  `${totalSeats} Total MBBS Seats`,
-                  "NEET Based Admission Process",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-6 h-6 rounded-lg bg-blue-600 flex items-center justify-center mt-0.5">
-                      <div className="w-2 h-2 rounded-lg bg-white"></div>
-                    </div>
-
-                    <p className="text-slate-700 font-medium">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative min-h-[400px]">
-              <img
-                src={state.image}
-                alt={state.name}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20"></div>
-
-              <div className="absolute bottom-10 left-10 right-10 text-white">
-                <h3 className="text-3xl font-black mb-4">
-                  Admission Guidance
-                </h3>
-
-                <p className="text-blue-100 leading-relaxed mb-6">
-                  Get complete counseling support for MBBS admissions,
-                  college selection, cutoff analysis, and NEET guidance.
-                </p>
-
-                <button
-                  onClick={openPopup}
-                  className="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3 rounded-2xl font-bold transition-all duration-300"
-                >
-                  Free Counseling
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Why-study strip */}
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
+          <SectionHeading
+              eyebrow="Medical Education"
+            title={`Why Study MBBS in ${state.name}?`}
+            description={`Medical colleges in ${state.name} offer high-quality education, experienced faculty, modern hospitals, and excellent clinical exposure for aspiring doctors.`}
+            className="mb-4"
+          />
+          <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+            {[
+              `${govtColleges} Government Medical Colleges`,
+              `${privateColleges} Private Medical Colleges`,
+              `${totalSeats} Total MBBS Seats`,
+              "NEET Based Admission Process",
+            ].map((item, index) => (
+              <li key={index} className="flex items-start gap-2 text-sm font-medium text-gray-600">
+                <FaCheckCircle className="mt-0.5 shrink-0 text-xs text-brand-950" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

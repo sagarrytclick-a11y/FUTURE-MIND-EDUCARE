@@ -5,10 +5,37 @@
   --foreground: #171717;
 }
 
+@theme {
+  /* Balanced site-wide type scale: readable body, prominent headings,
+     display sizes capped below Tailwind defaults to avoid oversized heroes */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.125rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.375rem;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.625rem;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.3125rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 2.125rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.5rem;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 2.75rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 3.625rem;
+  --text-6xl--line-height: 1.05;
+  --text-7xl: 4.25rem;
+  --text-7xl--line-height: 1.05;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-fira-sans);
   
   /* Standardized Brand Colors */
   --color-brand-50: #eff6ff;
@@ -18,10 +45,19 @@
   --color-brand-400: #60a5fa;
   --color-brand-500: #3b82f6;
   --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
+  --color-brand-700: #1e3a8a;
   --color-brand-800: #1e40af;
   --color-brand-900: #1e3a8a;
   --color-brand-950: #172554;
+
+  /* Yellow accent (headline highlights, pills, icon chips, CTAs) */
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-200: #fef08a;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #eab308;
+  --color-accent-600: #ca8a04;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,10 +69,62 @@
 
 body {
   background: #ffffff;
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: var(--font-fira-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Auto-scrolling marquee row (infinite loop, pauses on hover) */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 50s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }
 
 /* Custom scrollbar styles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -53,4 +141,35 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* ==========================================================================
+   STICKY OFFSET SYSTEM
+   --site-header-h is measured at runtime by components/Header.tsx so sticky
+   bars and anchor scrolling always clear the real header height (no gaps,
+   no overlap) across breakpoints, zoom levels and font-size changes.
+   ========================================================================== */
+:root {
+  --site-header-h: 102px;
+  --site-tabs-h: 69px;
+}
+
+/* Sit directly below the site header (e.g. secondary tab bar) */
+.top-header {
+  top: var(--site-header-h);
+}
+
+/* Sticky column with breathing room below the header */
+.top-header-gap {
+  top: calc(var(--site-header-h) + 1rem);
+}
+
+/* Anchor targets clear the header only */
+.scroll-mt-header {
+  scroll-margin-top: calc(var(--site-header-h) + 1rem);
+}
+
+/* Anchor targets clear header + secondary tab bar */
+.scroll-mt-header-tabs {
+  scroll-margin-top: calc(var(--site-header-h) + var(--site-tabs-h));
 }

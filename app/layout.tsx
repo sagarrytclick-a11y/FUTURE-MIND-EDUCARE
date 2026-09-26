@@ -1,16 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import { firaSans } from "./fonts";
 import "./globals.css";
 import { PopupProvider } from "@/contexts/PopupContext";
 import LayoutWrapper from "@/components/LayoutWrapper";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-  preload: true,
-});
 
 const siteUrl = "https://fmeducation.in";
 
@@ -122,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${firaSans.variable} h-full antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://i.pinimg.com" />

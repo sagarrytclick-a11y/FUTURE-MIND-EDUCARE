@@ -25,18 +25,18 @@ const NavigationMenu: React.FC = () => {
             <img
               src="/ar-group-logo.png"
               alt="Future Mind Educare"
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
-            <span className="ml-3 text-xl font-bold">Future Mind Educare</span>
+            <span className="ml-2.5 text-base font-bold">Future Mind Educare</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-1">
             {navigationItems.map((item, index) => (
               <a
                 key={index}
                 href={item.href}
-                className="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-white hover:text-blue-200 hover:bg-white/10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300"
               >
                 {item.name}
               </a>
@@ -47,9 +47,10 @@ const NavigationMenu: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-blue-200 p-2 rounded-md"
+              className="text-white hover:text-blue-200 p-2 rounded-xl"
+              aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6z"/>
                 ) : (
@@ -63,30 +64,30 @@ const NavigationMenu: React.FC = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-blue-900 shadow-2xl">
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-white text-xl font-bold">Menu</span>
+            <div className="p-5">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-white text-base font-bold">Menu</span>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-white hover:text-blue-200 p-2"
+                  aria-label="Close menu"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6z"/>
                   </svg>
                 </button>
               </div>
-            </div>
-
-            <div className="space-y-4">
-              {navigationItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="block text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  {item.name}
-                </a>
-              ))}
+              <div className="space-y-1">
+                {navigationItems.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.href}
+                    className="block text-white hover:text-blue-200 hover:bg-white/10 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}

@@ -5,17 +5,19 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
   FaArrowLeft,
+  FaArrowRight,
   FaGraduationCap,
   FaUniversity,
   FaGlobeAsia,
   FaMoneyBillWave,
   FaCheckCircle,
-  FaMapMarkerAlt,
-  FaStar,
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
+import PageHero from "@/components/PageHero";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 interface CollegeData {
   id: number;
@@ -97,10 +99,8 @@ const CountrySlugPage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-slate-600 font-medium">
-            Loading Country Details...
-          </p>
+          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm font-medium">Loading Country Details...</p>
         </div>
       </div>
     );
@@ -109,18 +109,12 @@ const CountrySlugPage: React.FC = () => {
   if (error || !country) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-        <div className="bg-white rounded-3xl shadow-xl p-10 text-center max-w-lg w-full">
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">
-            Country Not Found
-          </h1>
-
-          <p className="text-slate-600 mb-8">
-            {error || "Requested country does not exist"}
-          </p>
-
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 text-center max-w-lg w-full">
+          <h1 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-2">Country Not Found</h1>
+          <p className="text-sm text-gray-600 mb-5">{error || "Requested country does not exist"}</p>
           <Link
             href="/colleges/mbbs-abroad"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+            className="inline-flex items-center gap-2 h-11 px-6 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
           >
             <FaArrowLeft />
             Back to Countries
@@ -130,108 +124,57 @@ const CountrySlugPage: React.FC = () => {
     );
   }
 
+  const indexOfLastCollege = currentPage * collegesPerPage;
+  const indexOfFirstCollege = indexOfLastCollege - collegesPerPage;
+  const currentColleges = (country.colleges || []).slice(indexOfFirstCollege, indexOfLastCollege);
+  const totalPages = Math.ceil((country.colleges?.length || 0) / collegesPerPage);
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={country.image}
-            alt={country.name}
-            className="w-full h-full object-cover"
+      <PageHero
+        align="center"
+        variant="dark"
+        eyebrow="Study MBBS Abroad"
+        title={`MBBS in ${country.name}`}
+        description={country.description}
+        crumbs={[{ label: "Home", href: "/" }, { label: "MBBS Abroad", href: "/colleges/mbbs-abroad" }, { label: country.name }]}
+      />
+
+      <Section spacing="md">
+        {/* Fact strip */}
+        <div className="mb-5 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-4">
+          {[
+            { icon: FaUniversity, big: `${country.colleges?.length || 0}`, small: "Medical Colleges" },
+            { icon: FaGraduationCap, big: `${country.universities}`, small: "Universities" },
+            { icon: FaGlobeAsia, big: "WHO & NMC", small: "Recognition" },
+            { icon: FaMoneyBillWave, big: "Affordable", small: "Fee Structure" },
+          ].map((fact, i) => (
+            <div key={i} className="flex items-center gap-3 bg-white px-3 py-2.5">
+              <fact.icon className="shrink-0 text-sm text-brand-950" />
+              <div className="min-w-0">
+                <p className="truncate text-brand-950 font-extrabold tracking-tight text-base">{fact.big}</p>
+                <p className="text-xs text-gray-600">{fact.small}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mb-5 flex flex-col items-center gap-3 text-center">
+          <SectionHeading
+            align="center"
+            eyebrow="Top Medical Universities"
+            title={`Colleges in ${country.name}`}
+            className="mb-0"
           />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/80 to-blue-600/70"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <Link
-            href="/colleges/mbbs-abroad"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white mb-10 transition-all"
-          >
-            <FaArrowLeft />
-            Back to MBBS Abroad
-          </Link>
-
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-5 mb-6">
-              <img
-                src={country.flag}
-                alt={country.name}
-                className="w-20 h-14 rounded-xl object-cover border border-white/20 shadow-2xl"
-              />
-
-              <span className="bg-white/10 border border-white/20 text-white backdrop-blur-xl px-5 py-2 rounded-lg text-sm font-semibold">
-                Study MBBS Abroad
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-              MBBS in {country.name}
-            </h1>
-
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl">
-              {country.description}
-            </p>
-
-            {/* STATS */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-12">
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
-                <FaUniversity className="text-white text-2xl mb-3" />
-                <h3 className="text-3xl font-bold text-white">
-                  {country.colleges?.length || 0}
-                </h3>
-                <p className="text-white/70 text-sm">Medical Colleges</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
-                <FaGraduationCap className="text-white text-2xl mb-3" />
-                <h3 className="text-3xl font-bold text-white">
-                  {country.universities}
-                </h3>
-                <p className="text-white/70 text-sm">Universities</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
-                <FaGlobeAsia className="text-white text-2xl mb-3" />
-                <h3 className="text-xl font-bold text-white">
-                  WHO & NMC
-                </h3>
-                <p className="text-white/70 text-sm">Recognition</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
-                <FaMoneyBillWave className="text-white text-2xl mb-3" />
-                <h3 className="text-xl font-bold text-white">Affordable</h3>
-                <p className="text-white/70 text-sm">Fee Structure</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COLLEGES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
-          <div>
-            <p className="text-blue-600 font-semibold uppercase tracking-wider mb-2">
-              Top Medical Universities
-            </p>
-
-            <h2 className="text-4xl font-black text-slate-900">
-              Colleges in {country.name}
-            </h2>
-          </div>
-
           <button
             onClick={() => {
-              updateFormData({
-                courseInterest: `MBBS in ${country.name}`,
-              });
-
+              updateFormData({ courseInterest: `MBBS in ${country.name}` });
               openPopup();
             }}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-2xl font-semibold shadow-lg shadow-blue-600/30 transition-all hover:scale-105"
+            className="h-11 px-6 shrink-0 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
           >
             Free Counseling
           </button>
@@ -239,319 +182,180 @@ const CountrySlugPage: React.FC = () => {
 
         {country.colleges && country.colleges.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {(() => {
-                // Pagination logic
-                const indexOfLastCollege = currentPage * collegesPerPage;
-                const indexOfFirstCollege = indexOfLastCollege - collegesPerPage;
-                const currentColleges = country.colleges.slice(indexOfFirstCollege, indexOfLastCollege);
-                const totalPages = Math.ceil(country.colleges.length / collegesPerPage);
-
-                const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-                const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
-                const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
-
-                return (
-                  <>
-                    {currentColleges.map((college) => (
-              <div
-                key={college.id}
-                className="group bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-md hover:shadow-2xl transition-all duration-500"
-              >
-                {/* IMAGE */}
-                <div className="relative h-60 overflow-hidden">
-                  <img
-                    src={college.image}
-                    alt={college.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-
-                  <div className="absolute top-4 left-4 flex gap-2">
+            {/* COLLEGE CARD GRID */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {currentColleges.map((college) => (
+                <div
+                  key={college.id}
+                  className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
+                >
+                  <div className="relative h-40 overflow-hidden bg-slate-100">
+                    <img
+                      src={college.image}
+                      alt={college.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                     <span
-                      className={`px-3 py-1 rounded-lg text-xs font-bold ${
+                      className={`absolute left-2.5 top-2.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${
                         college.type === "Government"
-                          ? "bg-green-500 text-white"
-                          : "bg-blue-500 text-white"
+                          ? "bg-brand-950 text-white"
+                          : "bg-accent-400 text-brand-950"
                       }`}
                     >
                       {college.type}
                     </span>
-                  </div>
-
-                  {college.ranking && (
-                    <div className="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded-lg text-sm font-bold shadow-lg">
-                      {college.ranking}
-                    </div>
-                  )}
-
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex items-center gap-2 text-sm">
-                      <FaMapMarkerAlt />
-                      {college.city}
-                    </div>
-                  </div>
-                </div>
-
-                {/* CONTENT */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 leading-snug group-hover:text-blue-600 transition-colors">
-                    {college.name}
-                  </h3>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3">
-                      <span className="text-slate-500 font-medium">
-                        Tuition Fees
+                    {college.ranking && (
+                      <span className="absolute bottom-2.5 right-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase text-accent-600">
+                        {college.ranking}
                       </span>
+                    )}
+                  </div>
 
-                      <span className="font-bold text-blue-600">
+                  <div className="flex flex-1 flex-col p-4">
+                    <h3 className="text-brand-950 font-extrabold tracking-tight text-base leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-accent-600">
+                      {college.name}
+                    </h3>
+
+                    <p className="mt-1 inline-flex items-center gap-1.5 text-sm text-gray-600">
+                      <FaCheckCircle className="text-[11px] text-green-600" />
+                      WHO • English Medium
+                    </p>
+
+                    <div className="mt-3 rounded-2xl border border-accent-100 bg-accent-100/50 px-3 py-2.5">
+                      <p className="text-[10px] font-extrabold uppercase tracking-wide text-accent-600">
+                        Fees
+                      </p>
+                      <p className="text-sm font-extrabold text-brand-950 leading-snug break-words mt-0.5">
                         {college.fees}
-                      </span>
+                      </p>
                     </div>
 
-                    <div className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3">
-                      <span className="text-slate-500 font-medium">
-                        Available Seats
-                      </span>
-
-                      <span className="font-bold text-slate-900">
-                        {college.seats}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3">
-                      <span className="text-slate-500 font-medium">
-                        Recognition
-                      </span>
-
-                      <span className="font-bold text-slate-900">
-                        {college.recognition}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* FEATURES */}
-                  <div className="space-y-2 mb-6">
-                    {[
-                      "WHO Approved",
-                      "English Medium",
-                      "Global Degree",
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-2 text-sm text-slate-600"
+                    <div className="mt-2.5 flex items-center justify-between gap-2">
+                      <span className="text-xs text-gray-500 truncate">{college.recognition}</span>
+                      <button
+                        onClick={() => {
+                          updateFormData({ courseInterest: `${college.name} - ${country.name}` });
+                          openPopup();
+                        }}
+                        className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-brand-950 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-brand-900"
                       >
-                        <FaCheckCircle className="text-green-500" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* BUTTONS */}
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => {
-                        updateFormData({
-                          courseInterest: `${college.name} - ${country.name}`,
-                        });
-
-                        openPopup();
-                      }}
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all"
-                    >
-                      Apply Now
-                    </button>
-
-                    <button className="w-14 h-14 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-slate-100 transition-all">
-                      <FaStar className="text-yellow-500" />
-                    </button>
+                        Apply Now
+                        <FaArrowRight className="text-[10px]" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-                  </>
-                );
-              })()}
+              ))}
             </div>
 
-            {/* PAGINATION */}
-            {(() => {
-              const totalPages = Math.ceil((country.colleges?.length || 0) / collegesPerPage);
-              if (totalPages <= 1) return null;
-
-              const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-              const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
-              const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
-
-              return (
-                <div className="mt-12 flex items-center justify-center">
-                  <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-4 flex items-center gap-2">
-                    {/* Previous Button */}
-                    <button
-                      onClick={prevPage}
-                      disabled={currentPage === 1}
-                      className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <FaChevronLeft className="text-slate-600" />
-                    </button>
-
-                    {/* Page Numbers */}
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                        // Show first page, last page, current page, and pages around current
-                        if (
-                          page === 1 ||
-                          page === totalPages ||
-                          (page >= currentPage - 1 && page <= currentPage + 1)
-                        ) {
-                          return (
-                            <button
-                              key={page}
-                              onClick={() => paginate(page)}
-                              className={`w-10 h-10 rounded-lg font-semibold transition-colors ${
-                                currentPage === page
-                                  ? "bg-blue-600 text-white"
-                                  : "hover:bg-slate-50 text-slate-600"
-                              }`}
-                            >
-                              {page}
-                            </button>
-                          );
-                        }
-
-                        // Show ellipsis for gaps
-                        if (
-                          (page === 2 && currentPage > 3) ||
-                          (page === totalPages - 1 && currentPage < totalPages - 2)
-                        ) {
-                          return (
-                            <span key={page} className="px-2 text-slate-400">
-                              ...
-                            </span>
-                          );
-                        }
-
-                        return null;
-                      })}
-                    </div>
-
-                    {/* Next Button */}
-                    <button
-                      onClick={nextPage}
-                      disabled={currentPage === totalPages}
-                      className="p-2 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                      <FaChevronRight className="text-slate-600" />
-                    </button>
+            {totalPages > 1 && (
+              <div className="mt-6 flex items-center justify-center">
+                <div className="bg-white rounded-full border border-slate-200 p-2 flex items-center gap-1.5">
+                  <button
+                    onClick={prevPage}
+                    disabled={currentPage === 1}
+                    className="w-11 h-11 rounded-full hover:bg-accent-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                  >
+                    <FaChevronLeft className="text-gray-600 text-xs" />
+                  </button>
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                      if (page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)) {
+                        return (
+                          <button
+                            key={page}
+                            onClick={() => paginate(page)}
+                            className={`w-11 h-11 rounded-full text-sm font-bold transition-colors ${
+                              currentPage === page ? "bg-brand-950 text-white" : "hover:bg-accent-100 text-slate-600"
+                            }`}
+                          >
+                            {page}
+                          </button>
+                        );
+                      }
+                      if ((page === 2 && currentPage > 3) || (page === totalPages - 1 && currentPage < totalPages - 2)) {
+                        return (
+                          <span key={page} className="px-1.5 text-gray-400 text-sm">...</span>
+                        );
+                      }
+                      return null;
+                    })}
                   </div>
+                  <button
+                    onClick={nextPage}
+                    disabled={currentPage === totalPages}
+                    className="w-11 h-11 rounded-full hover:bg-accent-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                  >
+                    <FaChevronRight className="text-gray-600 text-xs" />
+                  </button>
                 </div>
-              );
-            })()}
+              </div>
+            )}
           </>
         ) : (
-          <div className="bg-white rounded-3xl p-12 text-center shadow-lg">
-            <h3 className="text-3xl font-bold text-slate-900 mb-4">
-              No Colleges Available
-            </h3>
-
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              Colleges for this country will be added soon. Please explore
-              other MBBS abroad destinations.
+          <div className="bg-white rounded-2xl p-5 text-center border border-slate-200">
+            <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-2">No Colleges Available</h3>
+            <p className="text-sm text-gray-600 mb-5 max-w-2xl mx-auto">
+              Colleges for this country will be added soon. Please explore other MBBS abroad destinations.
             </p>
-
             <Link
               href="/colleges/mbbs-abroad"
-              className="inline-flex bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-all"
+              className="inline-flex items-center justify-center h-11 px-6 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
             >
               Explore Other Countries
             </Link>
           </div>
         )}
-      </section>
 
-      {/* WHY STUDY */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-blue-600 font-semibold uppercase tracking-wider mb-3">
-              Benefits
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-1">World-Class Education</h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              Medical universities in {country.name} provide globally recognized MBBS degrees with advanced practical training, modern labs, and international exposure.
             </p>
-
-            <h2 className="text-4xl font-black text-slate-900">
-              Why Choose {country.name}?
-            </h2>
+            <ul className="space-y-2">
+              {[
+                "Internationally recognized degree",
+                "Experienced faculty members",
+                "Modern medical infrastructure",
+                "English medium education",
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                  <FaCheckCircle className="mt-0.5 shrink-0 text-xs text-brand-950" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-5">
-                World-Class Education
-              </h3>
-
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Medical universities in {country.name} provide globally
-                recognized MBBS degrees with advanced practical training,
-                modern labs, and international exposure.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  "Internationally recognized degree",
-                  "Experienced faculty members",
-                  "Modern medical infrastructure",
-                  "English medium education",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 text-slate-700"
-                  >
-                    <FaCheckCircle className="text-green-500 mt-1" />
-                    {item}
-                  </div>
-                ))}
-              </div>
+          <div className="rounded-2xl border border-blue-100 bg-accent-100 p-5">
+            <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-1">Affordable MBBS Abroad</h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              Compared to private colleges in India and Western countries, studying MBBS in {country.name} is highly affordable with quality education and global opportunities.
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {[
+                "Affordable tuition fees",
+                "Lower living expenses",
+                "Scholarship opportunities",
+                "High FMGE passing support",
+              ].map((item, index) => (
+                <span key={index} className="inline-flex items-center gap-1.5 text-sm text-gray-600">
+                  <FaCheckCircle className="text-xs text-brand-950" />
+                  {item}
+                </span>
+              ))}
             </div>
-
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-5">
-                Affordable MBBS Abroad
-              </h3>
-
-              <p className="text-white/80 leading-relaxed mb-6">
-                Compared to private colleges in India and Western countries,
-                studying MBBS in {country.name} is highly affordable with
-                quality education and global opportunities.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  "Affordable tuition fees",
-                  "Lower living expenses",
-                  "Scholarship opportunities",
-                  "High FMGE passing support",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3"
-                  >
-                    <FaCheckCircle className="text-green-300 mt-1" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => openPopup()}
-                className="mt-8 bg-white text-blue-700 hover:bg-slate-100 px-6 py-3 rounded-2xl font-bold transition-all"
-              >
-                Get Free Admission Guidance
-              </button>
-            </div>
+            <button
+              onClick={() => openPopup()}
+              className="mt-4 h-11 px-6 bg-brand-950 text-white hover:bg-brand-900 rounded-full text-sm font-bold transition-colors"
+            >
+              Get Free Admission Guidance
+            </button>
           </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

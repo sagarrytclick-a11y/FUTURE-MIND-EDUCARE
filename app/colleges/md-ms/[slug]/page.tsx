@@ -7,12 +7,14 @@ import {
   FaArrowLeft,
   FaCheckCircle,
   FaUniversity,
-  FaPhoneAlt,
   FaUserMd,
   FaMapMarkerAlt,
   FaArrowRight,
 } from "react-icons/fa";
 import { usePopup } from "@/contexts/PopupContext";
+import PageHero from "@/components/PageHero";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 interface CollegeData {
   id: number;
@@ -100,8 +102,8 @@ const MdMsStatePage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <div className="h-14 w-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-slate-600 font-medium">Loading MD/MS Details...</p>
+          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm font-medium">Loading MD/MS Details...</p>
         </div>
       </div>
     );
@@ -110,12 +112,12 @@ const MdMsStatePage: React.FC = () => {
   if (error || !stateData) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-        <div className="bg-white rounded-3xl shadow-xl p-10 text-center max-w-lg w-full">
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">Not Found</h1>
-          <p className="text-slate-600 mb-8">{error || "Requested details do not exist"}</p>
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 text-center max-w-lg w-full">
+          <h1 className="text-brand-950 font-extrabold tracking-tight text-xl sm:text-2xl mb-2">Not Found</h1>
+          <p className="text-sm text-gray-600 mb-6">{error || "Requested details do not exist"}</p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+            className="inline-flex items-center gap-2 h-11 px-6 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
           >
             <FaArrowLeft /> Back to Home
           </Link>
@@ -128,282 +130,214 @@ const MdMsStatePage: React.FC = () => {
   const privateColleges = stateData.colleges.filter((c) => c.type === "Private");
 
   const mdSpecializations = [
-    "General Medicine", "Pediatrics", "Dermatology", "Anesthesiology", 
-    "Radiology", "Pathology", "Psychiatry", "Microbiology", 
-    "Physiology", "Biochemistry", "Pharmacology"
+    "General Medicine", "Pediatrics", "Dermatology", "Anesthesiology",
+    "Radiology", "Pathology", "Psychiatry", "Microbiology",
   ];
 
   const msSpecializations = [
-    "General Surgery", "Orthopedics", "Ophthalmology", 
+    "General Surgery", "Orthopedics", "Ophthalmology",
     "ENT (Ear, Nose, and Throat)", "Obstetrics and Gynecology", "Plastic Surgery"
   ];
 
-  return (
-    <div className="min-h-screen bg-white pb-20">
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 bg-[#0F172A] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')]"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-600/20 to-transparent"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-white mb-8 transition-all font-bold group text-sm uppercase tracking-widest"
-          >
-            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Home
-          </Link>
-          
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-tighter">
-                Postgraduate Medical
-              </span>
-              <div className="h-px w-12 bg-blue-500/50"></div>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tight">
-              MD / MS in <span className="text-blue-500">{stateData.name}</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-3xl font-medium">
-              {stateData.description}
-            </p>
+  const totalSeats = stateData.colleges.reduce((acc, curr) => acc + (curr.seats || 0), 0);
 
-            <div className="flex flex-wrap gap-6 mt-12">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10">
-                  <FaUniversity className="text-blue-500" />
-                </div>
-                <div>
-                  <div className="text-2xl font-black">{stateData.colleges.length}</div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-widest">Colleges</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10">
-                  <FaUserMd className="text-blue-500" />
-                </div>
-                <div>
-                  <div className="text-2xl font-black">
-                    {stateData.colleges.reduce((acc, curr) => acc + (curr.seats || 0), 0)}+
-                  </div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-widest">Total Seats</div>
-                </div>
-              </div>
+  const renderCollegeCard = (college: CollegeData, badge: string) => (
+    <Link
+      key={college.id}
+      href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
+      className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
+    >
+      <div className="relative h-40 overflow-hidden bg-slate-100">
+        <img
+          src={college.image || "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop"}
+          alt={college.name}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <span
+          className={`absolute left-2.5 top-2.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${
+            badge === "Govt" ? "bg-brand-950 text-white" : "bg-accent-400 text-brand-950"
+          }`}
+        >
+          {badge === "Govt" ? "Government" : "Private"}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="text-brand-950 font-extrabold tracking-tight text-base leading-snug line-clamp-2 transition-colors duration-300 group-hover:text-accent-600">
+          {college.name}
+        </h3>
+
+        <p className="mt-1 flex items-center gap-1 text-sm text-gray-600 truncate">
+          <FaMapMarkerAlt className="text-xs text-accent-600 shrink-0" />
+          {college.city}
+        </p>
+
+        <div className="mt-3 rounded-2xl border border-accent-100 bg-accent-100/50 px-3 py-2.5">
+          <p className="text-[10px] font-extrabold uppercase tracking-wide text-accent-600">
+            Fees
+          </p>
+          <p className="text-sm font-extrabold text-brand-950 leading-snug break-words mt-0.5">
+            {college.fees}
+          </p>
+        </div>
+
+        <div className="mt-2.5 flex items-center justify-between gap-2">
+          <span className="text-xs text-gray-500">{college.seats || "—"} seats</span>
+          <span className="inline-flex items-center gap-1 text-sm font-bold text-accent-600">
+            View
+            <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <PageHero
+        align="center"
+        variant="dark"
+        eyebrow="Postgraduate Medical"
+        title={`MD / MS in ${stateData.name}`}
+        description={stateData.description}
+        crumbs={[{ label: "Home", href: "/" }, { label: "MD/MS", href: "/colleges/md-ms" }, { label: stateData.name }]}
+      />
+
+      <Section spacing="md">
+        <div className="grid grid-cols-2 gap-3 max-w-xl mb-8">
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-accent-100 flex items-center justify-center shrink-0">
+              <FaUniversity className="text-brand-950 text-sm" />
+            </div>
+            <div>
+              <div className="text-brand-950 font-extrabold tracking-tight text-xl">{stateData.colleges.length}</div>
+              <div className="text-xs text-gray-600 font-medium">Colleges</div>
+            </div>
+          </div>
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-accent-100 flex items-center justify-center shrink-0">
+              <FaUserMd className="text-brand-950 text-sm" />
+            </div>
+            <div>
+              <div className="text-brand-950 font-extrabold tracking-tight text-xl">{totalSeats}+</div>
+              <div className="text-xs text-gray-600 font-medium">Total Seats</div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* CARDS SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-        <div className="space-y-16">
-
-          {/* GOVT COLLEGES */}
+        <div className="space-y-8">
           <div>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
-                  <FaUniversity className="text-xs" />
-                  Government
-                </div>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                  Government <span className="text-blue-600">Medical Colleges</span>
-                </h2>
-                <p className="text-slate-500 mt-2 font-medium">Top-ranked government medical colleges in {stateData.name}.</p>
-              </div>
+            <div className="mb-5 flex flex-col items-center gap-3 text-center">
+              <SectionHeading
+                align="center"
+                    eyebrow="Government"
+                title={<>Government <span className="text-accent-600">Medical Colleges</span></>}
+                description={`Top-ranked government medical colleges in ${stateData.name}.`}
+                className="mb-0"
+              />
               <button
                 onClick={() => {
                   updateFormData({ courseInterest: `MD/MS Govt - ${stateData.name}` });
                   openPopup();
                 }}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-black transition-all shadow-xl shadow-blue-600/20 active:scale-95"
+                className="h-11 px-6 shrink-0 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
               >
                 Admission Guidance
               </button>
             </div>
 
             {govtColleges.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {govtColleges.map((college) => (
-                  <Link
-                    key={college.id}
-                    href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
-                    className="group bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="relative h-40 overflow-hidden">
-                      <img
-                        src={college.image || "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop"}
-                        alt={college.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none';
-                          (e.target as HTMLImageElement).parentElement!.classList.add('bg-gradient-to-br', 'from-green-600', 'to-emerald-700');
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <span className="absolute top-3 left-3 text-xs font-bold text-white bg-green-600/90 px-2.5 py-1 rounded-lg uppercase tracking-wider backdrop-blur-sm">
-                        Govt
-                      </span>
-                      <FaArrowRight className="absolute bottom-3 right-3 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all text-sm" />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-blue-600 transition-colors leading-snug">
-                        {college.name}
-                      </h3>
-                      <p className="text-xs text-slate-500 flex items-center gap-1 mb-4">
-                        <FaMapMarkerAlt className="text-blue-500" />
-                        {college.city}
-                      </p>
-                      <div className="flex items-end justify-between pt-3 border-t border-slate-100">
-                        <div>
-                          <div className="text-xs text-slate-400 font-medium">Fee / Year</div>
-                          <div className="text-lg font-bold text-blue-600">{college.fees}</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xs text-slate-400 font-medium">Seats</div>
-                          <div className="text-lg font-bold text-slate-900">{college.seats || "—"}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {govtColleges.map((college) => renderCollegeCard(college, "Govt"))}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-12 text-center">
-                <FaUniversity className="text-5xl mx-auto text-slate-300 mb-3" />
-                <p className="text-slate-400 font-semibold">No government colleges available for {stateData.name}.</p>
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center">
+                <FaUniversity className="text-3xl mx-auto text-gray-300 mb-2" />
+                <p className="text-sm text-gray-600 font-medium">No government colleges available for {stateData.name}.</p>
               </div>
             )}
           </div>
 
-          {/* PRIVATE COLLEGES */}
           <div>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-                  <FaUniversity className="text-xs" />
-                  Private
-                </div>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                  Private <span className="text-blue-600">Medical Colleges</span>
-                </h2>
-                <p className="text-slate-500 mt-2 font-medium">Leading private medical colleges in {stateData.name}.</p>
-              </div>
+            <div className="mb-5 flex flex-col items-center gap-3 text-center">
+              <SectionHeading
+                align="center"
+                eyebrow="Private"
+                title={<>Private <span className="text-accent-600">Medical Colleges</span></>}
+                description={`Leading private medical colleges in ${stateData.name}.`}
+                className="mb-0"
+              />
               <button
                 onClick={() => {
                   updateFormData({ courseInterest: `MD/MS Private - ${stateData.name}` });
                   openPopup();
                 }}
-                className="bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-2xl font-black transition-all shadow-xl active:scale-95"
+                className="h-11 px-6 shrink-0 bg-brand-950 hover:bg-brand-900 text-white rounded-full text-sm font-bold transition-colors"
               >
                 Check Cut-off
               </button>
             </div>
 
             {privateColleges.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {privateColleges.map((college) => (
-                  <Link
-                    key={college.id}
-                    href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}
-                    className="group bg-white rounded-2xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="relative h-40 overflow-hidden">
-                      <img
-                        src={college.image || "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop"}
-                        alt={college.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none';
-                          (e.target as HTMLImageElement).parentElement!.classList.add('bg-gradient-to-br', 'from-blue-600', 'to-indigo-700');
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <span className="absolute top-3 left-3 text-xs font-bold text-white bg-blue-600/90 px-2.5 py-1 rounded-lg uppercase tracking-wider backdrop-blur-sm">
-                        Private
-                      </span>
-                      <FaArrowRight className="absolute bottom-3 right-3 text-white/70 group-hover:text-white group-hover:translate-x-1 transition-all text-sm" />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-bold text-slate-900 text-base mb-1 group-hover:text-blue-600 transition-colors leading-snug">
-                        {college.name}
-                      </h3>
-                      <p className="text-xs text-slate-500 flex items-center gap-1 mb-4">
-                        <FaMapMarkerAlt className="text-blue-500" />
-                        {college.city}
-                      </p>
-                      <div className="flex items-end justify-between pt-3 border-t border-slate-100">
-                        <div>
-                          <div className="text-xs text-slate-400 font-medium">Fee / Year</div>
-                          <div className="text-lg font-bold text-blue-600">{college.fees}</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xs text-slate-400 font-medium">Seats</div>
-                          <div className="text-lg font-bold text-slate-900">{college.seats || "—"}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {privateColleges.map((college) => renderCollegeCard(college, "Private"))}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-12 text-center">
-                <FaUniversity className="text-5xl mx-auto text-slate-300 mb-3" />
-                <p className="text-slate-400 font-semibold">No private colleges data available for {stateData.name}.</p>
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center">
+                <FaUniversity className="text-3xl mx-auto text-gray-300 mb-2" />
+                <p className="text-sm text-gray-600 font-medium">No private colleges data available for {stateData.name}.</p>
               </div>
             )}
           </div>
         </div>
 
-        {/* SPECIALIZATIONS GRID */}
-        <div className="grid lg:grid-cols-3 gap-8 pt-12">
-          <div className="lg:col-span-1 bg-slate-900 rounded-[40px] p-10 text-white flex flex-col justify-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 rounded-full -mr-16 -mt-16 blur-2xl"></div>
-            <h3 className="text-4xl font-black mb-6 leading-tight">Available <br /><span className="text-blue-500">Clinical Courses</span></h3>
-            <p className="text-slate-400 font-medium leading-relaxed mb-8">
+        <div className="grid lg:grid-cols-3 gap-4 pt-8">
+          <div className="bg-brand-950 rounded-2xl p-5 text-white flex flex-col justify-center">
+            <h3 className="text-brand-950 font-extrabold tracking-tight text-xl sm:text-2xl !text-white mb-2 leading-tight">Available <span className="text-accent-400">Clinical Courses</span></h3>
+            <p className="text-sm text-gray-300 font-medium leading-relaxed mb-4">
               Explore the wide range of specializations available for MD and MS programs in {stateData.name}.
             </p>
-            <div className="mt-auto">
-              <button 
-                onClick={() => openPopup()}
-                className="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-blue-500 hover:text-white transition-all"
-              >
-                Specialization Inquiry
-              </button>
-            </div>
+            <button
+              onClick={() => openPopup()}
+              className="w-full h-11 rounded-full bg-white text-brand-950 text-sm font-bold hover:bg-accent-100 transition-colors"
+            >
+              Specialization Inquiry
+            </button>
           </div>
 
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-[40px] p-10 shadow-xl border border-slate-100">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center">
-                  <FaUserMd className="text-blue-600 text-2xl" />
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center shrink-0">
+                  <FaUserMd className="text-brand-950" />
                 </div>
-                <h4 className="text-2xl font-black text-slate-900">MD Courses</h4>
+                <h4 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg">MD Courses</h4>
               </div>
-              <ul className="space-y-4">
-                {mdSpecializations.slice(0, 8).map((spec, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-600 font-bold text-sm">
-                    <FaCheckCircle className="text-green-500 flex-shrink-0" />
+              <ul className="space-y-2.5">
+                {mdSpecializations.map((spec, i) => (
+                  <li key={i} className="flex items-center gap-2 text-gray-600 font-medium text-sm">
+                    <FaCheckCircle className="text-brand-950 flex-shrink-0 text-xs" />
                     {spec}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-white rounded-[40px] p-10 shadow-xl border border-slate-100">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center">
-                  <FaUniversity className="text-blue-600 text-2xl" />
+            <div className="bg-white rounded-2xl p-5 border border-slate-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center shrink-0">
+                  <FaUniversity className="text-brand-950" />
                 </div>
-                <h4 className="text-2xl font-black text-slate-900">MS Courses</h4>
+                <h4 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg">MS Courses</h4>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-2.5">
                 {msSpecializations.map((spec, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-600 font-bold text-sm">
-                    <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                  <li key={i} className="flex items-center gap-2 text-gray-600 font-medium text-sm">
+                    <FaCheckCircle className="text-brand-950 flex-shrink-0 text-xs" />
                     {spec}
                   </li>
                 ))}
@@ -411,9 +345,7 @@ const MdMsStatePage: React.FC = () => {
             </div>
           </div>
         </div>
-
-      
-      </section>
+      </Section>
     </div>
   );
 };

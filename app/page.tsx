@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
 import MbbsCard from "@/components/MbbsCard";
 
-const FlagSlider = dynamic(() => import("@/components/FlagSlider"));
 const TopCountriesSection = dynamic(() => import("@/components/TopCountriesSection"));
 const WhoWeAre = dynamic(() => import("@/components/WhoWeAre"));
 const ProgressInNumbers = dynamic(() => import("@/components/ProgressInNumbers"));
@@ -22,7 +21,6 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <HeroSection />
       <MbbsCard />
-      <FlagSlider />
       <TopCountriesSection />
       <WhoWeAre />
       <ProgressInNumbers />

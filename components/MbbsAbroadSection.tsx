@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp, FaSearch, FaFilter } from 'react-icons/fa';
+import Section from './Section';
+import SectionHeading from './SectionHeading';
 
 interface College {
   id: number;
@@ -34,11 +36,7 @@ const MbbsAbroadSection: React.FC = () => {
   const [hoveredCountry, setHoveredCountry] = useState<number | null>(null);
   const [hoveredCountryData, setHoveredCountryData] = useState<Country | null>(null);
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
-
-  const fetchCountries = async () => {
+  async function fetchCountries() {
     try {
       const response = await fetch('/mbbs-abroad.json');
       const data = await response.json();
@@ -48,7 +46,15 @@ const MbbsAbroadSection: React.FC = () => {
       console.error('Error fetching countries:', error);
       setLoading(false);
     }
-  };
+  }
+
+  useEffect(() => {
+    const load = async () => {
+      await fetchCountries();
+    };
+
+    load();
+  }, []);
 
   const filteredCountries = countries.filter(country =>
     country.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -60,7 +66,7 @@ const MbbsAbroadSection: React.FC = () => {
 
   const handleCountryHover = async (countryId: number) => {
     setHoveredCountry(countryId);
-    
+
     // Find the country data
     const country = countries.find(c => c.id === countryId);
     if (country) {
@@ -75,173 +81,164 @@ const MbbsAbroadSection: React.FC = () => {
 
   if (loading) {
     return (
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading countries and colleges...</p>
+      <Section spacing="md" className="bg-slate-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-brand-950 mx-auto"></div>
+          <p className="mt-3 text-sm text-gray-600">Loading countries and colleges...</p>
         </div>
-      </section>
+      </Section>
     );
   }
 
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-            Study MBBS <span className="text-blue-600">Abroad</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
-            Explore top medical universities across the globe. Get quality education at affordable fees 
-            with globally recognized degrees and excellent career opportunities.
-          </p>
-          <div className="mt-4 w-24 h-1.5 bg-blue-600 mx-auto rounded-lg"></div>
-        </div>
+    <Section spacing="md" className="bg-slate-50">
+        <SectionHeading
+          eyebrow="Global Medical Universities"
+          title={<>Study MBBS <span className="text-accent-600">Abroad</span></>}
+          description="Explore top medical universities across the globe. Quality education at affordable fees with globally recognized degrees."
+        />
 
-        {/* Search and Filter */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4 items-center justify-center">
-          <div className="relative w-full md:w-96">
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        {/* Slim pill filter bar */}
+        <div className="mb-4 flex flex-col sm:flex-row gap-2 bg-white border border-slate-200 rounded-full p-2">
+          <div className="relative flex-1">
+            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs" />
             <input
               type="text"
               placeholder="Search countries..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full h-11 pl-10 pr-4 text-sm border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-800 bg-white"
             />
           </div>
-          <button className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-            <FaFilter />
+          <button className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 text-white text-sm font-bold transition-colors shrink-0">
+            <FaFilter className="text-xs" />
             Filter
           </button>
         </div>
 
-        {/* Countries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Results count */}
+        <p className="mb-3 text-sm text-gray-600">
+          Found <span className="font-bold text-brand-950">{filteredCountries.length}</span> countries
+        </p>
+
+        {/* Compact horizontal rows */}
+        <div className="space-y-2.5">
           {filteredCountries.map((country) => (
-            <div
+            <article
               key={country.id}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative"
+              className="bg-white border border-slate-200 rounded-2xl p-3 sm:p-4"
               onMouseEnter={() => handleCountryHover(country.id)}
               onMouseLeave={handleCountryLeave}
             >
-              {/* Country Image with Overlay */}
-              <div className="relative h-48">
+              <div className="flex items-center gap-3">
                 <img
                   src={country.image}
                   alt={`Study in ${country.name}`}
-                  className="w-full h-full object-cover"
+                  className="w-28 h-20 rounded-lg object-cover shrink-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-lg text-sm font-semibold">
-                    {country.universities}+ Universities
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={country.flag}
+                      alt={`${country.name} Flag`}
+                      className="w-5 h-3.5 rounded-sm shrink-0"
+                    />
+                    <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg truncate">{country.name}</h3>
                   </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex items-center gap-2 mb-2">
-                      <img
-                        src={country.flag}
-                        alt={`${country.name} Flag`}
-                        className="w-8 h-6 rounded-sm"
-                      />
-                      <h3 className="text-xl font-bold">{country.name}</h3>
-                    </div>
-                    <p className="text-sm opacity-90">{country.description}</p>
+                  <p className="text-gray-600 text-sm line-clamp-1">{country.description}</p>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-2">
+                    <span className="bg-accent-100 text-accent-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                      {country.universities}+ Universities
+                    </span>
+                    <span className="bg-slate-100 text-slate-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">{country.courses}</span>
                   </div>
                 </div>
+                <button
+                  onClick={() => toggleCountryExpansion(country.id)}
+                  className="hidden sm:inline-flex items-center gap-1 h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 text-white font-bold text-sm transition-colors shrink-0"
+                >
+                  {expandedCountry === country.id ? 'Hide' : 'View'}
+                  {expandedCountry === country.id ? <FaChevronUp className="text-xs" /> : <FaChevronDown className="text-xs" />}
+                </button>
               </div>
 
-              {/* Hover Dropdown */}
+              <button
+                onClick={() => toggleCountryExpansion(country.id)}
+                className="mt-2.5 inline-flex sm:hidden items-center gap-1 text-brand-950 hover:text-brand-950 font-bold text-sm"
+              >
+                {expandedCountry === country.id ? 'Hide' : 'View'} Colleges
+                {expandedCountry === country.id ? <FaChevronUp className="text-xs" /> : <FaChevronDown className="text-xs" />}
+              </button>
+
+              {/* Hover preview */}
               {hoveredCountry === country.id && hoveredCountryData && (
-                <div className="absolute top-full left-0 right-0 bg-white shadow-xl border-t-2 border-blue-600 z-20">
-                  <div className="p-4 max-h-64 overflow-y-auto">
-                    <h4 className="font-bold text-gray-900 mb-3 text-sm">Top Universities:</h4>
-                    <div className="space-y-2">
-                      {hoveredCountryData.colleges.slice(0, 4).map((college) => (
-                        <div key={college.id} className="flex items-center justify-between p-2 bg-gray-50 rounded hover:bg-gray-100 transition-colors">
-                          <div className="flex items-center space-x-2">
-                            <img
-                              src={college.image}
-                              alt={college.name}
-                              className="w-8 h-8 rounded object-cover"
-                            />
-                            <div>
-                              <div className="text-xs font-medium text-gray-900">{college.name}</div>
-                              <div className="text-xs text-gray-500">{college.city}</div>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-xs text-blue-600 font-semibold">{college.fees}</div>
-                            <div className="text-xs text-gray-500">{college.duration}</div>
+                <div className="mt-3 border-t border-slate-200 pt-3">
+                  <h4 className="font-extrabold text-brand-950 mb-2 text-sm tracking-tight">Top Universities:</h4>
+                  <div className="space-y-1.5">
+                    {hoveredCountryData.colleges.slice(0, 4).map((college) => (
+                      <div key={college.id} className="flex items-center justify-between gap-2 p-2 bg-slate-50 rounded-lg">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <img
+                            src={college.image}
+                            alt={college.name}
+                            className="w-8 h-8 rounded-lg object-cover shrink-0"
+                          />
+                          <div className="min-w-0">
+                            <div className="text-xs font-bold text-brand-950 truncate">{college.name}</div>
+                            <div className="text-xs text-gray-600">{college.city}</div>
                           </div>
                         </div>
-                      ))}
-                      {hoveredCountryData.colleges.length > 4 && (
-                        <div className="text-xs text-center text-gray-500 italic py-2">
-                          +{hoveredCountryData.colleges.length - 4} more universities
+                        <div className="text-right shrink-0">
+                          <div className="text-xs text-brand-950 font-bold">{college.fees}</div>
+                          <div className="text-xs text-gray-600">{college.duration}</div>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    ))}
+                    {hoveredCountryData.colleges.length > 4 && (
+                      <div className="text-xs text-center text-gray-600 italic py-1">
+                        +{hoveredCountryData.colleges.length - 4} more universities
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
 
-              {/* Country Info */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-gray-500">{country.courses}</span>
-                  <button
-                    onClick={() => toggleCountryExpansion(country.id)}
-                    className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1"
-                  >
-                    {expandedCountry === country.id ? 'Hide' : 'Show'} Colleges
-                    {expandedCountry === country.id ? <FaChevronUp /> : <FaChevronDown />}
-                  </button>
-                </div>
-
-                {/* Colleges List */}
-                {expandedCountry === country.id && (
-                  <div className="mt-4 space-y-3 border-t pt-4">
-                    {country.colleges.map((college) => (
-                      <div
-                        key={college.id}
-                        className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors cursor-pointer"
-                      >
-                        <div className="flex items-start gap-3">
-                          <img
-                            src={college.image}
-                            alt={college.name}
-                            className="w-16 h-16 rounded-lg object-cover"
-                          />
-                          <div className="flex-1">
-                            <h4 className="font-bold text-gray-900 mb-1">{college.name}</h4>
-                            <p className="text-sm text-gray-600 mb-2">{college.city}</p>
-                            <div className="flex flex-wrap gap-2 text-xs">
-                              <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                                {college.fees}
-                              </span>
-                              <span className="bg-green-100 text-green-800 px-2 py-1 rounded">
-                                {college.duration}
-                              </span>
-                              <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded">
-                                {college.ranking}
-                              </span>
-                            </div>
-                          </div>
+              {/* Colleges list */}
+              {expandedCountry === country.id && (
+                <div className="mt-3 space-y-2 border-t border-slate-200 pt-3">
+                  {country.colleges.map((college) => (
+                    <div
+                      key={college.id}
+                      className="flex items-center gap-3 bg-slate-50 rounded-2xl p-2.5 hover:bg-slate-100 transition-colors cursor-pointer"
+                    >
+                      <img
+                        src={college.image}
+                        alt={college.name}
+                        className="w-14 h-14 rounded-lg object-cover shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-extrabold text-sm text-brand-950 tracking-tight truncate">{college.name}</h4>
+                        <p className="text-gray-600 text-sm">{college.city}</p>
+                        <div className="mt-1.5 flex flex-wrap gap-1.5">
+                          <span className="bg-accent-100 text-accent-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                            {college.fees}
+                          </span>
+                          <span className="bg-slate-100 text-slate-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                            {college.duration}
+                          </span>
+                          <span className="bg-slate-100 text-slate-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                            {college.ranking}
+                          </span>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </article>
           ))}
         </div>
-
-
-        
-      </div>
-    </section>
+    </Section>
   );
 };
 

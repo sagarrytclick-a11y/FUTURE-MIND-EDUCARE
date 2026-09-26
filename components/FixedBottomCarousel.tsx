@@ -29,36 +29,36 @@ const FixedBottomCarousel: React.FC = () => {
     <>
       <div className="fixed bottom-0 left-0 right-0 z-50">
         <div className="relative overflow-hidden border-t border-white/10 bg-[#071226]/95 backdrop-blur-xl shadow-2xl">
-          
-          {/* Glow */}
-          <div className="absolute -left-10 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-blue-500/20 blur-2xl sm:blur-3xl"></div>
-          <div className="absolute right-0 top-0 h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-cyan-400/20 blur-2xl sm:blur-3xl"></div>
 
-          <div className="relative py-1.5 sm:py-2">
+          {/* Glow */}
+          <div className="absolute -left-10 top-0 h-14 w-14 rounded-2xl bg-brand-900/20 blur-2xl"></div>
+          <div className="absolute right-0 top-0 h-14 w-14 rounded-2xl bg-accent-400/20 blur-2xl"></div>
+
+          <div className="relative py-1.5">
             <div className="overflow-hidden">
-              <div className="flex animate-marquee gap-2 sm:gap-3 w-max px-2 sm:px-3">
+              <div className="flex animate-marquee gap-2 w-max px-2">
                 {duplicatedStates.map((state, index) => (
                   <button
                     key={index}
-                    className="group flex items-center gap-1.5 sm:gap-2 rounded-lg border border-white/10 bg-white/5 px-2 sm:px-3 py-1 sm:py-1.5 text-white transition-all duration-300 hover:bg-blue-600 hover:border-blue-500"
+                    className="group flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-2.5 py-1 text-white transition-colors hover:bg-brand-950 hover:border-brand-900"
                   >
                     {/* Icon */}
-                    <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-lg bg-white/10">
-                      <FaPaperPlane className="text-[8px] sm:text-[10px]" />
+                    <div className="flex h-5 w-5 items-center justify-center rounded-lg bg-white/10">
+                      <FaPaperPlane className="text-[8px]" />
                     </div>
 
                     {/* Text */}
-                    <div className="flex items-center gap-0.5 sm:gap-1">
-                      <span className="text-[10px] sm:text-xs text-gray-300">
+                    <div className="flex items-center gap-1">
+                      <span className="text-[10px] text-gray-300">
                         MBBS in
                       </span>
 
-                      <span className="text-xs sm:text-sm font-semibold text-white">
+                      <span className="text-xs font-semibold text-white">
                         {state}
                       </span>
                     </div>
 
-                    <FaArrowRight className="text-[8px] sm:text-[10px] opacity-70 group-hover:translate-x-1 transition-transform" />
+                    <FaArrowRight className="text-[8px] opacity-70 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 ))}
               </div>

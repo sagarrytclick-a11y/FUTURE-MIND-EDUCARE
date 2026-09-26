@@ -12,7 +12,9 @@ export const SITE_IDENTITY = {
   contact: {
     phone: "9920798988",
     email: "edufuturemind@gmail.com",
-    googleMapsUrl: "https://share.google/dC4lF88Hsoic16fzR"
+    googleMapsUrl: "https://share.google/dC4lF88Hsoic16fzR",
+    googleBusinessUrl:
+      "https://www.google.com/maps/place/Future+Mind+Educare/data=!4m2!3m1!1s0x0:0x39c36e0b1f01bbb2?sa=X&ved=1t:2428&ictx=111"
   },
   officeHours: {
     mondayToSaturday: "10:00 AM - 8:00 PM",

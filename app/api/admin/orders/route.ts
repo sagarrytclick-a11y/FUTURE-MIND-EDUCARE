@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
 
     const skip = (page - 1) * limit;
 
-    let query: any = {};
+    const query: Record<string, unknown> = {};
 
     if (status && status !== 'all') {
       query.status = status;

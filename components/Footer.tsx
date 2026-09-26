@@ -57,26 +57,38 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#071B3B] text-white pt-20 pb-8 px-4 relative overflow-hidden">
-
-      {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 blur-3xl rounded-lg"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-400/10 blur-3xl rounded-lg"></div>
+    <footer className="bg-brand-950 text-white pt-12 pb-6 px-4 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
 
+        {/* Top stats strip */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-white/10 pb-8 mb-10 text-center">
+          <div>
+            <div className="text-2xl font-extrabold text-white">5000<span className="text-accent-400">+</span></div>
+            <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-slate-400">Students Counselled</div>
+          </div>
+          <div>
+            <div className="text-2xl font-extrabold text-white">15<span className="text-accent-400">+</span></div>
+            <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-slate-400">Years Experience</div>
+          </div>
+          <div>
+            <div className="text-2xl font-extrabold text-white">50<span className="text-accent-400">+</span></div>
+            <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-slate-400">Partner Colleges</div>
+          </div>
+        </div>
+
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/10 pb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-white/10 pb-10">
 
           {/* Company */}
           <div>
             <img
               src="/logo.png"
               alt="Future Mind Educare"
-              className="h-16 w-auto mb-5"
+              className="h-12 w-auto mb-4"
             />
 
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">
               FUTURE MIND EDUCARE helps students achieve their dream of
               studying MBBS in India & Abroad with expert counseling,
               admission support, and visa guidance.
@@ -84,7 +96,7 @@ const Footer: React.FC = () => {
 
             <button
               onClick={openPopup}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 text-white text-sm font-bold transition-colors"
             >
               Get Free Counseling
             </button>
@@ -92,16 +104,16 @@ const Footer: React.FC = () => {
 
           {/* Useful Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
               Useful Links
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {usefulLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                    className="text-sm text-slate-300 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -112,16 +124,16 @@ const Footer: React.FC = () => {
 
           {/* MBBS India */}
           <div>
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
               MBBS in India
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {mbbsIndiaLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
+                    className="text-sm text-slate-300 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -132,53 +144,54 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-6">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
               Contact Info
             </h3>
 
-            <div className="space-y-5 text-sm">
+            <div className="space-y-4 text-sm">
 
-              <div className="flex items-start gap-3">
-                <div className="bg-blue-600/20 p-2 rounded-lg mt-1">
-                  <FaMapMarkerAlt className="text-blue-400" />
+              <div className="flex items-start gap-2.5">
+                <div className="bg-white/10 p-2 rounded-xl mt-0.5">
+                  <FaMapMarkerAlt className="text-accent-400 text-xs" />
                 </div>
 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-slate-300 leading-relaxed text-sm">
                   B Wing-107, Rustomjee Central Park,
                   Andheri East, Mumbai - 400069
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-600/20 p-2 rounded-lg">
-                  <FaPhoneAlt className="text-blue-400" />
+              <div className="flex items-center gap-2.5">
+                <div className="bg-white/10 p-2 rounded-xl">
+                  <FaPhoneAlt className="text-accent-400 text-xs" />
                 </div>
 
-                <p className="text-gray-300">
+                <p className="text-slate-300 text-sm">
                   +91 9920798988
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-600/20 p-2 rounded-lg">
-                  <FaEnvelope className="text-blue-400" />
+              <div className="flex items-center gap-2.5">
+                <div className="bg-white/10 p-2 rounded-xl">
+                  <FaEnvelope className="text-accent-400 text-xs" />
                 </div>
 
-                <p className="text-gray-300">
+                <p className="text-slate-300 text-sm">
                   edufuturemind@gmail.com
                 </p>
               </div>
             </div>
 
             {/* Social */}
-            <div className="flex gap-3 mt-8">
+            <div className="flex gap-2.5 mt-6">
               {socialLinks.map((social, index) => (
                 <Link
                   key={index}
                   href={social.href}
-                  className="w-11 h-11 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
+                  aria-label={social.name}
+                  className="w-9 h-9 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-brand-950 transition-colors"
                 >
-                  <span className="text-lg">
+                  <span className="text-sm">
                     {social.icon}
                   </span>
                 </Link>
@@ -188,20 +201,20 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Disclaimer */}
-        <div className="py-10 border-b border-white/10">
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8">
-            <h4 className="text-2xl font-bold mb-4 text-white">
+        <div className="py-8 border-b border-white/10">
+          <div className="border border-white/15 rounded-2xl p-5">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
               Disclaimer
             </h4>
 
-            <p className="text-gray-300 leading-relaxed text-sm">
+            <p className="text-slate-300 leading-relaxed text-xs">
               FUTURE MIND EDUCARE provides counseling and admission guidance
               services for MBBS aspirants. Admission depends on eligibility,
               merit, and seat availability. Students are advised to verify
               details directly from universities and official authorities.
             </p>
 
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-slate-400 text-xs mt-3">
               We do not collect fees on behalf of universities. Beware of fraud
               and contact us directly for authentic guidance.
             </p>
@@ -209,14 +222,14 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
 
-          <p className="text-gray-400 text-sm text-center md:text-left">
+          <p className="text-slate-400 text-xs text-center md:text-left">
             © {new Date().getFullYear()} FUTURE MIND EDUCARE. All Rights Reserved.
           </p>
 
-          <p className="text-gray-500 text-sm">
-            Designed for Future Doctors ❤️
+          <p className="text-slate-500 text-xs">
+            Designed for Future Doctors
           </p>
 
         </div>

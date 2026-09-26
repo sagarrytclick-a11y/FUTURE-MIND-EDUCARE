@@ -3,10 +3,10 @@
 import React from 'react';
 import { usePopup } from '../contexts/PopupContext';
 import {
-  FaArrowRight,
   FaMapMarkerAlt,
-  FaPlaneDeparture,
 } from 'react-icons/fa';
+import Section from '@/components/Section';
+import SectionHeading from '@/components/SectionHeading';
 
 interface DiaryItem {
   id: number;
@@ -67,203 +67,74 @@ const AirportDiariesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#F8FAFC] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div
-            className="
-              inline-flex
-              items-center
-              gap-2
-              px-4
-              py-2
-              rounded-lg
-              bg-blue-50
-              border
-              border-blue-100
-              mb-5
-            "
+    <Section spacing="md" className="bg-white overflow-hidden">
+      <SectionHeading
+        eyebrow="Student Departures"
+        title={
+          <>
+            Airport <span className="text-accent-600">Diaries</span>
+          </>
+        }
+        description="Unforgettable moments when our students begin their MBBS journey abroad."
+      />
+
+      {/* 4-COL GALLERY TILES */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {diaries.map((diary) => (
+          <button
+            key={diary.id}
+            onClick={handleShareJourney}
+            className="group relative overflow-hidden rounded-2xl border border-slate-200 hover:border-brand-900 h-48 text-left shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-800"
           >
-            <FaPlaneDeparture className="text-blue-600 text-sm" />
-
-            <span className="text-blue-700 text-xs font-bold tracking-[0.2em] uppercase">
-              Student Departures
-            </span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-            Airport
-            <span className="text-blue-600"> Diaries</span>
-          </h2>
-
-          <p className="mt-5 text-slate-500 text-lg leading-8">
-            Witness the unforgettable moments when our students begin their
-            MBBS journey abroad and step closer to becoming future doctors.
-          </p>
-        </div>
-
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {diaries.map((diary) => (
-            <div
-              key={diary.id}
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[30px]
-                h-[420px]
-                shadow-lg
-                hover:shadow-[0_25px_60px_rgba(0,0,0,0.15)]
-                transition-all
-                duration-500
-              "
-            >
-              {/* IMAGE */}
-              <img
-                src={diary.image}
-                alt={diary.caption}
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                  group-hover:scale-110
-                  transition-transform
-                  duration-700
-                "
-              />
-
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-              {/* TOP TAG */}
-              <div className="absolute top-5 left-5">
-                <span
-                  className="
-                    bg-white/15
-                    backdrop-blur-md
-                    border
-                    border-white/20
-                    text-white
-                    text-[11px]
-                    font-bold
-                    px-4
-                    py-2
-                    rounded-lg
-                    tracking-wider
-                    uppercase
-                  "
-                >
-                  MBBS Abroad
-                </span>
-              </div>
-
-              {/* CONTENT */}
-              <div
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-                  right-0
-                  p-7
-                  translate-y-4
-                  group-hover:translate-y-0
-                  transition-transform
-                  duration-500
-                "
-              >
-                <h3 className="text-2xl font-black text-white leading-snug mb-4">
-                  {diary.caption}
-                </h3>
-
-                <div className="flex items-start gap-3 text-gray-200 mb-5">
-                  <FaMapMarkerAlt className="mt-1 text-blue-400 shrink-0" />
-
-                  <p className="text-sm leading-6">
-                    {diary.location}
-                  </p>
-                </div>
-
-                {/* BUTTON */}
-                <button
-                  onClick={handleShareJourney}
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    bg-blue-600
-                    hover:bg-blue-700
-                    text-white
-                    px-5
-                    py-3
-                    rounded-lg
-                    text-sm
-                    font-bold
-                    transition-all
-                    duration-300
-                    group/btn
-                  "
-                >
-                  Start Your Journey
-
-                  <FaArrowRight className="text-xs group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </button>
-              </div>
+            <img
+              src={diary.image}
+              alt={diary.caption}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/40 to-brand-950/10 group-hover:from-brand-950 group-hover:via-brand-950/60 transition-colors duration-300" />
+            <div className="absolute top-2.5 left-2.5">
+              <span className="inline-flex items-center gap-1 bg-accent-400 text-brand-950 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
+                <FaMapMarkerAlt className="text-[10px]" />
+                {diary.caption.split(' ').pop()}
+              </span>
             </div>
-          ))}
-        </div>
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <h3 className="font-bold text-white leading-snug line-clamp-1 text-sm">
+                {diary.caption}
+              </h3>
+              <p className="text-gray-200 text-xs leading-5 line-clamp-1 mt-1">
+                {diary.location}
+              </p>
+            </div>
+          </button>
+        ))}
+      </div>
 
-        {/* BOTTOM CONTENT */}
-        <div className="mt-16 text-center max-w-3xl mx-auto">
-          <p className="text-slate-500 text-lg leading-8 mb-8">
-            Hundreds of students trust Future Mind Educare every year to guide
-            them toward globally recognized medical universities. These airport
-            moments are the beginning of life-changing success stories.
-          </p>
+      {/* BOTTOM CONTENT */}
+      <div className="mt-6 text-center max-w-2xl mx-auto">
+        <p className="text-gray-600 text-sm leading-6 mb-4">
+          Hundreds of students trust Future Mind Educare every year. These
+          airport moments are the beginning of life-changing success stories.
+        </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={handleViewMoreStories}
-              className="
-                bg-blue-600
-                hover:bg-blue-700
-                text-white
-                px-8
-                py-4
-                rounded-lg
-                font-bold
-                shadow-lg
-                transition-all
-                duration-300
-                hover:scale-105
-              "
-            >
-              View More Stories
-            </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button
+            onClick={handleViewMoreStories}
+            className="bg-brand-950 hover:bg-brand-900 text-white h-11 px-6 rounded-full text-sm font-bold shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            View More Stories
+          </button>
 
-            <button
-              onClick={handleShareJourney}
-              className="
-                border
-                border-slate-300
-                bg-white
-                hover:bg-slate-100
-                text-slate-800
-                px-8
-                py-4
-                rounded-lg
-                font-bold
-                transition-all
-                duration-300
-              "
-            >
-              Share Your Journey
-            </button>
-          </div>
+          <button
+            onClick={handleShareJourney}
+            className="bg-accent-400 text-brand-950 hover:bg-accent-500 border border-accent-400 h-11 px-6 rounded-full text-sm font-bold transition-all duration-300"
+          >
+            Share Your Journey
+          </button>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
