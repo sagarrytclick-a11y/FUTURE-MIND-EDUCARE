@@ -14,6 +14,9 @@ import {
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import { handleImageError } from "@/lib/img-fallback";
+import { SkeletonDetail } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface BlogItem {
   id: number;
@@ -91,14 +94,7 @@ const BlogPostPage: React.FC = () => {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="text-center">
-          <div className="w-10 h-10 border-4 border-brand-900 border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="mt-3 text-sm text-gray-600 font-medium">Loading Article...</p>
-        </div>
-      </div>
-    );
+    return <SkeletonDetail />;
   }
 
   if (!blog) {
@@ -137,7 +133,15 @@ const BlogPostPage: React.FC = () => {
           {/* Main article in white cards */}
           <article className="min-w-0">
             <span className="relative block h-56 w-full overflow-hidden rounded-2xl bg-slate-100">
-              <img src={blog.image} alt={blog.title} className="h-full w-full object-cover" />
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 800px"
+                className="h-full w-full object-cover"
+                onError={handleImageError}
+              />
               <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase text-brand-950">
                 {blog.category}
               </span>
@@ -259,12 +263,14 @@ const BlogPostPage: React.FC = () => {
                   className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
                 >
                   <div className="relative h-40 overflow-hidden bg-slate-100">
-                    <img
-                      src={relatedBlog.image}
-                      alt={relatedBlog.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <Image
+                     src={relatedBlog.image}
+                     alt={relatedBlog.title}
+                     fill
+                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                     onError={handleImageError}
+                   />
                     <span className="absolute left-2.5 top-2.5 rounded-full bg-accent-400 px-2.5 py-1 text-[11px] font-bold uppercase text-brand-950">
                       {relatedBlog.category}
                     </span>

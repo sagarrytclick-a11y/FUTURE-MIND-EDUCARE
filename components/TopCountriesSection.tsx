@@ -8,6 +8,18 @@ import {
 } from "react-icons/fa";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import { SkeletonGrid, SkeletonHeading } from "@/components/Skeleton";
+import Image from "next/image";
+
+interface CountryJson {
+  id: number;
+  name: string;
+  flag: string;
+  image: string;
+  description: string;
+  universities: number | string;
+  courses: string | string[];
+}
 
 interface CountryItem {
   id: number;
@@ -36,7 +48,7 @@ const TopCountriesSection: React.FC = () => {
         const data = await response.json();
 
         const transformedCountries: CountryItem[] = data.countries.map(
-          (country: any) => ({
+          (country: CountryJson) => ({
             id: country.id,
             name: country.name,
             flag: country.flag,
@@ -69,12 +81,8 @@ const TopCountriesSection: React.FC = () => {
   if (loading) {
     return (
       <Section spacing="md" className="bg-slate-50">
-        <div className="text-center">
-          <div className="inline-block h-10 w-10 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin mx-auto"></div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-950 tracking-tight mt-4">
-            Loading Countries...
-          </h2>
-        </div>
+        <SkeletonHeading />
+        <SkeletonGrid count={4} cols={4} className="mt-6" />
       </Section>
     );
   }
@@ -117,15 +125,20 @@ const TopCountriesSection: React.FC = () => {
                     <div className="h-full bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                       {/* IMAGE */}
                       <div className="relative h-28 overflow-hidden">
-                        <img
+                        <Image
                           src={country.image}
                           alt={country.name}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 280px"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <span className="absolute top-2 left-2.5 inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full pl-1 pr-2.5 py-1">
-                          <img
+                          <Image
                             src={country.flag}
-                            alt={country.name}
+                            alt={`${country.name} flag`}
+                            width={20}
+                            height={20}
+                            sizes="20px"
                             className="w-5 h-5 rounded-full object-cover"
                           />
                         </span>

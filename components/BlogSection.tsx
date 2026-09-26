@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import {
   FaChevronLeft,
@@ -7,6 +7,8 @@ import {
 } from 'react-icons/fa';
 import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
+import { SkeletonGrid, SkeletonHeading } from "@/components/Skeleton";
+import CollegeCardImage from "@/components/CollegeCardImage";
 
 interface BlogItem {
   id: number;
@@ -30,29 +32,35 @@ const BlogSection: React.FC = () => {
 
   const CARDS_PER_VIEW = 3;
 
-  const fetchBlogs = useCallback(async () => {
-    try {
-      const response = await fetch('/blogs.json');
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (data.blogs) {
-        setBlogs(data.blogs);
-      }
-    } catch (error) {
-      console.error('Error fetching blogs:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
-    fetchBlogs();
-  }, [fetchBlogs]);
+    let cancelled = false;
+
+    const loadBlogs = async () => {
+      try {
+        const response = await fetch('/blogs.json');
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!cancelled && data.blogs) {
+          setBlogs(data.blogs);
+        }
+      } catch (error) {
+        if (!cancelled) console.error('Error fetching blogs:', error);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    loadBlogs();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const featuredBlogs = useMemo(() => blogs.slice(0, 9), [blogs]);
 
@@ -85,9 +93,8 @@ const BlogSection: React.FC = () => {
   if (loading) {
     return (
       <Section spacing="md" className="bg-slate-50">
-        <div className="text-center">
-          <div className="inline-block h-10 w-10 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin" />
-        </div>
+        <SkeletonHeading />
+        <SkeletonGrid count={3} cols={3} className="mt-6" />
       </Section>
     );
   }
@@ -98,11 +105,12 @@ const BlogSection: React.FC = () => {
         href={`/blog/${blog.id}`}
         className="group bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
       >
-        <div className="relative overflow-hidden">
-          <img
+        <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+          <CollegeCardImage
             src={blog.image}
             alt={blog.title}
-            loading="lazy"
+            width={640}
+            height={352}
             className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <span className="absolute top-2.5 left-2.5 bg-accent-400 text-brand-950 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 shadow-sm">

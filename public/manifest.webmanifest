@@ -1,0 +1,52 @@
+{
+  "name": "Future Mind Educare - MBBS Admission Consultants",
+  "short_name": "Future Mind Educare",
+  "description": "MBBS admission consultancy for India and abroad, NEET counselling, MD/MS guidance. Andheri East, Mumbai.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1220",
+  "categories": ["education", "business"],
+  "icons": [
+    {
+      "src": "/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact us",
+      "url": "/contact"
+    },
+    {
+      "name": "MBBS Colleges in India",
+      "url": "/colleges/mbbs-india"
+    },
+    {
+      "name": "NEET Predictor",
+      "url": "/neet-predictor"
+    }
+  ]
+}

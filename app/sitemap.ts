@@ -1,122 +1,127 @@
 import type { MetadataRoute } from "next";
-import { readFileSync } from "fs";
-import path from "path";
+import { SITE_URL } from "@/app/config/seo";
+import {
+  getAbroadData,
+  getBlogs,
+  getContentLastModified,
+  getIndiaData,
+  getMdmsData,
+  slugify,
+} from "@/lib/seo-data";
 
-function slugify(name: string) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
+// Stable per deploy: derived from the content JSON mtimes, not `new Date()`, so
+// regenerating the sitemap does not signal a change to crawlers.
+const lastModified = getContentLastModified();
+
+function safeDate(value: string | undefined, fallback: Date): Date {
+  if (!value) return fallback;
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? fallback : parsed;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = "https://fmeducation.in";
-
   const staticPages: MetadataRoute.Sitemap = [
-    { url: siteUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${siteUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteUrl}/states`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${siteUrl}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
-    { url: `${siteUrl}/colleges/mbbs-india`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${siteUrl}/colleges/mbbs-abroad`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-
+    { url: `${SITE_URL}/`, lastModified, changeFrequency: "daily", priority: 1.0 },
+    { url: `${SITE_URL}/about`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/contact`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/colleges/mbbs-india`, lastModified, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${SITE_URL}/colleges/mbbs-abroad`, lastModified, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${SITE_URL}/colleges/md-ms`, lastModified, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${SITE_URL}/mbbs-abroad`, lastModified, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${SITE_URL}/study-abroad`, lastModified, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${SITE_URL}/neet-predictor`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/neet-ug-packages`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/states`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/site-map`, lastModified, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${SITE_URL}/blog`, lastModified, changeFrequency: "daily", priority: 0.7 },
+    { url: `${SITE_URL}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE_URL}/terms`, lastModified, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const collegeUrls: MetadataRoute.Sitemap = [];
   const stateUrls: MetadataRoute.Sitemap = [];
   const countryUrls: MetadataRoute.Sitemap = [];
 
-  try {
-    const indiaData = JSON.parse(
-      readFileSync(path.join(process.cwd(), "public/mbbs-india.json"), "utf-8")
-    );
+  const indiaData = getIndiaData();
+  if (indiaData) {
     for (const state of indiaData.states) {
       stateUrls.push({
-        url: `${siteUrl}/states/${slugify(state.name)}`,
-        lastModified: new Date(),
+        url: `${SITE_URL}/states/${slugify(state.name)}`,
+        lastModified,
         changeFrequency: "weekly",
         priority: 0.8,
       });
       for (const college of state.colleges) {
         collegeUrls.push({
-          url: `${siteUrl}/colleges/${slugify(college.name)}`,
-          lastModified: new Date(),
+          url: `${SITE_URL}/colleges/${slugify(college.name)}`,
+          lastModified,
           changeFrequency: "monthly",
           priority: 0.6,
         });
       }
     }
-  } catch {}
+  }
 
-  try {
-    const abroadData = JSON.parse(
-      readFileSync(path.join(process.cwd(), "public/mbbs-abroad.json"), "utf-8")
-    );
+  const abroadData = getAbroadData();
+  if (abroadData) {
     for (const country of abroadData.countries) {
       countryUrls.push({
-        url: `${siteUrl}/country/${slugify(country.name)}`,
-        lastModified: new Date(),
+        url: `${SITE_URL}/country/${slugify(country.name)}`,
+        lastModified,
         changeFrequency: "monthly",
         priority: 0.8,
       });
       for (const college of country.colleges || []) {
         collegeUrls.push({
-          url: `${siteUrl}/colleges/${slugify(college.name)}`,
-          lastModified: new Date(),
+          url: `${SITE_URL}/colleges/${slugify(college.name)}`,
+          lastModified,
           changeFrequency: "monthly",
           priority: 0.6,
         });
       }
     }
-  } catch {}
+  }
 
-  try {
-    const mdmsData = JSON.parse(
-      readFileSync(path.join(process.cwd(), "public/md-ms.json"), "utf-8")
-    );
+  const mdmsData = getMdmsData();
+  if (mdmsData) {
     for (const state of mdmsData.states) {
       stateUrls.push({
-        url: `${siteUrl}/colleges/md-ms/${state.slug}`,
-        lastModified: new Date(),
+        url: `${SITE_URL}/colleges/md-ms/${state.slug}`,
+        lastModified,
         changeFrequency: "monthly",
         priority: 0.7,
       });
       for (const college of state.colleges) {
         collegeUrls.push({
-          url: `${siteUrl}/colleges/${slugify(college.name)}`,
-          lastModified: new Date(),
+          url: `${SITE_URL}/colleges/${slugify(college.name)}`,
+          lastModified,
           changeFrequency: "monthly",
           priority: 0.6,
         });
       }
     }
-  } catch {}
+  }
 
-  const blogUrls: MetadataRoute.Sitemap = [];
-  try {
-    const blogData = JSON.parse(
-      readFileSync(path.join(process.cwd(), "public/blogs.json"), "utf-8")
-    );
-    for (const blog of blogData.blogs) {
-      blogUrls.push({
-        url: `${siteUrl}/blog/${blog.id}`,
-        lastModified: new Date(blog.date || Date.now()),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
-  } catch {}
+  const blogUrls: MetadataRoute.Sitemap = getBlogs().map((blog) => ({
+    url: `${SITE_URL}/blog/${blog.id}`,
+    lastModified: safeDate(blog.date, lastModified),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
 
-  return [
+  const seen = new Set<string>();
+  const dedupe = (entries: MetadataRoute.Sitemap) =>
+    entries.filter((entry) => {
+      if (seen.has(entry.url)) return false;
+      seen.add(entry.url);
+      return true;
+    });
+
+  return dedupe([
     ...staticPages,
     ...stateUrls,
     ...countryUrls,
     ...collegeUrls,
     ...blogUrls,
-  ];
+  ]);
 }

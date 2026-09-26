@@ -13,6 +13,7 @@ import Link from 'next/link';
 import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
 import { SITE_IDENTITY } from '@/app/config/site_identity';
+import Image from "next/image";
 
 const WhoWeAre: React.FC = () => {
   const checklist = [
@@ -32,25 +33,29 @@ const WhoWeAre: React.FC = () => {
 
   return (
     <Section spacing="md" className="relative bg-white overflow-hidden">
-      {/* soft background accents */}
+      {/* Soft background accents */}
       <span className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-accent-100/50 blur-3xl" />
       <span className="pointer-events-none absolute -right-20 bottom-0 h-56 w-56 rounded-full bg-accent-200/40 blur-3xl" />
 
       <div className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-10 items-center">
           {/* LEFT IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative order-2 lg:order-1 lg:self-stretch"
+            className="relative order-2 lg:order-1 w-full"
           >
-            <div className="group relative mx-auto w-full max-w-[520px] lg:mx-0">
-              <div className="relative h-full min-h-[240px] max-h-[420px] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
-                <img
-                  src="/medical.png"
-                  alt="Future Mind Educare Team"
+            <div className="group relative w-full max-w-[580px] mx-auto lg:mx-0">
+              {/* Reduced height using lower aspect ratio (4/3 & 1/1 mix) */}
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-md">
+                <Image
+                  src="/about-team.jpg"
+                  alt="Future Mind Educare counselling team"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 580px"
                   className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
 
@@ -66,11 +71,11 @@ const WhoWeAre: React.FC = () => {
               </div>
 
               {/* FLOATING: YEARS EXPERIENCE */}
-              <div className="absolute -bottom-3 left-3 sm:left-4 flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-lg">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-400 text-sm font-extrabold text-brand-950">
+              <div className="absolute -bottom-3 left-3 sm:left-4 z-20 flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-white px-3.5 py-2 shadow-lg">
+                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-accent-400 text-xs font-extrabold text-brand-950">
                   10+
                 </span>
-                <span className="text-xs font-semibold leading-tight text-gray-600">
+                <span className="text-[11px] font-semibold leading-tight text-gray-600">
                   Years
                   <br />
                   Experience
@@ -82,16 +87,16 @@ const WhoWeAre: React.FC = () => {
                 href={SITE_IDENTITY.contact.googleBusinessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute -right-2 -top-3 hidden items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 py-2.5 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-400 sm:inline-flex"
+                className="absolute -right-2 -top-3 z-20 hidden items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 py-2 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-400 sm:inline-flex"
               >
-                <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                <span className="flex items-center gap-0.5 text-amber-400 text-[10px]">
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStar />
                 </span>
-                <span className="text-xs font-semibold leading-tight text-gray-600">
+                <span className="text-[11px] font-semibold leading-tight text-gray-600">
                   4.2 · 115
                   <br />
                   Google reviews

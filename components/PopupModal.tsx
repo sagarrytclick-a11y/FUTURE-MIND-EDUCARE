@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
+import Image from "next/image";
 
 const PopupModal = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -36,11 +37,14 @@ const PopupModal = () => {
         </button>
 
         {/* Image Container */}
-        <div className="w-full flex justify-center items-center p-2">
-          <img
+        <div className="w-full flex justify-center items-center">
+          <Image
             src="/banner.png"
-            alt="Promotion Banner"
-            className="w-full h-auto max-h-[75vh] object-contain block rounded-xl"
+            alt="Future Mind Educare admission offer - free MBBS counselling"
+            width={800}
+            height={1000}
+            sizes="(max-width: 640px) 90vw, 384px"
+            className="w-full h-auto max-h-[75vh] object-contain block"
           />
         </div>
       </div>

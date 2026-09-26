@@ -15,6 +15,8 @@ import { usePopup } from "@/contexts/PopupContext";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import { SkeletonDetail } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface CollegeData {
   id: number;
@@ -91,14 +93,7 @@ const StatePage: React.FC = () => {
   }, [params.state]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="text-center">
-          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-          <p className="text-gray-600 text-sm font-medium">Loading State Information...</p>
-        </div>
-      </div>
-    );
+    return <SkeletonDetail />;
   }
 
   if (error || !state) {
@@ -145,9 +140,12 @@ const StatePage: React.FC = () => {
       <Section spacing="md">
         {/* Slim stat band with banner thumb */}
         <div className="mb-5 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-3 sm:flex-row sm:items-center">
-          <img
+          <Image
             src={state.image}
             alt={state.name}
+            width={224}
+            height={80}
+            sizes="(max-width: 640px) 100vw, 112px"
             className="h-20 w-full rounded-lg bg-slate-100 object-cover sm:w-28"
           />
           <div className="grid flex-1 grid-cols-3 gap-3">
@@ -188,10 +186,11 @@ const StatePage: React.FC = () => {
               className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
             >
               <div className="relative h-40 overflow-hidden bg-slate-100">
-                <img
+                <Image
                   src={college.image}
                   alt={college.name}
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

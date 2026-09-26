@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa';
 import { usePopup } from '../contexts/PopupContext';
 import Link from 'next/link';
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   const { openPopup } = usePopup();
@@ -19,7 +20,9 @@ const Footer: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Blog", href: "/blog" },
+    { name: "NEET Predictor", href: "/neet-predictor" },
     { name: "Contact Us", href: "/contact" },
+    { name: "Sitemap", href: "/site-map" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms & Conditions", href: "/terms" }
   ];
@@ -82,9 +85,12 @@ const Footer: React.FC = () => {
 
           {/* Company */}
           <div>
-            <img
+            <Image
               src="/logo.png"
               alt="Future Mind Educare"
+              width={192}
+              height={48}
+              sizes="192px"
               className="h-12 w-auto mb-4"
             />
 
@@ -96,7 +102,7 @@ const Footer: React.FC = () => {
 
             <button
               onClick={openPopup}
-              className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-brand-950 hover:bg-brand-900 text-white text-sm font-bold transition-colors"
+              className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-white hover:bg-accent-100 text-brand-950 text-sm font-bold transition-colors"
             >
               Get Free Counseling
             </button>

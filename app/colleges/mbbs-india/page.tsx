@@ -16,6 +16,8 @@ import {
 import PageHero from "@/components/PageHero"
 import Section from "@/components/Section"
 import SectionHeading from "@/components/SectionHeading"
+import { SkeletonListPage } from "@/components/Skeleton"
+import CollegeCardImage from "@/components/CollegeCardImage";
 
 interface CollegeData {
   id: number
@@ -130,14 +132,7 @@ const MbbsIndiaPageContent: React.FC = () => {
   const totalSeats = useMemo(() => allColleges.reduce((acc, college) => acc + (college.seats || 0), 0), [allColleges])
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="text-center">
-          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-          <p className="text-gray-600 text-sm">Loading Medical Colleges...</p>
-        </div>
-      </div>
-    )
+    return <SkeletonListPage stats={4} cards={6} bg="bg-slate-50" />
   }
 
   return (
@@ -250,20 +245,12 @@ const MbbsIndiaPageContent: React.FC = () => {
               href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-")}`}
               className="group flex flex-col h-full bg-white border border-slate-200 hover:border-brand-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-3xl"
             >
-              <div className="relative overflow-hidden bg-slate-100">
-                <img
+              <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                <CollegeCardImage
                   src={college.image}
                   alt={college.name}
-                  loading="lazy"
                   className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-
-                {/* hover overlay */}
-                <div className="absolute inset-0 flex items-end justify-center bg-brand-950/0 pb-4 transition-colors duration-300 group-hover:bg-brand-950/55">
-                  <span className="inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent-400 px-4 py-2 text-xs font-bold text-brand-950 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    View College <FaArrowRight className="text-[10px]" />
-                  </span>
-                </div>
                 <span
                   className={`absolute top-2.5 left-2.5 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 ${
                     college.type === "Government"
@@ -408,7 +395,7 @@ const MbbsIndiaPageContent: React.FC = () => {
 
 const MbbsIndiaPage: React.FC = () => {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-brand-950"></div></div>}>
+    <Suspense fallback={<SkeletonListPage stats={4} cards={6} bg="bg-slate-50" />}>
       <MbbsIndiaPageContent />
     </Suspense>
   );

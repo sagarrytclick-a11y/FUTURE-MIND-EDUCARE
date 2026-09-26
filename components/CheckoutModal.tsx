@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaSpinner } from "react-icons/fa";
+
+const subscribeNoop = () => () => {};
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -13,9 +15,34 @@ interface CheckoutModalProps {
   planPrice: number;
 }
 
+type RazorpayResponse = {
+  razorpay_payment_id?: string;
+  razorpay_order_id?: string;
+  razorpay_signature?: string;
+};
+
+type RazorpayHandler = (response: RazorpayResponse) => void | Promise<void>;
+
+type RazorpayInstance = {
+  open: () => void;
+  on: (event: string, handler: () => void) => void;
+};
+
+type RazorpayConstructor = new (options: {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  prefill?: { name?: string; email?: string; contact?: string };
+  theme?: { color?: string };
+  handler: RazorpayHandler;
+  modal?: { ondismiss?: () => void };
+}) => RazorpayInstance;
+
 declare global {
   interface Window {
-    Razorpay: any;
+    Razorpay?: RazorpayConstructor;
   }
 }
 
@@ -25,11 +52,12 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
   const [mobile, setMobile] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Portals need the client: render nothing on the server
+  const mounted = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,7 +95,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
           theme: {
             color: "#2563EB",
           },
-          handler: async function (response: any) {
+          handler: async function (response: RazorpayResponse) {
             try {
               const verifyRes = await fetch("/api/verify", {
                 method: "POST",
@@ -99,6 +127,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
           },
         };
 
+        if (!window.Razorpay) throw new Error("Payment gateway unavailable");
         const rzp = new window.Razorpay(options);
         rzp.on("payment.failed", function () {
           setError("Payment failed. Please try again.");
@@ -108,8 +137,10 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
       };
 
       document.body.appendChild(script);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Something went wrong"
+      );
       setLoading(false);
     }
   };
@@ -205,7 +236,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex w-full items-center justify-center h-11 px-6 rounded-xl bg-brand-950 hover:bg-brand-900 disabled:opacity-60 text-white text-sm font-semibold transition-colors gap-2"
+                  className="inline-flex w-full items-center justify-center h-11 px-6 rounded-xl border border-brand-950 text-brand-950 text-sm font-semibold disabled:opacity-60 gap-2"
                 >
                   {loading ? (
                     <>

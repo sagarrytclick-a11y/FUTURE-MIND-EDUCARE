@@ -4,8 +4,15 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
+import { SkeletonGrid, SkeletonHeading } from "@/components/Skeleton";
+import CollegeCardImage from "@/components/CollegeCardImage";
 
 interface StateItem {
+  name: string;
+  image: string;
+}
+
+interface IndiaStateJson {
   name: string;
   image: string;
 }
@@ -28,7 +35,7 @@ const TopStatesSection: React.FC = () => {
 
         const data = await response.json();
 
-        const transformedStates: StateItem[] = data.states.map((state: any) => ({
+        const transformedStates: StateItem[] = data.states.map((state: IndiaStateJson) => ({
           name: state.name,
           image: state.image,
         }));
@@ -51,10 +58,8 @@ const TopStatesSection: React.FC = () => {
   if (loading) {
     return (
       <Section spacing="md" className="bg-slate-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-brand-950 mx-auto"></div>
-          <p className="text-gray-600 text-sm font-medium mt-3">Loading Top States...</p>
-        </div>
+        <SkeletonHeading />
+        <SkeletonGrid count={4} cols={4} className="mt-6" />
       </Section>
     );
   }
@@ -101,11 +106,12 @@ const TopStatesSection: React.FC = () => {
             key={index}
             className="group block bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
           >
-            <div className="overflow-hidden">
-              <img
+            <div className="relative h-32 w-full overflow-hidden bg-slate-100">
+              <CollegeCardImage
                 src={state.image}
                 alt={state.name}
-                loading="lazy"
+                width={640}
+                height={288}
                 className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>

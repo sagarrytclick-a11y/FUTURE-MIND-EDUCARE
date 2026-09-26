@@ -1,17 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  FaInstagram,
-  FaFacebook,
-  FaLinkedin,
   FaEnvelope,
   FaChevronDown,
   FaBars,
   FaTimes,
   FaPhoneAlt,
+  FaHeartbeat,
+  FaInstagram,
+  FaFacebook,
+  FaLinkedin,
 } from 'react-icons/fa';
 
 import { usePopup } from '../contexts/PopupContext';
@@ -62,8 +64,20 @@ const Header = () => {
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
-  const navLinks = [
+  type NavLinkChild = { name: string; href: string };
+  type NavLink = {
+    name: string;
+    label?: string;
+    href?: string;
+    hasDropdown?: boolean;
+    /** compact dropdown instead of the wide mega menu */
+    small?: boolean;
+    children?: NavLinkChild[];
+  };
+
+  const navLinks: NavLink[] = [
     { name: 'Home', href: '/' },
     {
       name: 'MBBS India',
@@ -77,15 +91,22 @@ const Header = () => {
     },
     {
       name: 'MD/MS',
+      label: 'MD / MS',
       href: '/colleges/md-ms',
       hasDropdown: true,
     },
-    { name: 'Blog', href: '/blog' },
     {
-      name: 'Packages',
+      name: 'Updates',
+      href: '/blog',
       hasDropdown: true,
+      small: true,
+      children: [
+        { name: 'Blog', href: '/blog' },
+        { name: 'NEET UG Packages', href: '/neet-ug-packages' },
+        { name: 'MBBS Abroad Packages', href: '/mbbs-abroad' },
+        { name: 'Contact Us', href: '/contact' },
+      ],
     },
-    { name: 'Contact', href: '/contact' },
   ];
 
   const fetchData = async (type: 'india' | 'abroad' | 'mdms') => {
@@ -97,11 +118,19 @@ const Header = () => {
       const data = await res.json();
 
       if (type === 'india') {
+        // default mega-menu preview: Delhi, falling back to the first state
+        const preferred =
+          data.states.find((state: State) => state.name === 'Delhi') ??
+          data.states[0];
         setIndiaStates(data.states);
-        setHoveredItemData(data.states[0]);
+        setHoveredItemData(preferred);
       } else if (type === 'abroad') {
+        // default mega-menu preview: Russia, falling back to the first country
+        const preferred =
+          data.countries.find((country: Country) => country.name === 'Russia') ??
+          data.countries[0];
         setAbroadCountries(data.countries);
-        setHoveredItemData(data.countries[0]);
+        setHoveredItemData(preferred);
       } else {
         // Updated to use states from md-ms.json correctly
         setMdmsStates(data.states);
@@ -158,25 +187,6 @@ const Header = () => {
     );
   };
 
-  // Set default hovered items when data is loaded
-  useEffect(() => {
-    if (indiaStates.length > 0) {
-      const delhiState = indiaStates.find(state => state.name === 'Delhi');
-      if (delhiState) {
-        setHoveredItemData(delhiState);
-      }
-    }
-  }, [indiaStates]);
-
-  useEffect(() => {
-    if (abroadCountries.length > 0) {
-      const russiaCountry = abroadCountries.find(country => country.name === 'Russia');
-      if (russiaCountry) {
-        setHoveredItemData(russiaCountry);
-      }
-    }
-  }, [abroadCountries]);
-
   // Publish the real header height to CSS so sticky bars and anchor scrolling
   // never leave a gap or slide under the header.
   useEffect(() => {
@@ -202,9 +212,16 @@ const Header = () => {
     };
   }, []);
 
+  /** current-route pill, e.g. Home stays dark like the reference header */
+  const isActiveLink = (href?: string) => {
+    if (!href) return false;
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <header ref={headerRef} className="sticky top-0 z-50 w-full">
-      {/* TOP BAR */}
+      {/* TOP STRIP — phone, email, socials */}
       <div className="bg-slate-50 border-b border-slate-200">
         <div className="max-w-[1400px] mx-auto px-4 py-1.5 flex items-center justify-between">
           {/* CONTACT */}
@@ -228,11 +245,29 @@ const Header = () => {
 
           {/* SOCIAL */}
           <div className="flex items-center gap-4">
-            <FaInstagram className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
+            <a
+              href="https://instagram.com"
+              aria-label="Instagram"
+              className="text-slate-500 hover:text-brand-950 transition-colors"
+            >
+              <FaInstagram className="text-xs" />
+            </a>
 
-            <FaFacebook className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
+            <a
+              href="https://facebook.com"
+              aria-label="Facebook"
+              className="text-slate-500 hover:text-brand-950 transition-colors"
+            >
+              <FaFacebook className="text-xs" />
+            </a>
 
-            <FaLinkedin className="text-slate-500 hover:text-brand-950 transition-colors cursor-pointer text-xs" />
+            <a
+              href="https://linkedin.com"
+              aria-label="LinkedIn"
+              className="text-slate-500 hover:text-brand-950 transition-colors"
+            >
+              <FaLinkedin className="text-xs" />
+            </a>
           </div>
         </div>
       </div>
@@ -265,38 +300,31 @@ const Header = () => {
 
           {/* DESKTOP NAV */}
           <nav className="hidden lg:flex items-center gap-1 h-full">
-            {navLinks.map((item) => (
+            {navLinks.map((item) => {
+              const isActive = isActiveLink(item.href);
+
+              return (
               <div
                 key={item.name}
                 className="relative h-full flex items-center group"
                 onMouseEnter={() => handleMouseEnter(item.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                {item.name === 'MD/MS' || item.name === 'Packages' ? (
-                  <div
-                    className={`relative flex items-center text-sm font-semibold transition-colors cursor-pointer rounded-full px-4 py-2 ${activeDropdown === item.name
+                <Link
+                  href={item.href || '#'}
+                  className={`relative flex items-center text-sm font-semibold transition-colors rounded-full px-4 py-2 ${
+                    isActive
                       ? 'bg-brand-950 text-white'
-                      : 'text-brand-950 hover:bg-slate-100'
-                      }`}
-                  >
-                    {item.name}
+                      : activeDropdown === item.name
+                        ? 'bg-slate-100 text-brand-950'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-brand-950'
+                    }`}
+                >
+                  {item.label || item.name}
+                  {item.hasDropdown && (
                     <FaChevronDown className="ml-1.5 text-[10px]" />
-                  </div>
-                ) : (
-                    <Link
-                      href={item.href || '#'}
-                      className={`relative flex items-center text-sm font-semibold transition-colors rounded-full px-4 py-2 ${activeDropdown === item.name
-                        ? 'bg-brand-950 text-white'
-                        : 'text-brand-950 hover:bg-slate-100'
-                        }`}
-                    >
-
-                    {item.name}
-                    {item.hasDropdown && (
-                      <FaChevronDown className="ml-1.5 text-[10px]" />
-                    )}
-                  </Link>
-                )}
+                  )}
+                </Link>
 
                 {/* MEGA MENU */}
                 <AnimatePresence>
@@ -309,16 +337,24 @@ const Header = () => {
                       className={`
         absolute
         top-full
-        ${item.name === 'Packages' ? 'left-0' : 'left-1/2 -translate-x-1/2'}
+        ${item.small ? 'left-0' : 'left-1/2 -translate-x-1/2'}
         mt-[2px]
         z-[999]
-        ${item.name === 'Packages' ? 'w-48' : 'w-[620px]'}
+        ${item.small ? 'w-56' : 'w-[620px]'}
       `}
                     >
-                      {item.name === 'Packages' ? (
+                      {item.small ? (
                         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-2">
-                          <Link href="/neet-ug-packages" className="block px-4 py-2.5 text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-xl transition-colors">NEET UG</Link>
-                          <Link href="/mbbs-abroad" className="block px-4 py-2.5 text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-xl transition-colors">MBBS Abroad</Link>
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={child.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="block px-4 py-2.5 text-sm font-semibold text-brand-950 hover:bg-slate-100 rounded-xl transition-colors"
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
                         </div>
                       ) : (
                         /* WRAPPER FOR MEGA MENU */
@@ -342,7 +378,7 @@ const Header = () => {
                                 : item.name === 'MBBS Abroad'
                                   ? abroadCountries
                                   : mdmsStates
-                              ).map((loc: any) => {
+                              ).map((loc: State | Country) => {
                                 const isMdMs = item.name === 'MD/MS';
                                 const Content = (
                                   <div
@@ -388,7 +424,7 @@ const Header = () => {
                                 return isMdMs ? (
                                   <Link
                                     key={loc.id}
-                                    href={`/colleges/md-ms/${loc.slug || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                    href={`/colleges/md-ms/${(loc as State).slug || loc.name.toLowerCase().replace(/\s+/g, '-')}`}
                                     onMouseEnter={() => setHoveredItemData(loc)}
                                     onClick={() => {
                                       setActiveDropdown(null);
@@ -499,30 +535,30 @@ const Header = () => {
                   )}
                 </AnimatePresence>
               </div>
-            ))}
+              );
+            })}
           </nav>
 
           {/* CTA */}
-          <button
-            onClick={openPopup}
-            className="
-              hidden
-              lg:inline-flex
-              items-center
-              justify-center
-              h-11
-              px-6
-              rounded-full
-              bg-accent-400
-              text-brand-950
-              font-bold
-              text-sm
-              hover:bg-accent-500
-              transition-colors
-            "
-          >
-            Get Guidance
-          </button>
+          <div className="hidden lg:flex items-center gap-2.5">
+            <Link
+              href="/neet-predictor"
+              className="inline-flex items-center gap-2 h-10 pl-4 pr-1.5 rounded-full bg-teal-700 text-white text-sm font-bold hover:bg-teal-800 transition-colors"
+            >
+              <FaHeartbeat className="text-[13px]" />
+              NEET Predictor
+              <span className="ml-1 inline-flex items-center rounded-full bg-accent-400 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wide text-brand-950">
+                New
+              </span>
+            </Link>
+
+            <button
+              onClick={openPopup}
+              className="inline-flex items-center justify-center h-10 px-5 rounded-full bg-accent-400 text-brand-950 font-bold text-sm hover:bg-accent-500 transition-colors"
+            >
+              Get Guidance
+            </button>
+          </div>
 
           {/* MOBILE BTN */}
           <button
@@ -595,22 +631,18 @@ const Header = () => {
                             transition={{ duration: 0.3 }}
                             className="ml-4 mt-1 space-y-1 overflow-hidden"
                           >
-                            {link.name === 'Packages' && (
+                            {link.name === 'Updates' && link.children && (
                               <div className="space-y-1">
-                                <Link
-                                  href="/neet-ug-packages"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
-                                >
-                                  NEET UG
-                                </Link>
-                                <Link
-                                  href="/mbbs-abroad"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
-                                >
-                                  MBBS Abroad
-                                </Link>
+                                {link.children.map((child) => (
+                                  <Link
+                                    key={child.name}
+                                    href={child.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="block text-sm font-medium text-gray-700 hover:text-brand-900 py-2 px-3 transition-colors"
+                                  >
+                                    {child.name}
+                                  </Link>
+                                ))}
                               </div>
                             )}
                             {link.name === 'MBBS India' && indiaStates.length > 0 && (
@@ -746,7 +778,7 @@ const Header = () => {
                                           >
                                             View All Details for {state.name}
                                           </Link>
-                                          {state.colleges && state.colleges.slice(0, 5).map((college: any) => {
+                                          {state.colleges && state.colleges.slice(0, 5).map((college: College) => {
                                             const collegeSlug = college.name
                                               .toLowerCase()
                                               .replace(/[^a-z0-9\s]/g, '')
@@ -778,6 +810,20 @@ const Header = () => {
                   )}
                 </div>
               ))}
+
+              <Link
+                href="/neet-predictor"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between gap-2 rounded-full bg-teal-700 px-4 py-2.5 text-sm font-bold text-white"
+              >
+                <span className="flex items-center gap-2">
+                  <FaHeartbeat className="text-[13px]" />
+                  NEET Predictor
+                </span>
+                <span className="inline-flex items-center rounded-full bg-accent-400 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wide text-brand-950">
+                  New
+                </span>
+              </Link>
 
               <button
                 onClick={() => {

@@ -5,21 +5,16 @@ import {
   FaChartBar,
   FaPhone,
   FaEnvelope,
-  FaGraduationCap,
   FaSearch,
-  FaFilter,
   FaEdit,
   FaEye,
-  FaCalendarAlt,
-  FaChartLine,
-  FaUserCheck,
   FaClock,
   FaCheckCircle,
   FaTrash,
   FaMoneyBill,
-  FaCreditCard,
 } from 'react-icons/fa';
 import AuthWrapper from './components/AuthWrapper';
+import { SkeletonAdmin } from "@/components/Skeleton";
 
 interface Enquiry {
   _id: string;
@@ -232,11 +227,7 @@ const AdminPanel: React.FC = () => {
   };
 
   if (!loadFailed && enquiries.length === 0) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
+    return <SkeletonAdmin />;
   }
 
   const renderEnquiriesTab = () => (
