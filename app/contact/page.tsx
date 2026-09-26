@@ -79,7 +79,7 @@ const ContactPage: React.FC = () => {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -174,9 +174,9 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* Split: brand-950 info panel + form */}
-        <div className="grid gap-4 lg:grid-cols-[360px_1fr]">
+        <div className="grid items-stretch gap-5 lg:grid-cols-[360px_1fr]">
           {/* Left info panel */}
-          <aside className="flex flex-col rounded-3xl bg-brand-950 p-5 text-white">
+          <aside className="flex h-full flex-col rounded-3xl bg-brand-950 p-5 text-white">
             <h2 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg !text-white">Contact Information</h2>
             <p className="mt-1 text-sm leading-relaxed text-gray-300">
               Have questions about MBBS admissions? Our expert counselors will get back to you within 24 hours.
@@ -230,68 +230,6 @@ const ContactPage: React.FC = () => {
                 </span>
               </li>
             </ul>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-white/10">
-              <iframe
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  `${SITE_IDENTITY.address.building}, ${SITE_IDENTITY.address.landmark}, ${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city} ${SITE_IDENTITY.address.pincode}`
-                )}&output=embed`}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                style={{ border: 0 }}
-                className="h-40 w-full"
-              />
-            </div>
-            <a
-              href={SITE_IDENTITY.contact.googleBusinessUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 transition-colors duration-300 hover:border-accent-400 hover:bg-white/10"
-            >
-              <span>
-                <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                </span>
-                <span className="mt-0.5 block text-xs font-bold text-white">4.2 · 115 Google reviews</span>
-              </span>
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-accent-400">
-                Write a review
-                <FaArrowRight className="text-[9px]" />
-              </span>
-            </a>
-
-            <div className="mt-4 border-t border-white/10 pt-4">
-              <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">Follow Us</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-accent-400 hover:text-brand-950"
-                  >
-                    <social.icon className="text-sm" />
-                  </a>
-                ))}
-              </div>
-              <div className="mt-3 flex flex-col gap-2">
-                <a
-                  href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-brand-950 transition-colors hover:bg-accent-100"
-                >
-                  <FaPhone className="text-xs" /> Call Now
-                </a>
-                <a
-                  href={`mailto:${SITE_IDENTITY.contact.email}`}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-6 text-sm font-bold text-white transition-colors hover:bg-white/10"
-                >
-                  <FaEnvelope className="text-xs" /> Mail Us
-                </a>
-              </div>
-            </div>
           </aside>
 
           {/* Right form */}
@@ -416,6 +354,78 @@ const ContactPage: React.FC = () => {
                 )}
               </button>
             </form>
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+            <div className="px-5 pb-3 pt-5">
+              <h2 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg">Visit Our Office</h2>
+              <p className="mt-1 text-sm text-gray-600">
+                {SITE_IDENTITY.address.area}, {SITE_IDENTITY.address.city}
+              </p>
+            </div>
+            <iframe
+              title="Future Mind Educare office location"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(
+                `${SITE_IDENTITY.address.building}, ${SITE_IDENTITY.address.landmark}, ${SITE_IDENTITY.address.area}, ${SITE_IDENTITY.address.city} ${SITE_IDENTITY.address.pincode}`
+              )}&output=embed`}
+              width="100%"
+              height="100%"
+              loading="lazy"
+              style={{ border: 0 }}
+              className="h-48 w-full sm:h-56"
+            />
+          </div>
+
+          <div className="flex flex-col justify-between gap-5 rounded-3xl bg-brand-950 p-5 text-white">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">Connect With Us</p>
+              <a
+                href={SITE_IDENTITY.contact.googleBusinessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 transition-colors duration-300 hover:border-accent-400 hover:bg-white/10"
+              >
+                <span>
+                  <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                  </span>
+                  <span className="mt-0.5 block text-xs font-bold text-white">4.2 · 115 Google reviews</span>
+                </span>
+                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-accent-400">
+                  Write a review
+                  <FaArrowRight className="text-[9px]" />
+                </span>
+              </a>
+              <p className="mt-4 text-[11px] font-bold uppercase tracking-wide text-gray-400">Follow Us</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.link}
+                    aria-label={`Follow us on ${["Facebook", "Instagram", "Twitter", "LinkedIn", "YouTube"][index]}`}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-accent-400 hover:text-brand-950"
+                  >
+                    <social.icon className="text-sm" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <a
+                href={`tel:${SITE_IDENTITY.contact.phone.replace(/[^0-9+]/g, '')}`}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-brand-950 transition-colors hover:bg-accent-100"
+              >
+                <FaPhone className="text-xs" /> Call Now
+              </a>
+              <a
+                href={`mailto:${SITE_IDENTITY.contact.email}`}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              >
+                <FaEnvelope className="text-xs" /> Mail Us
+              </a>
+            </div>
           </div>
         </div>
       </Section>

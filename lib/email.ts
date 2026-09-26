@@ -1,6 +1,4 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendMail } from '@/lib/mailer';
 
 export async function sendPurchaseReceipt(order: {
   customerName: string;
@@ -9,8 +7,7 @@ export async function sendPurchaseReceipt(order: {
   amountPaid: number;
 }) {
   try {
-    await resend.emails.send({
-      from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+    await sendMail({
       to: order.customerEmail,
       subject: 'Payment Confirmed: Welcome to Future Mind Educare',
       html: `
@@ -47,6 +44,6 @@ export async function sendPurchaseReceipt(order: {
       `,
     });
   } catch (error) {
-    console.error('Failed to send email:', error);
+    console.error('Failed to send purchase receipt email:', error);
   }
 }

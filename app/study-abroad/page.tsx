@@ -1,7 +1,28 @@
+import type { Metadata } from "next";
+import { buildMetadata } from "@/app/config/seo-utils";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Study Abroad 2026 - Global Education Counselling",
+  description:
+    "End-to-end study abroad guidance: university shortlisting, documentation, visa support, scholarships and pre-departure support for students in Mumbai.",
+  path: "/study-abroad",
+  keywords: [
+    "study abroad consultant",
+    "study abroad counselling mumbai",
+    "abroad education guidance",
+    "student visa assistance",
+  ],
+});
+
 import React from "react";
-import SinglePackageSection from "@/components/SinglePackageSection";
+import dynamic from "next/dynamic";
+
+const SinglePackageSection = dynamic(
+  () => import("@/components/SinglePackageSection")
+);
+import { serviceLd, JsonLd } from "@/app/config/seo-utils";
 import PageHero from "@/components/PageHero";
-import { FaCheckCircle } from "react-icons/fa";
+import TrustStrip from "@/components/TrustStrip";
 
 const TRUST_POINTS = [
   "Top-ranked global universities",
@@ -13,6 +34,15 @@ const TRUST_POINTS = [
 export default function StudyAbroadPage() {
   return (
     <main className="bg-white">
+      <JsonLd
+        data={serviceLd({
+          name: "Study Abroad Counselling",
+          description:
+            "Study abroad counselling from Future Mind Educare, Mumbai: university shortlisting, documentation and application support.",
+          path: "/study-abroad",
+          areaServed: ["India"],
+        })}
+      />
       <PageHero
         align="center"
         variant="light"
@@ -22,19 +52,8 @@ export default function StudyAbroadPage() {
         description="Expert consultancy for pursuing higher education in top global universities."
         crumbs={[{ label: "Home", href: "/" }, { label: "Study Abroad" }]}
       />
-      {/* Compact inline trust strip — blue checks, no cards */}
-      <div className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {TRUST_POINTS.map((point) => (
-              <span key={point} className="inline-flex items-center gap-1.5 text-sm text-gray-600">
-                <FaCheckCircle className="text-xs text-brand-950" />
-                {point}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Compact inline trust strip — centered checks, no cards */}
+      <TrustStrip points={TRUST_POINTS} />
       <SinglePackageSection
         title="Study Abroad Pathway"
         subtitle="Global Education, Limitless Opportunities"

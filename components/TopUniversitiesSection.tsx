@@ -3,13 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  FaArrowRight,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { usePopup } from "@/contexts/PopupContext";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import CollegeCardImage from "@/components/CollegeCardImage";
 
 interface UniversityItem {
   name: string;
@@ -50,8 +47,6 @@ interface MbbsData {
 const TopUniversitiesSection: React.FC = () => {
   const [universities, setUniversities] = useState<UniversityItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
-  const { openPopup } = usePopup();
 
   useEffect(() => {
     const fetchUniversities = async () => {
@@ -141,40 +136,41 @@ const TopUniversitiesSection: React.FC = () => {
                 >
                   <Link
                     href={`/colleges/${university.slug}`}
-                    className="group block bg-white hover:bg-blue-600 border border-slate-200 hover:border-blue-700 rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+                    className="group block bg-white border border-slate-200 hover:border-brand-900 rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
                   >
-                    <div className="overflow-hidden">
-                      <img
+                    <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                      <CollegeCardImage
                         src={university.image}
                         alt={university.name}
-                        loading="lazy"
+                        width={640}
+                        height={352}
                         className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-4">
                       <div className="flex items-center gap-2 flex-wrap mb-2">
                         {university.type && (
-                          <span className="bg-slate-100 group-hover:bg-white/15 text-slate-600 group-hover:text-slate-200 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 transition-colors duration-300">
+                          <span className="bg-slate-100 text-slate-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
                             {university.type}
                           </span>
                         )}
                         {university.ranking && (
-                          <span className="bg-accent-100 group-hover:bg-accent-400 text-accent-600 group-hover:text-brand-950 text-[11px] font-bold uppercase rounded-full px-2.5 py-1 transition-colors duration-300">
+                          <span className="bg-accent-100 text-accent-600 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
                             {university.ranking}
                           </span>
                         )}
                       </div>
-                      <h3 className="text-base font-bold text-brand-950 group-hover:text-white leading-snug line-clamp-2 min-h-[2.75rem] transition-colors duration-300">
+                      <h3 className="text-base font-bold text-brand-950 leading-snug line-clamp-2 min-h-[2.75rem]">
                         {university.name}
                       </h3>
                       {university.city && (
-                        <p className="flex items-center gap-1.5 text-gray-600 group-hover:text-slate-300 text-sm mt-1.5 pb-2 border-b border-slate-100 group-hover:border-white/15 transition-colors duration-300">
+                        <p className="flex items-center gap-1.5 text-gray-600 text-sm mt-1.5 pb-2 border-b border-slate-100">
                           <FaMapMarkerAlt className="text-[11px] text-accent-500 shrink-0" />
                           <span className="truncate">{university.city}</span>
                         </p>
                       )}
                       {university.fees && (
-                        <p className="mt-2 text-sm font-extrabold text-brand-950 group-hover:text-accent-400 transition-colors duration-300">
+                        <p className="mt-2 text-sm font-extrabold text-brand-950">
                           {university.fees}
                         </p>
                       )}
@@ -193,19 +189,7 @@ const TopUniversitiesSection: React.FC = () => {
               </Link>
             </div>
 
-            <div className="mt-6 text-center">
-              <p className="text-gray-600 text-sm leading-6 max-w-2xl mx-auto mb-4">
-                Our counselors help students secure admission into India&apos;s
-                top medical universities with complete guidance.
-              </p>
-              <button
-                onClick={() => openPopup()}
-                className="group inline-flex items-center gap-2 bg-brand-950 hover:bg-brand-900 text-white h-11 px-6 rounded-full font-bold text-sm shadow-[0_12px_30px_rgba(23,37,84,0.25)] transition-all duration-300 hover:scale-[1.03]"
-              >
-                Get Admission Guidance
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1 text-xs" />
-              </button>
-            </div>
+          
           </>
         )}
       </div>

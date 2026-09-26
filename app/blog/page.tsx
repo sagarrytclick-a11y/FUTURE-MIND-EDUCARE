@@ -14,6 +14,9 @@ import {
 } from "react-icons/fa";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
+import { handleImageError } from "@/lib/img-fallback";
+import { SkeletonListPage } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface BlogItem {
   id: number;
@@ -103,11 +106,7 @@ const BlogPage = () => {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="h-10 w-10 rounded-full border-4 border-brand-900 border-t-transparent animate-spin" />
-      </div>
-    );
+    return <SkeletonListPage stats={0} cards={6} bg="bg-slate-50" />;
   }
 
   return (
@@ -211,13 +210,15 @@ const BlogPage = () => {
                 className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
               >
                 <span className="relative block h-44 overflow-hidden bg-slate-100">
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute left-2.5 top-2.5 rounded-full bg-accent-400 px-2.5 py-1 text-[11px] font-bold uppercase text-brand-950">
+                  <Image
+                   src={blog.image}
+                   alt={blog.title}
+                   fill
+                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                   onError={handleImageError}
+                 />
+                  <span className="absolute left-2.5 top-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase text-brand-950">
                     {blog.category}
                   </span>
                 </span>
@@ -225,16 +226,16 @@ const BlogPage = () => {
                 <span className="flex flex-1 flex-col p-4">
                   <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500">
                     <span className="inline-flex items-center gap-1">
-                      <FaRegCalendarAlt className="text-[11px] text-accent-500" />
+                      <FaRegCalendarAlt className="text-[11px] text-gray-400" />
                       {blog.date}
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <FaRegClock className="text-[11px] text-accent-500" />
+                      <FaRegClock className="text-[11px] text-gray-400" />
                       {blog.readTime}
                     </span>
                   </span>
 
-                  <h2 className="mt-1.5 line-clamp-2 text-brand-950 font-extrabold tracking-tight text-base leading-snug transition-colors duration-300 group-hover:text-accent-600">
+                  <h2 className="mt-1.5 line-clamp-2 text-brand-950 font-extrabold tracking-tight text-base leading-snug">
                     {blog.title}
                   </h2>
 
@@ -242,22 +243,11 @@ const BlogPage = () => {
                     {blog.description}
                   </p>
 
-                  <span className="mt-3 flex flex-wrap gap-1.5">
-                    {blog.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-accent-100 px-2 py-0.5 text-[10px] font-bold text-accent-600"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </span>
-
                   <span className="mt-auto flex items-center justify-between gap-2 pt-4">
                     <span className="truncate text-xs text-gray-500">
                       By {blog.author}
                     </span>
-                    <span className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-accent-600">
+                    <span className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-brand-950">
                       Read
                       <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
                     </span>

@@ -16,7 +16,6 @@ interface PopupContextType {
   formData: FormData;
   updateFormData: (data: Partial<FormData>) => void;
   resetForm: () => void;
-  submitForm: () => Promise<{ success: boolean; message: string }>;
 }
 
 const PopupContext = createContext<PopupContextType | undefined>(undefined);
@@ -60,31 +59,6 @@ export const PopupProvider: React.FC<PopupProviderProps> = ({ children }) => {
     });
   };
 
-  const submitForm = async () => {
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        resetForm();
-        closePopup();
-        return { success: true, message: result.message };
-      } else {
-        return { success: false, message: result.error || 'Failed to send email' };
-      }
-    } catch (error) {
-      console.error('Submit error:', error);
-      return { success: false, message: 'Network error. Please try again.' };
-    }
-  };
-
   return (
     <PopupContext.Provider
       value={{
@@ -93,8 +67,7 @@ export const PopupProvider: React.FC<PopupProviderProps> = ({ children }) => {
         closePopup,
         formData,
         updateFormData,
-        resetForm,
-        submitForm
+        resetForm
       }}
     >
       {children}

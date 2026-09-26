@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
+import Image from "next/image";
 
 interface DiaryItem {
   id: number;
@@ -86,10 +87,12 @@ const AirportDiariesSection: React.FC = () => {
             onClick={handleShareJourney}
             className="group relative overflow-hidden rounded-2xl border border-slate-200 hover:border-brand-900 h-48 text-left shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-800"
           >
-            <img
+            <Image
               src={diary.image}
               alt={diary.caption}
+              fill
               loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/40 to-brand-950/10 group-hover:from-brand-950 group-hover:via-brand-950/60 transition-colors duration-300" />

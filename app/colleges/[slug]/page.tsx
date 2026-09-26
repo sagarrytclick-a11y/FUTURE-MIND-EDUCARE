@@ -6,7 +6,6 @@ import Link from 'next/link';
 import {
   GraduationCap,
   MapPin,
-  Award,
   Users,
   BookOpen,
   FileText,
@@ -21,6 +20,8 @@ import {
 } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 import Section from '@/components/Section';
+import { SkeletonDetail } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface CollegeData {
   id: number;
@@ -45,29 +46,6 @@ interface CollegeData {
   documentsRequired?: string[];
 }
 
-interface StateData {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  colleges: CollegeData[];
-}
-
-interface MbbsData {
-  states: StateData[];
-}
-
-interface CountryData {
-  id: number;
-  name: string;
-  flag: string;
-  colleges?: CollegeData[];
-}
-
-interface MbbsAbroadData {
-  countries: CountryData[];
-}
-
 const TAB_IDS = ['overview', 'fees', 'admission', 'placement', 'documents'] as const;
 
 type TabId = (typeof TAB_IDS)[number];
@@ -83,7 +61,7 @@ const CollegeSlugPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabId>('overview');
-  const { openPopup, updateFormData, resetForm } = usePopup();
+  const { openPopup, updateFormData } = usePopup();
 
   useEffect(() => {
     if (loading || !college) return;
@@ -234,14 +212,7 @@ const CollegeSlugPage: React.FC = () => {
   }, [params.slug]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-brand-950 mx-auto mb-3"></div>
-          <p className="text-sm text-gray-600">Loading college information...</p>
-        </div>
-      </div>
-    );
+    return <SkeletonDetail />;
   }
 
   if (error || !college) {
@@ -351,9 +322,11 @@ const CollegeSlugPage: React.FC = () => {
               <div className="p-5">
                 {/* college image banner */}
                 <div className="group relative mb-5 h-56 overflow-hidden rounded-2xl bg-slate-100 sm:h-64">
-                  <img
+                  <Image
                     src={college.image}
                     alt={college.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 1200px"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['react-icons', 'lucide-react'],
   },
 
@@ -11,9 +10,10 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 604800,
-    remotePatterns: [
-      { protocol: 'https', hostname: '**' },
-    ],
+    // The college/blog JSON content references images from ~200 different
+    // third-party hosts, so an explicit allow-list would break most of them.
+    // `https` only - keep this as the one remaining restriction.
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },
 
   compress: true,

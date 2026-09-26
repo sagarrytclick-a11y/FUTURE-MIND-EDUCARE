@@ -3,9 +3,10 @@
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { FaCheckCircle, FaSpinner, FaArrowLeft } from "react-icons/fa";
+import { FaCheckCircle, FaArrowLeft } from "react-icons/fa";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
+import { SkeletonDetail } from "@/components/Skeleton";
 
 type OrderDetails = {
   status: string;
@@ -43,12 +44,7 @@ function SuccessPageContent() {
     };
   }, [dbOrderId]);
 
-  if (loading)
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center text-gray-600">
-        <FaSpinner className="animate-spin text-2xl" />
-      </div>
-    );
+  if (loading) return <SkeletonDetail />;
 
   return (
     <>
@@ -120,7 +116,7 @@ function SuccessPageContent() {
 export default function SuccessPage() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center text-gray-600"><FaSpinner className="animate-spin text-2xl" /></div>}>
+      <Suspense fallback={<SkeletonDetail />}>
         <SuccessPageContent />
       </Suspense>
     </div>

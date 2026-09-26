@@ -18,6 +18,9 @@ import { usePopup } from "@/contexts/PopupContext";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import { handleImageError } from "@/lib/img-fallback";
+import { SkeletonDetail } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface CollegeData {
   id: number;
@@ -85,7 +88,7 @@ const CountrySlugPage: React.FC = () => {
         } else {
           setCountry(foundCountry);
         }
-      } catch (err) {
+      } catch {
         setError("Failed to load country");
       } finally {
         setLoading(false);
@@ -96,14 +99,7 @@ const CountrySlugPage: React.FC = () => {
   }, [params.slug]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="text-center">
-          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-          <p className="text-gray-600 text-sm font-medium">Loading Country Details...</p>
-        </div>
-      </div>
-    );
+    return <SkeletonDetail />;
   }
 
   if (error || !country) {
@@ -190,12 +186,14 @@ const CountrySlugPage: React.FC = () => {
                   className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
                 >
                   <div className="relative h-40 overflow-hidden bg-slate-100">
-                    <img
-                      src={college.image}
-                      alt={college.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <Image
+                  src={college.image}
+                  alt={college.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={handleImageError}
+                />
                     <span
                       className={`absolute left-2.5 top-2.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${
                         college.type === "Government"

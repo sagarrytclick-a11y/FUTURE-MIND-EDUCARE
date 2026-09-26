@@ -1,7 +1,25 @@
+import type { Metadata } from "next";
+import { buildMetadata } from "@/app/config/seo-utils";
+
+export const metadata: Metadata = buildMetadata({
+  title: "NEET UG Counselling Packages 2026 - Fees & What You Get",
+  description:
+    "Choose a NEET UG counselling package: 1-on-1 expert guidance, NEET score analysis, college shortlisting, choice filling support and seat confirmation assistance.",
+  path: "/neet-ug-packages",
+  keywords: [
+    "neet ug counselling package",
+    "neet counselling fees",
+    "neet seat confirmation help",
+    "medical college shortlist",
+  ],
+});
+
 import React from "react";
-import PricingSection from "@/components/PricingSection";
+import dynamic from "next/dynamic";
+
+const PricingSection = dynamic(() => import("@/components/PricingSection"));
 import PageHero from "@/components/PageHero";
-import { FaCheckCircle } from "react-icons/fa";
+import TrustStrip from "@/components/TrustStrip";
 
 const TRUST_POINTS = [
   "1-on-1 NEET counselling expert",
@@ -22,19 +40,8 @@ export default function NeetUgPackagesPage() {
         description="Pick a plan that fits your needs — from information access to end-to-end 1-on-1 counselling support."
         crumbs={[{ label: "Home", href: "/" }, { label: "NEET UG Packages" }]}
       />
-      {/* Compact inline trust strip — blue checks, no cards */}
-      <div className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {TRUST_POINTS.map((point) => (
-              <span key={point} className="inline-flex items-center gap-1.5 text-sm text-gray-600">
-                <FaCheckCircle className="text-xs text-brand-950" />
-                {point}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Compact inline trust strip — centered checks, no cards */}
+      <TrustStrip points={TRUST_POINTS} />
       <PricingSection />
     </main>
   );

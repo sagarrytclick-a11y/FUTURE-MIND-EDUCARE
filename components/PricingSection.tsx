@@ -1,11 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
 import CheckoutModal from "./CheckoutModal";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
+import { SkeletonGrid, SkeletonHeading } from "@/components/Skeleton";
+
+const subscribeNoop = () => () => {};
 
 const plans = [
   {
@@ -70,10 +73,20 @@ const PricingSection = () => {
     price: number;
   } | null>(null);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // Avoid hydration mismatch: render the real prices only after mount
+  const mounted = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false
+  );
 
-  if (!mounted) return <section className="py-10 bg-gray-50"><div className="max-w-7xl mx-auto text-center text-sm text-gray-600">Loading...</div></section>;
+  if (!mounted)
+    return (
+      <Section spacing="md" className="bg-gray-50">
+        <SkeletonHeading />
+        <SkeletonGrid count={3} cols={3} className="mt-6" />
+      </Section>
+    );
 
   return (
     <Section spacing="md" className="bg-gray-50">

@@ -9,6 +9,8 @@ import {
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import { SkeletonListPage } from "@/components/Skeleton";
+import Image from "next/image";
 
 interface CollegeData {
   id: number;
@@ -66,18 +68,7 @@ const StatesPage: React.FC = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="relative w-12 h-12 mx-auto mb-3">
-            <div className="absolute inset-0 rounded-full border-4 border-blue-200"></div>
-            <div className="absolute inset-0 rounded-full border-4 border-brand-950 border-t-transparent animate-spin"></div>
-          </div>
-          <h2 className="text-brand-950 font-extrabold tracking-tight text-base">Loading States...</h2>
-          <p className="text-sm text-gray-600 mt-1">Fetching medical colleges data</p>
-        </div>
-      </div>
-    );
+    return <SkeletonListPage stats={4} cards={6} bg="bg-slate-50" />;
   }
 
   if (error) {
@@ -159,16 +150,17 @@ const StatesPage: React.FC = () => {
                 className="group flex flex-col h-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-900 hover:shadow-xl"
               >
                 <div className="relative h-40 overflow-hidden bg-slate-100">
-                  <img
-                    src={state.image}
-                    alt={state.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => {
+                  <Image
+                  src={state.image}
+                  alt={state.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = "/placeholder-state.png";
                     }}
-                  />
+                />
                   <span className="absolute left-2.5 top-2.5 rounded-full bg-accent-400 px-2.5 py-1 text-[11px] font-bold uppercase text-brand-950">
                     MBBS State
                   </span>

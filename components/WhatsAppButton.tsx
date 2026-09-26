@@ -11,7 +11,7 @@ const WhatsAppButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed right-4 sm:right-5 bottom-20 z-40 flex flex-col items-end">
+    <div className="fixed left-4 bottom-20 z-40 flex flex-col items-start sm:left-5">
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
@@ -23,7 +23,7 @@ const WhatsAppButton: React.FC = () => {
         />
 
         {/* Tooltip */}
-        <div className="absolute bottom-full right-0 mb-2 px-2.5 py-1 bg-brand-950 text-white text-xs rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+        <div className="absolute bottom-full left-0 mb-2 px-2.5 py-1 bg-brand-950 text-white text-xs rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
           Chat on WhatsApp
         </div>
       </button>

@@ -1,60 +1,30 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { usePopup } from "../contexts/PopupContext";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
-const TYPED_COLLEGES = [
-  "Yaroslavl The Wise Novgorod State University, Russia",
-  "Kyrgyz State Medical Academy, Kyrgyzstan",
+const FEATURED_COLLEGES = [
+  "AIIMS, New Delhi",
   "Grant Medical College, Mumbai",
-  "Tbilisi State Medical University, Georgia",
+  "Maulana Azad Medical College, New Delhi",
+  "Lady Hardinge Medical College, New Delhi",
 ];
-
-function useTypewriter() {
-  const [text, setText] = useState("");
-  useEffect(() => {
-    let college = 0;
-    let char = 0;
-    let deleting = false;
-    let timer: ReturnType<typeof setTimeout>;
-
-    const tick = () => {
-      const current = TYPED_COLLEGES[college];
-      if (!deleting) {
-        char += 1;
-        setText(current.slice(0, char));
-        if (char === current.length) {
-          deleting = true;
-          timer = setTimeout(tick, 1800);
-          return;
-        }
-        timer = setTimeout(tick, 45);
-      } else {
-        char -= 1;
-        setText(current.slice(0, char));
-        if (char === 0) {
-          deleting = false;
-          college = (college + 1) % TYPED_COLLEGES.length;
-          timer = setTimeout(tick, 400);
-          return;
-        }
-        timer = setTimeout(tick, 18);
-      }
-    };
-
-    timer = setTimeout(tick, 500);
-    return () => clearTimeout(timer);
-  }, []);
-  return text;
-}
 
 const HeroSection = () => {
   const { openPopup } = usePopup();
-  const typed = useTypewriter();
+  const [featuredCollege, setFeaturedCollege] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setFeaturedCollege((current) => (current + 1) % FEATURED_COLLEGES.length);
+    }, 3200);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-brand-950 via-blue-900 to-brand-900">
@@ -72,22 +42,22 @@ const HeroSection = () => {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-14 sm:pb-20">
-        <div className="grid lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)] gap-8 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-14">
+        <div className="grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-2 sm:gap-4 md:gap-8 items-end">
           {/* DOCTOR CUTOUT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative hidden lg:block self-end"
+            className="relative order-2 flex h-[220px] justify-center sm:h-[280px] md:order-1 md:h-full md:min-h-[540px] md:items-end"
           >
             <Image
               src="/hero.png"
               alt="Future Mind Educare — medical student guidance"
-              width={500}
-              height={500}
+              width={275}
+              height={458}
               priority
-              className="w-full max-w-[560px] h-auto object-contain drop-shadow-2xl"
+              className="h-[220px] w-auto max-w-none object-contain object-bottom drop-shadow-2xl sm:h-[280px] md:h-[540px] lg:h-[620px]"
             />
           </motion.div>
 
@@ -96,39 +66,49 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            className="order-1 py-4 sm:py-6 md:order-2 md:py-14"
           >
             {/* BADGE */}
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 mb-5">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
               <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-white">
-                MBBS INDIA & ABROAD — GLOBAL PATHWAYS
+                MBBS ADMISSIONS IN INDIA
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-white text-balance">
-              Build Your
-              <span className="block text-accent-400 mt-1">
-                Medical Career
-              </span>
+            <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-white text-balance sm:text-5xl md:text-6xl">
+              MBBS in India
+              <span className="block text-accent-400 mt-1">Find Your College</span>
             </h1>
 
-            {/* FEATURED GLASS BOX */}
-            <div className="mt-6 max-w-xl rounded-2xl border border-white/15 bg-brand-950/60 backdrop-blur px-4 py-3.5">
-              <p className="text-[11px] font-bold tracking-[0.18em] text-slate-300">
-                FEATURED COLLEGE (ABROAD)
+            <div className="mt-5 max-w-xl rounded-xl border border-white/20 bg-brand-950/35 px-4 py-3">
+              <p className="text-[10px] font-bold tracking-[0.16em] text-slate-300 sm:text-[11px]">
+                FEATURED COLLEGE IN INDIA
               </p>
-              <p className="mt-1 text-sm sm:text-base font-semibold text-white min-h-[1.75rem]">
-                {typed}
-                <span className="ml-0.5 inline-block h-4 w-[2px] translate-y-[2px] animate-pulse bg-accent-400" />
-              </p>
+              <div className="relative mt-1 min-h-7 overflow-hidden text-base font-semibold text-white sm:text-lg">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.p
+                    key={featuredCollege}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-x-0 top-0"
+                  >
+                    {FEATURED_COLLEGES[featuredCollege]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
             </div>
 
-            {/* DESCRIPTION */}
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300 max-w-xl">
-              Trusted support for MBBS in India & abroad — university selection,
-              applications, counselling and visa assistance end to end.
-            </p>
+        
+            <div className="mt-5 grid max-w-xl grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-white sm:text-base">
+              <span>Fees and seat details</span>
+              <span>NEET cut-offs</span>
+              <span>Government and private colleges</span>
+              <span>State-wise choices</span>
+            </div>
 
             {/* BUTTONS */}
             <div className="flex flex-col sm:flex-row gap-3 mt-6">
@@ -141,26 +121,26 @@ const HeroSection = () => {
                   <FaArrowRight className="text-[11px] transition-transform duration-300 group-hover:translate-x-0.5" />
                 </span>
               </button>
-              <Link href="/colleges/mbbs-abroad">
-                <button className="h-12 px-7 rounded-full border border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
-                  Explore Countries
-                </button>
+              <Link href="/colleges/mbbs-india">
+                <span className="flex h-12 w-full items-center justify-center rounded-full border border-white/40 px-7 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 sm:w-auto">
+                  Explore Colleges
+                </span>
               </Link>
             </div>
 
             {/* MINI STATS */}
-            <div className="mt-7 flex flex-wrap gap-x-8 gap-y-3">
+            <div className="mt-7 flex flex-wrap gap-x-4 gap-y-3 sm:gap-x-8">
               <div>
-                <p className="text-2xl font-extrabold text-white leading-none">5000+</p>
-                <p className="text-xs text-slate-300 mt-1">Students Guided</p>
+                <p className="text-2xl font-extrabold text-white leading-none">296+</p>
+                <p className="text-xs text-slate-300 mt-1">Colleges Listed</p>
               </div>
-              <div className="border-l border-white/15 pl-8">
-                <p className="text-2xl font-extrabold text-white leading-none">15+</p>
-                <p className="text-xs text-slate-300 mt-1">Countries Available</p>
+              <div className="border-l border-white/15 pl-3 sm:pl-8">
+                <p className="text-2xl font-extrabold text-white leading-none">18</p>
+                <p className="text-xs text-slate-300 mt-1">States Covered</p>
               </div>
-              <div className="border-l border-white/15 pl-8">
-                <p className="text-2xl font-extrabold text-accent-400 leading-none">19+</p>
-                <p className="text-xs text-slate-300 mt-1">Years Experience</p>
+              <div className="border-l border-white/15 pl-3 sm:pl-8">
+                <p className="text-2xl font-extrabold text-accent-400 leading-none">46,696</p>
+                <p className="text-xs text-slate-300 mt-1">MBBS Seats</p>
               </div>
             </div>
           </motion.div>

@@ -7,7 +7,7 @@ export const SITE_IDENTITY = {
     details: "Near Western Express Highway Metro Station, Opp Kanakia Wall Street",
     area: "Andheri East",
     city: "Mumbai",
-    pincode: "400093"
+    pincode: "400069"
   },
   contact: {
     phone: "9920798988",
@@ -26,8 +26,8 @@ export const SITE_IDENTITY = {
     partnerColleges: "50+"
   },
   logo: {
-    primary: "/future-mind-logo.png",
-    favicon: "/favicon.ico"
+    primary: "/logo.png",
+    favicon: "/logo.png"
   }
 };
 

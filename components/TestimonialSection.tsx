@@ -11,6 +11,7 @@ import {
 import Section from '@/components/Section';
 import SectionHeading from '@/components/SectionHeading';
 import { SITE_IDENTITY } from '@/app/config/site_identity';
+import Image from "next/image";
 
 interface TestimonialItem {
   name: string;
@@ -155,10 +156,13 @@ const TestimonialSection: React.FC = () => {
                 </p>
 
                 <div className="mt-4 pt-4 border-t border-slate-100 group-hover:border-white/15 flex items-center gap-3">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={40}
+                    height={40}
                     loading="lazy"
+                    sizes="40px"
                     className="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100 group-hover:ring-accent-400 transition-all duration-300"
                   />
                   <div className="min-w-0">

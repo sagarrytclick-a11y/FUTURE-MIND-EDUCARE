@@ -6,6 +6,7 @@ import { FaAward, FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { usePopup } from "../contexts/PopupContext";
 import Section from "@/components/Section";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 
 const MINI_STATS = [
   { value: "5000+", label: "Students Guided" },
@@ -61,9 +62,12 @@ const AwardsAchievementsSection: React.FC = () => {
                   shadow-[0_20px_50px_rgba(0,0,0,0.35)]
                 "
               >
-                <img
+                <Image
                   src="/paper/image-1.png"
                   alt="Award Certificate"
+                  width={170}
+                  height={160}
+                  sizes="170px"
                   className="w-[150px] md:w-[170px] h-40 object-cover"
                 />
                 {/* Accent corner tag */}
@@ -87,9 +91,12 @@ const AwardsAchievementsSection: React.FC = () => {
                   shadow-[0_20px_50px_rgba(0,0,0,0.35)]
                 "
               >
-                <img
+                <Image
                   src="/paper/image-2.png"
                   alt="Achievement Certificate"
+                  width={170}
+                  height={160}
+                  sizes="170px"
                   className="w-[150px] md:w-[170px] h-40 object-cover"
                 />
               </motion.div>

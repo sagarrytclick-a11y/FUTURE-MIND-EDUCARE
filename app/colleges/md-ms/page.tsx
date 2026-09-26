@@ -16,6 +16,8 @@ import {
 import PageHero from "@/components/PageHero"
 import Section from "@/components/Section"
 import SectionHeading from "@/components/SectionHeading"
+import { SkeletonListPage } from "@/components/Skeleton"
+import CollegeCardImage from "@/components/CollegeCardImage";
 
 interface CollegeData {
   id: number
@@ -117,14 +119,7 @@ const MdMsPage: React.FC = () => {
   const totalSeats = useMemo(() => allColleges.reduce((acc, college) => acc + (college.seats || 0), 0), [allColleges])
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-center">
-          <div className="h-10 w-10 border-4 border-brand-950 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-          <p className="text-gray-600 text-sm">Loading PG Medical Colleges...</p>
-        </div>
-      </div>
-    )
+    return <SkeletonListPage stats={4} cards={6} bg="bg-white" />
   }
 
   return (
@@ -207,13 +202,12 @@ const MdMsPage: React.FC = () => {
                 href={`/colleges/${college.name.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-")}`}
                 className="group flex flex-col h-full bg-white border border-slate-200 hover:border-brand-900 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden rounded-3xl"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={college.image}
-                    alt={college.name}
-                    loading="lazy"
-                    className="w-full h-40 object-cover bg-slate-100 transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="relative h-40 w-full overflow-hidden bg-slate-100">
+                  <CollegeCardImage
+                  src={college.image}
+                  alt={college.name}
+                  className="w-full h-40 object-cover bg-slate-100 transition-transform duration-500 group-hover:scale-105"
+                />
                   <span className="absolute top-2.5 left-2.5 text-[11px] font-bold uppercase rounded-full px-2.5 py-1">
                     {college.type || "Private"}
                   </span>
