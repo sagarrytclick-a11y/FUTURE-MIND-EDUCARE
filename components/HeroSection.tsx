@@ -27,7 +27,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-brand-950 via-blue-900 to-brand-900">
+    <section className="relative overflow-hidden bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800">
       {/* Globe line-art decoration */}
       <div className="absolute inset-y-0 right-[-160px] hidden md:flex items-center opacity-100 pointer-events-none">
         <div className="relative h-[560px] w-[560px]">

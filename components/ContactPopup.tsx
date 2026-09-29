@@ -137,7 +137,7 @@ const ContactPopup: React.FC = () => {
             Free MBBS Counselling
           </h2>
 
-          <p className="mt-1 text-sm text-blue-100">
+          <p className="mt-1 text-sm text-brand-100">
             Fill your details and our expert counsellor will contact you shortly.
           </p>
         </div>

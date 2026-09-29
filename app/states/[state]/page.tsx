@@ -162,7 +162,7 @@ const StatePage: React.FC = () => {
             </div>
             <div className="rounded-2xl bg-slate-50 px-3 py-2.5 text-center">
               <p className="flex items-center justify-center gap-1 text-brand-950 font-extrabold tracking-tight text-base">
-                <FaStar className="text-xs text-yellow-500" />
+                <FaStar className="text-xs text-accent-500" />
                 {govtColleges}
               </p>
               <p className="text-xs text-gray-600">Govt Colleges</p>

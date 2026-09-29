@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   EXECUTIVE INDIGO & CHAMPAGNE — site-wide theme
+   60% canvas  #F8FAFC · 30% structure #1E1B4B · 10% accent #D97706
+   Components consume these tokens only (bg-brand-950, text-accent-600, …) so
+   the whole site re-skins from this file alone.
+   ========================================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme {
@@ -36,39 +42,46 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-fira-sans);
-  
-  /* Standardized Brand Colors */
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-300: #93c5fd;
-  --color-brand-400: #60a5fa;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1e3a8a;
-  --color-brand-800: #1e40af;
-  --color-brand-900: #1e3a8a;
-  --color-brand-950: #172554;
 
-  /* Yellow accent (headline highlights, pills, icon chips, CTAs) */
-  --color-accent-50: #fefce8;
-  --color-accent-100: #fef9c3;
-  --color-accent-200: #fef08a;
-  --color-accent-300: #fde047;
-  --color-accent-400: #facc15;
-  --color-accent-500: #eab308;
-  --color-accent-600: #ca8a04;
-}
+  /* Executive Indigo — headers, footers, primary cards, headings */
+  --color-brand-50: #eef0fb;
+  --color-brand-100: #e0e3f7;
+  --color-brand-200: #c3c7ef;
+  --color-brand-300: #9ca3e3;
+  --color-brand-400: #7c81d4;
+  --color-brand-500: #6366c9;
+  --color-brand-600: #5048b4;
+  --color-brand-700: #423a99;
+  --color-brand-800: #342e78;
+  --color-brand-900: #262257;
+  --color-brand-950: #1e1b4b;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Champagne Gold / Amber — CTAs, active tabs, metric badges */
+  --color-accent-50: #fdf8ec;
+  --color-accent-100: #faefd2;
+  --color-accent-200: #f3dfa6;
+  --color-accent-300: #ebcb6e;
+  --color-accent-400: #eab308;
+  --color-accent-500: #e0a90a;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45f06;
+  --color-accent-800: #8a4a09;
+  --color-accent-900: #6b3a0b;
+
+  /* Semantic surfaces & ink — replaces ad-hoc slate hexes */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-surface-sunken: #eef1f7;
+  --color-hairline: #e2e8f0;
+  --color-ink: #0f172a;
+  --color-ink-muted: #64748b;
+  --color-ink-subtle: #94a3b8;
+  --color-ink-on-brand: #f8fafc;
 }
 
 body {
-  background: #ffffff;
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-fira-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -130,17 +143,17 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #eef1f7;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #c3c7ef;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #9ca3e3;
 }
 
 /* ==========================================================================
@@ -178,15 +191,25 @@ body {
 
 /* Loading skeleton shimmer — used by components/Skeleton.tsx */
 .skeleton {
-  background-color: #e5e7eb;
-  background-image: linear-gradient(90deg, #e5e7eb 0%, #f3f4f6 45%, #e5e7eb 90%);
+  background-color: #e9ecf4;
+  background-image: linear-gradient(
+    90deg,
+    #e9ecf4 0%,
+    #f6f7fb 45%,
+    #e9ecf4 90%
+  );
   background-size: 220% 100%;
   animation: skeleton-shimmer 1.4s ease-in-out infinite;
 }
 
 .skeleton-dark {
-  background-color: #1e293b;
-  background-image: linear-gradient(90deg, #1e293b 0%, #334155 45%, #1e293b 90%);
+  background-color: #1e1b4b;
+  background-image: linear-gradient(
+    90deg,
+    #1e1b4b 0%,
+    #342e78 45%,
+    #1e1b4b 90%
+  );
   background-size: 220% 100%;
   animation: skeleton-shimmer 1.4s ease-in-out infinite;
 }

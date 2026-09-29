@@ -28,7 +28,7 @@ const FixedBottomCarousel: React.FC = () => {
   return (
     <>
       <div className="fixed bottom-0 left-0 right-0 z-50">
-        <div className="relative overflow-hidden border-t border-white/10 bg-[#071226]/95 backdrop-blur-xl shadow-2xl">
+        <div className="relative overflow-hidden border-t border-white/10 bg-brand-950/95 backdrop-blur-xl shadow-2xl">
 
           {/* Glow */}
           <div className="absolute -left-10 top-0 h-14 w-14 rounded-2xl bg-brand-900/20 blur-2xl"></div>

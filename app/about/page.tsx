@@ -184,7 +184,7 @@ const AboutPage: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-3.5 py-3 transition-colors duration-300 hover:border-brand-900"
               >
-                <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                <span className="flex items-center gap-0.5 text-accent-400 text-[11px]">
                   <FaStar />
                   <FaStar />
                   <FaStar />
@@ -216,7 +216,7 @@ const AboutPage: React.FC = () => {
             >
               <div className="flex items-start justify-between gap-3">
                 <FaQuoteLeft className="text-xl text-slate-200 transition-colors duration-300 group-hover:text-accent-400" />
-                <span className="flex items-center gap-0.5 text-[11px] text-amber-400">
+                <span className="flex items-center gap-0.5 text-[11px] text-accent-400">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <FaStar key={i} />
                   ))}

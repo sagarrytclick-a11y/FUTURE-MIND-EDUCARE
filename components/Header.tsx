@@ -483,7 +483,7 @@ const Header = () => {
                       rounded-xl
                       transition-colors
                       border-b
-                      border-blue-100
+                      border-hairline
                     "
                                     >
                                       View All {hoveredItemData.name} MD/MS Details →

@@ -82,8 +82,8 @@ const TIER_STYLE: Record<
     icon: <FaChartLine className="text-accent-600" />,
   },
   government: {
-    badge: "bg-blue-50 text-blue-700 border border-blue-200",
-    card: "border-blue-200 bg-blue-50",
+    badge: "bg-accent-50 text-accent-700 border border-accent-200",
+    card: "border-accent-200 bg-accent-50",
     bar: "bg-brand-900",
     icon: <FaCheckCircle className="text-brand-900" />,
   },
