@@ -95,7 +95,7 @@ const TestimonialSection: React.FC = () => {
       {/* RATING PILL ROW */}
       <div className="flex justify-center mb-6">
         <div className="inline-flex flex-wrap items-center justify-center gap-2 border border-slate-200 rounded-full pl-4 pr-1.5 py-1.5 bg-white shadow-sm">
-          <span className="flex items-center gap-0.5 text-amber-400 text-xs">
+          <span className="flex items-center gap-0.5 text-accent-400 text-xs">
             <FaStar />
             <FaStar />
             <FaStar />
@@ -143,7 +143,7 @@ const TestimonialSection: React.FC = () => {
               >
                 <FaQuoteLeft className="text-slate-200 group-hover:text-accent-400 text-2xl transition-colors duration-300" />
 
-                <div className="flex items-center gap-0.5 text-amber-400 text-[11px] mt-2">
+                <div className="flex items-center gap-0.5 text-accent-400 text-[11px] mt-2">
                   <FaStar />
                   <FaStar />
                   <FaStar />

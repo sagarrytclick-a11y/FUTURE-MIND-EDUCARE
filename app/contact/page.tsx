@@ -388,7 +388,7 @@ const ContactPage: React.FC = () => {
                 className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-3 transition-colors duration-300 hover:border-accent-400 hover:bg-white/10"
               >
                 <span>
-                  <span className="flex items-center gap-0.5 text-amber-400 text-[11px]">
+                  <span className="flex items-center gap-0.5 text-accent-400 text-[11px]">
                     <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
                   </span>
                   <span className="mt-0.5 block text-xs font-bold text-white">4.2 · 115 Google reviews</span>

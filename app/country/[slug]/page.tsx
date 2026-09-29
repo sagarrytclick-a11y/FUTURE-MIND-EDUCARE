@@ -327,7 +327,7 @@ const CountrySlugPage: React.FC = () => {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-blue-100 bg-accent-100 p-5">
+          <div className="rounded-2xl border border-accent-200 bg-accent-100 p-5">
             <h3 className="text-brand-950 font-extrabold tracking-tight text-base sm:text-lg mb-1">Affordable MBBS Abroad</h3>
             <p className="text-sm text-gray-600 leading-relaxed mb-3">
               Compared to private colleges in India and Western countries, studying MBBS in {country.name} is highly affordable with quality education and global opportunities.

@@ -221,7 +221,7 @@ const BlogPostPage: React.FC = () => {
 
             <div className="rounded-2xl bg-brand-900 p-5 text-white">
               <h2 className="text-brand-950 font-extrabold tracking-tight text-base !text-white mb-1">Need MBBS Guidance?</h2>
-              <p className="text-sm text-blue-100 mb-3">Talk to our counselors for free.</p>
+              <p className="text-sm text-brand-100 mb-3">Talk to our counselors for free.</p>
               <Link
                 href="/contact"
                 className="flex h-11 items-center justify-center rounded-full bg-white text-sm font-bold text-brand-950 transition-colors hover:bg-accent-100"

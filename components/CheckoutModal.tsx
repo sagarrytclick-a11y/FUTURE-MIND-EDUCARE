@@ -93,7 +93,7 @@ const CheckoutModal = ({ isOpen, onClose, planId, planName, planPrice }: Checkou
             contact: mobile,
           },
           theme: {
-            color: "#2563EB",
+            color: "#1E1B4B",
           },
           handler: async function (response: RazorpayResponse) {
             try {

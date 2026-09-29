@@ -1,23 +1,23 @@
 import { SITE_IDENTITY } from '@/app/config/site_identity';
 import { SITE_URL } from '@/app/config/seo';
 
-const BRAND_NAVY = '#172554';
-const BRAND_NAVY_SOFT = '#1e3a8a';
-const BRAND_BLUE = '#2563eb';
-const ACCENT = '#facc15';
-const ACCENT_DEEP = '#ca8a04';
-const LIGHT_BG = '#eef2f7';
-const DARK_BG = '#0b1220';
+const BRAND_NAVY = '#1e1b4b';
+const BRAND_NAVY_SOFT = '#342e78';
+const BRAND_BLUE = '#5048b4';
+const ACCENT = '#eab308';
+const ACCENT_DEEP = '#d97706';
+const LIGHT_BG = '#f8fafc';
+const DARK_BG = '#1e1b4b';
 const LIGHT_CARD = '#ffffff';
-const DARK_CARD = '#111827';
+const DARK_CARD = '#262257';
 const LIGHT_ROW = '#f8fafc';
-const DARK_ROW = '#0f172a';
+const DARK_ROW = '#1e1b4b';
 const LIGHT_TEXT = '#0f172a';
 const DARK_TEXT = '#f1f5f9';
 const LIGHT_MUTED = '#64748b';
-const DARK_MUTED = '#94a3b8';
+const DARK_MUTED = '#c3c7ef';
 const BORDER_LIGHT = '#e2e8f0';
-const BORDER_DARK = '#1f2937';
+const BORDER_DARK = '#342e78';
 
 
 const PHONE_DIGITS = SITE_IDENTITY.contact.phone.replace(/\D/g, '');
@@ -47,11 +47,11 @@ const DARK_MODE_CSS = `
       .em-accent  { color: ${ACCENT} !important; }
       .em-btn     { background-color: ${ACCENT} !important; color: ${BRAND_NAVY} !important; border-color: ${ACCENT} !important; }
       .em-btn-sec { background-color: ${DARK_ROW} !important; color: ${DARK_TEXT} !important; border-color: ${BORDER_DARK} !important; }
-      .em-chip    { background-color: rgba(250, 204, 21, 0.14) !important; border-color: rgba(250, 204, 21, 0.35) !important; }
+      .em-chip    { background-color: rgba(234, 179, 8, 0.14) !important; border-color: rgba(234, 179, 8, 0.35) !important; }
       .em-quote   { background-color: ${DARK_ROW} !important; border-color: ${BORDER_DARK} !important; }
       .em-divider { border-color: ${BORDER_DARK} !important; }
       .em-step    { background-color: ${BRAND_NAVY_SOFT} !important; color: ${ACCENT} !important; }
-      .em-header  { background-color: #0b1220 !important; }
+      .em-header  { background-color: ${DARK_BG} !important; }
     }
 `;
 
