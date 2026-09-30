@@ -122,7 +122,7 @@ const TopCountriesSection: React.FC = () => {
                     tabIndex={copy === 1 ? -1 : undefined}
                     className="group block w-[240px] shrink-0"
                   >
-                    <div className="h-full bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex h-full flex-col bg-white hover:bg-brand-950 border border-slate-200 hover:border-brand-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                       {/* IMAGE */}
                       <div className="relative h-28 overflow-hidden">
                         <Image
@@ -132,20 +132,20 @@ const TopCountriesSection: React.FC = () => {
                           sizes="(max-width: 640px) 100vw, 280px"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <span className="absolute top-2 left-2.5 inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full pl-1 pr-2.5 py-1">
+                        <span className="absolute left-2 top-2 grid h-6 w-9 place-items-center overflow-hidden rounded-md shadow-md ring-1 ring-black/10">
                           <Image
                             src={country.flag}
                             alt={`${country.name} flag`}
-                            width={20}
-                            height={20}
-                            sizes="20px"
-                            className="w-5 h-5 rounded-full object-cover"
+                            width={36}
+                            height={24}
+                            sizes="36px"
+                            className="size-full object-cover"
                           />
                         </span>
                       </div>
 
                       {/* BODY — name + count + View link */}
-                      <div className="p-3">
+                      <div className="flex flex-1 flex-col p-3">
                         <h3 className="text-brand-950 group-hover:text-white font-bold leading-tight truncate transition-colors duration-300">
                           {country.name}
                         </h3>
@@ -153,8 +153,8 @@ const TopCountriesSection: React.FC = () => {
                           <FaUniversity className="text-brand-950 group-hover:text-accent-400 text-xs shrink-0 transition-colors duration-300" />
                           {country.universities} Universities
                         </p>
-                        <span className="mt-1.5 inline-flex items-center gap-1 text-sm font-bold text-brand-950 group-hover:text-accent-400 transition-colors duration-300">
-                          View <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                        <span className="mt-auto inline-flex self-end items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1.5 text-xs font-bold text-brand-950 transition-colors duration-300 group-hover:bg-accent-400 group-hover:text-brand-950">
+                          View <FaArrowRight aria-hidden="true" className="text-[10px] transition-transform duration-300 group-hover:translate-x-0.5" />
                         </span>
                       </div>
                     </div>
