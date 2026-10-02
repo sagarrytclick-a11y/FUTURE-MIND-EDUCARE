@@ -198,7 +198,7 @@ const MbbsIndiaPageContent: React.FC = () => {
             )}
           </div>
 
-          <div className="no-scrollbar flex justify-start gap-2 overflow-x-auto pb-1 lg:justify-center">
+          <div className="flex min-w-0 touch-pan-x snap-x snap-proximity justify-start gap-2 overflow-x-auto overscroll-x-contain scroll-smooth pb-2">
             <button
               onClick={() => {
                 setSelectedState("")
